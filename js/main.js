@@ -13,6 +13,7 @@ function renderProjectsCatalog() {
         <span class="project-image-overlay absolute inset-0 flex items-center justify-center bg-sobhaNavy/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
           <span class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-sobhaNavy px-5 py-3 text-xs font-bold uppercase tracking-widest shadow-lg">View Details <span aria-hidden="true">→</span></span>
         </span>
+        ${p.reraId ? '<span class="absolute bottom-4 right-4 z-10 inline-flex items-center gap-1.5 rounded bg-white/90 backdrop-blur-sm px-2.5 py-1.5 text-[11px] font-semibold text-sobhaNavy shadow"><span aria-hidden="true" class="text-emerald-600">✓</span> RERA Verified</span>' : ''}
       </button>
       <div class="p-4 sm:p-5 flex flex-col flex-grow">
         <p class="text-[11px] font-semibold text-sobhaGold uppercase tracking-wider mb-1">${p.theme}</p>
@@ -31,9 +32,16 @@ function openPropertyDetail(id) {
   const p = projectsData.find(x => x.id === id); if (!p) return;
   activeProject = p;
   const put = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
-  put('detailTitle',p.title); put('detailBadge',p.badge); put('detailTheme',p.theme); put('detailPrice',p.price); put('detailOverview',p.overview);
+  put('detailTitle',p.title); put('detailBadge',p.badge); put('detailPrice',p.price); put('detailOverview',p.overview);
+  const detailTheme=document.getElementById('detailTheme');
+  const detailReraToggle=document.getElementById('detailReraToggle');
+  const detailReraValue=document.getElementById('detailReraValue');
+  if(detailTheme)detailTheme.textContent=p.reraId?'':p.theme;
+  if(detailReraToggle){detailReraToggle.classList.toggle('hidden',!p.reraId);detailReraToggle.setAttribute('aria-expanded','false');}
+  if(detailReraValue){detailReraValue.textContent=p.reraId?`RERA ID: ${p.reraId}`:'';detailReraValue.classList.add('hidden');}
   const loc = document.querySelector('#detailLocation span'); if(loc) loc.textContent=p.location;
-  ['Possession','LandArea','Config','Rera'].forEach((key,i)=>put('spec'+key,[p.specs.possession,p.specs.landArea,p.specs.config,p.specs.rera][i]));
+  ['Possession','LandArea','Config'].forEach((key,i)=>put('spec'+key,[p.specs.possession,p.specs.landArea,p.specs.config][i]));
+  put('specRera',p.reraId || 'Not available');
   const main=document.getElementById('mainGalleryImage'); if(main) main.src=p.gallery[0];
   p.gallery.slice(0,2).forEach((src,i)=>{const el=document.getElementById('thumb'+i);if(el)el.src=src;});
   const tabs=document.getElementById('floorPlanTabs');
@@ -44,15 +52,24 @@ function openPropertyDetail(id) {
   selectFloorPlan(p.id,0);
   document.getElementById('catalogView').classList.add('hidden'); document.getElementById('detailView').classList.remove('hidden');
   document.getElementById('headerNavLinks')?.classList.add('hidden');
-  document.getElementById('headerBackContainer')?.classList.remove('hidden');
+  document.getElementById('detailBackButton')?.classList.remove('hidden');
+  document.getElementById('detailBackButton')?.classList.add('inline-flex');
   document.getElementById('mobileMenuToggle')?.classList.add('hidden');
   closeMobileNavigation();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
+function toggleReraId(button){
+  const value=button.nextElementSibling;
+  if(!value)return;
+  const expanded=button.getAttribute('aria-expanded')==='true';
+  button.setAttribute('aria-expanded',String(!expanded));
+  value.classList.toggle('hidden',expanded);
+}
+
 function showCatalogView() {
   document.getElementById('detailView')?.classList.add('hidden'); document.getElementById('catalogView')?.classList.remove('hidden');
-  document.getElementById('headerBackContainer')?.classList.add('hidden'); document.getElementById('headerNavLinks')?.classList.remove('hidden');
+  document.getElementById('detailBackButton')?.classList.add('hidden'); document.getElementById('detailBackButton')?.classList.remove('inline-flex'); document.getElementById('headerNavLinks')?.classList.remove('hidden');
   document.getElementById('mobileMenuToggle')?.classList.remove('hidden');
   closeMobileNavigation();
 }

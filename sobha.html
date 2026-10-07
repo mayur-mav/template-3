@@ -46,14 +46,6 @@
                 <a href="#faq" onclick="navigateToSection('faq'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">FAQs</a>
             </nav>
 
-            <!-- Back Button (Only visible on Property Detail View) -->
-            <div id="headerBackContainer" class="hidden">
-                <button onclick="showCatalogView()" class="inline-flex items-center gap-2 text-[10px] sm:text-xs uppercase font-bold text-sobhaNavy hover:text-sobhaGold transition-colors bg-gray-100 hover:bg-sobhaGoldLight px-2.5 sm:px-3.5 py-2 rounded-sm border border-gray-200">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                    <span class="hidden sm:inline">Back to Residences</span><span class="sm:hidden">Back</span>
-                </button>
-            </div>
-
             <!-- CTA -->
             <div class="flex items-center space-x-3">
                 <button onclick="triggerEnquiryScroll()" class="bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-[10px] sm:text-xs tracking-widest uppercase px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-300 shadow-md">
@@ -373,9 +365,15 @@
                 
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                     <div>
-                        <div class="flex items-center gap-3 mb-2">
+                        <button id="detailBackButton" onclick="showCatalogView()" class="hidden items-center gap-2 text-xs uppercase font-bold text-white hover:text-sobhaGold transition-colors bg-white/10 hover:bg-white/20 px-3 py-2 rounded-sm border border-white/20 mb-5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                            Back to Residences
+                        </button>
+                        <div class="flex flex-wrap items-center gap-3 mb-2">
                             <span id="detailBadge" class="bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1"></span>
                             <span id="detailTheme" class="text-sobhaGold text-xs uppercase tracking-widest font-semibold"></span>
+                            <button id="detailReraToggle" type="button" onclick="toggleReraId(this)" aria-expanded="false" class="hidden bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1 cursor-pointer hover:bg-sobhaGoldHover transition-colors">✓ RERA Verified</button>
+                            <span id="detailReraValue" class="hidden text-xs text-gray-200"></span>
                         </div>
                         <h1 id="detailTitle" class="font-serif text-3xl sm:text-5xl font-bold text-white mb-2"></h1>
                         <p id="detailLocation" class="text-gray-300 text-xs sm:text-sm flex items-center gap-1.5">
