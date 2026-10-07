@@ -289,13 +289,15 @@
                                     <input type="email" id="formEmail" required placeholder="ananya@example.com" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
                                 </div>
                                 <div>
-                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Project of Interest</label>
-                                    <select id="formProject" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs text-gray-700 focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
-                                        <option value="General Query">All / General Query</option>
-                                        <option value="SOBHA Neopolis">SOBHA Neopolis (Panathur, ORR)</option>
-                                        <option value="SOBHA Townpark">SOBHA Townpark (Hosur Road)</option>
-                                        <option value="SOBHA Oakshire">SOBHA Oakshire (Devanahalli)</option>
-                                    </select>
+                                    <label id="formProjectLabel" class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Project of Interest</label>
+                                    <div class="project-picker">
+                                        <input id="formProject" name="project" type="hidden" value="General Query">
+                                        <button id="formProjectToggle" type="button" class="project-picker-toggle" aria-labelledby="formProjectLabel formProjectValue" aria-haspopup="listbox" aria-expanded="false">
+                                            <span id="formProjectValue">All / General Query</span>
+                                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </button>
+                                        <div id="formProjectMenu" class="project-picker-menu" role="listbox" aria-labelledby="formProjectLabel" hidden></div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -323,37 +325,7 @@
                     <div class="w-12 h-0.5 bg-sobhaGold mx-auto mb-4"></div>
                 </div>
 
-                <div class="space-y-4">
-                    <div class="bg-white border border-gray-200 shadow-sm transition-all duration-200">
-                        <button onclick="toggleFaq(1)" class="w-full text-left p-5 sm:p-6 flex justify-between items-center focus:outline-none">
-                            <span class="font-serif font-bold text-sobhaNavy text-sm sm:text-base">What makes SOBHA's Backward Integration model unique?</span>
-                            <span id="faq-icon-1" class="text-sobhaGold font-bold text-xl transition-transform duration-300">+</span>
-                        </button>
-                        <div id="faq-answer-1" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 pt-4">
-                            SOBHA is India's only fully backward integrated real estate developer. This means we design, manufacture, and construct every element of our projects in-house—including precision woodworking, aluminum glazing, and precast concrete—ensuring total quality control and timely delivery.
-                        </div>
-                    </div>
-
-                    <div class="bg-white border border-gray-200 shadow-sm transition-all duration-200">
-                        <button onclick="toggleFaq(2)" class="w-full text-left p-5 sm:p-6 flex justify-between items-center focus:outline-none">
-                            <span class="font-serif font-bold text-sobhaNavy text-sm sm:text-base">How can I book a private site visit for SOBHA properties?</span>
-                            <span id="faq-icon-2" class="text-sobhaGold font-bold text-xl transition-transform duration-300">+</span>
-                        </button>
-                        <div id="faq-answer-2" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 pt-4">
-                            You can easily schedule a site visit by filling out the <a href="#enquiry" class="text-sobhaGold underline font-semibold">Enquiry Form</a> on this page. Our dedicated relationship executive will contact you to schedule a convenient date, private transportation, and personal walkthrough.
-                        </div>
-                    </div>
-
-                    <div class="bg-white border border-gray-200 shadow-sm transition-all duration-200">
-                        <button onclick="toggleFaq(3)" class="w-full text-left p-5 sm:p-6 flex justify-between items-center focus:outline-none">
-                            <span class="font-serif font-bold text-sobhaNavy text-sm sm:text-base">Are SOBHA projects approved by major financial institutions?</span>
-                            <span id="faq-icon-3" class="text-sobhaGold font-bold text-xl transition-transform duration-300">+</span>
-                        </button>
-                        <div id="faq-answer-3" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 pt-4">
-                            Yes, all SOBHA developments are approved by leading nationalized and private banks (including HDFC, SBI, ICICI, and Axis Bank) for seamless home loan processing and approval.
-                        </div>
-                    </div>
-                </div>
+                <div id="faqList" class="space-y-4"></div>
             </div>
         </section>
     </div>
@@ -490,7 +462,7 @@
                         <!-- Amenities Grid -->
                         <div>
                             <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block">World-Class Amenities</h2>
-                            <div id="amenitiesGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div id="amenitiesGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                                 <!-- Dynamic JS Injection -->
                             </div>
                         </div>
@@ -523,10 +495,15 @@
                                     <input type="tel" required placeholder="+91 98765 43210" class="w-full border border-gray-300 p-2.5 text-xs focus:outline-none focus:border-sobhaGold">
                                 </div>
                                 <div>
-                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Preferred Unit Type</label>
-                                    <select id="sidebarUnitSelect" class="w-full border border-gray-300 p-2.5 text-xs text-gray-700 focus:outline-none focus:border-sobhaGold">
-                                        <!-- Dynamic options -->
-                                    </select>
+                                    <label id="sidebarUnitLabel" class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Preferred Unit Type</label>
+                                    <div class="project-picker" id="sidebarUnitPicker">
+                                        <input id="sidebarUnitSelect" name="preferredUnitType" type="hidden">
+                                        <button id="sidebarUnitToggle" type="button" class="project-picker-toggle" aria-labelledby="sidebarUnitLabel sidebarUnitValue" aria-haspopup="listbox" aria-expanded="false">
+                                            <span id="sidebarUnitValue">Select a unit type</span>
+                                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </button>
+                                        <div id="sidebarUnitMenu" class="project-picker-menu" role="listbox" aria-labelledby="sidebarUnitLabel" hidden></div>
+                                    </div>
                                 </div>
                                 <button type="submit" class="w-full bg-sobhaGold hover:bg-sobhaGoldHover text-sobhaNavy font-bold text-xs uppercase tracking-widest py-3.5 transition-colors shadow">
                                     Request Immediate Call Back
@@ -547,7 +524,7 @@
     </div>
 
     <!-- 9. FOOTER -->
-    <footer class="bg-sobhaNavyDark text-gray-400 text-xs py-12 sm:py-16 border-t border-white/10 mt-auto">
+    <footer id="siteFooter" class="bg-sobhaNavyDark text-gray-400 text-xs py-12 sm:py-16 border-t border-white/10 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-12">
             <div>
                 <button onclick="showCatalogView()" class="font-serif text-2xl font-bold text-sobhaGold tracking-widest block mb-3 focus:outline-none">SOBHA</button>

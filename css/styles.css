@@ -38,6 +38,7 @@ input, select, textarea { max-width: 100%; }
 #detailTitle, #detailLocation, #specConfig, #specRera { overflow-wrap: anywhere; }
 #floorPlanTabs { overflow-x: auto; }
 #floorPlanTabs button { flex: 0 0 auto; max-width: 100%; }
+#amenitiesGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 #amenitiesGrid > div { min-width: 0; }
 .amenity-item { display: flex; align-items: flex-start; gap: .65rem; }
 .amenity-item > i { flex: 0 0 1rem; margin-top: .1rem; text-align: center; }
@@ -47,6 +48,15 @@ input, select, textarea { max-width: 100%; }
 .connectivity-label { display: flex; min-width: 0; align-items: flex-start; gap: .65rem; }
 .connectivity-label > i { flex: 0 0 1rem; margin-top: .15rem; text-align: center; }
 .connectivity-distance { color: #112236; font-size: .75rem; font-weight: 600; text-align: right; }
+.project-picker { position: relative; }
+.project-picker-toggle { display: flex; width: 100%; min-height: 2.75rem; align-items: center; justify-content: space-between; gap: .75rem; border: 1px solid #d1d5db; background: #f9fafb; padding: .75rem; color: #374151; font-size: .75rem; text-align: left; transition: border-color .2s, background-color .2s; }
+.project-picker-toggle:hover, .project-picker-toggle[aria-expanded="true"] { border-color: #C5A059; background: #fff; }
+.project-picker-toggle:disabled { cursor: not-allowed; opacity: .6; }
+.project-picker-toggle i { flex: 0 0 auto; font-size: .7rem; }
+.project-picker-menu { position: absolute; z-index: 30; top: calc(100% + .25rem); left: 0; right: 0; max-height: 15rem; overflow-y: auto; border: 1px solid #d1d5db; background: #fff; padding: .25rem; box-shadow: 0 12px 24px rgb(17 34 54 / .16); }
+.project-picker-menu[hidden] { display: none; }
+.project-picker-option { display: block; width: 100%; border: 0; background: #fff; padding: .7rem .65rem; color: #374151; font-size: .75rem; text-align: left; cursor: pointer; }
+.project-picker-option:hover, .project-picker-option:focus-visible, .project-picker-option[aria-selected="true"] { background: #FAF4E8; color: #112236; }
 
 @media (max-width: 1023px) {
   #detailView .sticky { position: static; }
@@ -54,6 +64,10 @@ input, select, textarea { max-width: 100%; }
 
 @media (min-width: 768px) {
   #headerNavLinks:not(.hidden) { display: flex !important; }
+}
+
+@media (min-width: 641px) {
+  #amenitiesGrid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
 }
 
 @media (max-width: 640px) {
@@ -90,7 +104,6 @@ input, select, textarea { max-width: 100%; }
   #detailView .grid.grid-cols-2 { gap: .75rem; }
   #detailView .grid.grid-cols-2 > div { padding: .75rem; }
   #detailView h2 { font-size: 1.35rem; line-height: 1.35; }
-  #amenitiesGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #floorPlanImg { height: 14rem; }
   footer ul { line-height: 1.7; }
 }
@@ -119,4 +132,23 @@ input, select, textarea { max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* Location highlights use paired cards with the icon, name, and distance in one row. */
+#connectivityList { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; padding: 0 !important; border: 0; background: transparent; }
+#connectivityList > * { margin-top: 0; }
+#connectivityList .connectivity-item { min-width: 0; min-height: 4.6rem; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; border: 1px solid #dce5ef; border-radius: 1rem; background: #fff; padding: .85rem 1.1rem; }
+#connectivityList .connectivity-item:last-child { border-bottom: 1px solid #dce5ef; padding-bottom: .85rem; }
+#connectivityList .connectivity-label { align-items: center; gap: .8rem; }
+#connectivityList .connectivity-label > i { flex-basis: 1.2rem; margin-top: 0; color: #d8ad2e; font-size: 1.15rem; }
+#connectivityList .connectivity-label > span { color: #344258; font-size: .9rem; line-height: 1.4; }
+#connectivityList .connectivity-distance { color: #123f32; font-size: .85rem; white-space: nowrap; }
+@media (min-width: 641px) {
+  #connectivityList { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  #connectivityList .connectivity-item { gap: .55rem; padding: .8rem; }
+  #connectivityList .connectivity-label { gap: .55rem; }
+  #connectivityList .connectivity-label > span { font-size: .8rem; }
+  #connectivityList .connectivity-distance { font-size: .75rem; }
 }

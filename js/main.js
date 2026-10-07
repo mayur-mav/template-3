@@ -16,7 +16,6 @@ function renderProjectsCatalog() {
         ${p.reraId ? '<span class="absolute bottom-4 right-4 z-10 inline-flex items-center gap-1.5 rounded bg-white/90 backdrop-blur-sm px-2.5 py-1.5 text-[11px] font-semibold text-sobhaNavy shadow"><span aria-hidden="true" class="text-emerald-600">✓</span> RERA Verified</span>' : ''}
       </button>
       <div class="p-4 sm:p-5 flex flex-col flex-grow">
-        <p class="text-[11px] font-semibold text-sobhaGold uppercase tracking-wider mb-1">${p.theme}</p>
         <h3 class="font-serif text-xl sm:text-2xl font-bold text-sobhaNavy mb-2">${p.title}</h3>
         <p class="text-gray-500 text-xs mb-4">${p.location}</p>
         <div class="border-t border-gray-100 pt-3 mt-auto flex items-center justify-between gap-3">
@@ -26,6 +25,63 @@ function renderProjectsCatalog() {
       </div>
     </article>`).join('');
   applyFilters();
+}
+
+function renderEnquiryProjectOptions() {
+  const menu = document.getElementById('formProjectMenu');
+  if (!menu) return;
+  const projects = [...new Map(projectsData.filter(project => project?.title).map(project => [project.title, project])).values()];
+  const options = [{ value: 'General Query', label: 'All / General Query' }, ...projects.map(project => ({ value: project.title, label: project.title }))];
+  menu.replaceChildren();
+  options.forEach((option, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'project-picker-option';
+    button.role = 'option';
+    button.dataset.value = option.value;
+    button.textContent = option.label;
+    button.setAttribute('aria-selected', String(index === 0));
+    button.addEventListener('click', () => {
+      document.getElementById('formProject').value = option.value;
+      document.getElementById('formProjectValue').textContent = option.label;
+      menu.querySelectorAll('[role="option"]').forEach(item => item.setAttribute('aria-selected', String(item === button)));
+      menu.hidden = true;
+      document.getElementById('formProjectToggle').setAttribute('aria-expanded', 'false');
+      document.getElementById('formProjectToggle').focus();
+    });
+    menu.append(button);
+  });
+}
+
+function renderSidebarUnitOptions(project) {
+  const menu = document.getElementById('sidebarUnitMenu');
+  const value = document.getElementById('sidebarUnitValue');
+  const field = document.getElementById('sidebarUnitSelect');
+  if (!menu || !value || !field) return;
+  const unitTypes = [...new Set((project.floorPlans || []).map(plan => plan?.type).filter(Boolean))];
+  menu.replaceChildren();
+  unitTypes.forEach((unitType, index) => {
+    const option = document.createElement('button');
+    option.type = 'button';
+    option.className = 'project-picker-option';
+    option.setAttribute('role', 'option');
+    option.setAttribute('aria-selected', String(index === 0));
+    option.textContent = unitType;
+    option.addEventListener('click', () => {
+      field.value = unitType;
+      value.textContent = unitType;
+      menu.querySelectorAll('[role="option"]').forEach(item => item.setAttribute('aria-selected', String(item === option)));
+      menu.hidden = true;
+      document.getElementById('sidebarUnitToggle').setAttribute('aria-expanded', 'false');
+      document.getElementById('sidebarUnitToggle').focus();
+    });
+    menu.append(option);
+  });
+  field.value = unitTypes[0] || '';
+  value.textContent = unitTypes[0] || 'No unit types available';
+  document.getElementById('sidebarUnitToggle').disabled = unitTypes.length === 0;
+  menu.hidden = true;
+  document.getElementById('sidebarUnitToggle').setAttribute('aria-expanded', 'false');
 }
 
 function openPropertyDetail(id) {
@@ -55,9 +111,10 @@ function openPropertyDetail(id) {
     const entry=typeof item==='string'?{label:item,distance:'',icon:'fa-solid fa-location-dot'}:item;
     return `<div class="connectivity-item"><span class="connectivity-label"><i class="${entry.icon||'fa-solid fa-location-dot'} text-sobhaGold" aria-hidden="true"></i><span>${entry.label}</span></span>${entry.distance?`<span class="connectivity-distance">${entry.distance}</span>`:''}</div>`;
   }).join('');
-  document.getElementById('sidebarUnitSelect').innerHTML=p.floorPlans.map(fp=>`<option>${fp.type}</option>`).join('');
+  renderSidebarUnitOptions(p);
   selectFloorPlan(p.id,0);
   document.getElementById('catalogView').classList.add('hidden'); document.getElementById('detailView').classList.remove('hidden');
+  document.getElementById('siteFooter')?.classList.add('hidden');
   document.getElementById('headerNavLinks')?.classList.add('hidden');
   document.getElementById('detailBackButton')?.classList.remove('hidden');
   document.getElementById('detailBackButton')?.classList.add('inline-flex');
@@ -76,6 +133,7 @@ function toggleReraId(button){
 
 function showCatalogView() {
   document.getElementById('detailView')?.classList.add('hidden'); document.getElementById('catalogView')?.classList.remove('hidden');
+  document.getElementById('siteFooter')?.classList.remove('hidden');
   document.getElementById('detailBackButton')?.classList.add('hidden'); document.getElementById('detailBackButton')?.classList.remove('inline-flex'); document.getElementById('headerNavLinks')?.classList.remove('hidden');
   document.getElementById('mobileMenuToggle')?.classList.remove('hidden');
   closeMobileNavigation();
@@ -116,6 +174,12 @@ function selectFloorPlan(id,index) {
   const img=document.getElementById('floorPlanImg');img.src=fp.img;
   put('fpTitle',fp.type);put('fpSba',fp.sba);put('fpCarpet',fp.carpet);put('fpPrice',fp.price);
   document.querySelectorAll('.fp-tab-btn').forEach((b,i)=>b.className=`fp-tab-btn px-4 py-2 border text-xs font-bold uppercase ${i===index?'bg-sobhaNavy text-white':'bg-white text-gray-700'}`);
+  const unitField=document.getElementById('sidebarUnitSelect');
+  const unitValue=document.getElementById('sidebarUnitValue');
+  const unitMenu=document.getElementById('sidebarUnitMenu');
+  if(unitField&&unitValue){unitField.value=fp.type;unitValue.textContent=fp.type;}
+  if(unitMenu){unitMenu.hidden=true;unitMenu.querySelectorAll('[role="option"]').forEach(option=>option.setAttribute('aria-selected',String(option.textContent===fp.type)));}
+  document.getElementById('sidebarUnitToggle')?.setAttribute('aria-expanded','false');
 }
 function setGalleryImage(i){const img=document.getElementById('mainGalleryImage');if(activeProject?.gallery[i]&&img)img.src=activeProject.gallery[i];}
 function filterProjects(category){currentActiveCategory=category;document.querySelectorAll('.project-filter-btn').forEach(b=>b.setAttribute('aria-pressed',String(b.id===`btn-${category}`)));applyFilters();}
@@ -129,7 +193,49 @@ function requestFloorPlanBrochure(){triggerEnquiryScroll();}
 function handleLeadSubmit(e){e.preventDefault();document.getElementById('enquiryAlert')?.classList.remove('hidden');e.target.reset();}
 function handleDetailLeadSubmit(e){e.preventDefault();alert('Thank you. Our property advisor will contact you shortly.');e.target.reset();}
 function switchTab(key){const content={arch:['In-House Architecture','Our in-house team plans every space for natural light, ventilation, and long-term quality.','https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'],wood:['Precision Woodworking','Custom joinery and woodworking are crafted with careful attention to materials and finish.','https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80'],metal:['Glazing & Metal','In-house glazing and metalwork bring precision and durability to every residence.','https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80']}[key];if(!content)return;document.getElementById('tab-title').textContent=content[0];document.getElementById('tab-desc').textContent=content[1];document.getElementById('tab-image').src=content[2];}
-function toggleFaq(id){document.getElementById(`faq-answer-${id}`)?.classList.toggle('hidden');}
+function renderBuilderFaq(faqs) {
+  const section = document.getElementById('faq');
+  const list = document.getElementById('faqList');
+  if (!section || !list) return;
+  const entries = Array.isArray(faqs) ? faqs.filter(item => item?.question && item?.answer) : [];
+  list.replaceChildren();
+  section.hidden = entries.length === 0;
+  entries.forEach((item, index) => {
+    const card = document.createElement('article');
+    card.className = 'bg-white border border-gray-200 shadow-sm transition-all duration-200';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'w-full text-left p-5 sm:p-6 flex justify-between items-center focus:outline-none';
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', `faq-answer-${index}`);
+    const question = document.createElement('span');
+    question.className = 'font-serif font-bold text-sobhaNavy text-sm sm:text-base';
+    question.textContent = item.question;
+    const icon = document.createElement('span');
+    icon.id = `faq-icon-${index}`;
+    icon.className = 'text-sobhaGold font-bold text-xl transition-transform duration-300';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = '+';
+    button.append(question, icon);
+    button.addEventListener('click', () => toggleFaq(index));
+    const answer = document.createElement('div');
+    answer.id = `faq-answer-${index}`;
+    answer.className = 'hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 pt-4';
+    answer.textContent = item.answer;
+    card.append(button, answer);
+    list.append(card);
+  });
+}
+function toggleFaq(id){
+  const answer=document.getElementById(`faq-answer-${id}`);
+  const button=document.querySelector(`[aria-controls="faq-answer-${id}"]`);
+  if(!answer||!button)return;
+  const opening=answer.classList.contains('hidden');
+  answer.classList.toggle('hidden',!opening);
+  button.setAttribute('aria-expanded',String(opening));
+  const icon=document.getElementById(`faq-icon-${id}`);
+  if(icon)icon.textContent=opening?'−':'+';
+}
 function loadBuilderData() {
   const builder = (document.body.dataset.builder || '').trim().toLowerCase();
   const errorBox = document.getElementById('projectsContainer');
@@ -138,13 +244,15 @@ function loadBuilderData() {
     return;
   }
 
-  import(`../data/${builder}.js`).then(({ builderData }) => {
+  import(`../data/${builder}.js`).then(({ builderData, builderFaq }) => {
     if (!Array.isArray(builderData)) {
       if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">data/${builder}.js must export builderData as an array.</p>`;
       return;
     }
     projectsData = builderData;
     renderProjectsCatalog();
+    renderEnquiryProjectOptions();
+    renderBuilderFaq(builderFaq);
   }).catch(() => {
     if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">Could not load data/${builder}.js.</p>`;
   });
@@ -158,4 +266,66 @@ document.getElementById('projectsContainer')?.addEventListener('scroll', updateP
 
 document.addEventListener('click', event => {
   if (event.target.closest('#mobileNavigation a')) closeMobileNavigation();
+  const toggle = document.getElementById('formProjectToggle');
+  const menu = document.getElementById('formProjectMenu');
+  if (toggle && menu && !event.target.closest('.project-picker')) {
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  const unitToggle = document.getElementById('sidebarUnitToggle');
+  const unitMenu = document.getElementById('sidebarUnitMenu');
+  if (unitToggle && unitMenu && !event.target.closest('#sidebarUnitPicker')) {
+    unitMenu.hidden = true;
+    unitToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+document.getElementById('formProjectToggle')?.addEventListener('click', event => {
+  const menu = document.getElementById('formProjectMenu');
+  const opening = menu.hidden;
+  menu.hidden = !opening;
+  event.currentTarget.setAttribute('aria-expanded', String(opening));
+  if (opening) menu.querySelector('[aria-selected="true"]')?.focus();
+});
+document.getElementById('formProjectToggle')?.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    document.getElementById('formProjectMenu').hidden = true;
+    event.currentTarget.setAttribute('aria-expanded', 'false');
+  }
+});
+document.getElementById('sidebarUnitToggle')?.addEventListener('click', event => {
+  const menu = document.getElementById('sidebarUnitMenu');
+  const opening = menu.hidden;
+  menu.hidden = !opening;
+  event.currentTarget.setAttribute('aria-expanded', String(opening));
+  if (opening) menu.querySelector('[aria-selected="true"]')?.focus();
+});
+document.getElementById('sidebarUnitToggle')?.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    document.getElementById('sidebarUnitMenu').hidden = true;
+    event.currentTarget.setAttribute('aria-expanded', 'false');
+  }
+});
+document.querySelector('#enquiry form')?.addEventListener('reset', () => {
+  const value = document.getElementById('formProjectValue');
+  const menu = document.getElementById('formProjectMenu');
+  const toggle = document.getElementById('formProjectToggle');
+  if (value) value.textContent = 'All / General Query';
+  if (menu) {
+    menu.hidden = true;
+    menu.querySelectorAll('[role="option"]').forEach((item, index) => item.setAttribute('aria-selected', String(index === 0)));
+  }
+  toggle?.setAttribute('aria-expanded', 'false');
+});
+document.querySelector('#detailView form')?.addEventListener('reset', () => {
+  const menu = document.getElementById('sidebarUnitMenu');
+  const field = document.getElementById('sidebarUnitSelect');
+  const value = document.getElementById('sidebarUnitValue');
+  const toggle = document.getElementById('sidebarUnitToggle');
+  const firstOption = menu?.querySelector('[role="option"]');
+  if (field) field.value = firstOption?.textContent || '';
+  if (value) value.textContent = firstOption?.textContent || 'No unit types available';
+  menu?.querySelectorAll('[role="option"]').forEach((item, index) => item.setAttribute('aria-selected', String(index === 0)));
+  if (menu) menu.hidden = true;
+  toggle?.setAttribute('aria-expanded', 'false');
 });

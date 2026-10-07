@@ -124,3 +124,18 @@ export const builderData = [
     ]
   }
 ];
+
+export const builderFaq = [
+  {
+    question: "What makes SOBHA's Backward Integration model unique?",
+    answer: "SOBHA designs, manufactures, and constructs many elements of its projects in-house, including precision woodworking, aluminum glazing, and precast concrete. This approach supports quality control across the construction process."
+  },
+  {
+    question: 'How can I book a private site visit for a SOBHA property?',
+    answer: 'Use the Enquiry form on this page to request a site visit. A property advisor will contact you to arrange a convenient time and walkthrough.'
+  },
+  {
+    question: 'Are SOBHA projects approved by major financial institutions?',
+    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
+  }
+];
