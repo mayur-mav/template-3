@@ -241,6 +241,9 @@ function renderBuilderFaq(faqs) {
   if (!section || !list) return;
   const entries = Array.isArray(faqs) ? faqs.filter(item => item?.question && item?.answer) : [];
   list.replaceChildren();
+  list.className = entries.length > 5
+    ? 'grid grid-cols-1 lg:grid-cols-2 gap-4'
+    : 'space-y-4';
   section.hidden = entries.length === 0;
   entries.forEach((item, index) => {
     const card = document.createElement('article');
@@ -286,12 +289,18 @@ function loadBuilderData() {
     return;
   }
 
-  import(`../data/${builder}.js`).then(({ builderData, builderFaq, popularLocations }) => {
+  import(`../data/${builder}.js`).then(({ builderData, builderFaq, popularLocations, builderName }) => {
     if (!Array.isArray(builderData)) {
       if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">data/${builder}.js must export builderData as an array.</p>`;
       return;
     }
     projectsData = builderData;
+    const displayedBuilderName = builderName || builder.replace(/[-_]+/g, ' ').replace(/\b\w/g, character => character.toUpperCase());
+    document.querySelectorAll('[data-builder-name]').forEach(element => {
+      element.textContent = displayedBuilderName;
+    });
+    const footerPropertyCount = document.getElementById('footerPropertyCount');
+    if (footerPropertyCount) footerPropertyCount.textContent = String(builderData.length);
     renderProjectsCatalog();
     renderEnquiryProjectOptions();
     renderBuilderFaq(builderFaq);

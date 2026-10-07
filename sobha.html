@@ -482,37 +482,25 @@
     </div>
 
     <!-- 9. FOOTER -->
-    <footer id="siteFooter" class="bg-sobhaNavyDark text-gray-400 text-xs py-12 sm:py-16 border-t border-white/10 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-12">
-            <div>
-                <button onclick="showCatalogView()" class="font-serif text-2xl font-bold text-sobhaGold tracking-widest block mb-3 focus:outline-none">SOBHA</button>
-                <p class="leading-relaxed text-gray-400 text-xs">Headquartered in Bengaluru, SOBHA Limited is one of India's premier luxury real estate developers, renowned for uncompromised quality, precision craftsmanship, and benchmark execution.</p>
+    <footer id="siteFooter" class="bg-[#0b1220] text-slate-300 text-sm py-12 sm:py-16 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="pb-8 border-b border-white/10">
+                <div>
+                    <button onclick="showCatalogView()" data-builder-name class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight block focus:outline-none">SOBHA Limited</button>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Bengaluru</p>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 md:items-center">
+                        <p class="text-sm text-slate-300">Explore <span id="footerPropertyCount">0</span> properties by <span data-builder-name>SOBHA Limited</span> featured on this page.</p>
+                        <p class="md:justify-self-end max-w-xl leading-relaxed text-slate-300">This page is published and maintained by <strong class="text-white">M&amp;A Ventures</strong>, an <strong class="text-white">Authorised Channel Partner</strong>. It is not the developer’s official website.</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-semibold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Residences</h4>
-                <ul class="space-y-2.5">
-                    <li><button onclick="showCatalogView(); filterProjects('all')" class="hover:text-sobhaGold transition-colors text-left">Bengaluru Developments</button></li>
-                    <li><button onclick="showCatalogView(); filterProjects('ongoing')" class="hover:text-sobhaGold transition-colors text-left">Ongoing Projects</button></li>
-                    <li><button onclick="showCatalogView(); filterProjects('new-launch')" class="hover:text-sobhaGold transition-colors text-left">New Launch Townships</button></li>
-                    <li><button onclick="showCatalogView(); filterProjects('ready-to-move')" class="hover:text-sobhaGold transition-colors text-left">Ready To Move Row Houses</button></li>
-                </ul>
+            <div class="py-7 border-b border-white/10 text-sm leading-7 text-slate-300">
+                <p>Disclaimer: this website is operated by an Authorised Channel Partner and is not the developer’s official website. All images are artistic impressions and representative imagery, indicative only. Floor plans, layouts, furniture, fixtures and fittings shown are for illustrative purposes only and do not form part of the offering. Plans, specifications, areas and amenities are subject to change basis receipt of approvals and NOCs; dimensions and areas may change. Drive times are approximate. Nothing on this page constitutes an offer or a contract. Project information on this page is taken from the developer’s brochure and applicable RERA records.</p>
             </div>
-            <div>
-                <h4 class="text-white font-semibold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Quick Navigation</h4>
-                <ul class="space-y-2.5">
-                    <li><button onclick="showCatalogView()" class="hover:text-sobhaGold transition-colors">Residences Catalog</button></li>
-                    <li><a href="#legacy" onclick="navigateToSection('legacy'); return false" class="hover:text-sobhaGold transition-colors">Our Legacy</a></li>
-                    <li><a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="hover:text-sobhaGold transition-colors">Book A Site Visit</a></li>
-                    <li><a href="#faq" onclick="navigateToSection('faq'); return false" class="hover:text-sobhaGold transition-colors">FAQs</a></li>
-                </ul>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-7 text-xs text-slate-400">
+                <p>© 2026 · M&amp;A Ventures · Authorised Channel Partner · <span class="text-slate-300 underline underline-offset-2">Privacy Policy</span></p>
+                <p>Residential properties by <span data-builder-name>SOBHA Limited</span></p>
             </div>
-            <div>
-                <h4 class="text-white font-semibold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Corporate Address</h4>
-                <p class="leading-relaxed">SOBHA Limited<br>Sarjapur-Marathahalli Outer Ring Road,<br>Devarabisanahalli, Bellandur Post,<br>Bengaluru, Karnataka 560103</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10 pt-8 text-center text-gray-500">
-            <p>© 2026 SOBHA Limited. All Rights Reserved. Passion At Work.</p>
         </div>
     </footer>
     <!-- WhatsApp brochure request -->
