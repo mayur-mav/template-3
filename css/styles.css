@@ -39,6 +39,14 @@ input, select, textarea { max-width: 100%; }
 #floorPlanTabs { overflow-x: auto; }
 #floorPlanTabs button { flex: 0 0 auto; max-width: 100%; }
 #amenitiesGrid > div { min-width: 0; }
+.amenity-item { display: flex; align-items: flex-start; gap: .65rem; }
+.amenity-item > i { flex: 0 0 1rem; margin-top: .1rem; text-align: center; }
+.amenity-item > span, .connectivity-item > span { min-width: 0; overflow-wrap: anywhere; }
+.connectivity-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: .75rem; border-bottom: 1px solid rgb(229 231 235); padding-bottom: .75rem; }
+.connectivity-item:last-child { border-bottom: 0; padding-bottom: 0; }
+.connectivity-label { display: flex; min-width: 0; align-items: flex-start; gap: .65rem; }
+.connectivity-label > i { flex: 0 0 1rem; margin-top: .15rem; text-align: center; }
+.connectivity-distance { color: #112236; font-size: .75rem; font-weight: 600; text-align: right; }
 
 @media (max-width: 1023px) {
   #detailView .sticky { position: static; }
@@ -60,6 +68,8 @@ input, select, textarea { max-width: 100%; }
   .project-filter-list { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); min-width: 0 !important; width: 100%; }
   .project-filter-list .project-filter-btn { width: 100%; min-width: 0; padding-inline: .75rem; }
   #projectsContainer { gap: 1rem; padding: .25rem 0 .75rem; margin-inline: 1rem; }
+  #connectivityList { padding: 1rem; }
+  .connectivity-item { gap: .25rem .65rem; }
   #projectsContainer > article { flex-basis: 100%; }
   .project-carousel-arrow { width: 2.5rem; height: 2.5rem; }
   .project-carousel-arrow-prev { left: -.75rem; }

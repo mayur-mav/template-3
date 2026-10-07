@@ -25,6 +25,7 @@
         };
     </script>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body data-builder="sobha" class="font-sans bg-white text-sobhaDarkText antialiased flex flex-col min-h-screen selection:bg-sobhaGold selection:text-sobhaNavy">
 
@@ -579,6 +580,89 @@
             <p>© 2026 SOBHA Limited. All Rights Reserved. Passion At Work.</p>
         </div>
     </footer>
+    <!-- WhatsApp brochure request -->
+    <button id="whatsappLauncher" class="whatsapp-launcher" type="button" aria-label="Request a brochure on WhatsApp" aria-haspopup="dialog" aria-controls="whatsappDialog">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </button>
+    <div id="whatsappDialog" class="whatsapp-overlay" role="dialog" aria-modal="true" aria-labelledby="whatsappTitle" aria-describedby="whatsappDescription" hidden>
+        <div class="whatsapp-card">
+            <button id="whatsappClose" class="whatsapp-close" type="button" aria-label="Close dialog">&times;</button>
+            <div class="whatsapp-mark"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+            <h2 id="whatsappTitle">Get Instant E-Brochure</h2>
+            <p id="whatsappDescription">Receive floor plans, pricing sheets, and payment schedules directly on WhatsApp.</p>
+            <form id="whatsappForm">
+                <label class="sr-only" for="whatsappNumber">Your WhatsApp number</label>
+                <input id="whatsappNumber" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Enter Your WhatsApp Number" required pattern="[+0-9() -]{8,20}" aria-describedby="whatsappNumberHelp">
+                <small id="whatsappNumberHelp">Include your country code for faster assistance.</small>
+                <button type="submit"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Get Info on WhatsApp</button>
+            </form>
+        </div>
+    </div>
+    <style>
+        .whatsapp-launcher{position:fixed;right:max(1.25rem,env(safe-area-inset-right));bottom:max(1.25rem,env(safe-area-inset-bottom));z-index:80;width:3.5rem;height:3.5rem;border:0;border-radius:50%;background:#20c96b;color:#fff;font-size:1.65rem;box-shadow:0 8px 22px #20c96b55;cursor:pointer;transition:transform .2s,box-shadow .2s}
+        .whatsapp-launcher:hover{transform:translateY(-3px);box-shadow:0 14px 34px #20c96b70}
+        .whatsapp-overlay{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:1rem;background:rgba(10,21,38,.62);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+        .whatsapp-overlay[hidden]{display:none}
+        .whatsapp-card{position:relative;width:min(100%,38rem);max-height:calc(100dvh - 2rem);overflow:auto;border:1px solid #e8dfca;border-radius:1rem;background:#fff;padding:2rem clamp(1.25rem,4vw,2rem) 1.75rem;text-align:center;box-shadow:0 24px 80px #0a152655}
+        .whatsapp-close{position:absolute;right:1rem;top:.75rem;width:2.75rem;height:2.75rem;border:0;background:transparent;color:#94a3b8;font-size:2rem;line-height:1;cursor:pointer}
+        .whatsapp-mark{display:grid;place-items:center;width:4.25rem;height:4.25rem;margin:0 auto 1rem;border-radius:50%;background:#20c96b;color:#fff;font-size:2.15rem;box-shadow:0 10px 22px #20c96b40}
+        .whatsapp-card h2{margin:0;color:#111827;font:700 clamp(1.45rem,3vw,1.9rem)/1.2 'Playfair Display',serif}
+        .whatsapp-card>p{max-width:32rem;margin:.7rem auto 1.2rem;color:#596579;font-size:clamp(.9rem,1.6vw,1.05rem);line-height:1.6}
+        #whatsappForm{display:grid;gap:.8rem;text-align:left}
+        #whatsappForm input{width:100%;min-height:4rem;border:1px solid #d6deea;border-radius:.55rem;padding:.85rem 1rem;font-size:1rem;color:#172033}
+        #whatsappForm input::placeholder{color:#9aa4b4}
+        #whatsappForm small{margin-top:-.45rem;color:#68758a;font-size:.75rem}
+        #whatsappForm button{min-height:3.75rem;border:0;border-radius:.55rem;background:#20c96b;color:#fff;font-size:1.05rem;font-weight:700;cursor:pointer}
+        #whatsappForm button:hover{background:#18b85e}
+        body.whatsapp-open{overflow:hidden}
+        @media(max-width:600px){.whatsapp-launcher{right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));width:3rem;height:3rem;font-size:1.4rem}.whatsapp-card{padding:3rem 1rem 1.15rem;border-radius:.85rem}.whatsapp-mark{width:3.5rem;height:3.5rem;font-size:1.8rem;margin-bottom:.8rem}.whatsapp-card>p{margin:.6rem auto 1rem}.whatsapp-close{right:.45rem;top:.4rem}}
+        @media(max-height:520px){.whatsapp-card{padding-top:2.5rem}.whatsapp-mark{width:3.5rem;height:3.5rem;font-size:1.8rem;margin-bottom:.8rem}.whatsapp-card>p{margin:.5rem auto 1rem}}
+    </style>
+    <script>
+        (() => {
+            const overlay = document.getElementById('whatsappDialog');
+            const launcher = document.getElementById('whatsappLauncher');
+            const closeButton = document.getElementById('whatsappClose');
+            const form = document.getElementById('whatsappForm');
+            const phoneInput = document.getElementById('whatsappNumber');
+            const storageKey = 'sobhaWhatsAppPopupSeen';
+            let previousFocus;
+            const openDialog = () => {
+                previousFocus = document.activeElement;
+                overlay.hidden = false;
+                document.body.classList.add('whatsapp-open');
+                window.setTimeout(() => phoneInput.focus(), 40);
+            };
+            const closeDialog = () => {
+                overlay.hidden = true;
+                document.body.classList.remove('whatsapp-open');
+                try { localStorage.setItem(storageKey, 'true'); } catch (_) {}
+                if (previousFocus && previousFocus.focus) previousFocus.focus();
+            };
+            launcher.addEventListener('click', openDialog);
+            closeButton.addEventListener('click', closeDialog);
+            overlay.addEventListener('click', (event) => { if (event.target === overlay) closeDialog(); });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !overlay.hidden) closeDialog();
+                if (event.key === 'Tab' && !overlay.hidden) {
+                    const focusable = [...overlay.querySelectorAll('button,input')];
+                    if (event.shiftKey && document.activeElement === focusable[0]) { event.preventDefault(); focusable.at(-1).focus(); }
+                    else if (!event.shiftKey && document.activeElement === focusable.at(-1)) { event.preventDefault(); focusable[0].focus(); }
+                }
+            });
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if (!form.reportValidity()) return;
+                const phone = phoneInput.value.trim();
+                const message = `Hi, I would like the SOBHA e-brochure. My WhatsApp number is ${phone}. Please share floor plans, pricing, and payment schedules.`;
+                closeDialog();
+                window.open(`https://wa.me/918004250000?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+            });
+            let seen = false;
+            try { seen = localStorage.getItem(storageKey) === 'true'; } catch (_) {}
+            if (!seen) window.setTimeout(openDialog, 650);
+        })();
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

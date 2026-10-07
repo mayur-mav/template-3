@@ -46,8 +46,15 @@ function openPropertyDetail(id) {
   p.gallery.slice(0,2).forEach((src,i)=>{const el=document.getElementById('thumb'+i);if(el)el.src=src;});
   const tabs=document.getElementById('floorPlanTabs');
   tabs.innerHTML=p.floorPlans.map((fp,i)=>`<button id="fpBtn-${i}" onclick="selectFloorPlan('${p.id}',${i})" class="fp-tab-btn px-4 py-2 border text-xs font-bold uppercase">${fp.type}</button>`).join('');
-  document.getElementById('amenitiesGrid').innerHTML=p.amenities.map(x=>`<div class="bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded">${x}</div>`).join('');
-  document.getElementById('connectivityList').innerHTML=p.connectivity.map(x=>`<div>${x}</div>`).join('');
+  document.getElementById('amenitiesGrid').innerHTML=p.amenities.map(item=>{
+    const name=typeof item==='string'?item:item.name;
+    const icon=typeof item==='string'?'fa-solid fa-star':item.icon;
+    return `<div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="${icon} text-sobhaGold" aria-hidden="true"></i><span>${name}</span></div>`;
+  }).join('');
+  document.getElementById('connectivityList').innerHTML=p.connectivity.map(item=>{
+    const entry=typeof item==='string'?{label:item,distance:'',icon:'fa-solid fa-location-dot'}:item;
+    return `<div class="connectivity-item"><span class="connectivity-label"><i class="${entry.icon||'fa-solid fa-location-dot'} text-sobhaGold" aria-hidden="true"></i><span>${entry.label}</span></span>${entry.distance?`<span class="connectivity-distance">${entry.distance}</span>`:''}</div>`;
+  }).join('');
   document.getElementById('sidebarUnitSelect').innerHTML=p.floorPlans.map(fp=>`<option>${fp.type}</option>`).join('');
   selectFloorPlan(p.id,0);
   document.getElementById('catalogView').classList.add('hidden'); document.getElementById('detailView').classList.remove('hidden');
