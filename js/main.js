@@ -204,7 +204,7 @@ function selectFloorPlan(id,index) {
   const p=projectsData.find(x=>x.id===id), fp=p?.floorPlans[index]; if(!fp)return;
   const put=(el,v)=>{const node=document.getElementById(el);if(node)node.textContent=v;};
   const img=document.getElementById('floorPlanImg');img.src=fp.img;
-  put('fpTitle',fp.type);put('fpSba',fp.sba);put('fpCarpet',fp.carpet);put('fpPrice',fp.price);
+  put('fpTitle',fp.type);put('fpSba',fp.sba);put('fpPrice',fp.price);
   document.querySelectorAll('.fp-tab-btn').forEach((b,i)=>b.className=`fp-tab-btn px-4 py-2 border text-xs font-bold uppercase ${i===index?'bg-sobhaNavy text-white':'bg-white text-gray-700'}`);
   const unitField=document.getElementById('sidebarUnitSelect');
   const unitValue=document.getElementById('sidebarUnitValue');
