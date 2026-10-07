@@ -39,12 +39,13 @@
                 <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium">Passion At Work</span>
             </button>
 
-            <!-- Navigation Links (Active on Catalog View) -->
+            <!-- Shared section navigation for catalog and property detail views -->
             <nav id="headerNavLinks" class="items-center space-x-6 lg:space-x-8 text-xs uppercase tracking-widest font-semibold">
-                <a href="#projects" onclick="navigateToSection('projects'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Residences</a>
-                <a href="#legacy" onclick="navigateToSection('legacy'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Our Legacy</a>
-                <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Enquire</a>
-                <a href="#faq" onclick="navigateToSection('faq'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">FAQs</a>
+                <a href="#hero" onclick="navigateToSection('hero'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Overview</a>
+                <a href="#projects" onclick="navigateToSection('projects'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Residences</a>
+                <a href="#legacy" onclick="navigateToSection('legacy'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">About Us</a>
+                <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Contact</a>
+                <a href="#faq" onclick="navigateToSection('faq'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">FAQ</a>
             </nav>
 
             <!-- CTA -->
@@ -52,16 +53,17 @@
                 <button onclick="triggerEnquiryScroll()" class="bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-[10px] sm:text-xs tracking-widest uppercase px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-300 shadow-md">
                     Enquire Now
                 </button>
-                <button id="mobileMenuToggle" type="button" onclick="toggleMobileNavigation()" aria-controls="mobileNavigation" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-gray-200 text-sobhaNavy" >
+                <button id="mobileMenuToggle" type="button" onclick="toggleMobileNavigation()" aria-controls="mobileNavigation" aria-expanded="false" aria-label="Open navigation menu" class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-gray-200 text-sobhaNavy" >
                     <svg id="mobileMenuIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
-        <nav id="mobileNavigation" hidden class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-2 shadow-md" aria-label="Mobile navigation">
-            <a href="#projects" onclick="navigateToSection('projects'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">Residences</a>
-            <a href="#legacy" onclick="navigateToSection('legacy'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">Our Legacy</a>
-            <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">Enquire</a>
-            <a href="#faq" onclick="navigateToSection('faq'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">FAQs</a>
+        <nav id="mobileNavigation" hidden class="hidden lg:hidden border-t border-gray-100 bg-white px-4 py-2 shadow-md" aria-label="Mobile navigation">
+            <a href="#hero" onclick="navigateToSection('hero'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">Overview</a>
+            <a href="#projects" onclick="navigateToSection('projects'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">Residences</a>
+            <a href="#legacy" onclick="navigateToSection('legacy'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">About Us</a>
+            <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">Contact</a>
+            <a href="#faq" onclick="navigateToSection('faq'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">FAQ</a>
         </nav>
     </header>
 
@@ -311,7 +313,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded text-left md:text-right flex flex-col justify-center">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded text-left md:text-right flex flex-col justify-center md:translate-y-9">
                         <span class="text-[10px] uppercase text-gray-300 tracking-wider">Starting Price</span>
                         <span id="detailPrice" class="font-serif text-2xl sm:text-3xl font-bold text-sobhaGold"></span>
                         <span class="text-[10px] text-gray-300 mt-0.5">*Govt Taxes & Charges Extra</span>
@@ -327,10 +329,10 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
-                        <button onclick="setGalleryImage(0)" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold">
+                        <button onclick="setGalleryImage(0)" aria-pressed="true" aria-label="Show first project image" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold">
                             <img id="thumb0" src="" class="w-full h-full object-cover hover:scale-105 transition-transform">
                         </button>
-                        <button onclick="setGalleryImage(1)" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none">
+                        <button onclick="setGalleryImage(1)" aria-pressed="false" aria-label="Show second project image" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none">
                             <img id="thumb1" src="" class="w-full h-full object-cover hover:scale-105 transition-transform">
                         </button>
                     </div>
@@ -343,21 +345,21 @@
         <section class="bg-sobhaLightBg border-b border-gray-200 py-6">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div class="bg-white p-4 border border-gray-200 rounded shadow-sm">
-                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Possession Status</p>
-                        <p id="specPossession" class="text-xs sm:text-sm font-bold text-sobhaNavy mt-1"></p>
+                    <div class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center">
+                        <p class="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider font-bold">Possession Status</p>
+                        <p id="specPossession" class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"></p>
                     </div>
-                    <div class="bg-white p-4 border border-gray-200 rounded shadow-sm">
-                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Total Land Area</p>
-                        <p id="specLandArea" class="text-xs sm:text-sm font-bold text-sobhaNavy mt-1"></p>
+                    <div class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center">
+                        <p class="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider font-bold">Total Land Area</p>
+                        <p id="specLandArea" class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"></p>
                     </div>
-                    <div class="bg-white p-4 border border-gray-200 rounded shadow-sm">
-                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Configurations</p>
-                        <p id="specConfig" class="text-xs sm:text-sm font-bold text-sobhaNavy mt-1"></p>
+                    <div class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center">
+                        <p class="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider font-bold">Configurations</p>
+                        <p id="specConfig" class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"></p>
                     </div>
-                    <div class="bg-white p-4 border border-gray-200 rounded shadow-sm">
-                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">RERA Reg. Number</p>
-                        <p id="specRera" class="text-xs sm:text-sm font-bold text-sobhaNavy mt-1"></p>
+                    <div class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center">
+                        <p class="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider font-bold">RERA Reg. Number</p>
+                        <p id="specRera" class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"></p>
                     </div>
                 </div>
             </div>

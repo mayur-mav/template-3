@@ -14,6 +14,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 input, select, textarea { max-width: 100%; }
 #headerNavLinks { display: none !important; }
 #headerNavLinks.hidden { display: none !important; }
+.nav-section-link { transition: color .2s ease, border-color .2s ease; }
+.nav-section-link.nav-link-active { color: #C5A059 !important; border-bottom-color: #C5A059 !important; }
+#mobileNavigation .nav-section-link.nav-link-active { border-bottom-color: transparent !important; text-decoration: underline; text-decoration-color: #C5A059; text-decoration-thickness: 2px; text-underline-offset: 6px; }
 #mobileNavigation[hidden] { display: none !important; }
 .project-filter-btn { background: #fff; color: #4b5563; transition: background-color .2s ease, color .2s ease; }
 .project-filter-btn[aria-pressed="true"] { background: #000; color: #fff; border-color: #000; }
@@ -64,7 +67,7 @@ input, select, textarea { max-width: 100%; }
   #detailView .sticky { position: static; }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   #headerNavLinks:not(.hidden) { display: flex !important; }
 }
 
@@ -111,7 +114,7 @@ input, select, textarea { max-width: 100%; }
 
 @media (max-width: 380px) {
   #detailView .grid.grid-cols-2 { grid-template-columns: minmax(0, 1fr); }
-  #specPossession, #specLandArea, #specConfig, #specRera { font-size: .7rem; }
+  #specPossession, #specLandArea, #specConfig, #specRera { font-size: .8rem; }
   #projectsContainer .project-card .border-t { align-items: flex-start; flex-direction: column; }
   #hero .inline-flex { max-width: 100%; }
   #hero .tracking-\[0\.2em\] { letter-spacing: .08em; }

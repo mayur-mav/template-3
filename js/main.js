@@ -124,6 +124,7 @@ function openPropertyDetail(id) {
   put('specRera',p.reraId || 'Not available');
   const main=document.getElementById('mainGalleryImage'); if(main) main.src=p.gallery[0];
   p.gallery.slice(0,2).forEach((src,i)=>{const el=document.getElementById('thumb'+i);if(el)el.src=src;});
+  setGalleryImage(0);
   const tabs=document.getElementById('floorPlanTabs');
   tabs.innerHTML=p.floorPlans.map((fp,i)=>`<button id="fpBtn-${i}" onclick="selectFloorPlan('${p.id}',${i})" class="fp-tab-btn px-4 py-2 border text-xs font-bold uppercase">${fp.type}</button>`).join('');
   document.getElementById('amenitiesGrid').innerHTML=p.amenities.map(item=>{
@@ -139,10 +140,8 @@ function openPropertyDetail(id) {
   selectFloorPlan(p.id,0);
   document.getElementById('catalogView').classList.add('hidden'); document.getElementById('detailView').classList.remove('hidden');
   document.getElementById('siteFooter')?.classList.add('hidden');
-  document.getElementById('headerNavLinks')?.classList.add('hidden');
   document.getElementById('detailBackButton')?.classList.remove('hidden');
   document.getElementById('detailBackButton')?.classList.add('inline-flex');
-  document.getElementById('mobileMenuToggle')?.classList.add('hidden');
   closeMobileNavigation();
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -164,7 +163,16 @@ function showCatalogView() {
 }
 function toggleMobileNavigation(){const nav=document.getElementById('mobileNavigation');const button=document.getElementById('mobileMenuToggle');if(!nav||!button)return;const opening=nav.hidden;nav.hidden=!opening;nav.classList.toggle('hidden',!opening);button.setAttribute('aria-expanded',String(opening));button.setAttribute('aria-label',opening?'Close navigation menu':'Open navigation menu');}
 function closeMobileNavigation(){const nav=document.getElementById('mobileNavigation');const button=document.getElementById('mobileMenuToggle');if(nav){nav.hidden=true;nav.classList.add('hidden');}button?.setAttribute('aria-expanded','false');button?.setAttribute('aria-label','Open navigation menu');}
+function setActiveNavigationItem(id){
+  document.querySelectorAll('.nav-section-link').forEach(link=>{
+    const active=link.hash===`#${id}`;
+    link.classList.toggle('nav-link-active',active);
+    if(active)link.setAttribute('aria-current','location');
+    else link.removeAttribute('aria-current');
+  });
+}
 function navigateToSection(id){
+  setActiveNavigationItem(id);
   showCatalogView();
   closeMobileNavigation();
   if (window.location.hash !== `#${id}`) history.pushState(null, '', `#${id}`);
@@ -205,14 +213,25 @@ function selectFloorPlan(id,index) {
   if(unitMenu){unitMenu.hidden=true;unitMenu.querySelectorAll('[role="option"]').forEach(option=>option.setAttribute('aria-selected',String(option.textContent===fp.type)));}
   document.getElementById('sidebarUnitToggle')?.setAttribute('aria-expanded','false');
 }
-function setGalleryImage(i){const img=document.getElementById('mainGalleryImage');if(activeProject?.gallery[i]&&img)img.src=activeProject.gallery[i];}
+function setGalleryImage(i){
+  const img=document.getElementById('mainGalleryImage');
+  if(activeProject?.gallery[i]&&img)img.src=activeProject.gallery[i];
+  [0,1].forEach(index=>{
+    const button=document.getElementById(`thumb${index}`)?.closest('button');
+    if(!button)return;
+    const selected=index===i;
+    button.classList.toggle('ring-2',selected);
+    button.classList.toggle('ring-sobhaGold',selected);
+    button.setAttribute('aria-pressed',String(selected));
+  });
+}
 function filterProjects(category){currentActiveCategory=category;document.querySelectorAll('.project-filter-btn').forEach(b=>b.setAttribute('aria-pressed',String(b.id===`btn-${category}`)));applyFilters();}
 function applyFilters(){const q=(document.getElementById('heroSearchInput')?.value||'').trim().toLowerCase();let count=0;document.querySelectorAll('.project-card').forEach(c=>{const show=(currentActiveCategory==='all'||c.dataset.category===currentActiveCategory)&&(!q||(c.dataset.search||'').includes(q));c.classList.toggle('hidden',!show);if(show)count++;});document.getElementById('noResultsMsg')?.classList.toggle('hidden',count!==0);requestAnimationFrame(updateProjectCarouselArrows);}
 function filterBySearch(){showCatalogView();applyFilters();document.getElementById('projects')?.scrollIntoView({behavior:'smooth'});}
 function quickSearch(q){document.getElementById('heroSearchInput').value=q;filterBySearch();}
 function handleHeroSearch(e){if(e.key==='Enter')filterBySearch();}
 function resetFilters(){document.getElementById('heroSearchInput').value='';filterProjects('all');}
-function triggerEnquiryScroll(){showCatalogView();setTimeout(()=>document.getElementById('enquiry')?.scrollIntoView({behavior:'smooth'}),100);}
+function triggerEnquiryScroll(){setActiveNavigationItem('enquiry');showCatalogView();setTimeout(()=>document.getElementById('enquiry')?.scrollIntoView({behavior:'smooth'}),100);}
 function requestFloorPlanBrochure(){triggerEnquiryScroll();}
 function handleLeadSubmit(e){e.preventDefault();document.getElementById('enquiryAlert')?.classList.remove('hidden');e.target.reset();}
 function handleDetailLeadSubmit(e){e.preventDefault();alert('Thank you. Our property advisor will contact you shortly.');e.target.reset();}
@@ -286,7 +305,10 @@ if (document.readyState === 'loading') document.addEventListener('DOMContentLoad
 else loadBuilderData();
 
 window.addEventListener('resize', updateProjectCarouselArrows);
+window.addEventListener('popstate', () => setActiveNavigationItem(window.location.hash.slice(1)));
 document.getElementById('projectsContainer')?.addEventListener('scroll', updateProjectCarouselArrows, { passive: true });
+
+setActiveNavigationItem(window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : 'hero');
 
 document.addEventListener('click', event => {
   if (event.target.closest('#mobileNavigation a')) closeMobileNavigation();
