@@ -241,11 +241,18 @@ function renderBuilderFaq(faqs) {
   if (!section || !list) return;
   const entries = Array.isArray(faqs) ? faqs.filter(item => item?.question && item?.answer) : [];
   list.replaceChildren();
-  list.className = entries.length > 5
-    ? 'grid grid-cols-1 lg:grid-cols-2 gap-4'
-    : 'space-y-4';
+  const useTwoColumns = entries.length > 5;
+  list.className = useTwoColumns ? 'faq-two-column' : 'space-y-4';
   section.hidden = entries.length === 0;
-  entries.forEach((item, index) => {
+  const columns = useTwoColumns ? [document.createElement('div'), document.createElement('div')] : [list];
+  if (useTwoColumns) {
+    columns.forEach(column => {
+      column.className = 'faq-column';
+      list.append(column);
+    });
+  }
+
+  const renderCard = (item, index, parent) => {
     const card = document.createElement('article');
     card.className = 'bg-white border border-gray-200 shadow-sm transition-all duration-200';
     const button = document.createElement('button');
@@ -254,7 +261,7 @@ function renderBuilderFaq(faqs) {
     button.setAttribute('aria-expanded', 'false');
     button.setAttribute('aria-controls', `faq-answer-${index}`);
     const question = document.createElement('span');
-    question.className = 'font-serif font-bold text-sobhaNavy text-sm sm:text-base';
+    question.className = 'font-sans font-semibold text-sobhaNavy text-base sm:text-lg leading-snug';
     question.textContent = item.question;
     const icon = document.createElement('span');
     icon.id = `faq-icon-${index}`;
@@ -268,7 +275,13 @@ function renderBuilderFaq(faqs) {
     answer.className = 'hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 pt-4';
     answer.textContent = item.answer;
     card.append(button, answer);
-    list.append(card);
+    parent.append(card);
+  };
+
+  const splitIndex = Math.ceil(entries.length / 2);
+  entries.forEach((item, index) => {
+    const columnIndex = useTwoColumns && index >= splitIndex ? 1 : 0;
+    renderCard(item, index, columns[columnIndex]);
   });
 }
 function toggleFaq(id){
