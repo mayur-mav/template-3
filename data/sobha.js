@@ -139,3 +139,5 @@ export const builderFaq = [
     answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
   }
 ];
+
+export const popularLocations = ['Panathur', 'Hosur Road', 'Devanahalli'];

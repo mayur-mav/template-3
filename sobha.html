@@ -42,7 +42,7 @@
             <!-- Navigation Links (Active on Catalog View) -->
             <nav id="headerNavLinks" class="items-center space-x-6 lg:space-x-8 text-xs uppercase tracking-widest font-semibold">
                 <a href="#projects" onclick="navigateToSection('projects'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Residences</a>
-                <a href="#advantage" onclick="navigateToSection('advantage'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">SOBHA Advantage</a>
+                <a href="#legacy" onclick="navigateToSection('legacy'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Our Legacy</a>
                 <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Enquire</a>
                 <a href="#faq" onclick="navigateToSection('faq'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">FAQs</a>
             </nav>
@@ -59,7 +59,7 @@
         </div>
         <nav id="mobileNavigation" hidden class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-2 shadow-md" aria-label="Mobile navigation">
             <a href="#projects" onclick="navigateToSection('projects'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">Residences</a>
-            <a href="#advantage" onclick="navigateToSection('advantage'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">SOBHA Advantage</a>
+            <a href="#legacy" onclick="navigateToSection('legacy'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">Our Legacy</a>
             <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">Enquire</a>
             <a href="#faq" onclick="navigateToSection('faq'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">FAQs</a>
         </nav>
@@ -107,37 +107,9 @@
                 </div>
 
                 <!-- Tags -->
-                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-gray-200 pt-2">
+                <div id="popularLocations" class="hidden flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-gray-200 pt-2">
                     <span class="font-medium text-white">Popular Locations:</span>
-                    <button onclick="quickSearch('Panathur')" class="hover:text-sobhaGold underline underline-offset-4 transition-colors">Panathur</button>
-                    <span class="text-gray-400">•</span>
-                    <button onclick="quickSearch('Hosur Road')" class="hover:text-sobhaGold underline underline-offset-4 transition-colors">Hosur Road</button>
-                    <span class="text-gray-400">•</span>
-                    <button onclick="quickSearch('Devanahalli')" class="hover:text-sobhaGold underline underline-offset-4 transition-colors">Devanahalli</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. STATS SECTION -->
-        <section id="stats" class="bg-sobhaLightBg border-t border-b border-gray-200 text-sobhaNavy py-10 sm:py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center divide-x-0 md:divide-x divide-gray-200">
-                    <div class="p-2">
-                        <p class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">150M+</p>
-                        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gray-600 font-semibold mt-1 sm:mt-2">Sq. Ft. Delivered</p>
-                    </div>
-                    <div class="p-2">
-                        <p class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">1,456</p>
-                        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gray-600 font-semibold mt-1 sm:mt-2">Quality Checks / Home</p>
-                    </div>
-                    <div class="p-2">
-                        <p class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">30+</p>
-                        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gray-600 font-semibold mt-1 sm:mt-2">Years of Legacy</p>
-                    </div>
-                    <div class="p-2">
-                        <p class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">34,000+</p>
-                        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gray-600 font-semibold mt-1 sm:mt-2">Happy Families</p>
-                    </div>
+                    <div id="popularLocationList" class="flex flex-wrap items-center justify-center gap-2 sm:gap-3"></div>
                 </div>
             </div>
         </section>
@@ -193,47 +165,31 @@
             </div>
         </section>
 
-        <!-- 5. BACKWARD INTEGRATION / SOBHA ADVANTAGE -->
-        <section id="advantage" class="py-16 sm:py-24 bg-sobhaLightBg border-t border-b border-gray-200 scroll-mt-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-                    <div>
-                        <p class="text-sobhaGold uppercase tracking-[0.2em] text-xs font-semibold mb-2">The Benchmark of Quality</p>
-                        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-6 leading-tight">India's Only Backward Integrated Developer</h2>
-                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-8">
-                            Unlike traditional developers, SOBHA creates every element of your home in-house. From architectural concept and structural execution to German precision woodworking and glass glazing, we control every step to deliver uncompromised perfection.
-                        </p>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div class="w-8 h-8 rounded-full bg-sobhaGold/20 flex items-center justify-center text-sobhaNavy flex-shrink-0 mt-1 font-bold">✓</div>
-                                <div>
-                                    <h4 class="text-sobhaNavy font-bold text-sm mb-1">Self-Reliant Execution</h4>
-                                    <p class="text-gray-600 text-xs leading-relaxed">Zero dependency on third-party contractors ensures absolute adherence to construction schedules and quality control.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-8 h-8 rounded-full bg-sobhaGold/20 flex items-center justify-center text-sobhaNavy flex-shrink-0 mt-1 font-bold">✓</div>
-                                <div>
-                                    <h4 class="text-sobhaNavy font-bold text-sm mb-1">Precision In-House Manufacturing</h4>
-                                    <p class="text-gray-600 text-xs leading-relaxed">Custom doors, joinery, and metalwork fabricated inside proprietary factories adhering to German engineering standards.</p>
-                                </div>
-                            </div>
-                        </div>
+        <!-- 5. BUILDER LEGACY -->
+        <section id="legacy" class="py-16 sm:py-24 bg-sobhaLightBg border-y border-gray-200 scroll-mt-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-sobhaNavy uppercase tracking-[0.2em] text-xs font-semibold mb-3">30+ Years of Excellence</p>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-6 leading-tight">A legacy of precision. A future shaped around you.</h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">Founded in 1995, SOBHA Limited has built its reputation on thoughtful design, exacting craftsmanship, and quality across every stage of development.</p>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">Through backward integration and German engineering principles, SOBHA brings design, manufacturing, and construction together to create homes made for generations.</p>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mt-10 sm:mt-14">
+                    <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+                        <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">150M+</p>
+                        <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Sq. Ft. Delivered</p>
                     </div>
-
-                    <div class="bg-white p-6 sm:p-10 border border-gray-200 shadow-xl">
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-sobhaNavy mb-6 text-center">In-House Manufacturing Divisions</h3>
-                        <div class="grid grid-cols-3 gap-2 text-center text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-6">
-                            <button onclick="switchTab('arch')" id="tab-arch" class="p-2.5 sm:p-3 border-b-2 border-sobhaGold text-sobhaNavy bg-sobhaGoldLight transition-all">Architectural</button>
-                            <button onclick="switchTab('wood')" id="tab-wood" class="p-2.5 sm:p-3 border-b-2 border-transparent text-gray-500 hover:text-sobhaNavy transition-all">Woodworking</button>
-                            <button onclick="switchTab('metal')" id="tab-metal" class="p-2.5 sm:p-3 border-b-2 border-transparent text-gray-500 hover:text-sobhaNavy transition-all">Glazing & Metal</button>
-                        </div>
-                        <div id="tab-content" class="text-center">
-                            <img id="tab-image" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="In-house Architecture" class="w-full h-48 sm:h-56 object-cover mb-6 shadow-sm">
-                            <h4 id="tab-title" class="font-serif font-bold text-sobhaNavy text-lg sm:text-xl mb-2">In-House Architecture</h4>
-                            <p id="tab-desc" class="text-gray-600 text-xs leading-relaxed">Our in-house team of over 70 designers and engineers plan every millimeter of space for maximum natural light, ventilation, and structural longevity.</p>
-                        </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+                        <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">1,456</p>
+                        <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Quality Checks / Home</p>
+                    </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+                        <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">30+</p>
+                        <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Years of Legacy</p>
+                    </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+                        <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">34,000+</p>
+                        <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Happy Families</p>
                     </div>
                 </div>
             </div>
@@ -543,7 +499,7 @@
                 <h4 class="text-white font-semibold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Quick Navigation</h4>
                 <ul class="space-y-2.5">
                     <li><button onclick="showCatalogView()" class="hover:text-sobhaGold transition-colors">Residences Catalog</button></li>
-                    <li><a href="#advantage" onclick="navigateToSection('advantage'); return false" class="hover:text-sobhaGold transition-colors">SOBHA Advantage</a></li>
+                    <li><a href="#legacy" onclick="navigateToSection('legacy'); return false" class="hover:text-sobhaGold transition-colors">Our Legacy</a></li>
                     <li><a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="hover:text-sobhaGold transition-colors">Book A Site Visit</a></li>
                     <li><a href="#faq" onclick="navigateToSection('faq'); return false" class="hover:text-sobhaGold transition-colors">FAQs</a></li>
                 </ul>

@@ -35,6 +35,8 @@ input, select, textarea { max-width: 100%; }
 .project-carousel-arrow-prev { left: -3rem; }
 .project-carousel-arrow-next { right: -3rem; }
 #projectsContainer > article > div:last-child { min-height: 8rem; }
+#popularLocations { display: flex; }
+#popularLocations.hidden { display: none; }
 #detailTitle, #detailLocation, #specConfig, #specRera { overflow-wrap: anywhere; }
 #floorPlanTabs { overflow-x: auto; }
 #floorPlanTabs button { flex: 0 0 auto; max-width: 100%; }
@@ -95,7 +97,6 @@ input, select, textarea { max-width: 100%; }
   #projectsContainer .project-card button { min-height: 44px; }
   .project-image-overlay { opacity: 1; background: linear-gradient(to top, rgb(10 21 38 / .48), transparent 55%); align-items: flex-end; justify-content: flex-end; padding: .65rem; }
   .project-image-overlay > span { padding: .55rem .7rem; font-size: .6rem; }
-  #advantage button { min-height: 44px; overflow-wrap: anywhere; }
   #enquiry input, #enquiry select, #enquiry textarea, #detailView input, #detailView select { min-height: 44px; font-size: 16px; }
   #enquiry textarea { min-height: 96px; }
   #faq button { min-height: 56px; gap: .75rem; }

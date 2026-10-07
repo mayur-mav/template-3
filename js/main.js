@@ -53,6 +53,30 @@ function renderEnquiryProjectOptions() {
   });
 }
 
+function renderPopularLocations(locations) {
+  const container = document.getElementById('popularLocations');
+  const list = document.getElementById('popularLocationList');
+  if (!container || !list) return;
+  const items = [...new Set((Array.isArray(locations) ? locations : []).map(location => String(location).trim()).filter(Boolean))];
+  list.replaceChildren();
+  items.forEach((location, index) => {
+    if (index) {
+      const separator = document.createElement('span');
+      separator.className = 'text-gray-400';
+      separator.setAttribute('aria-hidden', 'true');
+      separator.textContent = '•';
+      list.append(separator);
+    }
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'hover:text-sobhaGold underline underline-offset-4 transition-colors';
+    button.textContent = location;
+    button.addEventListener('click', () => quickSearch(location));
+    list.append(button);
+  });
+  container.classList.toggle('hidden', items.length === 0);
+}
+
 function renderSidebarUnitOptions(project) {
   const menu = document.getElementById('sidebarUnitMenu');
   const value = document.getElementById('sidebarUnitValue');
@@ -192,7 +216,6 @@ function triggerEnquiryScroll(){showCatalogView();setTimeout(()=>document.getEle
 function requestFloorPlanBrochure(){triggerEnquiryScroll();}
 function handleLeadSubmit(e){e.preventDefault();document.getElementById('enquiryAlert')?.classList.remove('hidden');e.target.reset();}
 function handleDetailLeadSubmit(e){e.preventDefault();alert('Thank you. Our property advisor will contact you shortly.');e.target.reset();}
-function switchTab(key){const content={arch:['In-House Architecture','Our in-house team plans every space for natural light, ventilation, and long-term quality.','https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'],wood:['Precision Woodworking','Custom joinery and woodworking are crafted with careful attention to materials and finish.','https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80'],metal:['Glazing & Metal','In-house glazing and metalwork bring precision and durability to every residence.','https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80']}[key];if(!content)return;document.getElementById('tab-title').textContent=content[0];document.getElementById('tab-desc').textContent=content[1];document.getElementById('tab-image').src=content[2];}
 function renderBuilderFaq(faqs) {
   const section = document.getElementById('faq');
   const list = document.getElementById('faqList');
@@ -244,7 +267,7 @@ function loadBuilderData() {
     return;
   }
 
-  import(`../data/${builder}.js`).then(({ builderData, builderFaq }) => {
+  import(`../data/${builder}.js`).then(({ builderData, builderFaq, popularLocations }) => {
     if (!Array.isArray(builderData)) {
       if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">data/${builder}.js must export builderData as an array.</p>`;
       return;
@@ -253,6 +276,7 @@ function loadBuilderData() {
     renderProjectsCatalog();
     renderEnquiryProjectOptions();
     renderBuilderFaq(builderFaq);
+    renderPopularLocations(popularLocations);
   }).catch(() => {
     if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">Could not load data/${builder}.js.</p>`;
   });
