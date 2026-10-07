@@ -1,0 +1,578 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBHA Limited | Luxury Real Estate & Flagship Residences</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                colors: {
+                    sobhaNavy: '#112236', sobhaNavyDark: '#0A1526', sobhaGold: '#C5A059',
+                    sobhaGoldHover: '#B08C46', sobhaGoldLight: '#FAF4E8', sobhaLightBg: '#F8F9FA',
+                    sobhaDarkText: '#1F2937'
+                },
+                fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-builder="sobha" class="font-sans bg-white text-sobhaDarkText antialiased flex flex-col min-h-screen selection:bg-sobhaGold selection:text-sobhaNavy">
+
+    <!-- 1. HEADER NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md text-sobhaNavy border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <button onclick="showCatalogView()" class="flex flex-col text-left group focus:outline-none">
+                <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-sobhaNavy group-hover:text-sobhaGold transition-colors duration-300">SOBHA</span>
+                <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium">Passion At Work</span>
+            </button>
+
+            <!-- Navigation Links (Active on Catalog View) -->
+            <nav id="headerNavLinks" class="items-center space-x-6 lg:space-x-8 text-xs uppercase tracking-widest font-semibold">
+                <a href="#projects" onclick="navigateToSection('projects'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Residences</a>
+                <a href="#advantage" onclick="navigateToSection('advantage'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">SOBHA Advantage</a>
+                <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Enquire</a>
+                <a href="#faq" onclick="navigateToSection('faq'); return false" class="text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">FAQs</a>
+            </nav>
+
+            <!-- Back Button (Only visible on Property Detail View) -->
+            <div id="headerBackContainer" class="hidden">
+                <button onclick="showCatalogView()" class="inline-flex items-center gap-2 text-[10px] sm:text-xs uppercase font-bold text-sobhaNavy hover:text-sobhaGold transition-colors bg-gray-100 hover:bg-sobhaGoldLight px-2.5 sm:px-3.5 py-2 rounded-sm border border-gray-200">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    <span class="hidden sm:inline">Back to Residences</span><span class="sm:hidden">Back</span>
+                </button>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex items-center space-x-3">
+                <button onclick="triggerEnquiryScroll()" class="bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-[10px] sm:text-xs tracking-widest uppercase px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-300 shadow-md">
+                    Enquire Now
+                </button>
+                <button id="mobileMenuToggle" type="button" onclick="toggleMobileNavigation()" aria-controls="mobileNavigation" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-gray-200 text-sobhaNavy" >
+                    <svg id="mobileMenuIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <nav id="mobileNavigation" hidden class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-2 shadow-md" aria-label="Mobile navigation">
+            <a href="#projects" onclick="navigateToSection('projects'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">Residences</a>
+            <a href="#advantage" onclick="navigateToSection('advantage'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">SOBHA Advantage</a>
+            <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">Enquire</a>
+            <a href="#faq" onclick="navigateToSection('faq'); return false" class="block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700">FAQs</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CATALOG VIEW CONTAINER -->
+    <div id="catalogView" class="fade-in">
+
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="relative min-h-[70vh] lg:min-h-[75vh] flex items-center justify-center bg-gray-900 text-white overflow-hidden py-16 sm:py-24 scroll-mt-24">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" alt="SOBHA Luxury Residence Banner" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-sobhaNavy/90 via-sobhaNavy/70 to-sobhaNavy/40"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-sobhaNavyDark/80 via-transparent to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
+                <div class="inline-flex items-center gap-2 border border-sobhaGold/50 bg-sobhaNavy/70 backdrop-blur-md px-4 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-sobhaGold animate-pulse"></span>
+                    <span class="text-sobhaGold uppercase tracking-[0.2em] text-[10px] sm:text-xs font-bold">Uncompromising Quality Since 1995</span>
+                </div>
+
+                <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-4xl mx-auto">
+                    Architectural Marvels <br class="hidden sm:block">
+                    <span class="italic font-normal text-sobhaGold">Crafted For Generations</span>
+                </h1>
+
+                <p class="text-gray-200 text-xs sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
+                    Discover India's premier luxury residences engineered through self-reliant backward integration, German precision, and timeless design.
+                </p>
+
+                <!-- Interactive Search -->
+                <div class="max-w-3xl mx-auto bg-white p-2 sm:p-3 shadow-2xl border-l-4 border-sobhaGold rounded-none text-left">
+                    <div class="flex flex-col sm:flex-row items-center gap-2">
+                        <div class="relative w-full flex items-center">
+                            <svg class="w-5 h-5 text-sobhaNavy absolute left-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                            <input id="heroSearchInput" type="text" placeholder="Search by project name or location (e.g. Panathur, Hosur Road)..." class="w-full pl-12 pr-4 py-3.5 text-sobhaNavy bg-transparent focus:outline-none placeholder-gray-400 text-xs sm:text-sm font-medium" onkeyup="handleHeroSearch(event)">
+                        </div>
+                        <button onclick="filterBySearch()" class="w-full sm:w-auto bg-sobhaGold hover:bg-sobhaGoldHover text-sobhaNavy font-bold text-xs uppercase tracking-widest px-8 py-4 whitespace-nowrap transition-all duration-300 shadow-md">
+                            Search Properties
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-gray-200 pt-2">
+                    <span class="font-medium text-white">Popular Locations:</span>
+                    <button onclick="quickSearch('Panathur')" class="hover:text-sobhaGold underline underline-offset-4 transition-colors">Panathur</button>
+                    <span class="text-gray-400">•</span>
+                    <button onclick="quickSearch('Hosur Road')" class="hover:text-sobhaGold underline underline-offset-4 transition-colors">Hosur Road</button>
+                    <span class="text-gray-400">•</span>
+                    <button onclick="quickSearch('Devanahalli')" class="hover:text-sobhaGold underline underline-offset-4 transition-colors">Devanahalli</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. STATS SECTION -->
+        <section id="stats" class="bg-sobhaLightBg border-t border-b border-gray-200 text-sobhaNavy py-10 sm:py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center divide-x-0 md:divide-x divide-gray-200">
+                    <div class="p-2">
+                        <p class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">150M+</p>
+                        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gray-600 font-semibold mt-1 sm:mt-2">Sq. Ft. Delivered</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">1,456</p>
+                        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gray-600 font-semibold mt-1 sm:mt-2">Quality Checks / Home</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">30+</p>
+                        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gray-600 font-semibold mt-1 sm:mt-2">Years of Legacy</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">34,000+</p>
+                        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gray-600 font-semibold mt-1 sm:mt-2">Happy Families</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. RESIDENCES CATALOG GRID -->
+        <section id="projects" class="py-16 sm:py-24 bg-white scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+                    <p class="text-sobhaGold uppercase tracking-[0.2em] text-xs font-semibold mb-2">Portfolio of Excellence</p>
+                    <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-3">Flagship Residences</h2>
+                    <div class="w-12 h-0.5 bg-sobhaGold mx-auto mb-4"></div>
+                    <p class="text-gray-600 text-xs sm:text-sm">Click "View Full Details" on any property to open its dedicated project page with floor plans, gallery, and amenities.</p>
+                </div>
+
+                <!-- Responsive Filter Tabs -->
+                <div class="flex justify-center mb-10 sm:mb-14">
+                    <div class="w-full sm:w-auto overflow-x-auto no-scrollbar border-b sm:border border-gray-200 bg-gray-50/50 p-1">
+                        <div class="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-1 sm:gap-2 min-w-max sm:min-w-0">
+                            <button onclick="filterProjects('all')" id="btn-all" class="project-filter-btn px-5 py-3 text-xs font-bold uppercase tracking-wider text-sobhaNavy bg-white sm:bg-sobhaNavy sm:text-white shadow-sm border-b-2 sm:border-b-0 border-sobhaGold sm:border-transparent">
+                                All Projects
+                            </button>
+                            <button onclick="filterProjects('ongoing')" id="btn-ongoing" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600 hover:text-sobhaNavy border-b-2 sm:border-b-0 border-transparent">
+                                Ongoing
+                            </button>
+                            <button onclick="filterProjects('new-launch')" id="btn-new-launch" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600 hover:text-sobhaNavy border-b-2 sm:border-b-0 border-transparent">
+                                New Launch
+                            </button>
+                            <button onclick="filterProjects('ready-to-move')" id="btn-ready-to-move" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600 hover:text-sobhaNavy border-b-2 sm:border-b-0 border-transparent">
+                                Ready To Move
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+                    <!-- Project Cards standard JS injection target or static pre-renders -->
+                </div>
+
+                <!-- Empty Search State -->
+                <div id="noResultsMsg" class="hidden text-center py-12">
+                    <p class="text-gray-500 text-base mb-2">No properties match your search criteria.</p>
+                    <button onclick="resetFilters()" class="text-sobhaGold border-b border-sobhaGold pb-0.5 text-xs font-bold uppercase tracking-wider hover:text-sobhaNavy transition-colors">Reset Search Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. BACKWARD INTEGRATION / SOBHA ADVANTAGE -->
+        <section id="advantage" class="py-16 sm:py-24 bg-sobhaLightBg border-t border-b border-gray-200 scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+                    <div>
+                        <p class="text-sobhaGold uppercase tracking-[0.2em] text-xs font-semibold mb-2">The Benchmark of Quality</p>
+                        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-6 leading-tight">India's Only Backward Integrated Developer</h2>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-8">
+                            Unlike traditional developers, SOBHA creates every element of your home in-house. From architectural concept and structural execution to German precision woodworking and glass glazing, we control every step to deliver uncompromised perfection.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-sobhaGold/20 flex items-center justify-center text-sobhaNavy flex-shrink-0 mt-1 font-bold">✓</div>
+                                <div>
+                                    <h4 class="text-sobhaNavy font-bold text-sm mb-1">Self-Reliant Execution</h4>
+                                    <p class="text-gray-600 text-xs leading-relaxed">Zero dependency on third-party contractors ensures absolute adherence to construction schedules and quality control.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-sobhaGold/20 flex items-center justify-center text-sobhaNavy flex-shrink-0 mt-1 font-bold">✓</div>
+                                <div>
+                                    <h4 class="text-sobhaNavy font-bold text-sm mb-1">Precision In-House Manufacturing</h4>
+                                    <p class="text-gray-600 text-xs leading-relaxed">Custom doors, joinery, and metalwork fabricated inside proprietary factories adhering to German engineering standards.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 sm:p-10 border border-gray-200 shadow-xl">
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-sobhaNavy mb-6 text-center">In-House Manufacturing Divisions</h3>
+                        <div class="grid grid-cols-3 gap-2 text-center text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-6">
+                            <button onclick="switchTab('arch')" id="tab-arch" class="p-2.5 sm:p-3 border-b-2 border-sobhaGold text-sobhaNavy bg-sobhaGoldLight transition-all">Architectural</button>
+                            <button onclick="switchTab('wood')" id="tab-wood" class="p-2.5 sm:p-3 border-b-2 border-transparent text-gray-500 hover:text-sobhaNavy transition-all">Woodworking</button>
+                            <button onclick="switchTab('metal')" id="tab-metal" class="p-2.5 sm:p-3 border-b-2 border-transparent text-gray-500 hover:text-sobhaNavy transition-all">Glazing & Metal</button>
+                        </div>
+                        <div id="tab-content" class="text-center">
+                            <img id="tab-image" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="In-house Architecture" class="w-full h-48 sm:h-56 object-cover mb-6 shadow-sm">
+                            <h4 id="tab-title" class="font-serif font-bold text-sobhaNavy text-lg sm:text-xl mb-2">In-House Architecture</h4>
+                            <p id="tab-desc" class="text-gray-600 text-xs leading-relaxed">Our in-house team of over 70 designers and engineers plan every millimeter of space for maximum natural light, ventilation, and structural longevity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. LEAD GENERATION ENQUIRY FORM -->
+        <section id="enquiry" class="py-16 sm:py-24 bg-white scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-sobhaNavy text-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 border border-sobhaNavyDark">
+                    
+                    <div class="lg:col-span-5 bg-gradient-to-br from-sobhaNavy to-sobhaNavyDark p-8 sm:p-12 flex flex-col justify-between relative">
+                        <div class="relative z-10 space-y-4">
+                            <span class="text-sobhaGold uppercase tracking-widest text-xs font-bold block">Exclusive Priority Services</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold leading-snug">Schedule A Private Site Visit</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed font-light">
+                                Connect with our senior property advisors to receive comprehensive cost sheets, floor plans, and personalized tours.
+                            </p>
+                        </div>
+
+                        <div class="relative z-10 pt-8 border-t border-white/10 space-y-3 mt-6">
+                            <div class="flex items-center gap-3 text-xs text-gray-300">
+                                <span class="text-sobhaGold font-bold">✓</span> Personalized One-on-One Property Tour
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-gray-300">
+                                <span class="text-sobhaGold font-bold">✓</span> Direct Unit Selection & Custom Pricing
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-gray-300">
+                                <span class="text-sobhaGold font-bold">✓</span> Complete Transparent Cost Breakdowns
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-white text-sobhaDarkText p-6 sm:p-10 lg:p-12">
+                        <div id="enquiryAlert" class="hidden mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-medium rounded">
+                            ✓ Thank you for your enquiry! Our senior advisor will contact you within 2 business hours with floor plans and price sheets.
+                        </div>
+
+                        <form onsubmit="handleLeadSubmit(event)" class="space-y-4 sm:space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Full Name *</label>
+                                    <input type="text" id="formName" required placeholder="e.g. Ananya Sharma" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Phone Number *</label>
+                                    <input type="tel" id="formPhone" required placeholder="+91 98765 43210" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Email Address *</label>
+                                    <input type="email" id="formEmail" required placeholder="ananya@example.com" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Project of Interest</label>
+                                    <select id="formProject" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs text-gray-700 focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
+                                        <option value="General Query">All / General Query</option>
+                                        <option value="SOBHA Neopolis">SOBHA Neopolis (Panathur, ORR)</option>
+                                        <option value="SOBHA Townpark">SOBHA Townpark (Hosur Road)</option>
+                                        <option value="SOBHA Oakshire">SOBHA Oakshire (Devanahalli)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Message / Requirements (Optional)</label>
+                                <textarea id="formMessage" rows="3" placeholder="Tell us about preferred bedroom configurations (e.g. 3 BHK), budget range..." class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto bg-sobhaNavy hover:bg-sobhaGold text-white hover:text-sobhaNavy font-bold text-xs uppercase tracking-widest px-8 py-4 transition-all duration-300 shadow-md">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FREQUENTLY ASKED QUESTIONS -->
+        <section id="faq" class="py-16 sm:py-24 bg-sobhaLightBg border-t border-gray-200 scroll-mt-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <p class="text-sobhaGold uppercase tracking-[0.2em] text-xs font-semibold mb-2">Got Questions?</p>
+                    <h2 class="font-serif text-2xl sm:text-4xl font-bold text-sobhaNavy mb-3">Frequently Asked Questions</h2>
+                    <div class="w-12 h-0.5 bg-sobhaGold mx-auto mb-4"></div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white border border-gray-200 shadow-sm transition-all duration-200">
+                        <button onclick="toggleFaq(1)" class="w-full text-left p-5 sm:p-6 flex justify-between items-center focus:outline-none">
+                            <span class="font-serif font-bold text-sobhaNavy text-sm sm:text-base">What makes SOBHA's Backward Integration model unique?</span>
+                            <span id="faq-icon-1" class="text-sobhaGold font-bold text-xl transition-transform duration-300">+</span>
+                        </button>
+                        <div id="faq-answer-1" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 pt-4">
+                            SOBHA is India's only fully backward integrated real estate developer. This means we design, manufacture, and construct every element of our projects in-house—including precision woodworking, aluminum glazing, and precast concrete—ensuring total quality control and timely delivery.
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 shadow-sm transition-all duration-200">
+                        <button onclick="toggleFaq(2)" class="w-full text-left p-5 sm:p-6 flex justify-between items-center focus:outline-none">
+                            <span class="font-serif font-bold text-sobhaNavy text-sm sm:text-base">How can I book a private site visit for SOBHA properties?</span>
+                            <span id="faq-icon-2" class="text-sobhaGold font-bold text-xl transition-transform duration-300">+</span>
+                        </button>
+                        <div id="faq-answer-2" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 pt-4">
+                            You can easily schedule a site visit by filling out the <a href="#enquiry" class="text-sobhaGold underline font-semibold">Enquiry Form</a> on this page. Our dedicated relationship executive will contact you to schedule a convenient date, private transportation, and personal walkthrough.
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 shadow-sm transition-all duration-200">
+                        <button onclick="toggleFaq(3)" class="w-full text-left p-5 sm:p-6 flex justify-between items-center focus:outline-none">
+                            <span class="font-serif font-bold text-sobhaNavy text-sm sm:text-base">Are SOBHA projects approved by major financial institutions?</span>
+                            <span id="faq-icon-3" class="text-sobhaGold font-bold text-xl transition-transform duration-300">+</span>
+                        </button>
+                        <div id="faq-answer-3" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 pt-4">
+                            Yes, all SOBHA developments are approved by leading nationalized and private banks (including HDFC, SBI, ICICI, and Axis Bank) for seamless home loan processing and approval.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 8. PROPERTY FULL DETAIL PAGE VIEW (SPA ROUTE TARGET) -->
+    <div id="detailView" class="hidden fade-in bg-white min-h-screen">
+        <!-- Detail view hero banner & gallery header -->
+        <section class="bg-sobhaNavy text-white py-8 sm:py-12 border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span id="detailBadge" class="bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1"></span>
+                            <span id="detailTheme" class="text-sobhaGold text-xs uppercase tracking-widest font-semibold"></span>
+                        </div>
+                        <h1 id="detailTitle" class="font-serif text-3xl sm:text-5xl font-bold text-white mb-2"></h1>
+                        <p id="detailLocation" class="text-gray-300 text-xs sm:text-sm flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-sobhaGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span></span>
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded text-left md:text-right flex flex-col justify-center">
+                        <span class="text-[10px] uppercase text-gray-300 tracking-wider">Starting Price</span>
+                        <span id="detailPrice" class="font-serif text-2xl sm:text-3xl font-bold text-sobhaGold"></span>
+                        <span class="text-[10px] text-gray-300 mt-0.5">*Govt Taxes & Charges Extra</span>
+                    </div>
+                </div>
+
+                <!-- Main Gallery Showcase -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div class="lg:col-span-2 relative h-72 sm:h-96 bg-gray-800 rounded overflow-hidden group">
+                        <img id="mainGalleryImage" src="" alt="Main Project Gallery" class="w-full h-full object-cover transition-all duration-500">
+                        <div class="absolute bottom-4 left-4 bg-sobhaNavy/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded">
+                            <span id="galleryCaption">Exterior View</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
+                        <button onclick="setGalleryImage(0)" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold">
+                            <img id="thumb0" src="" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                        </button>
+                        <button onclick="setGalleryImage(1)" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none">
+                            <img id="thumb1" src="" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Specifications Pill Bar -->
+        <section class="bg-sobhaLightBg border-b border-gray-200 py-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white p-4 border border-gray-200 rounded shadow-sm">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Possession Status</p>
+                        <p id="specPossession" class="text-xs sm:text-sm font-bold text-sobhaNavy mt-1"></p>
+                    </div>
+                    <div class="bg-white p-4 border border-gray-200 rounded shadow-sm">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Total Land Area</p>
+                        <p id="specLandArea" class="text-xs sm:text-sm font-bold text-sobhaNavy mt-1"></p>
+                    </div>
+                    <div class="bg-white p-4 border border-gray-200 rounded shadow-sm">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Configurations</p>
+                        <p id="specConfig" class="text-xs sm:text-sm font-bold text-sobhaNavy mt-1"></p>
+                    </div>
+                    <div class="bg-white p-4 border border-gray-200 rounded shadow-sm">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">RERA Reg. Number</p>
+                        <p id="specRera" class="text-xs sm:text-sm font-bold text-sobhaNavy mt-1"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail Content Main Grid -->
+        <section class="py-12 sm:py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left Column: Overview, Floor Plans & Amenities -->
+                    <div class="lg:col-span-8 space-y-12">
+                        
+                        <!-- Overview -->
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-4 pb-2 border-b-2 border-sobhaGold inline-block">Architectural Overview</h2>
+                            <p id="detailOverview" class="text-gray-600 text-sm leading-relaxed mt-4"></p>
+                        </div>
+
+                        <!-- Interactive Floor Plans -->
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block">Floor Plans & Configurations</h2>
+                            
+                            <div class="bg-sobhaLightBg p-6 border border-gray-200 rounded">
+                                <!-- Floor Plan Selectors -->
+                                <div id="floorPlanTabs" class="flex flex-wrap gap-2 mb-6 border-b border-gray-200 pb-4">
+                                    <!-- Dynamic JS Injection -->
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                                    <div class="bg-white p-4 border border-gray-200 rounded text-center">
+                                        <img id="floorPlanImg" src="" alt="Floor Plan" class="w-full h-64 object-contain mx-auto">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <h3 id="fpTitle" class="font-serif text-xl font-bold text-sobhaNavy"></h3>
+                                        <div class="space-y-2 text-xs sm:text-sm text-gray-600">
+                                            <p class="flex justify-between border-b border-gray-200 pb-2">
+                                                <span class="text-gray-400">Super Built-up Area:</span>
+                                                <span id="fpSba" class="font-bold text-sobhaNavy"></span>
+                                            </p>
+                                            <p class="flex justify-between border-b border-gray-200 pb-2">
+                                                <span class="text-gray-400">Carpet Area:</span>
+                                                <span id="fpCarpet" class="font-bold text-sobhaNavy"></span>
+                                            </p>
+                                            <p class="flex justify-between border-b border-gray-200 pb-2">
+                                                <span class="text-gray-400">Estimated Price:</span>
+                                                <span id="fpPrice" class="font-bold text-sobhaGold"></span>
+                                            </p>
+                                        </div>
+                                        <button onclick="requestFloorPlanBrochure()" class="w-full bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-xs uppercase tracking-wider py-3 transition-colors mt-4">
+                                            Download High-Res Floor Plan PDF
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Amenities Grid -->
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block">World-Class Amenities</h2>
+                            <div id="amenitiesGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                <!-- Dynamic JS Injection -->
+                            </div>
+                        </div>
+
+                        <!-- Connectivity & Location -->
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block">Location & Neighborhood Highlights</h2>
+                            <div id="connectivityList" class="bg-sobhaLightBg p-6 border border-gray-200 rounded space-y-3 text-xs sm:text-sm text-gray-700">
+                                <!-- Dynamic JS Injection -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Sticky Sidebar CTA -->
+                    <div class="lg:col-span-4">
+                        <div class="sticky top-28 bg-white border-2 border-sobhaNavy p-6 shadow-xl space-y-6">
+                            <div class="border-b border-gray-200 pb-4">
+                                <p class="text-[10px] text-sobhaGold uppercase tracking-widest font-bold">Interested in this property?</p>
+                                <h3 class="font-serif text-xl font-bold text-sobhaNavy mt-1">Book Priority Site Visit</h3>
+                            </div>
+
+                            <form onsubmit="handleDetailLeadSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Your Name *</label>
+                                    <input type="text" required placeholder="Full Name" class="w-full border border-gray-300 p-2.5 text-xs focus:outline-none focus:border-sobhaGold">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Phone Number *</label>
+                                    <input type="tel" required placeholder="+91 98765 43210" class="w-full border border-gray-300 p-2.5 text-xs focus:outline-none focus:border-sobhaGold">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Preferred Unit Type</label>
+                                    <select id="sidebarUnitSelect" class="w-full border border-gray-300 p-2.5 text-xs text-gray-700 focus:outline-none focus:border-sobhaGold">
+                                        <!-- Dynamic options -->
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full bg-sobhaGold hover:bg-sobhaGoldHover text-sobhaNavy font-bold text-xs uppercase tracking-widest py-3.5 transition-colors shadow">
+                                    Request Immediate Call Back
+                                </button>
+                            </form>
+
+                            <div class="bg-sobhaGoldLight p-4 border border-sobhaGold/30 text-center">
+                                <p class="text-xs font-bold text-sobhaNavy">Need Direct Assistance?</p>
+                                <p class="text-xs text-gray-600 mt-1">Call Advisory Desk: <a href="tel:18004250000" class="font-bold text-sobhaGold underline">1800 425 0000</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-sobhaNavyDark text-gray-400 text-xs py-12 sm:py-16 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-12">
+            <div>
+                <button onclick="showCatalogView()" class="font-serif text-2xl font-bold text-sobhaGold tracking-widest block mb-3 focus:outline-none">SOBHA</button>
+                <p class="leading-relaxed text-gray-400 text-xs">Headquartered in Bengaluru, SOBHA Limited is one of India's premier luxury real estate developers, renowned for uncompromised quality, precision craftsmanship, and benchmark execution.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Residences</h4>
+                <ul class="space-y-2.5">
+                    <li><button onclick="showCatalogView(); filterProjects('all')" class="hover:text-sobhaGold transition-colors text-left">Bengaluru Developments</button></li>
+                    <li><button onclick="showCatalogView(); filterProjects('ongoing')" class="hover:text-sobhaGold transition-colors text-left">Ongoing Projects</button></li>
+                    <li><button onclick="showCatalogView(); filterProjects('new-launch')" class="hover:text-sobhaGold transition-colors text-left">New Launch Townships</button></li>
+                    <li><button onclick="showCatalogView(); filterProjects('ready-to-move')" class="hover:text-sobhaGold transition-colors text-left">Ready To Move Row Houses</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Quick Navigation</h4>
+                <ul class="space-y-2.5">
+                    <li><button onclick="showCatalogView()" class="hover:text-sobhaGold transition-colors">Residences Catalog</button></li>
+                    <li><a href="#advantage" onclick="navigateToSection('advantage'); return false" class="hover:text-sobhaGold transition-colors">SOBHA Advantage</a></li>
+                    <li><a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="hover:text-sobhaGold transition-colors">Book A Site Visit</a></li>
+                    <li><a href="#faq" onclick="navigateToSection('faq'); return false" class="hover:text-sobhaGold transition-colors">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Corporate Address</h4>
+                <p class="leading-relaxed">SOBHA Limited<br>Sarjapur-Marathahalli Outer Ring Road,<br>Devarabisanahalli, Bellandur Post,<br>Bengaluru, Karnataka 560103</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10 pt-8 text-center text-gray-500">
+            <p>© 2026 SOBHA Limited. All Rights Reserved. Passion At Work.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
