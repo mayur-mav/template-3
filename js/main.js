@@ -1,22 +1,26 @@
 let currentActiveCategory = 'all';
 let activeProject = null;
+let projectsData = [];
 
 function renderProjectsCatalog() {
   const container = document.getElementById('projectsContainer');
   if (!container) return;
-  container.innerHTML = window.projectsData.map(p => `
-    <article class="project-card bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all group flex flex-col" data-id="${p.id}" data-category="${p.category}" data-search="${(p.title+' '+p.searchLocation).toLowerCase()}">
-      <button type="button" class="relative overflow-hidden h-64 sm:h-72 text-left" onclick="openPropertyDetail('${p.id}')" aria-label="View ${p.title} details">
+  container.innerHTML = projectsData.map(p => `
+    <article class="project-card bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all group flex flex-col snap-start" data-id="${p.id}" data-category="${p.category}" data-search="${(p.title+' '+p.searchLocation).toLowerCase()}">
+      <button type="button" class="project-image relative overflow-hidden text-left group" onclick="openPropertyDetail('${p.id}')" aria-label="View ${p.title} details">
         <img src="${p.mainImg}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
         <span class="absolute top-4 left-4 bg-sobhaNavy text-sobhaGold text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">${p.badge}</span>
+        <span class="project-image-overlay absolute inset-0 flex items-center justify-center bg-sobhaNavy/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+          <span class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-sobhaNavy px-5 py-3 text-xs font-bold uppercase tracking-widest shadow-lg">View Details <span aria-hidden="true">→</span></span>
+        </span>
       </button>
-      <div class="p-5 sm:p-6 flex flex-col flex-grow">
+      <div class="p-4 sm:p-5 flex flex-col flex-grow">
         <p class="text-[11px] font-semibold text-sobhaGold uppercase tracking-wider mb-1">${p.theme}</p>
         <h3 class="font-serif text-xl sm:text-2xl font-bold text-sobhaNavy mb-2">${p.title}</h3>
-        <p class="text-gray-500 text-xs mb-6">${p.location}</p>
-        <div class="border-t border-gray-100 pt-4 mt-auto flex items-center justify-between gap-2">
-          <div><p class="text-[10px] text-gray-400 uppercase">Starting From</p><p class="text-lg font-bold text-sobhaNavy">${p.price}</p></div>
-          <button onclick="openPropertyDetail('${p.id}')" class="bg-sobhaNavy text-white text-[11px] font-semibold px-3 py-2 uppercase">View Full Details</button>
+        <p class="text-gray-500 text-xs mb-4">${p.location}</p>
+        <div class="border-t border-gray-100 pt-3 mt-auto flex items-center justify-between gap-3">
+          <div class="min-w-0"><p class="text-[10px] text-gray-400 uppercase">Starting From</p><p class="text-lg font-bold text-sobhaNavy">${p.price}</p></div>
+          <button onclick="openPropertyDetail('${p.id}')" class="shrink-0 bg-sobhaNavy text-white text-[11px] font-semibold px-3 sm:px-4 py-2 uppercase">View Full Details</button>
         </div>
       </div>
     </article>`).join('');
@@ -24,7 +28,7 @@ function renderProjectsCatalog() {
 }
 
 function openPropertyDetail(id) {
-  const p = window.projectsData.find(x => x.id === id); if (!p) return;
+  const p = projectsData.find(x => x.id === id); if (!p) return;
   activeProject = p;
   const put = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
   put('detailTitle',p.title); put('detailBadge',p.badge); put('detailTheme',p.theme); put('detailPrice',p.price); put('detailOverview',p.overview);
@@ -60,16 +64,38 @@ function navigateToSection(id){
   if (window.location.hash !== `#${id}`) history.pushState(null, '', `#${id}`);
   requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})));
 }
+function scrollProjects(direction){
+  const rail=document.getElementById('projectsContainer');
+  if(!rail)return;
+  const card=rail.querySelector('.project-card');
+  const gap=parseFloat(getComputedStyle(rail).columnGap)||24;
+  const amount=card ? card.getBoundingClientRect().width+gap : rail.clientWidth*.8;
+  rail.scrollBy({left:direction*amount,behavior:'smooth'});
+}
+function updateProjectCarouselArrows(){
+  const rail=document.getElementById('projectsContainer');
+  const arrows=document.querySelectorAll('.project-carousel-arrow');
+  if(!rail||!arrows.length)return;
+  const maxScroll=rail.scrollWidth-rail.clientWidth;
+  const hasOverflow=maxScroll>1;
+  const previous=document.querySelector('.project-carousel-arrow-prev');
+  const next=document.querySelector('.project-carousel-arrow-next');
+  arrows.forEach(arrow=>{arrow.hidden=!hasOverflow;});
+  if(hasOverflow){
+    if(previous)previous.disabled=rail.scrollLeft<=1;
+    if(next)next.disabled=rail.scrollLeft>=maxScroll-1;
+  }
+}
 function selectFloorPlan(id,index) {
-  const p=window.projectsData.find(x=>x.id===id), fp=p?.floorPlans[index]; if(!fp)return;
+  const p=projectsData.find(x=>x.id===id), fp=p?.floorPlans[index]; if(!fp)return;
   const put=(el,v)=>{const node=document.getElementById(el);if(node)node.textContent=v;};
   const img=document.getElementById('floorPlanImg');img.src=fp.img;
   put('fpTitle',fp.type);put('fpSba',fp.sba);put('fpCarpet',fp.carpet);put('fpPrice',fp.price);
   document.querySelectorAll('.fp-tab-btn').forEach((b,i)=>b.className=`fp-tab-btn px-4 py-2 border text-xs font-bold uppercase ${i===index?'bg-sobhaNavy text-white':'bg-white text-gray-700'}`);
 }
 function setGalleryImage(i){const img=document.getElementById('mainGalleryImage');if(activeProject?.gallery[i]&&img)img.src=activeProject.gallery[i];}
-function filterProjects(category){currentActiveCategory=category;document.querySelectorAll('.project-filter-btn').forEach(b=>b.className='project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600 border-b-2 border-transparent');document.getElementById(`btn-${category}`)?.classList.add('text-sobhaNavy','bg-white','font-bold','border-sobhaGold');applyFilters();}
-function applyFilters(){const q=(document.getElementById('heroSearchInput')?.value||'').trim().toLowerCase();let count=0;document.querySelectorAll('.project-card').forEach(c=>{const show=(currentActiveCategory==='all'||c.dataset.category===currentActiveCategory)&&(!q||(c.dataset.search||'').includes(q));c.classList.toggle('hidden',!show);if(show)count++;});document.getElementById('noResultsMsg')?.classList.toggle('hidden',count!==0);}
+function filterProjects(category){currentActiveCategory=category;document.querySelectorAll('.project-filter-btn').forEach(b=>b.setAttribute('aria-pressed',String(b.id===`btn-${category}`)));applyFilters();}
+function applyFilters(){const q=(document.getElementById('heroSearchInput')?.value||'').trim().toLowerCase();let count=0;document.querySelectorAll('.project-card').forEach(c=>{const show=(currentActiveCategory==='all'||c.dataset.category===currentActiveCategory)&&(!q||(c.dataset.search||'').includes(q));c.classList.toggle('hidden',!show);if(show)count++;});document.getElementById('noResultsMsg')?.classList.toggle('hidden',count!==0);requestAnimationFrame(updateProjectCarouselArrows);}
 function filterBySearch(){showCatalogView();applyFilters();document.getElementById('projects')?.scrollIntoView({behavior:'smooth'});}
 function quickSearch(q){document.getElementById('heroSearchInput').value=q;filterBySearch();}
 function handleHeroSearch(e){if(e.key==='Enter')filterBySearch();}
@@ -88,24 +114,23 @@ function loadBuilderData() {
     return;
   }
 
-  const script = document.createElement('script');
-  script.src = `data/${builder}.js`;
-  script.onload = () => {
-    if (!Array.isArray(window.builderData)) {
-      if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">data/${builder}.js must define window.builderData as an array.</p>`;
+  import(`../data/${builder}.js`).then(({ builderData }) => {
+    if (!Array.isArray(builderData)) {
+      if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">data/${builder}.js must export builderData as an array.</p>`;
       return;
     }
-    window.projectsData = window.builderData;
+    projectsData = builderData;
     renderProjectsCatalog();
-  };
-  script.onerror = () => {
+  }).catch(() => {
     if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">Could not load data/${builder}.js.</p>`;
-  };
-  document.head.appendChild(script);
+  });
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadBuilderData);
 else loadBuilderData();
+
+window.addEventListener('resize', updateProjectCarouselArrows);
+document.getElementById('projectsContainer')?.addEventListener('scroll', updateProjectCarouselArrows, { passive: true });
 
 document.addEventListener('click', event => {
   if (event.target.closest('#mobileNavigation a')) closeMobileNavigation();

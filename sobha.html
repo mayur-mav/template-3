@@ -151,7 +151,7 @@
 
         <!-- 4. RESIDENCES CATALOG GRID -->
         <section id="projects" class="py-16 sm:py-24 bg-white scroll-mt-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
                     <p class="text-sobhaGold uppercase tracking-[0.2em] text-xs font-semibold mb-2">Portfolio of Excellence</p>
                     <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-3">Flagship Residences</h2>
@@ -161,27 +161,35 @@
 
                 <!-- Responsive Filter Tabs -->
                 <div class="flex justify-center mb-10 sm:mb-14">
-                    <div class="w-full sm:w-auto overflow-x-auto no-scrollbar border-b sm:border border-gray-200 bg-gray-50/50 p-1">
-                        <div class="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-1 sm:gap-2 min-w-max sm:min-w-0">
-                            <button onclick="filterProjects('all')" id="btn-all" class="project-filter-btn px-5 py-3 text-xs font-bold uppercase tracking-wider text-sobhaNavy bg-white sm:bg-sobhaNavy sm:text-white shadow-sm border-b-2 sm:border-b-0 border-sobhaGold sm:border-transparent">
+                    <div class="project-filter-scroll w-full sm:w-auto overflow-x-auto no-scrollbar border-b sm:border border-gray-200 bg-gray-50/50 p-1">
+                        <div class="project-filter-list flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-1 sm:gap-2 min-w-max sm:min-w-0">
+                            <button onclick="filterProjects('all')" id="btn-all" aria-pressed="true" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider border-b-2 sm:border-b-0 border-transparent">
                                 All Projects
                             </button>
-                            <button onclick="filterProjects('ongoing')" id="btn-ongoing" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600 hover:text-sobhaNavy border-b-2 sm:border-b-0 border-transparent">
+                            <button onclick="filterProjects('ongoing')" id="btn-ongoing" aria-pressed="false" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider border-b-2 sm:border-b-0 border-transparent">
                                 Ongoing
                             </button>
-                            <button onclick="filterProjects('new-launch')" id="btn-new-launch" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600 hover:text-sobhaNavy border-b-2 sm:border-b-0 border-transparent">
+                            <button onclick="filterProjects('new-launch')" id="btn-new-launch" aria-pressed="false" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider border-b-2 sm:border-b-0 border-transparent">
                                 New Launch
                             </button>
-                            <button onclick="filterProjects('ready-to-move')" id="btn-ready-to-move" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600 hover:text-sobhaNavy border-b-2 sm:border-b-0 border-transparent">
+                            <button onclick="filterProjects('ready-to-move')" id="btn-ready-to-move" aria-pressed="false" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider border-b-2 sm:border-b-0 border-transparent">
                                 Ready To Move
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Dynamic Projects Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+                <!-- Responsive, swipeable project carousel -->
+                <div class="project-carousel relative" aria-label="Featured SOBHA residences">
+                    <button type="button" class="project-carousel-arrow project-carousel-arrow-prev" onclick="scrollProjects(-1)" aria-label="Show previous projects" hidden>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+                    </button>
+                    <div class="project-carousel-track no-scrollbar" id="projectsContainer" tabindex="0" aria-label="Projects. Swipe or use arrow buttons to browse.">
                     <!-- Project Cards standard JS injection target or static pre-renders -->
+                    </div>
+                    <button type="button" class="project-carousel-arrow project-carousel-arrow-next" onclick="scrollProjects(1)" aria-label="Show more projects" hidden>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+                    </button>
                 </div>
 
                 <!-- Empty Search State -->

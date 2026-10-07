@@ -1,12 +1,55 @@
-window.builderData = [
+export const builderData = [
   {
-    id: 'neopolis', title: 'SOBHA Neopolis', badge: 'New Launch', category: 'new-launch',
-    theme: 'Greek-inspired Luxury Residences', location: 'Panathur, Outer Ring Road, Bengaluru', searchLocation: 'panathur outer ring road bengaluru',
-    price: '₹ 1.50 Cr*', mainImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-    gallery: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80'],
+    id: 'neopolis', 
+    title: 'SOBHA Neopolis', 
+    badge: 'New Launch', 
+    category: 'new-launch',
+    theme: 'Greek-inspired Luxury Residences', 
+    location: 'Panathur, Outer Ring Road, Bengaluru', 
+    searchLocation: 'panathur outer ring road bengaluru',
+    price: '₹ 1.50 Cr*', 
+    mainImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80'
+    ],
     overview: 'SOBHA Neopolis brings Greek-inspired architecture and refined urban living to Panathur, Bengaluru. Explore thoughtfully planned residences, landscaped open spaces, and a rich range of community amenities.',
-    specs: { possession: 'December 2028', landArea: '25.5 Acres', config: '1, 3 & 4 BHK Apartments', rera: 'PRM/KA/RERA/1251/446/PR/050923/006238' },
-    floorPlans: [{type:'3 BHK',sba:'1,500 Sq. Ft.',carpet:'1,050 Sq. Ft.',price:'₹ 1.50 Cr*',img:'https://placehold.co/600x400/112236/FFFFFF?text=SOBHA+Neopolis+Floor+Plan'}],
+    specs: { 
+      possession: 'December 2028', 
+      landArea: '25.5 Acres', 
+      config: '1, 3 & 4 BHK Apartments', 
+      rera: 'PRM/KA/RERA/1251/446/PR/050923/006238' 
+    },
+    floorPlans: [
+      {type:'3 BHK',sba:'1,500 Sq. Ft.',carpet:'1,050 Sq. Ft.',price:'₹ 1.50 Cr*',img:'https://placehold.co/600x400/112236/FFFFFF?text=SOBHA+Neopolis+Floor+Plan'}
+    ],
+    amenities: ['🏊 Swimming Pool','🏋️ Fitness Centre','🌳 Landscaped Gardens','🧒 Children’s Play Area','🧘 Yoga Studio','🎾 Sports Courts'],
+    connectivity: ['📍 Panathur Main Road','🚇 Close to upcoming metro connectivity','💼 Convenient access to Outer Ring Road IT hubs','🛍️ Shopping and schools nearby']
+  },
+  {
+    id: 'neopolis', 
+    title: 'SOBHA Neopolis', 
+    badge: 'New Launch', 
+    category: 'new-launch',
+    theme: 'Greek-inspired Luxury Residences', 
+    location: 'Panathur, Outer Ring Road, Bengaluru', 
+    searchLocation: 'panathur outer ring road bengaluru',
+    price: '₹ 1.50 Cr*', 
+    mainImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80'
+    ],
+    overview: 'SOBHA Neopolis brings Greek-inspired architecture and refined urban living to Panathur, Bengaluru. Explore thoughtfully planned residences, landscaped open spaces, and a rich range of community amenities.',
+    specs: { 
+      possession: 'December 2028', 
+      landArea: '25.5 Acres', 
+      config: '1, 3 & 4 BHK Apartments', 
+      rera: 'PRM/KA/RERA/1251/446/PR/050923/006238' 
+    },
+    floorPlans: [
+      {type:'3 BHK',sba:'1,500 Sq. Ft.',carpet:'1,050 Sq. Ft.',price:'₹ 1.50 Cr*',img:'https://placehold.co/600x400/112236/FFFFFF?text=SOBHA+Neopolis+Floor+Plan'}
+    ],
     amenities: ['🏊 Swimming Pool','🏋️ Fitness Centre','🌳 Landscaped Gardens','🧒 Children’s Play Area','🧘 Yoga Studio','🎾 Sports Courts'],
     connectivity: ['📍 Panathur Main Road','🚇 Close to upcoming metro connectivity','💼 Convenient access to Outer Ring Road IT hubs','🛍️ Shopping and schools nearby']
   },
