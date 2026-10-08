@@ -8,7 +8,7 @@ function renderProjectsCatalog() {
   container.innerHTML = projectsData.map(p => `
     <article class="project-card bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all group flex flex-col snap-start" data-id="${p.id}" data-category="${p.category}" data-search="${(p.title+' '+p.searchLocation).toLowerCase()}">
       <button type="button" class="project-image relative overflow-hidden text-left group" onclick="openPropertyDetail('${p.id}')" aria-label="View ${p.title} details">
-        <img src="${p.mainImg}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        <img src="${p.mainImg}" alt="${p.title}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
         <span class="absolute top-4 left-4 bg-sobhaNavy text-sobhaGold text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">${p.badge}</span>
         <span class="project-image-overlay absolute inset-0 flex items-center justify-center bg-sobhaNavy/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
           <span class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-sobhaNavy px-5 py-3 text-xs font-bold uppercase tracking-widest shadow-lg">View Details <span aria-hidden="true">→</span></span>
@@ -122,7 +122,7 @@ function openPropertyDetail(id) {
   const loc = document.querySelector('#detailLocation span'); if(loc) loc.textContent=p.location;
   ['Possession','LandArea','Config'].forEach((key,i)=>put('spec'+key,[p.specs.possession,p.specs.landArea,p.specs.config][i]));
   put('specRera',p.reraId || 'Not available');
-  const main=document.getElementById('mainGalleryImage'); if(main) main.src=p.gallery[0];
+  const main=document.getElementById('mainGalleryImage'); if(main){main.loading='eager';main.fetchPriority='high';main.src=p.gallery[0];}
   p.gallery.slice(0,2).forEach((src,i)=>{const el=document.getElementById('thumb'+i);if(el)el.src=src;});
   setGalleryImage(0);
   const tabs=document.getElementById('floorPlanTabs');
@@ -203,7 +203,7 @@ function updateProjectCarouselArrows(){
 function selectFloorPlan(id,index) {
   const p=projectsData.find(x=>x.id===id), fp=p?.floorPlans[index]; if(!fp)return;
   const put=(el,v)=>{const node=document.getElementById(el);if(node)node.textContent=v;};
-  const img=document.getElementById('floorPlanImg');img.src=fp.img;
+  const img=document.getElementById('floorPlanImg');img.loading='lazy';img.src=fp.img;
   put('fpTitle',fp.type);put('fpSba',fp.sba);put('fpPrice',fp.price);
   document.querySelectorAll('.fp-tab-btn').forEach((b,i)=>b.className=`fp-tab-btn px-4 py-2 border text-xs font-bold uppercase ${i===index?'bg-sobhaNavy text-white':'bg-white text-gray-700'}`);
   const unitField=document.getElementById('sidebarUnitSelect');

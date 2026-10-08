@@ -73,7 +73,7 @@
         <!-- 2. HERO SECTION -->
         <section id="hero" class="relative min-h-[70vh] lg:min-h-[75vh] flex items-center justify-center bg-gray-900 text-white overflow-hidden py-16 sm:py-24 scroll-mt-24">
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" alt="SOBHA Luxury Residence Banner" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" alt="DS-MAX Luxury Residence Banner" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-sobhaNavy/90 via-sobhaNavy/70 to-sobhaNavy/40"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-sobhaNavyDark/80 via-transparent to-transparent"></div>
             </div>
@@ -322,17 +322,17 @@
                 <!-- Main Gallery Showcase -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     <div class="lg:col-span-2 relative h-72 sm:h-96 bg-gray-800 rounded overflow-hidden group">
-                        <img id="mainGalleryImage" src="" alt="Main Project Gallery" class="w-full h-full object-cover transition-all duration-500">
+                        <img id="mainGalleryImage" src="" alt="Main Project Gallery" loading="lazy" decoding="async" class="w-full h-full object-cover transition-all duration-500">
                         <div class="absolute bottom-4 left-4 bg-sobhaNavy/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded">
                             <span id="galleryCaption">Exterior View</span>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
                         <button onclick="setGalleryImage(0)" aria-pressed="true" aria-label="Show first project image" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold">
-                            <img id="thumb0" src="" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                            <img id="thumb0" src="" alt="Project gallery thumbnail 1" loading="lazy" decoding="async" class="w-full h-full object-cover hover:scale-105 transition-transform">
                         </button>
                         <button onclick="setGalleryImage(1)" aria-pressed="false" aria-label="Show second project image" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none">
-                            <img id="thumb1" src="" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                            <img id="thumb1" src="" alt="Project gallery thumbnail 2" loading="lazy" decoding="async" class="w-full h-full object-cover hover:scale-105 transition-transform">
                         </button>
                     </div>
                 </div>
@@ -390,7 +390,7 @@
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                                     <div class="bg-white p-4 border border-gray-200 rounded text-center">
-                                        <img id="floorPlanImg" src="" alt="Floor Plan" class="w-full h-64 object-contain mx-auto">
+                                        <img id="floorPlanImg" src="" alt="Floor Plan" loading="lazy" decoding="async" class="w-full h-64 object-contain mx-auto">
                                     </div>
                                     <div class="space-y-4">
                                         <h3 id="fpTitle" class="font-serif text-xl font-bold text-sobhaNavy"></h3>
