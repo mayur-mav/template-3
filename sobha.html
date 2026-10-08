@@ -544,18 +544,19 @@
             const closeButton = document.getElementById('whatsappClose');
             const form = document.getElementById('whatsappForm');
             const phoneInput = document.getElementById('whatsappNumber');
-            const storageKey = 'sobhaWhatsAppPopupSeen';
+            const storageKey = 'waPopupShown';
             let previousFocus;
             const openDialog = () => {
                 previousFocus = document.activeElement;
                 overlay.hidden = false;
                 document.body.classList.add('whatsapp-open');
+                try { sessionStorage.setItem(storageKey, 'true'); } catch (_) {}
                 window.setTimeout(() => phoneInput.focus(), 40);
             };
             const closeDialog = () => {
                 overlay.hidden = true;
                 document.body.classList.remove('whatsapp-open');
-                try { localStorage.setItem(storageKey, 'true'); } catch (_) {}
+                try { sessionStorage.setItem(storageKey, 'true'); } catch (_) {}
                 if (previousFocus && previousFocus.focus) previousFocus.focus();
             };
             launcher.addEventListener('click', openDialog);
@@ -578,8 +579,8 @@
                 window.open(`https://wa.me/918004250000?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
             });
             let seen = false;
-            try { seen = localStorage.getItem(storageKey) === 'true'; } catch (_) {}
-            if (!seen) window.setTimeout(openDialog, 650);
+            try { seen = sessionStorage.getItem(storageKey) === 'true'; } catch (_) {}
+            if (!seen) window.setTimeout(openDialog, 3500);
         })();
     </script>
     <script src="js/main.js"></script>

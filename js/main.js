@@ -278,9 +278,8 @@ function renderBuilderFaq(faqs) {
     parent.append(card);
   };
 
-  const splitIndex = Math.ceil(entries.length / 2);
   entries.forEach((item, index) => {
-    const columnIndex = useTwoColumns && index >= splitIndex ? 1 : 0;
+    const columnIndex = useTwoColumns ? index % columns.length : 0;
     renderCard(item, index, columns[columnIndex]);
   });
 }
@@ -290,6 +289,7 @@ function toggleFaq(id){
   if(!answer||!button)return;
   const opening=answer.classList.contains('hidden');
   answer.classList.toggle('hidden',!opening);
+  button.closest('article')?.classList.toggle('faq-open', opening);
   button.setAttribute('aria-expanded',String(opening));
   const icon=document.getElementById(`faq-icon-${id}`);
   if(icon)icon.textContent=opening?'−':'+';

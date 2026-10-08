@@ -446,30 +446,38 @@ export const builderData = [
 ]
 
 export const builderFaq = [
-  {
-    question: "What makes SOBHA's Backward Integration model unique?",
-    answer: "SOBHA designs, manufactures, and constructs many elements of its projects in-house, including precision woodworking, aluminum glazing, and precast concrete. This approach supports quality control across the construction process."
-  },
-  {
-    question: 'How can I book a private site visit for a SOBHA property?',
-    answer: 'Use the Enquiry form on this page to request a site visit. A property advisor will contact you to arrange a convenient time and walkthrough.'
-  },
-  {
-    question: 'Are SOBHA projects approved by major financial institutions?',
-    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
-  },
-  {
-    question: 'Are SOBHA projects approved by major financial institutions?',
-    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
-  },
-  {
-    question: 'Are SOBHA projects approved by major financial institutions?',
-    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
-  },
-  {
-    question: 'Are SOBHA projects approved by major financial institutions?',
-    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
-  }
+    {
+        question: 'Who is the owner of DS Max?',
+        answer: 'The owner, founder, and chairman of DS-MAX Properties is Dr. K. V. Satish.'
+    },
+    {
+        question: 'Is DS-Max a good builder in Bangalore?',
+        answer: 'DS-Max Properties is a budget-focused developer in Bangalore with mixed reviews, known for offering affordable housing, though buyers frequently report concerns regarding construction quality and post-possession customer service.'
+    },
+    {
+        question: 'Are DS-MAX projects RERA compliant and legally approved?',
+        answer: 'Yes, all residential projects by DS-MAX Properties are 100% RERA-compliant and receive necessary clearances from local planning authorities like BBMP, BDA, BMRDA, or BIAPPA depending on the exact location.'
+    },
+    {
+        question: 'How many projects has the developer completed?',
+        answer: 'The company has successfully completed over 100 residential developments across Bengaluru and wider Karnataka, housing more than 26,000 families.'
+    },
+    {
+        question: 'Which banks provide home loans for DS-MAX apartments?',
+        answer: 'Major financial institutions—including HDFC, State Bank of India (SBI), ICICI Bank, and Canara Bank—frequently pre-approve DS-MAX projects for home loan financing.'
+    },
+    {
+        question: 'What building materials does DS-MAX typically use?',
+        answer: 'They generally rely on RCC framed structures mixed with solid concrete block masonry for internal and external walls. Features typically include vitrified tiles for flooring and powder-coated aluminum or UPVC windows.'
+    },
+    {
+        question: 'Do DS-MAX properties come with an A-Khata or B-Khata?',
+        answer: 'The vast majority of their primary BDA/BBMP-approved developments qualify for an A-Khata certificate, which allows for straightforward property tax assessment and smoother resale. You should always request the exact Khata certification category for the specific project site before booking.'
+    },
+    {
+        question: 'How much advance maintenance deposit is collected?',
+        answer: 'Depending on the project scale, they regularly secure structural maintenance charges upfront for an extended tenure—often mapping out to a 2 to 3-year advance maintenance fee rather than the standard 1-year deposit seen with standalone builders.'
+    }
 ];
 
 export const popularLocations = ['Manchenahalli', 'Whitefield', 'Chandapura'];
