@@ -5,6 +5,8 @@
 
 html { scroll-padding-top: 5rem; }
 body { min-width: 320px; overflow-x: hidden; }
+html, body { -ms-overflow-style: none; scrollbar-width: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 img { max-width: 100%; height: auto; }
 button, input, select, textarea { font: inherit; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
