@@ -157,6 +157,10 @@ input, select, textarea { max-width: 100%; }
 #connectivityList .connectivity-label > i { flex-basis: 1.2rem; margin-top: 0; color: #d8ad2e; font-size: 1.15rem; }
 #connectivityList .connectivity-label > span { color: #344258; font-size: .9rem; line-height: 1.4; }
 #connectivityList .connectivity-distance { color: #123f32; font-size: .85rem; white-space: nowrap; }
+.list-collapsed#amenitiesGrid > :nth-child(n+7),
+.list-collapsed#connectivityList > :nth-child(n+5) { display: none; }
+.list-expansion-toggle { display: block; margin-top: .75rem; border: 1px solid #000; border-radius: .5rem; background: #000; padding: .5rem .8rem; color: #fff; font-size: .75rem; font-weight: 700; transition: background-color .2s, border-color .2s, color .2s; }
+.list-expansion-toggle:hover { border-color: #C5A059; background: #C5A059; color: #112236; }
 @media (min-width: 641px) {
   #connectivityList { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

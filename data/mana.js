@@ -39,7 +39,6 @@ export const builderData = [
             { name: 'Outdoor Gym', icon: 'fa-solid fa-dumbbell' },
             { name: 'Urban Farming', icon: 'fa-solid fa-seedling' },
             { name: 'Fruit Orchards', icon: 'fa-solid fa-apple-whole' },
-            { name: 'Butterfly Gardens', icon: 'fa-solid fa-butterfly' },
             { name: 'Event Lawns', icon: 'fa-solid fa-champagne-glasses' },
             { name: 'Pet Parks', icon: 'fa-solid fa-dog' },
             { name: 'Swimming Areas', icon: 'fa-solid fa-person-swimming' },

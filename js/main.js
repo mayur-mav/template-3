@@ -127,15 +127,19 @@ function openPropertyDetail(id) {
   setGalleryImage(0);
   const tabs=document.getElementById('floorPlanTabs');
   tabs.innerHTML=p.floorPlans.map((fp,i)=>`<button id="fpBtn-${i}" onclick="selectFloorPlan('${p.id}',${i})" class="fp-tab-btn px-4 py-2 border text-xs font-bold uppercase">${fp.type}</button>`).join('');
-  document.getElementById('amenitiesGrid').innerHTML=p.amenities.map(item=>{
+  const amenitiesGrid=document.getElementById('amenitiesGrid');
+  amenitiesGrid.innerHTML=p.amenities.map(item=>{
     const name=typeof item==='string'?item:item.name;
     const icon=typeof item==='string'?'fa-solid fa-star':item.icon;
     return `<div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="${icon} text-sobhaGold" aria-hidden="true"></i><span>${name}</span></div>`;
   }).join('');
-  document.getElementById('connectivityList').innerHTML=p.connectivity.map(item=>{
+  addListExpansion(amenitiesGrid, 6, 'amenities');
+  const connectivityList=document.getElementById('connectivityList');
+  connectivityList.innerHTML=p.connectivity.map(item=>{
     const entry=typeof item==='string'?{label:item,distance:'',icon:'fa-solid fa-location-dot'}:item;
     return `<div class="connectivity-item"><span class="connectivity-label"><i class="${entry.icon||'fa-solid fa-location-dot'} text-sobhaGold" aria-hidden="true"></i><span>${entry.label}</span></span>${entry.distance?`<span class="connectivity-distance">${entry.distance}</span>`:''}</div>`;
   }).join('');
+  addListExpansion(connectivityList, 4, 'connectivity');
   renderSidebarUnitOptions(p);
   selectFloorPlan(p.id,0);
   document.getElementById('catalogView').classList.add('hidden'); document.getElementById('detailView').classList.remove('hidden');
@@ -144,6 +148,25 @@ function openPropertyDetail(id) {
   document.getElementById('detailBackButton')?.classList.add('inline-flex');
   closeMobileNavigation();
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function addListExpansion(list, collapsedLimit, label) {
+  list.classList.toggle('list-collapsed', list.children.length > collapsedLimit);
+  const oldButton=list.nextElementSibling;
+  if(oldButton?.classList.contains('list-expansion-toggle')) oldButton.remove();
+  if(list.children.length <= collapsedLimit) return;
+  const button=document.createElement('button');
+  button.type='button';
+  button.className='list-expansion-toggle';
+  button.setAttribute('aria-expanded','false');
+  button.textContent=`View more ${label}`;
+  button.addEventListener('click',()=>{
+    const expanded=button.getAttribute('aria-expanded')==='true';
+    button.setAttribute('aria-expanded',String(!expanded));
+    list.classList.toggle('list-collapsed',expanded);
+    button.textContent=expanded?`View more ${label}`:`View less ${label}`;
+  });
+  list.insertAdjacentElement('afterend',button);
 }
 
 function toggleReraId(button){
