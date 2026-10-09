@@ -19,18 +19,18 @@ export const builderData = [
         },
         floorPlans: [
             {
-            type: '3 BHK',
-            sba: '1,661 - 1,953 Sq. Ft.',
-            carpet: '',
-            price: '₹ 1.79 Cr*',
-            img: ''
+              type: '3 BHK',
+              sba: '1,661 - 1,953 Sq. Ft.',
+              carpet: '',
+              price: '₹ 1.79 Cr*',
+              img: ''
             },
             {
-            type: '3.5 BHK',
-            sba: '2,068 - 2,244 Sq. Ft.',
-            carpet: '',
-            price: '₹ 2.35 Cr*',
-            img: ''
+              type: '3.5 BHK',
+              sba: '2,068 - 2,244 Sq. Ft.',
+              carpet: '',
+              price: '₹ 2.35 Cr*',
+              img: ''
             }
         ],
         amenities: [

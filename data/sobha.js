@@ -127,31 +127,47 @@ export const builderData = [
 
 export const builderFaq = [
   {
-    question: "What makes SOBHA's Backward Integration model unique?",
-    answer: "SOBHA designs, manufactures, and constructs many elements of its projects in-house, including precision woodworking, aluminum glazing, and precast concrete. This approach supports quality control across the construction process."
+    "question": "Who is the owner of SOBHA?",
+    "answer": "Sobha was founded by the billionaire businessman P. N. C. Menon, who serves as the Founder and Chairman Emeritus, while his son Ravi P. N. C. Menon serves as the Chairman of the Sobha Group."
   },
   {
-    question: 'How can I book a private site visit for a SOBHA property?',
-    answer: 'Use the Enquiry form on this page to request a site visit. A property advisor will contact you to arrange a convenient time and walkthrough.'
+    "question": "What are the newest SOBHA projects in Bangalore?",
+    "answer": "The newest Sobha New Launch Projects in Bangalore include prominent developments like SOBHA Neopolis, SOBHA Infinia, and SOBHA Townpark. SOBHA Limited Latest Sobha Projects by Location Panathur / Off ORR: SOBHA Neopolis (Greek-themed luxury apartments) and SOBHA Ayana. Koramangala: SOBHA Infinia (ultra-luxury 3 and 4 bed residences). Electronic City / Hosur Road: SOBHA Townpark (New York-themed community) and SOBHA Hamptons. Bannerghatta Road: SOBHA Magnus (eco-luxe 2, 3, and 4 BHK flats). Hoskote (East Bangalore): SOBHA One World (large-scale integrated township). Bhoganahalli: SOBHA Insignia (bespoke tech-enabled residences). Chikkakannalli / Sarjapur Road: SOBHA Altair. sobhaupcoming.com +6"
   },
   {
-    question: 'Are SOBHA projects approved by major financial institutions?',
-    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
+    "question": "Is Sobha a premium builder?",
+    "answer": "Yes, Sobha Limited is widely recognized as a premium and luxury real estate developer in India."
   },
   {
-    question: 'Are SOBHA projects approved by major financial institutions?',
-    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
+    "question": "What is SOBHA's construction model?",
+    "answer": "SOBHA is India's only fully backward-integrated real estate developer, meaning it manufactures its own metalwork, concrete blocks, and interiors in-house to ensure strict quality control."
   },
   {
-    question: 'Are SOBHA projects approved by major financial institutions?',
-    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
+    "question": "Where are SOBHA projects located?",
+    "answer": "The company operates across major Indian cities including Bengaluru, Delhi-NCR, Pune, Chennai, Kochi, and Coimbatore."
   },
   {
-    question: 'Are SOBHA projects approved by major financial institutions?',
-    answer: 'SOBHA projects may be eligible for home loans from major banks. Contact a property advisor or your preferred bank to confirm approval for a specific project.'
+    "question": "Are SOBHA properties RERA-registered?",
+    "answer": "Yes, all ongoing residential and commercial developments by SOBHA strictly comply with state RERA guidelines for legal and financial transparency."
+  },
+  {
+    "question": "What kind of payment plans are offered?",
+    "answer": "SOBHA usually structures payments based on construction-linked payment plans. This means you pay in installments as specific milestones (like foundation, specific floors, brickwork) are met."
+  },
+  {
+    "question": "What is the typical project delivery timeline?",
+    "answer": "SOBHA generally delivers its residential projects within 36 to 48 months from their official launch date. Because of their in-house manufacturing model, their on-time delivery record is historically much higher than the industry average."
+  },
+  {
+    "question": "Which banks approve SOBHA projects?",
+    "answer": "Because of their transparent legal clearances, most SOBHA developments are pre-approved by over 15 leading financial institutions (including SBI, HDFC, ICICI, and Axis Bank)."
+  },
+  {
+    "question": "Can I view floor plans or book online?",
+    "answer": "Detailed floor plans, project brochures, and booking terms are hosted directly on the official SOBHA Residential Portal. You can contact the centralized sales desk at 080-46464500 to coordinate virtual walkthroughs or schedule a physical site visit."
   }
 ];
 
 export const popularLocations = ['Panathur', 'Hosur Road', 'Devanahalli'];
 
-export const builderName = 'SOBHA Limited';
+export const builderName = 'SOBHA LIMITED';
