@@ -157,14 +157,16 @@ function addListExpansion(list, collapsedLimit, label) {
   if(list.children.length <= collapsedLimit) return;
   const button=document.createElement('button');
   button.type='button';
-  button.className='list-expansion-toggle';
+  button.className='list-expansion-toggle font-serif';
   button.setAttribute('aria-expanded','false');
-  button.textContent=`View more ${label}`;
+  button.textContent=label==='amenities'?'View all amenities →':'Explore connectivity details →';
   button.addEventListener('click',()=>{
     const expanded=button.getAttribute('aria-expanded')==='true';
     button.setAttribute('aria-expanded',String(!expanded));
     list.classList.toggle('list-collapsed',expanded);
-    button.textContent=expanded?`View more ${label}`:`View less ${label}`;
+    button.textContent=expanded
+      ? (label==='amenities'?'View all amenities →':'Explore connectivity details →')
+      : (label==='amenities'?'Show fewer amenities →':'Show fewer connectivity details →');
   });
   list.insertAdjacentElement('afterend',button);
 }
