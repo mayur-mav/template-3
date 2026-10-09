@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mana | Live Brilliantly</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                colors: {
+                    sobhaNavy: '#112236', sobhaNavyDark: '#0A1526', sobhaGold: '#C5A059',
+                    sobhaGoldHover: '#B08C46', sobhaGoldLight: '#FAF4E8', sobhaLightBg: '#F8F9FA',
+                    sobhaDarkText: '#1F2937'
+                },
+                fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body data-builder="mana" class="font-sans bg-white text-sobhaDarkText antialiased flex flex-col min-h-screen selection:bg-sobhaGold selection:text-sobhaNavy">
+
+    <!-- 1. HEADER NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md text-sobhaNavy border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <button onclick="showCatalogView()" class="flex flex-col text-left group focus:outline-none">
+                <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-sobhaNavy group-hover:text-sobhaGold transition-colors duration-300">MANA</span>
+                <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium">Live Brilliantly</span>
+            </button>
+
+            <!-- Shared section navigation for catalog and property detail views -->
+            <nav id="headerNavLinks" class="items-center space-x-6 lg:space-x-8 text-xs uppercase tracking-widest font-semibold">
+                <a href="#hero" onclick="navigateToSection('hero'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Overview</a>
+                <a href="#projects" onclick="navigateToSection('projects'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Residences</a>
+                <a href="#legacy" onclick="navigateToSection('legacy'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">About Us</a>
+                <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">Contact</a>
+                <a href="#faq" onclick="navigateToSection('faq'); return false" class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold">FAQ</a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="flex items-center space-x-3">
+                <button onclick="triggerEnquiryScroll()" class="bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-[10px] sm:text-xs tracking-widest uppercase px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-300 shadow-md">
+                    Enquire Now
+                </button>
+                <button id="mobileMenuToggle" type="button" onclick="toggleMobileNavigation()" aria-controls="mobileNavigation" aria-expanded="false" aria-label="Open navigation menu" class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-gray-200 text-sobhaNavy" >
+                    <svg id="mobileMenuIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <nav id="mobileNavigation" hidden class="hidden lg:hidden border-t border-gray-100 bg-white px-4 py-2 shadow-md" aria-label="Mobile navigation">
+            <a href="#hero" onclick="navigateToSection('hero'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">Overview</a>
+            <a href="#projects" onclick="navigateToSection('projects'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">Residences</a>
+            <a href="#legacy" onclick="navigateToSection('legacy'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">About Us</a>
+            <a href="#enquiry" onclick="navigateToSection('enquiry'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">Contact</a>
+            <a href="#faq" onclick="navigateToSection('faq'); return false" class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent">FAQ</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CATALOG VIEW CONTAINER -->
+    <div id="catalogView" class="fade-in">
+
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="relative min-h-[70vh] lg:min-h-[75vh] flex items-center justify-center bg-gray-900 text-white overflow-hidden py-16 sm:py-24 scroll-mt-24">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" alt="DS-MAX Luxury Residence Banner" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-sobhaNavy/90 via-sobhaNavy/70 to-sobhaNavy/40"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-sobhaNavyDark/80 via-transparent to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
+                <div class="inline-flex items-center gap-2 border border-sobhaGold/50 bg-sobhaNavy/70 backdrop-blur-md px-4 py-1.5 rounded-full">
+                    <span class="text-sobhaGold uppercase tracking-[0.2em] text-[10px] sm:text-xs font-bold">25+ Years Of Excellence</span>
+                </div>
+
+                <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-4xl mx-auto">
+                    Spaces Designed <br class="hidden sm:block">
+                    <span class="italic font-normal text-sobhaGold">To Live Brilliantly</span>
+                </h1>
+
+                <p class="text-gray-200 text-xs sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
+                    Discover nature-integrated luxury homes engineered with precision, sustainable design, and seamless connectivity across East Bengaluru.
+                </p>
+
+                <!-- Interactive Search -->
+                <div class="max-w-3xl mx-auto bg-white p-2 sm:p-3 shadow-2xl border-l-4 border-sobhaGold rounded-none text-left">
+                    <div class="flex flex-col sm:flex-row items-center gap-2">
+                        <div class="relative w-full flex items-center">
+                            <svg class="w-5 h-5 text-sobhaNavy absolute left-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                            <input id="heroSearchInput" type="text" placeholder="Search by project name or location (e.g. Panathur, Hosur Road)..." class="w-full pl-12 pr-4 py-3.5 text-sobhaNavy bg-transparent focus:outline-none placeholder-gray-400 text-xs sm:text-sm font-medium" onkeyup="handleHeroSearch(event)">
+                        </div>
+                        <button onclick="filterBySearch()" class="w-full sm:w-auto bg-sobhaGold hover:bg-sobhaGoldHover text-sobhaNavy font-bold text-xs uppercase tracking-widest px-8 py-4 whitespace-nowrap transition-all duration-300 shadow-md">
+                            Search Properties
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div id="popularLocations" class="hidden flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-gray-200 pt-2">
+                    <span class="font-medium text-white">Popular Locations:</span>
+                    <div id="popularLocationList" class="flex flex-wrap items-center justify-center gap-2 sm:gap-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. RESIDENCES CATALOG GRID -->
+        <section id="projects" class="py-16 sm:py-24 bg-white scroll-mt-20">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+                    <p class="text-sobhaGold uppercase tracking-[0.2em] text-xs font-semibold mb-2">Portfolio of Excellence</p>
+                    <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-3">Flagship Residences</h2>
+                    <div class="w-12 h-0.5 bg-sobhaGold mx-auto mb-4"></div>
+                    <p class="text-gray-600 text-xs sm:text-sm">Click "View Full Details" on any property to open its dedicated project page with floor plans, gallery, and amenities.</p>
+                </div>
+
+                <!-- Responsive Filter Tabs -->
+                <div class="flex justify-center mb-10 sm:mb-14">
+                    <div class="project-filter-scroll w-full sm:w-auto overflow-x-auto no-scrollbar border-b sm:border border-gray-200 bg-gray-50/50 p-1">
+                        <div class="project-filter-list flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-1 sm:gap-2 min-w-max sm:min-w-0">
+                            <button onclick="filterProjects('all')" id="btn-all" aria-pressed="true" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider border-b-2 sm:border-b-0 border-transparent">
+                                All Projects
+                            </button>
+                            <button onclick="filterProjects('ongoing')" id="btn-ongoing" aria-pressed="false" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider border-b-2 sm:border-b-0 border-transparent">
+                                Ongoing
+                            </button>
+                            <button onclick="filterProjects('new-launch')" id="btn-new-launch" aria-pressed="false" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider border-b-2 sm:border-b-0 border-transparent">
+                                New Launch
+                            </button>
+                            <button onclick="filterProjects('ready-to-move')" id="btn-ready-to-move" aria-pressed="false" class="project-filter-btn px-5 py-3 text-xs font-semibold uppercase tracking-wider border-b-2 sm:border-b-0 border-transparent">
+                                Ready To Move
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Responsive, swipeable project carousel -->
+                <div class="project-carousel relative" aria-label="Featured SOBHA residences">
+                    <button type="button" class="project-carousel-arrow project-carousel-arrow-prev" onclick="scrollProjects(-1)" aria-label="Show previous projects" hidden>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+                    </button>
+                    <div class="project-carousel-track no-scrollbar" id="projectsContainer" tabindex="0" aria-label="Projects. Swipe or use arrow buttons to browse.">
+                    <!-- Project Cards standard JS injection target or static pre-renders -->
+                    </div>
+                    <button type="button" class="project-carousel-arrow project-carousel-arrow-next" onclick="scrollProjects(1)" aria-label="Show more projects" hidden>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+                    </button>
+                </div>
+
+                <!-- Empty Search State -->
+                <div id="noResultsMsg" class="hidden text-center py-12">
+                    <p class="text-gray-500 text-base mb-2">No properties match your search criteria.</p>
+                    <button onclick="resetFilters()" class="text-sobhaGold border-b border-sobhaGold pb-0.5 text-xs font-bold uppercase tracking-wider hover:text-sobhaNavy transition-colors">Reset Search Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. BUILDER LEGACY -->
+        <section id="legacy" class="py-16 sm:py-24 bg-sobhaLightBg border-y border-gray-200 scroll-mt-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-sobhaNavy uppercase tracking-[0.2em] text-xs font-semibold mb-3">26 Years of Brilliant Living</p>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-6 leading-tight">CRAFTING SPACES TO LIVE BRILLIANTLY.</h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">Founded in 2000 by Mr. D. Kishore Reddy, Mana Projects has delivered over two and a half decades of real estate innovation across Bengaluru. Guided by our philosophy of "Imagineering" and the core commitment to help families "Live Brilliantly," we pioneer green construction by seamlessly weaving nature into contemporary residential architecture.</p>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">Driven by precision engineering and sustainable design, Mana Projects has successfully transformed urban living into tranquil, nature-integrated sanctuaries. With over 38 million sq. ft. of developments delivered and underway, we continue to shape prime locations across East Bengaluru with unmatched quality and customer trust.</p>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mt-10 sm:mt-14">
+                    <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+                        <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">30+</p>
+                        <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Projects Completed</p>
+                    </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+                        <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">38M+</p>
+                        <p class="text-[10px] sm:text-xs text-gray-600 mt-2">sq. Ft. Developerd</p>
+                    </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+                        <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">26</p>
+                        <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Years of Legacy</p>
+                    </div>
+                    <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+                        <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">15,000+</p>
+                        <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Happy Families</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. LEAD GENERATION ENQUIRY FORM -->
+        <section id="enquiry" class="py-16 sm:py-24 bg-white scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-sobhaNavy text-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 border border-sobhaNavyDark">
+                    
+                    <div class="lg:col-span-5 bg-gradient-to-br from-sobhaNavy to-sobhaNavyDark p-8 sm:p-12 flex flex-col justify-between relative">
+                        <div class="relative z-10 space-y-4">
+                            <span class="text-sobhaGold uppercase tracking-widest text-xs font-bold block">Exclusive Priority Services</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold leading-snug">Schedule A Private Site Visit</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed font-light">
+                                Connect with our senior property advisors to receive comprehensive cost sheets, floor plans, and personalized tours.
+                            </p>
+                        </div>
+
+                        <div class="relative z-10 pt-8 border-t border-white/10 space-y-3 mt-6">
+                            <div class="flex items-center gap-3 text-xs text-gray-300">
+                                <span class="text-sobhaGold font-bold">✓</span> Personalized One-on-One Property Tour
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-gray-300">
+                                <span class="text-sobhaGold font-bold">✓</span> Direct Unit Selection & Custom Pricing
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-gray-300">
+                                <span class="text-sobhaGold font-bold">✓</span> Complete Transparent Cost Breakdowns
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-white text-sobhaDarkText p-6 sm:p-10 lg:p-12">
+                        <div id="enquiryAlert" class="hidden mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-medium rounded">
+                            ✓ Thank you for your enquiry! Our senior advisor will contact you within 2 business hours with floor plans and price sheets.
+                        </div>
+
+                        <form onsubmit="handleLeadSubmit(event)" class="space-y-4 sm:space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Full Name *</label>
+                                    <input type="text" id="formName" required placeholder="e.g. Ananya Sharma" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Phone Number *</label>
+                                    <input type="tel" id="formPhone" required placeholder="+91 98765 43210" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Email Address *</label>
+                                    <input type="email" id="formEmail" required placeholder="ananya@example.com" class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all">
+                                </div>
+                                <div>
+                                    <label id="formProjectLabel" class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Project of Interest</label>
+                                    <div class="project-picker">
+                                        <input id="formProject" name="project" type="hidden" value="General Query">
+                                        <button id="formProjectToggle" type="button" class="project-picker-toggle" aria-labelledby="formProjectLabel formProjectValue" aria-haspopup="listbox" aria-expanded="false">
+                                            <span id="formProjectValue">All / General Query</span>
+                                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </button>
+                                        <div id="formProjectMenu" class="project-picker-menu" role="listbox" aria-labelledby="formProjectLabel" hidden></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Message / Requirements (Optional)</label>
+                                <textarea id="formMessage" rows="3" placeholder="Tell us about preferred bedroom configurations (e.g. 3 BHK), budget range..." class="w-full border border-gray-300 bg-gray-50 p-3 text-xs focus:outline-none focus:border-sobhaGold focus:bg-white transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto bg-sobhaNavy hover:bg-sobhaGold text-white hover:text-sobhaNavy font-bold text-xs uppercase tracking-widest px-8 py-4 transition-all duration-300 shadow-md">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FREQUENTLY ASKED QUESTIONS -->
+        <section id="faq" class="py-16 sm:py-24 bg-sobhaLightBg border-t border-gray-200 scroll-mt-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <p class="text-sobhaGold uppercase tracking-[0.2em] text-xs font-semibold mb-2">Got Questions?</p>
+                    <h2 class="font-serif text-2xl sm:text-4xl font-bold text-sobhaNavy mb-3">Frequently Asked Questions</h2>
+                    <div class="w-12 h-0.5 bg-sobhaGold mx-auto mb-4"></div>
+                </div>
+
+                <div id="faqList" class="space-y-4"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 8. PROPERTY FULL DETAIL PAGE VIEW (SPA ROUTE TARGET) -->
+    <div id="detailView" class="hidden fade-in bg-white min-h-screen">
+        <!-- Detail view hero banner & gallery header -->
+        <section class="bg-sobhaNavy text-white py-8 sm:py-12 border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <button id="detailBackButton" onclick="showCatalogView()" class="hidden items-center gap-2 text-xs uppercase font-bold text-white hover:text-sobhaGold transition-colors bg-white/10 hover:bg-white/20 px-3 py-2 rounded-sm border border-white/20 mb-5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                            Back to Residences
+                        </button>
+                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                            <span id="detailBadge" class="bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1"></span>
+                            <span id="detailTheme" class="text-sobhaGold text-xs uppercase tracking-widest font-semibold"></span>
+                            <button id="detailReraToggle" type="button" onclick="toggleReraId(this)" aria-expanded="false" class="hidden bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1 cursor-pointer hover:bg-sobhaGoldHover transition-colors">✓ RERA Verified</button>
+                            <span id="detailReraValue" class="hidden text-xs text-gray-200"></span>
+                        </div>
+                        <h1 id="detailTitle" class="font-serif text-3xl sm:text-5xl font-bold text-white mb-2"></h1>
+                        <p id="detailLocation" class="text-gray-300 text-xs sm:text-sm flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-sobhaGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span></span>
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded text-left md:text-right flex flex-col justify-center md:translate-y-9">
+                        <span class="text-[10px] uppercase text-gray-300 tracking-wider">Starting Price</span>
+                        <span id="detailPrice" class="font-serif text-2xl sm:text-3xl font-bold text-sobhaGold"></span>
+                        <span class="text-[10px] text-gray-300 mt-0.5">*Govt Taxes & Charges Extra</span>
+                    </div>
+                </div>
+
+                <!-- Main Gallery Showcase -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div class="lg:col-span-2 relative h-72 sm:h-96 bg-gray-800 rounded overflow-hidden group">
+                        <img id="mainGalleryImage" src="" alt="Main Project Gallery" loading="lazy" decoding="async" class="w-full h-full object-cover transition-all duration-500">
+                        <div class="absolute bottom-4 left-4 bg-sobhaNavy/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded">
+                            <span id="galleryCaption">Exterior View</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
+                        <button onclick="setGalleryImage(0)" aria-pressed="true" aria-label="Show first project image" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold">
+                            <img id="thumb0" src="" alt="Project gallery thumbnail 1" loading="lazy" decoding="async" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                        </button>
+                        <button onclick="setGalleryImage(1)" aria-pressed="false" aria-label="Show second project image" class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none">
+                            <img id="thumb1" src="" alt="Project gallery thumbnail 2" loading="lazy" decoding="async" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Specifications Pill Bar -->
+        <section class="bg-sobhaLightBg border-b border-gray-200 py-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center">
+                        <p class="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider font-bold">Possession Status</p>
+                        <p id="specPossession" class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"></p>
+                    </div>
+                    <div class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center">
+                        <p class="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider font-bold">Total Land Area</p>
+                        <p id="specLandArea" class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"></p>
+                    </div>
+                    <div class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center">
+                        <p class="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider font-bold">Configurations</p>
+                        <p id="specConfig" class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"></p>
+                    </div>
+                    <div class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center">
+                        <p class="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider font-bold">RERA Reg. Number</p>
+                        <p id="specRera" class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail Content Main Grid -->
+        <section class="py-12 sm:py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left Column: Overview, Floor Plans & Amenities -->
+                    <div class="lg:col-span-8 space-y-12">
+                        
+                        <!-- Overview -->
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-4 pb-2 border-b-2 border-sobhaGold inline-block">Architectural Overview</h2>
+                            <p id="detailOverview" class="text-gray-600 text-sm leading-relaxed mt-4"></p>
+                        </div>
+
+                        <!-- Interactive Floor Plans -->
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block">Floor Plans & Configurations</h2>
+                            
+                            <div class="bg-sobhaLightBg p-6 border border-gray-200 rounded">
+                                <!-- Floor Plan Selectors -->
+                                <div id="floorPlanTabs" class="flex flex-wrap gap-2 mb-6 border-b border-gray-200 pb-4">
+                                    <!-- Dynamic JS Injection -->
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                                    <div class="bg-white p-4 border border-gray-200 rounded text-center">
+                                        <img id="floorPlanImg" src="" alt="Floor Plan" loading="lazy" decoding="async" class="w-full h-64 object-contain mx-auto">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <h3 id="fpTitle" class="font-serif text-xl font-bold text-sobhaNavy"></h3>
+                                        <div class="space-y-2 text-xs sm:text-sm text-gray-600">
+                                            <p class="flex justify-between border-b border-gray-200 pb-2">
+                                                <span class="text-gray-400">Super Built-up Area:</span>
+                                                <span id="fpSba" class="font-bold text-sobhaNavy"></span>
+                                            </p>
+                                            <p class="flex justify-between border-b border-gray-200 pb-2">
+                                                <span class="text-gray-400">Estimated Price:</span>
+                                                <span id="fpPrice" class="font-bold text-sobhaGold"></span>
+                                            </p>
+                                        </div>
+                                        <button onclick="requestFloorPlanBrochure()" class="w-full bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-xs uppercase tracking-wider py-3 transition-colors mt-4">
+                                            Download High-Res Floor Plan PDF
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Amenities Grid -->
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block">World-Class Amenities</h2>
+                            <div id="amenitiesGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+                                <!-- Dynamic JS Injection -->
+                            </div>
+                        </div>
+
+                        <!-- Connectivity & Location -->
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block">Location & Neighborhood Highlights</h2>
+                            <div id="connectivityList" class="bg-sobhaLightBg p-6 border border-gray-200 rounded space-y-3 text-xs sm:text-sm text-gray-700">
+                                <!-- Dynamic JS Injection -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Sticky Sidebar CTA -->
+                    <div class="lg:col-span-4">
+                        <div class="sticky top-28 bg-white border-2 border-sobhaNavy p-6 shadow-xl space-y-6">
+                            <div class="border-b border-gray-200 pb-4">
+                                <p class="text-[10px] text-sobhaGold uppercase tracking-widest font-bold">Interested in this property?</p>
+                                <h3 class="font-serif text-xl font-bold text-sobhaNavy mt-1">Book Priority Site Visit</h3>
+                            </div>
+
+                            <form onsubmit="handleDetailLeadSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Your Name *</label>
+                                    <input type="text" required placeholder="Full Name" class="w-full border border-gray-300 p-2.5 text-xs focus:outline-none focus:border-sobhaGold">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Phone Number *</label>
+                                    <input type="tel" required placeholder="+91 98765 43210" class="w-full border border-gray-300 p-2.5 text-xs focus:outline-none focus:border-sobhaGold">
+                                </div>
+                                <div>
+                                    <label id="sidebarUnitLabel" class="block text-[10px] uppercase font-bold text-gray-700 mb-1">Preferred Unit Type</label>
+                                    <div class="project-picker" id="sidebarUnitPicker">
+                                        <input id="sidebarUnitSelect" name="preferredUnitType" type="hidden">
+                                        <button id="sidebarUnitToggle" type="button" class="project-picker-toggle" aria-labelledby="sidebarUnitLabel sidebarUnitValue" aria-haspopup="listbox" aria-expanded="false">
+                                            <span id="sidebarUnitValue">Select a unit type</span>
+                                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </button>
+                                        <div id="sidebarUnitMenu" class="project-picker-menu" role="listbox" aria-labelledby="sidebarUnitLabel" hidden></div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="w-full bg-sobhaGold hover:bg-sobhaGoldHover text-sobhaNavy font-bold text-xs uppercase tracking-widest py-3.5 transition-colors shadow">
+                                    Request Immediate Call Back
+                                </button>
+                            </form>
+
+                            <div class="bg-sobhaGoldLight p-4 border border-sobhaGold/30 text-center">
+                                <p class="text-xs font-bold text-sobhaNavy">Need Direct Assistance?</p>
+                                <p class="text-xs text-gray-600 mt-1">Call Advisory Desk: <a href="tel:18004250000" class="font-bold text-sobhaGold underline">1800 425 0000</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 9. FOOTER -->
+    <footer id="siteFooter" class="bg-[#0b1220] text-slate-300 text-sm py-12 sm:py-16 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="pb-8 border-b border-white/10">
+                <div>
+                    <button onclick="showCatalogView()" data-builder-name class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight block focus:outline-none">SOBHA Limited</button>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Bengaluru</p>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 md:items-center">
+                        <p class="text-sm text-slate-300">Explore <span id="footerPropertyCount">0</span> properties by <span data-builder-name>SOBHA Limited</span> featured on this page.</p>
+                        <p class="md:justify-self-end max-w-xl leading-relaxed text-slate-300">This page is published and maintained by <strong class="text-white">M&amp;A Ventures</strong>, an <strong class="text-white">Authorised Channel Partner</strong>. It is not the developer’s official website.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="py-7 border-b border-white/10 text-sm leading-7 text-slate-300">
+                <p>Disclaimer: this website is operated by an Authorised Channel Partner and is not the developer’s official website. All images are artistic impressions and representative imagery, indicative only. Floor plans, layouts, furniture, fixtures and fittings shown are for illustrative purposes only and do not form part of the offering. Plans, specifications, areas and amenities are subject to change basis receipt of approvals and NOCs; dimensions and areas may change. Drive times are approximate. Nothing on this page constitutes an offer or a contract. Project information on this page is taken from the developer’s brochure and applicable RERA records.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-7 text-xs text-slate-400">
+                <p>© 2026 · M&amp;A Ventures · Authorised Channel Partner · <span class="text-slate-300 underline underline-offset-2">Privacy Policy</span></p>
+                <p>Residential properties by <span data-builder-name>SOBHA Limited</span></p>
+            </div>
+        </div>
+    </footer>
+    <!-- WhatsApp brochure request -->
+    <button id="whatsappLauncher" class="whatsapp-launcher" type="button" aria-label="Request a brochure on WhatsApp" aria-haspopup="dialog" aria-controls="whatsappDialog">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </button>
+    <div id="whatsappDialog" class="whatsapp-overlay" role="dialog" aria-modal="true" aria-labelledby="whatsappTitle" aria-describedby="whatsappDescription" hidden>
+        <div class="whatsapp-card">
+            <button id="whatsappClose" class="whatsapp-close" type="button" aria-label="Close dialog">&times;</button>
+            <div class="whatsapp-mark"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+            <h2 id="whatsappTitle">Get Instant E-Brochure</h2>
+            <p id="whatsappDescription">Receive floor plans, pricing sheets, and payment schedules directly on WhatsApp.</p>
+            <form id="whatsappForm">
+                <label class="sr-only" for="whatsappNumber">Your WhatsApp number</label>
+                <input id="whatsappNumber" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Enter Your WhatsApp Number" required pattern="[+0-9() -]{8,20}" aria-describedby="whatsappNumberHelp">
+                <small id="whatsappNumberHelp">Include your country code for faster assistance.</small>
+                <button type="submit"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Get Info on WhatsApp</button>
+            </form>
+        </div>
+    </div>
+    <style>
+        .whatsapp-launcher{position:fixed;right:max(1.25rem,env(safe-area-inset-right));bottom:max(1.25rem,env(safe-area-inset-bottom));z-index:80;width:3.5rem;height:3.5rem;border:0;border-radius:50%;background:#20c96b;color:#fff;font-size:1.65rem;box-shadow:0 8px 22px #20c96b55;cursor:pointer;transition:transform .2s,box-shadow .2s}
+        .whatsapp-launcher:hover{transform:translateY(-3px);box-shadow:0 14px 34px #20c96b70}
+        .whatsapp-overlay{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:1rem;background:rgba(10,21,38,.62);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+        .whatsapp-overlay[hidden]{display:none}
+        .whatsapp-card{position:relative;width:min(100%,38rem);max-height:calc(100dvh - 2rem);overflow:auto;border:1px solid #e8dfca;border-radius:1rem;background:#fff;padding:2rem clamp(1.25rem,4vw,2rem) 1.75rem;text-align:center;box-shadow:0 24px 80px #0a152655}
+        .whatsapp-close{position:absolute;right:1rem;top:.75rem;width:2.75rem;height:2.75rem;border:0;background:transparent;color:#94a3b8;font-size:2rem;line-height:1;cursor:pointer}
+        .whatsapp-mark{display:grid;place-items:center;width:4.25rem;height:4.25rem;margin:0 auto 1rem;border-radius:50%;background:#20c96b;color:#fff;font-size:2.15rem;box-shadow:0 10px 22px #20c96b40}
+        .whatsapp-card h2{margin:0;color:#111827;font:700 clamp(1.45rem,3vw,1.9rem)/1.2 'Playfair Display',serif}
+        .whatsapp-card>p{max-width:32rem;margin:.7rem auto 1.2rem;color:#596579;font-size:clamp(.9rem,1.6vw,1.05rem);line-height:1.6}
+        #whatsappForm{display:grid;gap:.8rem;text-align:left}
+        #whatsappForm input{width:100%;min-height:4rem;border:1px solid #d6deea;border-radius:.55rem;padding:.85rem 1rem;font-size:1rem;color:#172033}
+        #whatsappForm input::placeholder{color:#9aa4b4}
+        #whatsappForm small{margin-top:-.45rem;color:#68758a;font-size:.75rem}
+        #whatsappForm button{min-height:3.75rem;border:0;border-radius:.55rem;background:#20c96b;color:#fff;font-size:1.05rem;font-weight:700;cursor:pointer}
+        #whatsappForm button:hover{background:#18b85e}
+        body.whatsapp-open{overflow:hidden}
+        @media(max-width:600px){.whatsapp-launcher{right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));width:3rem;height:3rem;font-size:1.4rem}.whatsapp-card{padding:3rem 1rem 1.15rem;border-radius:.85rem}.whatsapp-mark{width:3.5rem;height:3.5rem;font-size:1.8rem;margin-bottom:.8rem}.whatsapp-card>p{margin:.6rem auto 1rem}.whatsapp-close{right:.45rem;top:.4rem}}
+        @media(max-height:520px){.whatsapp-card{padding-top:2.5rem}.whatsapp-mark{width:3.5rem;height:3.5rem;font-size:1.8rem;margin-bottom:.8rem}.whatsapp-card>p{margin:.5rem auto 1rem}}
+    </style>
+    <script>
+        (() => {
+            const overlay = document.getElementById('whatsappDialog');
+            const launcher = document.getElementById('whatsappLauncher');
+            const closeButton = document.getElementById('whatsappClose');
+            const form = document.getElementById('whatsappForm');
+            const phoneInput = document.getElementById('whatsappNumber');
+            const storageKey = 'waPopupShown';
+            let previousFocus;
+            const openDialog = () => {
+                previousFocus = document.activeElement;
+                overlay.hidden = false;
+                document.body.classList.add('whatsapp-open');
+                try { sessionStorage.setItem(storageKey, 'true'); } catch (_) {}
+                window.setTimeout(() => phoneInput.focus(), 40);
+            };
+            const closeDialog = () => {
+                overlay.hidden = true;
+                document.body.classList.remove('whatsapp-open');
+                try { sessionStorage.setItem(storageKey, 'true'); } catch (_) {}
+                if (previousFocus && previousFocus.focus) previousFocus.focus();
+            };
+            launcher.addEventListener('click', openDialog);
+            closeButton.addEventListener('click', closeDialog);
+            overlay.addEventListener('click', (event) => { if (event.target === overlay) closeDialog(); });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !overlay.hidden) closeDialog();
+                if (event.key === 'Tab' && !overlay.hidden) {
+                    const focusable = [...overlay.querySelectorAll('button,input')];
+                    if (event.shiftKey && document.activeElement === focusable[0]) { event.preventDefault(); focusable.at(-1).focus(); }
+                    else if (!event.shiftKey && document.activeElement === focusable.at(-1)) { event.preventDefault(); focusable[0].focus(); }
+                }
+            });
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if (!form.reportValidity()) return;
+                const phone = phoneInput.value.trim();
+                const message = `Hi, I would like the SOBHA e-brochure. My WhatsApp number is ${phone}. Please share floor plans, pricing, and payment schedules.`;
+                closeDialog();
+                window.open(`https://wa.me/918004250000?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+            });
+            let seen = false;
+            try { seen = sessionStorage.getItem(storageKey) === 'true'; } catch (_) {}
+            if (!seen) window.setTimeout(openDialog, 3500);
+        })();
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
