@@ -642,6 +642,10 @@ export const builderFaq = [
   }
 ];
 
-export const popularLocations = ['Panathur', 'Hosur Road', 'Devanahalli'];
+export const popularLocations = [
+  'Thanisandra Main Road',
+  'Bagalur',
+  'Kogilu'
+];
 
 export const builderName = 'BHARTIYA GROUP';
