@@ -686,7 +686,7 @@ export const builderData = [
     "title": "Embassy Pristine",
     "badge": "Ready to Move",
     "category": "ready-to-move",
-    "theme": "IGBC Gold-Certified Eco-Luxe Waterfront Lakefront Residences",
+    "theme": "",
     "location": "Ibblur Junction, Off Outer Ring Road (ORR) & Sarjapur Road, Bellandur, South-East Bengaluru",
     "searchLocation": "ibblur junction bellandur outer ring road sarjapur road iblur lake south east bengaluru",
     "price": "₹ 5.19 Cr*",
