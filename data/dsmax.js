@@ -1,206 +1,853 @@
 export const builderData = [
     {
-        "id": "ds-max-sky-sampadha",
-        "reraId": "PRM/KA/RERA/1251/308/PR/291225/008366",
-        "title": "DS-MAX Sky Sampadha",
-        "badge": "New Launch",
-        "category": "new-launch",
-        "theme": "",
-        "location": "Manchanahalli Rd, Krishnasagara, Manchenahalli, Karnataka 562107",
-        "searchLocation": "manchanahalli road krishnasagara manchenahalli karnataka bengaluru",
-        "price": "₹ 72.36 Lakhs*",
-        "mainImg": "https://drive.google.com/drive/folders/IDpSNmtzLBCzNM9ZX0oYoAIADPEsrvGA6?usp=drive_link",
-        "gallery": [
-            "https://drive.google.com/drive/folders/IDpSNmtzLBCzNM9ZX0oYoAIADPEsrvGA6?usp=drive_link"
-        ],
-        "overview": "DS-MAX Sky Sampadha by DS-MAX Properties Pvt. Ltd. is a well-planned residential project situated on Hosur Road, Bengaluru – 562107, within 10-minute reach of Electronic City. This property consists of a 2B+S+G+22 construction and provides large-sized 2 and 3 BHK units.",
-        "specs": {
-            "possession": "",
-            "landArea": "",
-            "config": "2 & 3 BHK Apartments"
-        },
-        "floorPlans": [
-            {
-            "type": "2 BHK",
-            "sba": "1,206–1,390 Sq. Ft.",
-            "carpet": "",
-            "price": "₹ 72.36 Lakhs*",
-            "img": ""
-            },
-            {
-            "type": "3 BHK",
-            "sba": "1,572–1,645 Sq. Ft.",
-            "carpet": "",
-            "price": "₹ 1.03 Crore*",
-            "img": ""
-            }
-        ],
-        "amenities": [
-            { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
-            { "name": "Multi Gym", "icon": "fa-solid fa-dumbbell" },
-            { "name": "Landscaped Gardens", "icon": "fa-solid fa-tree" },
-            { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
-            { "name": "Club House", "icon": "fa-solid fa-house-chimney" },
-            { "name": "Cricket Practice Net", "icon": "fa-solid fa-baseball-bat-ball" },
-            { "name": "Table Tennis", "icon": "fa-solid fa-table-tennis-paddle-ball" },
-            { "name": "Sauna and Steam", "icon": "fa-solid fa-spa" },
-            { "name": "Snooker", "icon": "fa-solid fa-circle-dot" },
-            { "name": "Foosball", "icon": "fa-solid fa-gamepad" },
-            { "name": "CCTV Camera", "icon": "fa-solid fa-video" },
-            { "name": "24 Hours Security", "icon": "fa-solid fa-shield-halved" },
-            { "name": "Senior Citizens' Gazebo", "icon": "fa-solid fa-chair" },
-            { "name": "Sewage Treatment Plant", "icon": "fa-solid fa-recycle" },
-            { "name": "Parking for Cars", "icon": "fa-solid fa-square-parking" }
-        ],
-        "connectivity": [
-            { "label": "KIADB Attibele Industrial Area", "distance": "2.2 Km", "icon": "fa-solid fa-briefcase" },
-            { "label": "Delta Electronics Bommasandra Metro Station", "distance": "Nearby", "icon": "fa-solid fa-train-subway" },
-            { "label": "Heelalige Railway Station", "distance": "8.6 Km", "icon": "fa-solid fa-train" },
-            { "label": "Electronic City IT & Tech Corridors", "distance": "15.1 Km", "icon": "fa-solid fa-building" },
-            { "label": "ST.Philomena's public school", "distance": "1.6 Km", "icon": "fa-solid fa-school" },
-            { "label": "Kalppa Virusha Hospital", "distance": "3.8 Km", "icon": "fa-solid fa-hospital" },
-            { "label": "Kempegowda International Airport Bengaluru", "distance": "63.5 Km", "icon": "fa-solid fa-plane" }
-        ]
-    },
-    {
         "id": "ds-max-sky-sampurn",
-        "reraId": "PRM/KA/RERA/1250/304/PR/231726/008848",
+        "reraId": "PRM/KA/RERA/1250/304/PR/270726/008848",
         "title": "DS MAX Sky Sampurn",
         "badge": "New Launch",
         "category": "new-launch",
-        "theme": "Super Luxury Residential Community",
-        "location": "Varthur, Near Prestige Tech Forest IT Park, East Bengaluru",
-        "searchLocation": "varthur prestige tech forest east bengaluru",
-        "price": "₹ 84.42 Lakhs*",
+        "theme": "Modern High-Rise Eco-Luxe Living with 82% Open Space & Rooftop Infinity Pool",
+        "location": "Varthur, Near Prestige Tech Forest, East Bengaluru",
+        "searchLocation": "varthur gullakaipura whitefield prestige tech forest outer ring road east bengaluru",
+        "price": "₹ 86.83 L*",
         "mainImg": "",
         "gallery": [],
-        "overview": "DS MAX Sky Sampurn is a residential project by DS MAX located in Varthur, near Prestige Tech Forest IT Park, East Bengaluru[cite: 10, 12]. The project offers 2 & 3 BHK luxurious homes in a G+16-floor development[cite: 10, 12]. The project is designed as a super luxury residential community, with homes focused on comfort, lifestyle, wellness and recreation[cite: 11, 12].",
+        "overview": "DS MAX Sky Sampurn is a modern high-rise residential development by DS-MAX Properties, located in Varthur near Prestige Tech Forest in East Bengaluru. Spanning 4.62 acres with an impressive 82% open green space, the project features a single G+16 storey high-rise tower offering 615 luxury 2 and 3 BHK apartments. Highlighted by an iconic rooftop infinity pool and over 60 lifestyle amenities, the development offers high accessibility to the Whitefield IT corridor, Embassy Tech Village, and major educational hubs.",
         "specs": {
             "possession": "June 2031",
             "landArea": "4.62 Acres",
-            "config": "2 & 3 BHK Apartments"
+            "config": "2 & 3 BHK High-Rise Apartments (615 Units)"
         },
         "floorPlans": [
             {
-            "type": "2 BHK",
-            "sba": "1,206–1,363 Sq. Ft.",
-            "carpet": "",
-            "price": "₹ 84.42 Lakhs*",
-            "img": ""
+                "type": "2 BHK",
+                "sba": "1,206 - 1,363 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 86.83 L*",
+                "img": ""
             },
             {
-            "type": "3 BHK",
-            "sba": "1,685–1,954 Sq. Ft.",
-            "carpet": "",
-            "price": "₹ 1.03 Cr*",
-            "img": ""
+                "type": "3 BHK",
+                "sba": "1,685 - 1,760 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.21 Cr*",
+                "img": ""
+            },
+        ],
+        "amenities": [
+            { "name": "Rooftop Infinity Swimming Pool & Lounge", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "82% Dedicated Open Spaces & Landscaped Gardens", "icon": "fa-solid fa-tree" },
+            { "name": "Resident Clubhouse & Multipurpose Party Hall", "icon": "fa-solid fa-building-user" },
+            { "name": "Children's Play Zone & Outdoor Sports Facilities", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Yoga & Meditation Deck", "icon": "fa-solid fa-spa" },
+            { "name": "Power Backup & High-Speed Elevators", "icon": "fa-solid fa-bolt" },
+            { "name": "24/7 Gated Security & CCTV Surveillance", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Prestige Tech Forest", "distance": "1.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Varthur Main Road / SH 35", "distance": "1.5 km", "icon": "fa-solid fa-route" },
+            { "label": "Sigma Soft Tech Park", "distance": "4.5 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Manipal Hospital Varthur Road", "distance": "5.0 km", "icon": "fa-solid fa-hospital" },
+            { "label": "Kadugodi Tree Park Metro Station (Purple Line)", "distance": "8.0 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "ITPB (International Tech Park Bangalore)", "distance": "8.5 km", "icon": "fa-solid fa-building" },
+            { "label": "Kempegowda International Airport", "distance": "42.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sky-sukhino",
+        "reraId": "PRM/KA/RERA/1251/310/PR/050526/008622",
+        "title": "DS MAX Sky Sukhino",
+        "badge": "New Launch",
+        "category": "new-launch",
+        "theme": "Modern High-Rise Luxury Living with 85% Open Space",
+        "location": "Thavarekere, Off Magadi Main Road, West Bengaluru",
+        "searchLocation": "magadi main road thavarekere kadabagere challaghatta metro nice road west bengaluru",
+        "price": "₹ 89.49 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sky Sukhino is a premium high-rise residential project by DS-MAX Properties, strategically positioned off Magadi Main Road in Thavarekere, West Bengaluru. Spanning 1.6 acres with an expansive 85% open green space cover, the development features a single G+14 storey high-rise tower housing 180 luxury 2 and 3 BHK residences. Billed as 'A Home by Address, A Retreat by Design', the project offers multi-tier lifestyle amenities and seamless connectivity to Challaghatta Metro Station, NICE Road, and key industrial belts.",
+        "specs": {
+            "possession": "March 2031",
+            "landArea": "1.60 Acres",
+            "config": "Exclusive 2 & 3 BHK High-Rise Apartments (180 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,297 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 89.49 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,423 - 1,516 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 92.49 L*",
+                "img": ""
             }
         ],
         "amenities": [
-            { "name": "Rooftop Swimming Pool", "icon": "fa-solid fa-person-swimming" },
-            { "name": "Recreational Spaces", "icon": "fa-solid fa-icons" },
-            { "name": "Wellness Spaces", "icon": "fa-solid fa-spa" },
-            { "name": "Kids Engagement Area", "icon": "fa-solid fa-child-reaching" },
-            { "name": "Senior Friendly Spaces", "icon": "fa-solid fa-chair" },
-            { "name": "Landscaped Gardens", "icon": "fa-solid fa-tree" }
+            { "name": "Resident Clubhouse & Multipurpose Party Lounge", "icon": "fa-solid fa-building-user" },
+            { "name": "Swimming Pool & Dedicated Kids' Pool", "icon": "fa-solid fa-person-swimming" },
+            { "name": "85% Dedicated Open Spaces & Landscaped Gardens", "icon": "fa-solid fa-tree" },
+            { "name": "Fully Equipped Multi-Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Steam, Sauna Room & Wellness Deck", "icon": "fa-solid fa-spa" },
+            { "name": "Table Tennis, Snooker & Indoor Games Room", "icon": "fa-solid fa-table-tennis-paddle-ball" },
+            { "name": "Children's Play Area & Jogging Track", "icon": "fa-solid fa-child-reaching" },
+            { "name": "24/7 Gated Security & Sewage Treatment Plant", "icon": "fa-solid fa-shield-halved" }
         ],
         "connectivity": [
-            { "label": "Prestige Tech Forest IT Park", "distance": "2.5 km", "icon": "fa-solid fa-briefcase" },
-            { "label": "The Prodigies International School", "distance": "1.5 km", "icon": "fa-solid fa-school" },
-            { "label": "National Public School", "distance": "3.9 km", "icon": "fa-solid fa-school" },
-            { "label": "Manipal Hospital Varthur Road", "distance": "4.2 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Nexus Whitefield Mall", "distance": "6.3 km", "icon": "fa-solid fa-location-dot" },
-            { "label": "Whitefield Railway Station", "distance": "8.3 km", "icon": "fa-solid fa-train" },
-            { "label": "Kadugodi Tree Park Metro Station", "distance": "2.9 km", "icon": "fa-solid fa-train-subway" },
-            { "label": "Kempegowda International Airport", "distance": "43.2 km", "icon": "fa-solid fa-plane" }
+            { "label": "Magadi Main Road", "distance": "0.1 km", "icon": "fa-solid fa-route" },
+            { "label": "Major Arterial Road (MAR) / PRR-2", "distance": "1.0 km", "icon": "fa-solid fa-road" },
+            { "label": "Challaghatta Metro Station (Purple Line)", "distance": "3.0 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "NICE Road Junction", "distance": "7.0 km", "icon": "fa-solid fa-route" },
+            { "label": "RNS Vidyaniketan / East West Institute of Technology", "distance": "4.5 km", "icon": "fa-solid fa-school" },
+            { "label": "Machohalli & Kumbalgodu Industrial Areas", "distance": "6.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "44.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sky-sampadha",
+        "reraId": "PRM/KA/RERA/1251/308/PR/291225/008366",
+        "title": "DS MAX Sky Sampadha",
+        "badge": "New Launch",
+        "category": "new-launch",
+        "theme": "Modern Eco-Luxe High-Rise Enclave with 75% Open Space near Electronic City",
+        "location": "Attibele, Off Hosur Main Road & NH 44, South-East Bengaluru",
+        "searchLocation": "attibele hosur road nh 44 electronic city bommasandra anekal south east bengaluru",
+        "price": "₹ 72.36 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sky Sampadha is a high-rise residential development by DS-MAX Properties, strategically situated in Attibele off Hosur Main Road (NH 44) in South-East Bengaluru, just 10 minutes from Electronic City. Spanning 3.52 acres with 75% dedicated open green space, the project features a single 22-storey tower (2B + Stilt + Ground + 22 Floors) housing 550 luxury 2 and 3 BHK apartments. Designed with high space efficiency, modern amenities, and multi-sport facilities, the community provides rapid access to KIADB industrial corridors, top universities, and the Bommasandra Metro Station.",
+        "specs": {
+            "possession": "October 2030",
+            "landArea": "3.52 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (550 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,206 - 1,390 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 72.36 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,572 - 1,645 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.03 Cr*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Entrance Lounge", "icon": "fa-solid fa-building-user" },
+            { "name": "Swimming Pool & Kids' Splash Pool", "icon": "fa-solid fa-person-swimming" },
+            { "name": "75% Dedicated Open Spaces & Landscaped Gardens", "icon": "fa-solid fa-tree" },
+            { "name": "Multi-Sport Arena with Tennis Court & Cricket Pitch", "icon": "fa-solid fa-baseball" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Yoga / Meditation Deck & Reflexology Pathway", "icon": "fa-solid fa-spa" },
+            { "name": "Children's Play Area & Toddler Zone", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & 24/7 Gated CCTV Security", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "National Highway 44 (NH 44)", "distance": "1.6 km", "icon": "fa-solid fa-route" },
+            { "label": "Alliance University", "distance": "2.5 km", "icon": "fa-solid fa-school" },
+            { "label": "KIADB Attibele Industrial Area", "distance": "3.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "KIADB Bommasandra Industrial Area", "distance": "6.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Bommasandra Metro Station (Yellow Line)", "distance": "8.0 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Electronic City Phase 1 & 2", "distance": "10.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "56.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-spoorthi-nest",
+        "reraId": "PRM/KA/RERA/1251/308/PR/230126/008427",
+        "title": "DS MAX Spoorthi Nest",
+        "badge": "New Launch",
+        "category": "new-launch",
+        "theme": "Low-Density Value-Driven Living near Sarjapur-Attibele Tech Corridor",
+        "location": "S. Medihalli, Sarjapur-Attibele Road, Bidaraguppe, South-East Bengaluru",
+        "searchLocation": "sarjapur attibele road medihalli bidaraguppe electronic city anekal south east bengaluru",
+        "price": "₹ 69.96 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Spoorthi Nest is a low-rise residential development by DS-MAX Properties, located along the Sarjapur-Attibele Road at S. Medihalli in South-East Bengaluru. Spanning 1.79 acres, the project comprises 4 low-rise towers (G+4 floors) housing 186 spacious 2 and 3 BHK apartments. Designed to offer value-driven modern living, the community features vitrified tile flooring, UPVC sliding windows, a resident clubhouse, a swimming pool, and well-planned green spaces. It provides smooth connectivity to the Sarjapur IT belt, Electronic City, and key industrial parks.",
+        "specs": {
+            "possession": "December 2030",
+            "landArea": "1.79 Acres",
+            "config": "2 & 3 BHK Low-Rise Apartments (186 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK Comfort",
+                "sba": "1,272 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 69.96 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK Standard",
+                "sba": "1,395 - 1,665 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 76.73 L*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Community Hall", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Sun Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Fitness Center & Gym", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Landscaped Garden & Open Greenery", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Play Area & Indoor Recreation", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup for Common Areas", "icon": "fa-solid fa-bolt" },
+            { "name": "High-Speed Elevators", "icon": "fa-solid fa-elevator" },
+            { "name": "24/7 Gated Security & CCTV Surveillance", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Sarjapur Police Station Junction", "distance": "2.5 km", "icon": "fa-solid fa-route" },
+            { "label": "Azim Premji University", "distance": "3.8 km", "icon": "fa-solid fa-school" },
+            { "label": "Indus International School", "distance": "4.2 km", "icon": "fa-solid fa-school" },
+            { "label": "Attibele Industrial Area / NH 44", "distance": "7.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Bommasandra Metro Station (Yellow Line)", "distance": "9.5 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Electronic City Phase 1 & 2", "distance": "12.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "52.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sky-shlokam",
+        "reraId": "PRM/KA/RERA/1251/472/PR/250225/007524",
+        "title": "DS MAX Sky Shlokam",
+        "badge": "New Launch",
+        "category": "new-launch",
+        "theme": "Super-Luxurious High-Rise Eco-Living on Airport Road Corridor",
+        "location": "Navarathna Agrahara, Sadahalli, Off Airport Road / Bellary Road (NH 44), North Bengaluru",
+        "searchLocation": "navarathna agrahara sadahalli airport road bellary road nh 44 devanahalli yelahanka north bengaluru",
+        "price": "₹ 92.70 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sky Shlokam is a super-luxurious high-rise residential project by DS-MAX Properties, strategically located at Navarathna Agrahara near Sadahalli off Airport Road (NH 44) in North Bengaluru. Spanning 5.20 acres, the BIAAPA-approved development features 2 high-rise towers (G+14 floors) housing 992 premium 2 and 3 BHK residences. Designed with modern architectural standards, vitrified tile flooring, and UPVC sliding windows, the project offers quick access to Kempegowda International Airport, Prestige Tech Cloud, and upcoming metro nodes.",
+        "specs": {
+            "possession": "March 2031",
+            "landArea": "5.20 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (992 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,204 - 1,226 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 92.70 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,469 - 1,663 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.17 Cr*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Entrance Lobby", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Lounge Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Yoga & Meditation Zone", "icon": "fa-solid fa-spa" },
+            { "name": "Basketball Court & Outdoor Games Area", "icon": "fa-solid fa-basketball" },
+            { "name": "Landscaped Garden & Open Green Seating", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Play Zone", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & 24/7 Gated Security", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Bellary Road / Airport Road (NH 44)", "distance": "0.8 km", "icon": "fa-solid fa-route" },
+            { "label": "Prestige Tech Cloud IT Park", "distance": "1.5 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Doddajala Metro Station (Upcoming Blue Line)", "distance": "3.2 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Kempegowda International Airport", "distance": "7.5 km", "icon": "fa-solid fa-plane" },
+            { "label": "Stonehill International School", "distance": "8.0 km", "icon": "fa-solid fa-school" },
+            { "label": "Yelahanka Junction / Town", "distance": "11.0 km", "icon": "fa-solid fa-location-dot" },
+            { "label": "Phoenix Mall of Asia (Hebbal)", "distance": "15.0 km", "icon": "fa-solid fa-store" }
+        ]
+    },
+    {
+        "id": "ds-max-sky-stanza",
+        "reraId": "PRM/KA/RERA/1251/308/PR/281125/008287",
+        "title": "DS MAX Sky Stanza",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Nature-Inspired Modern High-Rise Sanctuary near Jigani Industrial Hub",
+        "location": "Jigani, Near APC Circle, Off Bommasandra-Jigani Main Road, South-East Bengaluru",
+        "searchLocation": "jigani apc circle bommasandra electronic city bannerghatta road south east bengaluru",
+        "price": "₹ 64.29 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sky Stanza is a modern high-rise residential township by DS-MAX Properties, located near APC Circle in Jigani, South-East Bengaluru. Spanning 3.50 acres, the development comprises 2 high-rise towers (G+14 floors) housing 465 luxury 2 and 3 BHK apartments. Designed to harmonize serene nature-centric living with urban convenience, the project features vitrified tile flooring, UPVC sliding windows, and comprehensive lifestyle amenities with quick access to the Jigani Industrial Area, Electronic City, and the Bommasandra Metro Station.",
+        "specs": {
+            "possession": "October 2030",
+            "landArea": "3.50 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (465 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,169 - 1,260 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 64.29 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,482 - 1,644 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 81.51 L*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Exclusive Lounge", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Sun Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Steam, Sauna Room & Wellness Deck", "icon": "fa-solid fa-spa" },
+            { "name": "Landscaped Open Greenery & Quiet Charm Gardens", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Play Park & Recreations", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & High-Speed Elevators", "icon": "fa-solid fa-bolt" },
+            { "name": "24/7 Gated Security & CCTV Surveillance", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "APC Circle Jigani", "distance": "0.5 km", "icon": "fa-solid fa-route" },
+            { "label": "Jigani Industrial Area", "distance": "1.2 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "HCL Technologies Campus / Biocon Park", "distance": "3.5 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Alliance University", "distance": "4.8 km", "icon": "fa-solid fa-school" },
+            { "label": "Bommasandra Metro Station (Yellow Line)", "distance": "6.5 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Electronic City Phase 1", "distance": "9.0 km", "icon": "fa-solid fa-location-dot" },
+            { "label": "Kempegowda International Airport", "distance": "58.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-swastika",
+        "reraId": "PRM/KA/RERA/1251/309/PR/030524/006841",
+        "title": "DS MAX Swastika",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Low-Density Boutique Eco-Living Enclave near Hennur IT Corridor",
+        "location": "Anagalapura, Off Hennur Main Road & Bagalur Road, North Bengaluru",
+        "searchLocation": "anagalapura hennur main road bagalur road doddagubbi manyata tech park north bengaluru",
+        "price": "₹ 74.76 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Swastika is an exclusive low-density residential development by DS-MAX Properties, located in Anagalapura off Hennur Main Road and Bagalur Road in North Bengaluru. Spanning 0.99 acres, the boutique enclave comprises 2 low-rise blocks (G+4 floors) housing just 68 premium 2 and 3 BHK apartments. Billed as a peaceful retreat built for modern productivity, the community features spacious homes with vitrified tile flooring, UPVC sliding windows, and curated lifestyle amenities. It offers excellent connectivity to Manyata Tech Park, Bhartiya City, top international schools, and the upcoming Nagawara Metro Station.",
+        "specs": {
+            "possession": "March 2027",
+            "landArea": "0.99 Acres",
+            "config": "Exclusive 2 & 3 BHK Low-Rise Apartments (68 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,068 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 74.76 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,451 - 1,742 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.01 Cr*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Multipurpose Party Hall", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Lounge Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Landscaped Garden & Open Recreation Spaces", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Outdoor Play Zone", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup for Common Areas & Elevators", "icon": "fa-solid fa-bolt" },
+            { "name": "Solid Waste Management & Sewage Treatment", "icon": "fa-solid fa-leaf" },
+            { "name": "24/7 Gated Security & CCTV Surveillance", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Hennur Main Road / Bagalur Road", "distance": "1.2 km", "icon": "fa-solid fa-route" },
+            { "label": "New Horizon International School / St. Norbert School", "distance": "2.5 km", "icon": "fa-solid fa-school" },
+            { "label": "Kristu Jayanti College", "distance": "5.9 km", "icon": "fa-solid fa-graduation-cap" },
+            { "label": "Bhartiya Mall of Bengaluru / Bhartiya City IT Park", "distance": "4.1 km", "icon": "fa-solid fa-store" },
+            { "label": "Upcoming Nagawara Metro Station", "distance": "8.5 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Manyata Tech Park", "distance": "11.1 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "22.0 km", "icon": "fa-solid fa-plane" }
         ]
     },
     {
         "id": "ds-max-sky-fields",
         "reraId": "PRM/KA/RERA/1250/304/PR/251024/007179",
         "title": "DS MAX Sky Fields",
-        "badge": "New Launch",
-        "category": "new-launch",
-        "theme": "Super Luxury Residential Community",
-        "location": "Soukya Road, Samethanahalli, Whitefield, Bengaluru",
-        "searchLocation": "soukya road samethanahalli whitefield bengaluru",
-        "price": "₹ 92.47 Lakhs*",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Contemporary High-Rise Eco-Living Enclave with 60+ Lifestyle Amenities",
+        "location": "Anekal, Off Hosur Road & Chandapura-Anekal Main Road, South-East Bengaluru",
+        "searchLocation": "anekal chandapura hosur road electronic city bommasandra south east bengaluru",
+        "price": "₹ 92.47 L*",
         "mainImg": "",
         "gallery": [],
-        "overview": "DS-MAX Sky Fields is a residential development by DS-MAX Properties Pvt. Ltd. located on Soukya Road, Whitefield, in East Bengaluru[cite: 3]. Spread across 4.92 acres, it features 870 homes within a G + 14 floor structure[cite: 3]. The project features 85% open spaces, over 30 luxury amenities and an onsite convenience supermarket[cite: 3].",
+        "overview": "DS MAX Sky Fields is a major high-rise residential development by DS-MAX Properties, located in Anekal off Chandapura-Anekal Road in South-East Bengaluru. Spanning 5.14 acres with generous open green landscapes, the project comprises 4 high-rise towers (G+14 floors) housing 716 thoughtfully designed 2, 3, and 4 BHK luxury residences. Featuring modern architectural design, vitrified tile flooring, and over 60 lifestyle amenities including a rooftop swimming pool and resident clubhouse, the township offers excellent access to Jigani-Bommasandra industrial hubs and Electronic City.",
         "specs": {
             "possession": "September 2030",
-            "landArea": "4.92 Acres",
-            "config": "2 & 3 BHK Apartments"
+            "landArea": "5.14 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (716 Units)"
         },
         "floorPlans": [
             {
                 "type": "2 BHK",
-                "sba": "1,201–1,207 Sq. Ft.",
+                "sba": "1,201 - 1,207 Sq. Ft.",
                 "carpet": "",
-                "price": "₹ 92.47 Lakhs*",
+                "price": "₹ 92.47 L*",
                 "img": ""
             },
             {
                 "type": "3 BHK",
-                "sba": "1,388–1,738 Sq. Ft.",
+                "sba": "1,388 - 1,738 Sq. Ft.",
                 "carpet": "",
                 "price": "₹ 1.06 Cr*",
                 "img": ""
             }
         ],
         "amenities": [
-            { "name": "Gymnasium", "icon": "fa-solid fa-dumbbell" },
-            { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
-            { "name": "Badminton Court", "icon": "fa-solid fa-table-tennis-paddle-ball" },
-            { "name": "Basketball Court", "icon": "fa-solid fa-basketball" },
-            { "name": "Jogging Track", "icon": "fa-solid fa-person-running" },
-            { "name": "Cycling Track", "icon": "fa-solid fa-person-biking" },
-            { "name": "Rock Climbing Wall", "icon": "fa-solid fa-mountain" },
-            { "name": "Yoga/Meditation Deck", "icon": "fa-solid fa-spa" },
-            { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
-            { "name": "Skating Rink", "icon": "fa-solid fa-person-skating" },
-            { "name": "Kids Pool", "icon": "fa-solid fa-water" },
-            { "name": "Clubhouse", "icon": "fa-solid fa-house-chimney" },
-            { "name": "Indoor Games Room", "icon": "fa-solid fa-gamepad" },
-            { "name": "Billiards", "icon": "fa-solid fa-circle-dot" },
-            { "name": "Cards Room", "icon": "fa-solid fa-icons" },
-            { "name": "Landscaped Garden", "icon": "fa-solid fa-tree" },
-            { "name": "Party Lawn", "icon": "fa-solid fa-champagne-glasses" },
-            { "name": "Gazebo", "icon": "fa-solid fa-campground" },
-            { "name": "Amphitheatre", "icon": "fa-solid fa-masks-theater" },
-            { "name": "Senior Citizen Sit-out", "icon": "fa-solid fa-chair" },
-            { "name": "Reflexology Park", "icon": "fa-solid fa-shoe-prints" },
-            { "name": "Barbecue Zone", "icon": "fa-solid fa-fire" },
-            { "name": "In-house Supermarket", "icon": "fa-solid fa-cart-shopping" },
-            { "name": "Grand Entrance Lobby", "icon": "fa-solid fa-door-open" },
-            { "name": "24/7 Security with CCTV", "icon": "fa-solid fa-shield-halved" },
-            { "name": "Full Power Backup", "icon": "fa-solid fa-bolt" }
+            { "name": "Resident Clubhouse & Community Hall", "icon": "fa-solid fa-building-user" },
+            { "name": "Rooftop Swimming Pool & Lounge Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Yoga & Meditation Pavilion", "icon": "fa-solid fa-spa" },
+            { "name": "Multipurpose Sports Court & Cricket Practice Pitch", "icon": "fa-solid fa-baseball" },
+            { "name": "Landscaped Open Greenery & Children's Play Zone", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & High-Speed Elevators", "icon": "fa-solid fa-bolt" },
+            { "name": "24/7 Gated Security & CCTV Surveillance", "icon": "fa-solid fa-shield-halved" }
         ],
         "connectivity": [
-            { "label": "Bangalore International Academy", "distance": "0.9 km", "icon": "fa-solid fa-school" },
-            { "label": "Indian Oil Petrol Pump, Kadugodi-Soukya Road junction", "distance": "2.2 km", "icon": "fa-solid fa-gas-pump" },
-            { "label": "Delhi Public School Whitefield", "distance": "4.5 km", "icon": "fa-solid fa-school" },
-            { "label": "Channasandra Circle Local Market", "distance": "4.8 km", "icon": "fa-solid fa-store" },
-            { "label": "MVJ College of Engineering", "distance": "4.9 km", "icon": "fa-solid fa-graduation-cap" },
-            { "label": "Whitefield Railway Station", "distance": "6.4 km", "icon": "fa-solid fa-train" },
-            { "label": "Winmore Academy", "distance": "6.5 km", "icon": "fa-solid fa-school" },
-            { "label": "Hope Farm Metro Station", "distance": "6.9 km", "icon": "fa-solid fa-train-subway" },
-            { "label": "Shell Petrol Pump, Soukya Road", "distance": "7.1 km", "icon": "fa-solid fa-gas-pump" },
-            { "label": "TATA MD Healthcare Centre", "distance": "7.3 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Kadugodi Tree Park", "distance": "7.5 km", "icon": "fa-solid fa-tree" },
-            { "label": "Kadugodi Tree Park Metro Station", "distance": "7.5 km", "icon": "fa-solid fa-train-subway" },
-            { "label": "Whitefield (Kadugodi) Metro Station", "distance": "7.7 km", "icon": "fa-solid fa-train-subway" },
-            { "label": "GR Tech Park", "distance": "7.8 km", "icon": "fa-solid fa-briefcase" },
-            { "label": "Samethanahalli Lake", "distance": "1.8 km", "icon": "fa-solid fa-water" },
-            { "label": "International Tech Park Bangalore (ITPB)", "distance": "8.2 km", "icon": "fa-solid fa-briefcase" },
-            { "label": "Nexus Mall Whitefield", "distance": "8.2 km", "icon": "fa-solid fa-location-dot" },
-            { "label": "Aster Hospital Whitefield", "distance": "8.4 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Capitol Towers Tech Park", "distance": "8.5 km", "icon": "fa-solid fa-briefcase" },
-            { "label": "PVR Cinemas at Park Square Mall", "distance": "8.6 km", "icon": "fa-solid fa-film" },
-            { "label": "Manipal Hospital Whitefield", "distance": "9.2 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Park Square Mall", "distance": "9.3 km", "icon": "fa-solid fa-location-dot" },
-            { "label": "Kempegowda International Airport (BLR)", "distance": "42 km", "icon": "fa-solid fa-plane" }
+            { "label": "Anekal Town Centre / Bus Station", "distance": "1.5 km", "icon": "fa-solid fa-bus" },
+            { "label": "Anekal Railway Station", "distance": "2.8 km", "icon": "fa-solid fa-train" },
+            { "label": "Chandapura Circle / Hosur Main Road (NH 44)", "distance": "11.0 km", "icon": "fa-solid fa-route" },
+            { "label": "Alliance University", "distance": "7.5 km", "icon": "fa-solid fa-school" },
+            { "label": "Jigani Industrial Hub", "distance": "12.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Bommasandra Metro Station (Yellow Line)", "distance": "14.0 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Electronic City Phase 1", "distance": "18.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "62.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sky-sisira",
+        "reraId": "PRM/KA/RERA/1250/301/PR/251024/007178",
+        "title": "DS MAX Sky Sisira",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Season of Refined High-Rise Living with Japanese Garden & Eco-Luxe Wellness",
+        "location": "Rajanukunte, Off Doddaballapur Main Road & IVC Road, Yelahanka, North Bengaluru",
+        "searchLocation": "rajanukunte doddaballapur road ivc road yelahanka airport corridor north bengaluru",
+        "price": "₹ 71.00 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sky Sisira (also known as DS MAX Sky Sisra) is a premium high-rise residential development by DS-MAX Properties, strategically positioned at Rajanukunte off Doddaballapur Road and IVC Road in North Bengaluru. Spanning 5.00 acres, the township features 5 high-rise towers (2B + G + 14 Floors) housing 870 luxury 2 and 3 BHK apartments. Designed around the concept of 'A Season of Refined Living', the community integrates a signature Japanese Garden, dedicated pet wash stations, steam and sauna wellness decks, and comprehensive lifestyle amenities with seamless access to Kempegowda International Airport, Yelahanka New Town, and major tech SEZs.",
+        "specs": {
+            "possession": "December 2028",
+            "landArea": "5.00 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (870 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,182 - 1,190 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 71.00 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,431 - 1,697 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 91.58 L*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Entrance Lobby", "icon": "fa-solid fa-building-user" },
+            { "name": "Signature Japanese Garden & Landscaped Parks", "icon": "fa-solid fa-torii-gate" },
+            { "name": "Swimming Pool & Dedicated Kids' Pool", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Steam, Sauna Room & Reflexology Pathway", "icon": "fa-solid fa-spa" },
+            { "name": "Children's Play Area & Dedicated Pet Wash Station", "icon": "fa-solid fa-dog" },
+            { "name": "Party Hall & Outdoor Recreation Space", "icon": "fa-solid fa-people-roof" },
+            { "name": "Power Backup & 24/7 Gated Security", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Rajanukunte Railway Station / Junction", "distance": "2.0 km", "icon": "fa-solid fa-train" },
+            { "label": "Doddaballapur Main Road", "distance": "2.5 km", "icon": "fa-solid fa-route" },
+            { "label": "Presidency University / Nitte Meenakshi Institute", "distance": "5.5 km", "icon": "fa-solid fa-graduation-cap" },
+            { "label": "Yelahanka New Town / Junction", "distance": "9.0 km", "icon": "fa-solid fa-location-dot" },
+            { "label": "Foxconn & Ecopolis SEZ", "distance": "12.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "18.0 km", "icon": "fa-solid fa-plane" },
+            { "label": "Phoenix Mall of Asia (Hebbal)", "distance": "20.0 km", "icon": "fa-solid fa-store" }
+        ]
+    },
+    {
+        "id": "ds-max-samyak",
+        "reraId": "PRM/KA/RERA/1251/310/PR/150223/005721",
+        "title": "DS MAX Samyak",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Urban High-Rise Eco-Living Enclave near Mysore Road & Challaghatta Metro Corridor",
+        "location": "Bheemanakuppe, Off Mysore Main Road, Kengeri Hobli, West Bengaluru",
+        "searchLocation": "kengeri bheemanakuppe mysore road challaghatta metro rajrajeshwari medical college west bengaluru",
+        "price": "₹ 83.51 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Samyak is a high-rise residential development by DS-MAX Properties, strategically positioned at Bheemanakuppe off Mysore Main Road in Kengeri Hobli, West Bengaluru. Spanning 3 acres, the community features 4 high-rise blocks (2B + G + 14 Floors) housing 600 thoughtfully designed 2 and 3 BHK apartments. Designed with vitrified tile flooring, UPVC sliding windows, and a rich collection of modern amenities, the project offers fast access to Challaghatta Metro Station, NICE Road, RajaRajeswari Medical College, and major tech-industrial hubs.",
+        "specs": {
+            "possession": "January 2028",
+            "landArea": "3.00 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (600 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,193 - 1,213 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 83.51 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,367 - 1,562 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 98.42 L*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Entrance Lobby", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Kids' Pool", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Steam, Sauna & Relaxation Deck", "icon": "fa-solid fa-spa" },
+            { "name": "Basketball Court & Outdoor Sports Amenities", "icon": "fa-solid fa-basketball" },
+            { "name": "Landscaped Open Greenery & Children's Play Zone", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & High-Speed Elevators", "icon": "fa-solid fa-bolt" },
+            { "name": "24/7 Gated Security & Intercom Infrastructure", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Mysore Main Road (SH 17 / NH 275)", "distance": "0.8 km", "icon": "fa-solid fa-route" },
+            { "label": "East West College of Engineering", "distance": "1.2 km", "icon": "fa-solid fa-school" },
+            { "label": "Challaghatta Metro Station (Purple Line)", "distance": "2.5 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "RajaRajeswari Medical College & Hospital", "distance": "3.0 km", "icon": "fa-solid fa-hospital" },
+            { "label": "Kengeri Railway Station / Bus Terminal", "distance": "5.0 km", "icon": "fa-solid fa-train" },
+            { "label": "NICE Ring Road Junction", "distance": "5.5 km", "icon": "fa-solid fa-road" },
+            { "label": "Kempegowda International Airport", "distance": "48.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sky-blossom",
+        "reraId": "PRM/KA/RERA/1251/310/PR/210324/006724",
+        "title": "DS MAX Sky Blossom",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Super-Luxurious High-Rise Eco-Living Enclave near Silk Board & Hosur Road Corridor",
+        "location": "Lakshmi Layout, Begur, Off Hosur Road, South Bengaluru",
+        "searchLocation": "begur lakshmi layout silk board singasandra hosur road electronic city south bengaluru",
+        "price": "₹ 94.92 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sky Blossom is an ultra-luxury high-rise residential development by DS-MAX Properties, located in Begur near Silk Board and Hosur Main Road in South Bengaluru. Spanning 1.52 acres, the project features a single high-rise tower (2B + G + 14 Floors) comprising 255 premium 2 and 3 BHK apartments. Built with modern architectural standards, vitrified tile flooring, hardwood profiled doors, and UPVC sliding windows, the community offers high-end lifestyle amenities, reflexology pathways, and fast access to Electronic City, HSR Layout, and major IT parks.",
+        "specs": {
+            "possession": "February 2029",
+            "landArea": "1.52 Acres",
+            "config": "Super-Luxurious 2 & 3 BHK High-Rise Apartments (255 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,217 - 1,254 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 94.92 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,380 - 1,858 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.15 Cr*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Opulent Grand Resident Lobby & Clubhouse", "icon": "fa-solid fa-building-user" },
+            { "name": "Swimming Pool & Kids' Splash Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Fitness Studio & Gym", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Reflexology Pathway & Yoga Lawn", "icon": "fa-solid fa-spa" },
+            { "name": "Kids Corner & Toddlers Park", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Landscaped Gardens & Open Seating Decks", "icon": "fa-solid fa-tree" },
+            { "name": "Power Backup & High-Speed Elevators", "icon": "fa-solid fa-bolt" },
+            { "name": "24/7 Gated Security & Intercom Infrastructure", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Begur Main Road", "distance": "0.5 km", "icon": "fa-solid fa-route" },
+            { "label": "Singasandra Metro Station (Yellow Line)", "distance": "2.8 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Hosur Main Road (NH 44)", "distance": "3.2 km", "icon": "fa-solid fa-route" },
+            { "label": "Silk Board Junction", "distance": "6.5 km", "icon": "fa-solid fa-location-dot" },
+            { "label": "Electronic City Phase 1", "distance": "7.2 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "HSR Layout", "distance": "7.5 km", "icon": "fa-solid fa-building" },
+            { "label": "Kempegowda International Airport", "distance": "45.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sky-sanman",
+        "reraId": "PRM/KA/RERA/1251/308/PR/160824/006973",
+        "title": "DS MAX Sky Sanman",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Super-Luxurious High-Rise Eco-Living Enclave near Electronic City Phase 1",
+        "location": "S. Bingipura, Begur-Koppa Road, Off Electronic City & Bannerghatta Road, South Bengaluru",
+        "searchLocation": "bingipura begur koppa road electronic city phase 1 candor international school bannerghatta road south bengaluru",
+        "price": "₹ 97.30 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sky Sanman (also known as DS MAX Sanman) is a super-luxurious high-rise residential development by DS-MAX Properties, located along Begur-Koppa Road at S. Bingipura in South Bengaluru. Spanning 5.67 acres, the community features 4 high-rise towers (2B + G + 14 Floors) comprising 990 thoughtfully designed 2 and 3 BHK apartments. Featuring modern architectural design, vitrified tile flooring, hardwood doors, and UPVC sliding windows, the project is equipped with a Japanese garden, reflexology pathway, sports facilities, and offers excellent connectivity to Electronic City Phase 1, Candor International School, and the Pink & Yellow Line Metro corridors.",
+        "specs": {
+            "possession": "January 2030",
+            "landArea": "5.67 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (990 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "3 BHK Signature",
+                "sba": "1,497 - 1,859 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 97.30 L*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Multipurpose Party Hall", "icon": "fa-solid fa-building-user" },
+            { "name": "Swimming Pool & Dedicated Toddler Pool", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Signature Japanese Garden & Gazebo", "icon": "fa-solid fa-torii-gate" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Steam, Sauna Room & Reflexology Pathway", "icon": "fa-solid fa-spa" },
+            { "name": "Half Basketball Court, Skating Rink & Cricket Pitch", "icon": "fa-solid fa-basketball" },
+            { "name": "Children's Play Area & Dedicated Pet Wash Station", "icon": "fa-solid fa-dog" },
+            { "name": "Power Backup & 24/7 Gated Security", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Candor International School", "distance": "1.2 km", "icon": "fa-solid fa-school" },
+            { "label": "Broadcom India / Wipro Electronic City Campus", "distance": "3.8 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Electronic City Phase 1 / Infosys Campus", "distance": "4.5 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "NICE Road Junction", "distance": "4.3 km", "icon": "fa-solid fa-route" },
+            { "label": "Kalena Agrahara Metro Station (Upcoming Pink Line)", "distance": "6.0 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Infosys Foundation Konappana Agrahara Metro Station (Yellow Line)", "distance": "5.7 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Kempegowda International Airport", "distance": "48.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sista-grand",
+        "reraId": "PRM/KA/RERA/1251/310/PR/151223/006489",
+        "title": "DS MAX Sista Grand",
+        "badge": "Ready to Move",
+        "category": "ready-to-move",
+        "theme": "Low-Density Boutique Luxury Enclave with Modern Urban Comforts",
+        "location": "Banashankari 5th Stage, Bharath Housing Society Layout, Uttarahalli, South Bengaluru",
+        "searchLocation": "banashankari 5th stage bharath housing society layout uttarahalli subramanyapura vajarahalli metro south bengaluru",
+        "price": "₹ 1.46 Cr*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sista Grand is a premium low-density residential development by DS-MAX Properties, located in Banashankari 5th Stage (Bharath Housing Society Layout), Uttarahalli in South Bengaluru. Spanning 2.20 acres, the boutique project features a low-rise structure (B + S + G + 3 Floors) comprising 212 spacious 3 and 4 BHK luxury apartments. Designed to provide serene and elegant living, the community features hardwood timber doors, UPVC sliding windows, vitrified tile flooring, a swimming pool, a fully equipped gym, and reflexology pathways, offering rapid access to Vajarahalli Metro Station, Kanakapura Road, and Mysore Road.",
+        "specs": {
+            "possession": "December 2027",
+            "landArea": "2.20 Acres",
+            "config": "3 & 4 BHK Low-Rise Apartments (212 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "3 BHK",
+                "sba": "1,458 - 1,652 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.45 Cr*",
+                "img": ""
+            },
+            {
+                "type": "4 BHK",
+                "sba": "1,928 - 2,175 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.92 Cr*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Entrance Lobby", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Toddler Pool", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Steam, Sauna Room & Wellness Deck", "icon": "fa-solid fa-spa" },
+            { "name": "Multipurpose Party Hall", "icon": "fa-solid fa-people-roof" },
+            { "name": "Landscaped Garden & Open Green Spaces", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Play Area & Indoor Recreation", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & 24/7 Gated CCTV Security", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Uttarahalli Main Road", "distance": "1.0 km", "icon": "fa-solid fa-route" },
+            { "label": "Subramanyapura Police Station / Lake", "distance": "1.8 km", "icon": "fa-solid fa-location-dot" },
+            { "label": "Vajarahalli Metro Station (Green Line)", "distance": "3.2 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Kanakapura Main Road", "distance": "3.5 km", "icon": "fa-solid fa-route" },
+            { "label": "RajaRajeswari Medical College / Mysore Road", "distance": "6.0 km", "icon": "fa-solid fa-hospital" },
+            { "label": "Kengeri Bus Terminal Metro Station (Purple Line)", "distance": "6.5 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Kempegowda International Airport", "distance": "46.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sahara-grand",
+        "reraId": "PRM/KA/RERA/1251/308/PR/160824/006972",
+        "title": "DS MAX Sahara Grand",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Low-Density Boutique Living with Modern Urban Comforts",
+        "location": "Somasundarapalya, HSR Layout Sector 2 Extension, Kudlu, South Bengaluru",
+        "searchLocation": "hsr layout somasundarapalya kudlu haralur road electronic city silk board south bengaluru",
+        "price": "₹ 1.01 Cr*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sahara Grand is a premium low-density residential project by DS-MAX Properties, strategically situated at Somasundarapalya in the HSR Layout Sector 2 extension corridor (Kudlu) in South Bengaluru. Spanning 2.50 acres, the boutique enclave features low-rise blocks (G+4 floors) housing 220 spacious 2 and 3 BHK luxury residences. Built with high-grade vitrified tile flooring, UPVC sliding windows, and quality timber doors, the project integrates lifestyle amenities like a swimming pool, clubhouse, and fitness center, providing effortless connectivity to HSR Layout, Koramangala, and Electronic City.",
+        "specs": {
+            "possession": "January 2029",
+            "landArea": "3.14 Acres",
+            "config": "2 & 3 BHK Low-Rise Apartments (220 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "3 BHK",
+                "sba": "1,446 - 1,652 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.01 Cr*",
+                "img": ""
+            },
+            {
+                "type": "4 BHK",
+                "sba": "1,812 - 1,922 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 1.44 Cr*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Entrance Lobby", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Sun Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Steam, Sauna Room & Wellness Deck", "icon": "fa-solid fa-spa" },
+            { "name": "Multipurpose Party Hall", "icon": "fa-solid fa-people-roof" },
+            { "name": "Landscaped Open Greenery & Garden Spaces", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Play Area & Indoor Games", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & 24/7 Gated Security", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Somasundarapalya Lake Park", "distance": "0.5 km", "icon": "fa-solid fa-tree" },
+            { "label": "HSR Layout Sector 2 / Sector 3", "distance": "1.5 km", "icon": "fa-solid fa-location-dot" },
+            { "label": "Hosur Main Road / Kudlu Gate", "distance": "2.8 km", "icon": "fa-solid fa-route" },
+            { "label": "Singasandra Metro Station (Yellow Line)", "distance": "3.2 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Silk Board Junction / Koramangala", "distance": "5.5 km", "icon": "fa-solid fa-building" },
+            { "label": "Electronic City Phase 1", "distance": "7.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "44.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-sky-samurai",
+        "reraId": "PRM/KA/RERA/1250/304/PR/150224/006622",
+        "title": "DS MAX Sky Samurai",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Japanese-Inspired Modern High-Rise Living in Whitefield East Corridor",
+        "location": "Soukya Road, Kacharakanahalli, Whitefield Extension, East Bengaluru",
+        "searchLocation": "soukya road whitefield kacharakanahalli hope farm itpl hoskote east bengaluru",
+        "price": "₹ 78.38 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Sky Samurai is a Japanese-inspired high-rise residential development by DS-MAX Properties, strategically positioned along Soukya Road in Whitefield Extension (Kacharakanahalli), East Bengaluru. Spanning 1.79 acres, the development features a high-rise tower (2B + G + 14 Floors) housing 280 premium 2 and 3 BHK apartments. Designed to blend serene, zen-inspired living with urban functionality, the community offers top-tier amenities including a swimming pool, clubhouse, sauna, and sports facilities with rapid access to ITPL, Hope Farm Metro Station, and major tech corridors.",
+        "specs": {
+            "possession": "December 2028",
+            "landArea": "1.79 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (280 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "1,104 - 1,191 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 78.38 L*",
+                "img": ""
+            },
+            {
+                "type": "3 BHK",
+                "sba": "1,351 - 1,632 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 97.27 L*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Entrance Lobby", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Sun Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Steam, Sauna Room & Relaxation Deck", "icon": "fa-solid fa-spa" },
+            { "name": "Table Tennis, Snooker & Indoor Recreation Room", "icon": "fa-solid fa-table-tennis-paddle-ball" },
+            { "name": "Cricket Pitch & Outdoor Sports Area", "icon": "fa-solid fa-baseball" },
+            { "name": "Landscaped Garden & Avenue Seating", "icon": "fa-solid fa-tree" },
+            { "name": "Power Backup & 24/7 Gated Security", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "Soukya Road", "distance": "0.1 km", "icon": "fa-solid fa-route" },
+            { "label": "Bangalore International Academy", "distance": "1.5 km", "icon": "fa-solid fa-school" },
+            { "label": "MVJ College of Engineering", "distance": "4.5 km", "icon": "fa-solid fa-graduation-cap" },
+            { "label": "Hope Farm Junction & Metro Station (Purple Line)", "distance": "6.0 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Sri Sathya Sai Super Speciality Hospital", "distance": "7.2 km", "icon": "fa-solid fa-hospital" },
+            { "label": "ITPL (International Tech Park Bangalore)", "distance": "8.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "38.0 km", "icon": "fa-solid fa-plane" }
+        ]
+    },
+    {
+        "id": "ds-max-spoorthi",
+        "reraId": "PRM/KA/RERA/1251/308/PR/290122/004660",
+        "title": "DS MAX Spoorthi",
+        "badge": "Ready to Move",
+        "category": "ready-to-move",
+        "theme": "Low-Density Community Living on Sarjapur-Attibele Tech Corridor",
+        "location": "BEML Cooperative Society Layout, S. Medihalli, Sarjapur-Attibele Road, South-East Bengaluru",
+        "searchLocation": "sarjapur attibele road medihalli beml layout electronic city anekal south east bengaluru",
+        "price": "₹ 60.01 L*",
+        "mainImg": "",
+        "gallery": [],
+        "overview": "DS MAX Spoorthi is a low-rise residential enclave by DS-MAX Properties, situated along the Sarjapur-Attibele Road at S. Medihalli in South-East Bengaluru. Spanning 3.57 acres across 8 low-rise blocks (G+4 Floors) with 436 units, the project offers functional 2 BHK apartments crafted for modern lifestyle comfort. Featuring vitrified tile flooring, UPVC sliding windows, a resident clubhouse, a swimming pool, and landscaped open green spaces, the development offers smooth connectivity to Sarjapur town, Electronic City, and key educational hubs like Azim Premji University.",
+        "specs": {
+            "possession": "December 2026",
+            "landArea": "3.57 Acres",
+            "config": "2 BHK Low-Rise Apartments (436 Units)"
+        },
+        "floorPlans": [
+            {
+                "type": "2 BHK",
+                "sba": "968 Sq. Ft.",
+                "carpet": "",
+                "price": "₹ 60.01 L*",
+                "img": ""
+            }
+        ],
+        "amenities": [
+            { "name": "Resident Clubhouse & Community Hall", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Lounge", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Landscaped Open Green Spaces & Jogging Track", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Outdoor Play Zone", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup for Common Areas & Elevators", "icon": "fa-solid fa-bolt" },
+            { "name": "Intercom Facility & High-Speed Elevators", "icon": "fa-solid fa-elevator" },
+            { "name": "24/7 Gated Security & CCTV Surveillance", "icon": "fa-solid fa-shield-halved" }
+        ],
+        "connectivity": [
+            { "label": "St. Philomena's Central School", "distance": "0.85 km", "icon": "fa-solid fa-school" },
+            { "label": "Sarjapur Main Road Junction", "distance": "1.5 km", "icon": "fa-solid fa-route" },
+            { "label": "Azim Premji University", "distance": "4.8 km", "icon": "fa-solid fa-school" },
+            { "label": "Attibele Industrial Area / NH 44", "distance": "7.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Bommasandra Metro Station (Yellow Line)", "distance": "9.5 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Electronic City Phase 1", "distance": "12.0 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "52.0 km", "icon": "fa-solid fa-plane" }
         ]
     },
     {
@@ -209,238 +856,100 @@ export const builderData = [
         "title": "DS MAX Sukruth",
         "badge": "Ready to Move",
         "category": "ready-to-move",
-        "theme": "Modern Residential Apartments",
-        "location": "Madiwala, Kasaba Hobli, Chandapura, Bengaluru, Karnataka 562107",
-        "searchLocation": "madiwala kasaba hobli chandapura bengaluru",
-        "price": "₹ 51.70 Lakhs*",
+        "theme": "Peaceful Low-Density Living with Natural Lighting on Hosur Road Corridor",
+        "location": "Thirumagondanahalli Road, Madivala, Off Chandapura-Anekal Main Road & Hosur Road (NH 44), South-East Bengaluru",
+        "searchLocation": "chandapura thirumagondanahalli madivala hosur road anekal bommasandra electronic city south east bengaluru",
+        "price": "₹ 56.40 L*",
         "mainImg": "",
         "gallery": [],
-        "overview": "DS-MAX Sukruth is a residential development by DS-MAX Properties Pvt. Ltd. located in Chandapura, South Bengaluru[cite: 25, 28]. Spread across 2.22 acres, it features 312 apartments within a G + 3 floor structure[cite: 25, 28]. The project offers gated community living with over 13 lifestyle amenities, eco-friendly features, and seamless connectivity to Bommasandra and Electronic City[cite: 25, 28].",
+        "overview": "DS MAX Sukruth is a modern low-rise residential development by DS-MAX Properties, located off Hosur Main Road at Madivala near Chandapura in South-East Bengaluru. Spanning 2.54 acres, the project features low-rise blocks (G+3 Floors) housing 304 thoughtfully designed 2 and 3 BHK apartments. Built with vitrified tile flooring, Redsal wood doors, and aluminum/UPVC sliding windows, the community offers peaceful and well-ventilated living loaded with lifestyle amenities such as a resident clubhouse, swimming pool, landscaped gardens, and quick connectivity to the Bommasandra Metro Station and Electronic City.",
         "specs": {
             "possession": "February 2026",
-            "landArea": "2.22 Acres",
-            "config": "2 BHK Apartments"
+            "landArea": "2.54 Acres",
+            "config": "2 & 3 BHK Low-Rise Apartments (304 Units)"
         },
         "floorPlans": [
             {
-                "type": "2 BHK",
-                "sba": "940–969 Sq. Ft.",
+                "type": "2 BHK Comfort",
+                "sba": "940 - 969 Sq. Ft.",
                 "carpet": "",
-                "price": "₹ 51.70 Lakhs*",
+                "price": "₹ 56.40 L*",
                 "img": ""
             }
         ],
         "amenities": [
-            { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
-            { "name": "Clubhouse", "icon": "fa-solid fa-house-chimney" },
-            { "name": "Multi-Gym", "icon": "fa-solid fa-dumbbell" },
-            { "name": "Table Tennis", "icon": "fa-solid fa-table-tennis-paddle-ball" },
-            { "name": "Snooker / Billiards", "icon": "fa-solid fa-circle-dot" },
-            { "name": "Foosball", "icon": "fa-solid fa-gamepad" },
-            { "name": "Chess", "icon": "fa-solid fa-chess" },
-            { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
-            { "name": "Avenue Seating", "icon": "fa-solid fa-chair" },
-            { "name": "Covered Car Parking", "icon": "fa-solid fa-square-parking" },
-            { "name": "24/7 Security with CCTV", "icon": "fa-solid fa-shield-halved" },
-            { "name": "Sewage Treatment Plant", "icon": "fa-solid fa-recycle" }
+            { "name": "Resident Clubhouse & Multipurpose Hall", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Sun Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Landscaped Garden & Jogging Track", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Play Zone", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & High-Speed Lifts", "icon": "fa-solid fa-bolt" },
+            { "name": "Covered Car Parking & Intercom Facility", "icon": "fa-solid fa-square-parking" },
+            { "name": "24/7 Gated Security & CCTV Surveillance", "icon": "fa-solid fa-shield-halved" }
         ],
         "connectivity": [
-            { "label": "SyndicateBank Marsur Branch", "distance": "0.9 km", "icon": "fa-solid fa-building-columns" },
-            { "label": "Green Dot International School", "distance": "1.9 km", "icon": "fa-solid fa-school" },
-            { "label": "Bharat Petroleum Petrol Pump, Hosur Rd", "distance": "2.6 km", "icon": "fa-solid fa-gas-pump" },
-            { "label": "Marsur Lake", "distance": "2.8 km", "icon": "fa-solid fa-water" },
-            { "label": "Narayana PU College", "distance": "2.9 km", "icon": "fa-solid fa-graduation-cap" },
-            { "label": "The Big Market Chandapura", "distance": "2.9 km", "icon": "fa-solid fa-store" },
+            { "label": "Green Dot International School", "distance": "1.2 km", "icon": "fa-solid fa-school" },
+            { "label": "Chandapura Circle / Hosur Main Road (NH 44)", "distance": "2.5 km", "icon": "fa-solid fa-route" },
             { "label": "Athreya Hospital", "distance": "3.2 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Indian Oil Petrol Pump, Chandapura-Anekal Rd", "distance": "3.2 km", "icon": "fa-solid fa-gas-pump" },
-            { "label": "Spurthy Global School / College", "distance": "3.7 km", "icon": "fa-solid fa-school" },
-            { "label": "Sunray Multispeciality Hospital", "distance": "3.9 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Chandapura Lake", "distance": "4.0 km", "icon": "fa-solid fa-water" },
-            { "label": "Triumph World School", "distance": "4.0 km", "icon": "fa-solid fa-school" },
-            { "label": "Narayana Health City / Institute of Cardiac Sciences", "distance": "5.0 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Heelalige Railway Station", "distance": "5.3 km", "icon": "fa-solid fa-train" },
-            { "label": "SmartX Technologies", "distance": "5.5 km", "icon": "fa-solid fa-briefcase" },
-            { "label": "Szigony Technologies Pvt Ltd", "distance": "5.6 km", "icon": "fa-solid fa-briefcase" },
-            { "label": "National Public School", "distance": "7.9 km", "icon": "fa-solid fa-school" },
-            { "label": "Metro Mall", "distance": "7.9 km", "icon": "fa-solid fa-location-dot" },
-            { "label": "Sri Suswani Mataji Dham (Pink Marble Temple)", "distance": "8.0 km", "icon": "fa-solid fa-gopuram" },
-            { "label": "INOX / PVR at M5 Ecity Mall", "distance": "9.8 km", "icon": "fa-solid fa-film" },
-            { "label": "The Oxford Medical College and Hospital", "distance": "10.4 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Kempegowda International Airport (BLR)", "distance": "60.2 km", "icon": "fa-solid fa-plane" }
+            { "label": "Heelalige Railway Station", "distance": "4.5 km", "icon": "fa-solid fa-train" },
+            { "label": "Bommasandra Metro Station (Yellow Line)", "distance": "7.4 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Alliance University", "distance": "8.0 km", "icon": "fa-solid fa-graduation-cap" },
+            { "label": "Electronic City Phase 1", "distance": "11.5 km", "icon": "fa-solid fa-briefcase" },
+            { "label": "Kempegowda International Airport", "distance": "60.5 km", "icon": "fa-solid fa-plane" }
         ]
     },
     {
-        "id": "ds-max-sky-sisira",
-        "reraId": "PRM/KA/RERA/1250/301/PR/251024/007178",
-        "title": "DS-MAX Sky Sisira",
-        "badge": "New Launch",
-        "category": "new-launch",
-        "theme": "Luxury Residential High-Rise",
-        "location": "Near Rajanukunte Toll Gate, Kasuvanahalli, Doddaballapur Road, Yelahanka, North Bangalore, Bengaluru, Karnataka 560064",
-        "searchLocation": "rajanukunte toll gate kasuvanahalli doddaballapur road yelahanka bengaluru",
-        "price": "₹ 71.00 Lakhs*",
+        "id": "ds-max-sky-sanjeevini",
+        "reraId": "PRM/KA/RERA/1251/309/PR/060923/006244",
+        "title": "DS MAX Sky Sanjeevini",
+        "badge": "Ongoing",
+        "category": "ongoing",
+        "theme": "Super-Luxurious High-Rise Oasis on Tumkur Road Corridor",
+        "location": "Nagarur Colony, Dasanapura, Off Tumkur Road (NH 48), West Bengaluru",
+        "searchLocation": "nagarur dasanapura tumkur road nh 48 biec nice road peenya west bengaluru",
+        "price": "₹ 81.43 L*",
         "mainImg": "",
         "gallery": [],
-        "overview": "DS-MAX Sky Sisira is a residential development by DS-MAX Properties Pvt. Ltd. located on Doddaballapur Road, Yelahanka, in North Bengaluru[cite: 31, 33]. Spread across ~5.00 acres, it features 870 homes within 5 towers of 2B + G + 14 floors structure[cite: 31, 33]. The project features 83% open space, 30+ luxury amenities, and integrated resort/commercial space[cite: 31, 33].",
+        "overview": "DS MAX Sky Sanjeevini is a super-luxurious high-rise residential development by DS-MAX Properties, strategically located at Nagarur Colony in Dasanapura off Tumkur Road (NH 48), West Bengaluru. Spanning 1.50 acres, the high-rise development features a tower structure (2B + G + 9 Floors) housing 207 premium 2 and 3 BHK apartments. Designed to blend urban elegance with tranquil living, the project features vitrified tile flooring, UPVC sliding windows, branded FRLS insulated copper wiring, and an array of lifestyle amenities with quick access to BIEC, Golden Palms Resort, IKEA Nagasandra, and the Nagasandra Metro Station.",
         "specs": {
-            "possession": "September 2030",
-            "landArea": "~5.00 Acres",
-            "config": "2 & 3 BHK Apartments"
+            "possession": "August 2027",
+            "landArea": "1.50 Acres",
+            "config": "2 & 3 BHK High-Rise Apartments (207 Units)"
         },
         "floorPlans": [
             {
                 "type": "2 BHK",
-                "sba": "1,182–1,190 Sq. Ft.",
+                "sba": "1,131 Sq. Ft.",
                 "carpet": "",
-                "price": "₹ 71.00 Lakhs*",
+                "price": "₹ 81.43 L*",
                 "img": ""
             },
             {
                 "type": "3 BHK",
-                "sba": "1,319–1,736 Sq. Ft.",
+                "sba": "1,309 - 1,431 Sq. Ft.",
                 "carpet": "",
-                "price": "₹ 81.77 Lakhs*",
+                "price": "₹ 94.24 L*",
                 "img": ""
             }
         ],
         "amenities": [
-            { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
-            { "name": "Multi-Gym", "icon": "fa-solid fa-dumbbell" },
-            { "name": "Table Tennis", "icon": "fa-solid fa-table-tennis-paddle-ball" },
-            { "name": "Jogging Track", "icon": "fa-solid fa-person-running" },
-            { "name": "Sports Courts", "icon": "fa-solid fa-volleyball" },
-            { "name": "Sauna & Steam", "icon": "fa-solid fa-hot-tub-person" },
-            { "name": "Yoga Deck", "icon": "fa-solid fa-spa" },
-            { "name": "Kid's Pool", "icon": "fa-solid fa-water" },
-            { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
-            { "name": "Clubhouse", "icon": "fa-solid fa-house-chimney" },
-            { "name": "Party Hall", "icon": "fa-solid fa-champagne-glasses" },
-            { "name": "Snooker / Billiards Room", "icon": "fa-solid fa-circle-dot" },
-            { "name": "Indoor Games Room", "icon": "fa-solid fa-gamepad" },
-            { "name": "Amphitheatre", "icon": "fa-solid fa-masks-theater" },
-            { "name": "Landscaped Gardens", "icon": "fa-solid fa-tree" },
-            { "name": "Gazebo", "icon": "fa-solid fa-campground" },
-            { "name": "Senior Citizen Area", "icon": "fa-solid fa-chair" },
-            { "name": "Provision for Resort / Commercial Space", "icon": "fa-solid fa-cart-shopping" },
-            { "name": "EV Charging", "icon": "fa-solid fa-charging-station" },
-            { "name": "24/7 Power Backup", "icon": "fa-solid fa-bolt" },
-            { "name": "CCTV Surveillance", "icon": "fa-solid fa-shield-halved" },
-            { "name": "Sewage Treatment Plant (STP)", "icon": "fa-solid fa-recycle" }
+            { "name": "Resident Main Lobby & Clubhouse", "icon": "fa-solid fa-building-user" },
+            { "name": "Outdoor Swimming Pool & Sun Deck", "icon": "fa-solid fa-person-swimming" },
+            { "name": "Fully Equipped Gymnasium & Fitness Center", "icon": "fa-solid fa-dumbbell" },
+            { "name": "Open Terrace Sitting & Gazebo Deck", "icon": "fa-solid fa-torii-gate" },
+            { "name": "Landscaped Gardens & Walking Track", "icon": "fa-solid fa-tree" },
+            { "name": "Children's Outdoor Play Zone", "icon": "fa-solid fa-child-reaching" },
+            { "name": "Power Backup & High-Speed Elevators", "icon": "fa-solid fa-bolt" },
+            { "name": "24/7 Gated Security & CCTV Surveillance", "icon": "fa-solid fa-shield-halved" }
         ],
         "connectivity": [
-            { "label": "PKB High School", "distance": "850 m", "icon": "fa-solid fa-school" },
-            { "label": "HP Petrol Pump (Shree Lakshmi Petroleum)", "distance": "3.0 km", "icon": "fa-solid fa-gas-pump" },
-            { "label": "Bharat Petroleum", "distance": "4.0 km", "icon": "fa-solid fa-gas-pump" },
-            { "label": "Indian Oil Petrol Pump", "distance": "4.0 km", "icon": "fa-solid fa-gas-pump" },
-            { "label": "Doddaballapur Road", "distance": "4.7 km", "icon": "fa-solid fa-road" },
-            { "label": "IZee College of Engineering", "distance": "4.9 km", "icon": "fa-solid fa-graduation-cap" },
-            { "label": "Rajanukunte Toll Gate", "distance": "5.2 km", "icon": "fa-solid fa-road" },
-            { "label": "Bashettihalli Lake", "distance": "5.8 km", "icon": "fa-solid fa-water" },
-            { "label": "Shree Kempegowda Hospital", "distance": "6.8 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Mutthur Lake", "distance": "6.9 km", "icon": "fa-solid fa-water" },
-            { "label": "Vaibhav Cinema", "distance": "7.6 km", "icon": "fa-solid fa-film" },
-            { "label": "Rajanukunte Hospital", "distance": "7.7 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Rajanukunte Village Market", "distance": "7.7 km", "icon": "fa-solid fa-store" },
-            { "label": "Soundarya Mahal", "distance": "8.1 km", "icon": "fa-solid fa-film" },
-            { "label": "Raksha Health Care", "distance": "8.3 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Royal Mart Supermarket", "distance": "8.3 km", "icon": "fa-solid fa-cart-shopping" },
-            { "label": "Rajanukunte Railway Station (RNN)", "distance": "8.5 km", "icon": "fa-solid fa-train" },
-            { "label": "Sai Vidya Institute of Technology", "distance": "8.8 km", "icon": "fa-solid fa-graduation-cap" },
-            { "label": "Canara Bank Rajanukunte Branch", "distance": "9.2 km", "icon": "fa-solid fa-building-columns" },
-            { "label": "Chiguru Hospital", "distance": "9.3 km", "icon": "fa-solid fa-hospital" },
-            { "label": "HDFC Bank Honnenahalli", "distance": "9.3 km", "icon": "fa-solid fa-building-columns" },
-            { "label": "Vishwa Vidyapeeth Takshashila", "distance": "9.6 km", "icon": "fa-solid fa-school" },
-            { "label": "BMS Institute of Technology", "distance": "9.7 km", "icon": "fa-solid fa-graduation-cap" },
-            { "label": "Kempegowda International Airport (BLR)", "distance": "25.0 km", "icon": "fa-solid fa-plane" }
-        ]
-    },
-    {
-        "id": "ds-max-sky-shlokam",
-        "reraId": "PRM/KA/RERA/1251/472/PR/250225/007524",
-        "title": "DS-MAX SkyShlokam",
-        "badge": "New Launch",
-        "category": "new-launch",
-        "theme": "Luxury Residential High-Rise",
-        "location": "Navarathna Agrahara, Airport Road, before toll, close to Tech Cloud IT Park, Bengaluru, Karnataka 562110",
-        "searchLocation": "navarathna agrahara airport road tech cloud it park bengaluru",
-        "price": "₹ 92.70 Lakhs*",
-        "mainImg": "",
-        "gallery": [],
-        "overview": "DS-MAX SkyShlokam is a BIAAPA-approved residential project by DS-MAX Properties Pvt. Ltd. located on Airport Road in Navarathna Agrahara, North Bengaluru[cite: 34, 36]. Spread across 6.72 acres, the project comprises 992 units across G+14 high-rise towers with 70–83% open space and 30+ premium lifestyle and wellness amenities[cite: 34, 36]. Strategic highlights include quick access to the upcoming Doddajala Metro Station (2.7 km), Prestige Tech Cloud IT Park (1.9 km), and Kempegowda International Airport (8-9 km)[cite: 35, 36].",
-        "specs": {
-            "possession": "March 2031",
-            "landArea": "6.72 Acres",
-            "config": "2 & 3 BHK Apartments"
-        },
-        "floorPlans": [
-            {
-                "type": "2 BHK",
-                "sba": "1,024–1,226 Sq. Ft.",
-                "carpet": "",
-                "price": "₹ 92.70 Lakhs*",
-                "img": ""
-            },
-            {
-                "type": "3 BHK",
-                "sba": "1,469–1,663 Sq. Ft.",
-                "carpet": "",
-                "price": "₹ 1.17 Crore*",
-                "img": ""
-            }
-        ],
-        "amenities": [
-            { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
-            { "name": "Toddler's Pool", "icon": "fa-solid fa-water" },
-            { "name": "Gym", "icon": "fa-solid fa-dumbbell" },
-            { "name": "Skating Rink", "icon": "fa-solid fa-person-skating" },
-            { "name": "Tennis Court", "icon": "fa-solid fa-baseball-bat-ball" },
-            { "name": "Cricket Practice Pitch", "icon": "fa-solid fa-cricket-bat-ball" },
-            { "name": "Cycling Track", "icon": "fa-solid fa-bicycle" },
-            { "name": "Jogging Track", "icon": "fa-solid fa-person-running" },
-            { "name": "Yoga Deck", "icon": "fa-solid fa-spa" },
-            { "name": "Outdoor Gym", "icon": "fa-solid fa-dumbbell" },
-            { "name": "Badminton Court", "icon": "fa-solid fa-mitten" },
-            { "name": "Basketball Court", "icon": "fa-solid fa-basketball" },
-            { "name": "Kids' Play Area", "icon": "fa-solid fa-child-reaching" },
-            { "name": "Toddler's Park", "icon": "fa-solid fa-icons" },
-            { "name": "Kids' Creative Room", "icon": "fa-solid fa-palette" },
-            { "name": "Entrance Lounge", "icon": "fa-solid fa-couch" },
-            { "name": "Party Hall", "icon": "fa-solid fa-champagne-glasses" },
-            { "name": "Sauna & Steam Room", "icon": "fa-solid fa-hot-tub-person" },
-            { "name": "Dining Space", "icon": "fa-solid fa-utensils" },
-            { "name": "Dance Room", "icon": "fa-solid fa-music" },
-            { "name": "Indoor Games Room", "icon": "fa-solid fa-gamepad" },
-            { "name": "Snooker", "icon": "fa-solid fa-circle-dot" },
-            { "name": "Table Tennis", "icon": "fa-solid fa-table-tennis-paddle-ball" },
-            { "name": "Sit-out with Pergola", "icon": "fa-solid fa-chair" },
-            { "name": "Entrance Fountain & Water Cascade", "icon": "fa-solid fa-water" },
-            { "name": "Themed Gardens", "icon": "fa-solid fa-tree" },
-            { "name": "Avenue Seating", "icon": "fa-solid fa-couch" },
-            { "name": "Outdoor Chess", "icon": "fa-solid fa-chess" },
-            { "name": "Climbing Wall", "icon": "fa-solid fa-mountain" },
-            { "name": "Senior Citizens' Gazebo", "icon": "fa-solid fa-campground" },
-            { "name": "Garden Water Body", "icon": "fa-solid fa-water" },
-            { "name": "Blogger's Deck", "icon": "fa-solid fa-camera" }
-        ],
-        "connectivity": [
-            { "label": "M. S. Engineering College (MSEC)", "distance": "800 m", "icon": "fa-solid fa-graduation-cap" },
-            { "label": "Prestige Tech Cloud IT Park", "distance": "1.9 km", "icon": "fa-solid fa-building" },
-            { "label": "Doddajala Metro Station", "distance": "2.7 km", "icon": "fa-solid fa-train-subway" },
-            { "label": "IndianOil Petrol Pump (Sadahalli)", "distance": "3.0 km", "icon": "fa-solid fa-gas-pump" },
-            { "label": "MVM School", "distance": "5.6 km", "icon": "fa-solid fa-school" },
-            { "label": "Life Care Multispeciality Hospital", "distance": "6.1 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Ramaiah Leena Hospital (Devanahalli)", "distance": "8.06 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Kempegowda International Airport Bengaluru (BLR)", "distance": "8.5 km", "icon": "fa-solid fa-plane" },
-            { "label": "Stonehill International School", "distance": "9.1 km", "icon": "fa-solid fa-school" },
-            { "label": "Sadhu Vaswani International School", "distance": "10.0 km", "icon": "fa-solid fa-school" },
-            { "label": "Elements Mall (Thanisandra Main Road)", "distance": "10.2 km", "icon": "fa-solid fa-cart-shopping" },
-            { "label": "Akash Super Speciality Hospital", "distance": "12.3 km", "icon": "fa-solid fa-hospital" },
-            { "label": "Apex Multispeciality Hospital", "distance": "14.5 km", "icon": "fa-solid fa-hospital" },
-            { "label": "KIADB Aerospace Park", "distance": "15.5 km", "icon": "fa-solid fa-industry" },
-            { "label": "VIBGYOR High School Yelahanka", "distance": "16.9 km", "icon": "fa-solid fa-school" },
-            { "label": "Phoenix Mall of Asia", "distance": "17.9 km", "icon": "fa-solid fa-cart-shopping" },
-            { "label": "Manyata Tech Park", "distance": "22.8 km", "icon": "fa-solid fa-briefcase" },
-            { "label": "Indian Academy Degree College", "distance": "26.1 km", "icon": "fa-solid fa-graduation-cap" }
+            { "label": "Tumkur Road (NH 48)", "distance": "0.8 km", "icon": "fa-solid fa-route" },
+            { "label": "The Golden Palms Hotel & Spa", "distance": "2.5 km", "icon": "fa-solid fa-hotel" },
+            { "label": "Adichunchanagiri Ayurvedic Medical College & Hospital", "distance": "3.5 km", "icon": "fa-solid fa-hospital" },
+            { "label": "NICE Ring Road Junction", "distance": "5.0 km", "icon": "fa-solid fa-road" },
+            { "label": "Bengaluru International Exhibition Centre (BIEC)", "distance": "6.0 km", "icon": "fa-solid fa-landmark" },
+            { "label": "Nagasandra Metro Station (Green Line) / IKEA", "distance": "9.5 km", "icon": "fa-solid fa-train-subway" },
+            { "label": "Kempegowda International Airport", "distance": "42.0 km", "icon": "fa-solid fa-plane" }
         ]
     }
 ]
@@ -480,6 +989,6 @@ export const builderFaq = [
     }
 ];
 
-export const popularLocations = ['Manchenahalli', 'Whitefield', 'Chandapura'];
+export const popularLocations = ['Uttarahalli', 'Whitefield', 'Chandapura'];
 
 export const builderName = 'DS-MAX PROPERTIES';
