@@ -9,7 +9,7 @@ function renderProjectsCatalog() {
     <article class="project-card bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all group flex flex-col snap-start" data-id="${p.id}" data-category="${p.category}" data-search="${(p.title+' '+p.searchLocation).toLowerCase()}">
       <button type="button" class="project-image relative overflow-hidden text-left group" onclick="openPropertyDetail('${p.id}')" aria-label="View ${p.title} details">
         <img src="${p.mainImg}" alt="${p.title}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-        <span class="absolute top-4 left-4 bg-sobhaNavy text-sobhaGold text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">${p.badge}</span>
+        <span class="absolute top-4 left-4 bg-sobhaNavy text-[#E4C477] text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">${p.badge}</span>
         <span class="project-image-overlay absolute inset-0 flex items-center justify-center bg-sobhaNavy/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
           <span class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-sobhaNavy px-5 py-3 text-xs font-bold uppercase tracking-widest shadow-lg">View Details <span aria-hidden="true">→</span></span>
         </span>
@@ -19,7 +19,7 @@ function renderProjectsCatalog() {
         <h3 class="font-serif text-xl sm:text-2xl font-bold text-sobhaNavy mb-2">${p.title}</h3>
         <p class="text-gray-500 text-xs mb-4">${p.location}</p>
         <div class="border-t border-gray-100 pt-3 mt-auto flex items-center justify-between gap-3">
-          <div class="min-w-0"><p class="text-[10px] text-gray-400 uppercase">Starting From</p><p class="text-lg font-bold text-sobhaNavy">${p.price}</p></div>
+          <div class="min-w-0"><p class="text-[10px] text-gray-600 uppercase">Starting From</p><p class="text-lg font-bold text-sobhaNavy">${p.price}</p></div>
           <button onclick="openPropertyDetail('${p.id}')" class="shrink-0 bg-sobhaNavy text-white text-[11px] font-semibold px-3 sm:px-4 py-2 uppercase">View Full Details</button>
         </div>
       </div>
