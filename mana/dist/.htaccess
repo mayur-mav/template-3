@@ -1,0 +1,14 @@
+Options -MultiViews
+RewriteEngine On
+RewriteRule ^privacy-policy/?$ privacy-policy.html [L]
+RewriteRule ^residences/?$ residences/index.html [L]
+RewriteRule ^about/?$ about/index.html [L]
+RewriteRule ^faq/?$ faq/index.html [L]
+RewriteRule ^contact/?$ contact/index.html [L]
+RewriteRule ^the-right-life/?$ the-right-life/index.html [L]
+RewriteRule ^mana-vista/?$ mana-vista/index.html [L]
+RewriteRule ^mana-cresta/?$ mana-cresta/index.html [L]
+RewriteRule ^mana-dale/?$ mana-dale/index.html [L]
+RewriteRule ^mana-verdant-terraces/?$ mana-verdant-terraces/index.html [L]
+RewriteRule ^daintree-by-mana/?$ daintree-by-mana/index.html [L]
+RewriteRule ^mana-jardin-neo/?$ mana-jardin-neo/index.html [L]
