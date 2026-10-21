@@ -1,0 +1,651 @@
+export const builderData = [
+  {
+    "id": "nikoo-homes-8",
+    "reraId": "PRM/KA/RERA/1251/309/PR/070526/008628",
+    "title": "Nikoo Homes 8",
+    "badge": "New Launch",
+    "category": "new-launch",
+    "theme": "Modern Township Residential Community",
+    "location": "Bhartiya City, Thanisandra Main Road, North Bengaluru",
+    "searchLocation": "thanisandra main road bhartiya city north bengaluru",
+    "price": "₹ 93.00 Lakhs*",
+    "mainImg": "",
+    "gallery": [],
+    "overview": "Nikoo Homes 8 is a residential project by Bhartiya Urban located within the Bhartiya City township on Thanisandra Main Road, North Bengaluru. The project offers Studio, 1, 2, 3, and 4 BHK apartments along with Loft duplexes set within a thoughtfully designed township community focused on modern lifestyle and convenience.",
+    "specs": {
+        "possession": "March 2031",
+        "landArea": "7.54 Acres",
+        "config": "Studio, 1, 2, 3 & 4 BHK Apartments & Lofts"
+    },
+    "floorPlans": [
+        {
+            "type": "Studio",
+            "sba": "501 Sq. Ft.",
+            "carpet": "",
+            "price": "On Request",
+            "img": ""
+        },
+        {
+            "type": "1 BHK",
+            "sba": "786 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 93.00 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "1 BHK + Study",
+            "sba": "1,088 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.31 Cr*",
+            "img": ""
+        },
+        {
+            "type": "2 BHK",
+            "sba": "1,165 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.40 Cr*",
+            "img": ""
+        },
+        {
+            "type": "2 BHK + Study",
+            "sba": "1,371 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.59 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK",
+            "sba": "1,730 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.07 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK + Study",
+            "sba": "2,006 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.33 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK Loft",
+            "sba": "2,132 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.59 Cr*",
+            "img": ""
+        },
+        {
+            "type": "4 BHK + Staff",
+            "sba": "2,506 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.94 Cr*",
+            "img": ""
+        }
+    ],
+    "amenities": [
+        { "name": "Gymnasium", "icon": "fa-solid fa-dumbbell" },
+        { "name": "Clubhouse", "icon": "fa-solid fa-building-user" },
+        { "name": "Workspaces", "icon": "fa-solid fa-laptop" },
+        { "name": "Sports Courts", "icon": "fa-solid fa-basketball" },
+        { "name": "Indoor Games Room", "icon": "fa-solid fa-gamepad" },
+        { "name": "Jogging & Skating Track", "icon": "fa-solid fa-person-running" },
+        { "name": "Meditation & Yoga Deck", "icon": "fa-solid fa-spa" }
+    ],
+    "connectivity": [
+        { "label": "Bhartiya City Mall", "distance": "0.5 km", "icon": "fa-solid fa-location-dot" },
+        { "label": "Chaman Bhartiya School", "distance": "1.0 km", "icon": "fa-solid fa-school" },
+        { "label": "Manyata Tech Park", "distance": "5.6 km", "icon": "fa-solid fa-briefcase" },
+        { "label": "Elements Mall", "distance": "5.5 km", "icon": "fa-solid fa-location-dot" },
+        { "label": "Yelahanka Railway Station", "distance": "8.0 km", "icon": "fa-solid fa-train" },
+        { "label": "Nagawara Metro Station", "distance": "8.5 km", "icon": "fa-solid fa-train-subway" },
+        { "label": "Kempegowda International Airport", "distance": "25.0 km", "icon": "fa-solid fa-plane" }
+    ]
+  },
+  {
+    "id": "nikoo-homes-9",
+    "reraId": "PRM/KA/RERA/1251/309/PR/100926/008930",
+    "title": "Nikoo Homes 9",
+    "badge": "New Launch",
+    "category": "new-launch",
+    "theme": "Garden Living Integrated Residential Community",
+    "location": "KIADB Aerospace Park, Bagalur, North Bengaluru",
+    "searchLocation": "kiadb aerospace park bagalur north bengaluru",
+    "price": "₹ 62.00 Lakhs*",
+    "mainImg": "",
+    "gallery": [],
+    "overview": "Nikoo Homes 9 is a newly launched residential project by Bhartiya Urban located at KIADB Aerospace Park, Bagalur in North Bengaluru. The project features studio, 1, 2, 3 BHK apartments, lofts, and sky villas designed around a car-free central spine, themed gardens, and integrated township living.",
+    "specs": {
+        "possession": "December 2030",
+        "landArea": "13.50 Acres",
+        "config": "Studio, 1, 2, 3 BHK Apartments & Lofts"
+    },
+    "floorPlans": [
+        {
+            "type": "Studio",
+            "sba": "506 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 62.00 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "1 BHK",
+            "sba": "879 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 99.00 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "1 BHK + Study",
+            "sba": "1,016 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.12 Cr*",
+            "img": ""
+        },
+        {
+            "type": "2 BHK",
+            "sba": "1,257 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.43 Cr*",
+            "img": ""
+        },
+        {
+            "type": "2 BHK + Study",
+            "sba": "1,428 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.59 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK",
+            "sba": "1,714 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.85 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK + Study",
+            "sba": "1,911 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.11 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK Loft (Duplex)",
+            "sba": "2,190 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.56 Cr*",
+            "img": ""
+        }
+    ],
+    "amenities": [
+        { "name": "Gymnasium", "icon": "fa-solid fa-dumbbell" },
+        { "name": "Grand Clubhouse (The Black Swan Club)", "icon": "fa-solid fa-building-user" },
+        { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
+        { "name": "Indoor Games Room", "icon": "fa-solid fa-gamepad" },
+        { "name": "Spa & Salon", "icon": "fa-solid fa-spa" },
+        { "name": "Jogging & Skating Track", "icon": "fa-solid fa-person-running" },
+        { "name": "Multiple Sports Courts", "icon": "fa-solid fa-basketball" },
+        { "name": "Amphitheater", "icon": "fa-solid fa-masks-theater" }
+    ],
+    "connectivity": [
+        { "label": "Shell Technology Centre", "distance": "2.0 km", "icon": "fa-solid fa-briefcase" },
+        { "label": "Boeing India", "distance": "2.5 km", "icon": "fa-solid fa-briefcase" },
+        { "label": "Bagalur Metro Station (Blue Line)", "distance": "3.4 km", "icon": "fa-solid fa-train-subway" },
+        { "label": "Manyata Tech Park", "distance": "14.0 km", "icon": "fa-solid fa-briefcase" },
+        { "label": "Kempegowda International Airport", "distance": "15.0 km", "icon": "fa-solid fa-plane" }
+    ]
+  },
+  {
+    "id": "nikoo-homes-6",
+    "reraId": "PRM/KA/RERA/1251/309/PR/160124/006550",
+    "title": "Nikoo Homes 6",
+    "badge": "Ongoing",
+    "category": "ongoing",
+    "theme": "Integrated Township Residential Community",
+    "location": "Kogilu Main Road, near Bhartiya City, North Bengaluru",
+    "searchLocation": "kogilu main road bhartiya city north bengaluru",
+    "price": "₹ 55.23 Lakhs*",
+    "mainImg": "",
+    "gallery": [],
+    "overview": "Nikoo Homes 6 is a residential project by Bhartiya Urban located on Kogilu Main Road near Bhartiya City in North Bengaluru. The project offers Studio, 1, 2, 2.5, 3, 3.5, 4 BHK apartments and Loft duplexes set across 8 acres of land with 632 residential units and extensive green spaces.",
+    "specs": {
+        "possession": "September 2029",
+        "landArea": "8.00 Acres",
+        "config": "Studio, 1, 2, 2.5, 3, 3.5, 4 BHK Apartments & Lofts"
+    },
+    "floorPlans": [
+        {
+            "type": "Studio",
+            "sba": "470 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 55.23 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "1 BHK",
+            "sba": "731 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 85.89 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "2 BHK",
+            "sba": "1,140 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.22 Cr*",
+            "img": ""
+        },
+        {
+            "type": "2.5 BHK",
+            "sba": "1,354 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.44 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK",
+            "sba": "1,637 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.79 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3.5 BHK",
+            "sba": "1,831 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.01 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK Loft (Duplex)",
+            "sba": "2,130 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.33 Cr*",
+            "img": ""
+        },
+        {
+            "type": "4 BHK",
+            "sba": "2,502 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.75 Cr*",
+            "img": ""
+        }
+    ],
+    "amenities": [
+        { "name": "Gymnasium", "icon": "fa-solid fa-dumbbell" },
+        { "name": "Clubhouse", "icon": "fa-solid fa-building-user" },
+        { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
+        { "name": "Indoor Games Room", "icon": "fa-solid fa-gamepad" },
+        { "name": "Landscaped Gardens", "icon": "fa-solid fa-tree" },
+        { "name": "Jogging Track", "icon": "fa-solid fa-person-running" },
+        { "name": "Outdoor Sports Courts", "icon": "fa-solid fa-basketball" },
+        { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
+        { "name": "Yoga Pavilion", "icon": "fa-solid fa-spa" }
+    ],
+    "connectivity": [
+        { "label": "Kogilu Cross Metro Station", "distance": "1.2 km", "icon": "fa-solid fa-train-subway" },
+        { "label": "Canadian International School", "distance": "3.5 km", "icon": "fa-solid fa-school" },
+        { "label": "Cytecare Cancer Hospital", "distance": "4.0 km", "icon": "fa-solid fa-hospital" },
+        { "label": "Yelahanka Junction Railway Station", "distance": "4.5 km", "icon": "fa-solid fa-train" },
+        { "label": "Phoenix Mall of Asia", "distance": "7.5 km", "icon": "fa-solid fa-location-dot" },
+        { "label": "Kempegowda International Airport", "distance": "18.0 km", "icon": "fa-solid fa-plane" }
+    ]
+  },
+  {
+    "id": "nikoo-homes-V",
+    "reraId": "PRM/KA/RERA/1251/309/PR/171123/006418",
+    "title": "Nikoo Homes V",
+    "badge": "Ongoing",
+    "category": "ongoing",
+    "theme": "Integrated Township Residential Community",
+    "location": "Bhartiya City, Thanisandra Main Road, North Bengaluru",
+    "searchLocation": "thanisandra main road bhartiya city north bengaluru",
+    "price": "₹ 1.25 Cr*",
+    "mainImg": "",
+    "gallery": [],
+    "overview": "Nikoo Homes V is a residential development by Bhartiya Urban situated within the Bhartiya City township on Thanisandra Main Road, North Bengaluru. The project features Studio, 1, 2, 2.5, 3, 3.5, and 4 BHK apartments, along with Loft duplexes, designed for modern urban living in a self-contained township.",
+    "specs": {
+        "possession": "June 2030",
+        "landArea": "8.00 Acres",
+        "config": "Studio, 1, 2, 2.5, 3, 3.5 & 4 BHK Apartments & Lofts"
+    },
+    "floorPlans": [
+        {
+            "type": "2 BHK",
+            "sba": "1,090 - 1,144 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.25 Cr*",
+            "img": ""
+        },
+        {
+            "type": "2.5 BHK",
+            "sba": "1,317 - 1,386 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.51 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK",
+            "sba": "1,610 - 1,735 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.84 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3.5 BHK / 3 BHK Loft",
+            "sba": "1,872 – 2,188 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.17 Cr*",
+            "img": ""
+        },
+        {
+            "type": "4 BHK",
+            "sba": "2,553 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.94 Cr*",
+            "img": ""
+        }
+    ],
+    "amenities": [
+        { "name": "Gymnasium", "icon": "fa-solid fa-dumbbell" },
+        { "name": "Clubhouse (55,000 sq ft)", "icon": "fa-solid fa-building-user" },
+        { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
+        { "name": "Indoor Games Room", "icon": "fa-solid fa-gamepad" },
+        { "name": "Landscaped Gardens", "icon": "fa-solid fa-tree" },
+        { "name": "Jogging Track", "icon": "fa-solid fa-person-running" },
+        { "name": "Outdoor Sports Courts", "icon": "fa-solid fa-basketball" },
+        { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
+        { "name": "Party Hall", "icon": "fa-solid fa-champagne-glasses" }
+    ],
+    "connectivity": [
+        { "label": "Chaman Bhartiya School", "distance": "2.0 km", "icon": "fa-solid fa-school" },
+        { "label": "Bhartiya City Mall", "distance": "1.0 km", "icon": "fa-solid fa-location-dot" },
+        { "label": "Manyata Tech Park", "distance": "6.0 km", "icon": "fa-solid fa-briefcase" },
+        { "label": "Yelahanka Junction Railway Station", "distance": "7.0 km", "icon": "fa-solid fa-train" },
+        { "label": "Aster CMI Hospital", "distance": "10.0 km", "icon": "fa-solid fa-hospital" },
+        { "label": "Kempegowda International Airport", "distance": "22.0 km", "icon": "fa-solid fa-plane" }
+    ]
+  },
+  {
+    "id": "bhartiya-garden-estate",
+    "reraId": "PRM/KA/RERA/1251/472/PR/260825/008038",
+    "title": "Bhartiya Garden Estate",
+    "badge": "Ongoing",
+    "category": "ongoing",
+    "theme": "Garden-Themed Integrated Township Community",
+    "location": "Navarathna Agrahara, Sadahalli, North Bengaluru",
+    "searchLocation": "navarathna agrahara sadahalli devanahalli north bengaluru",
+    "price": "₹ 97 Lakhs*",
+    "mainImg": "",
+    "gallery": [],
+    "overview": "Bhartiya Garden Estate is a premium residential township by Bhartiya Urban located in Sadahalli, near Devanahalli, North Bengaluru. Spread across 29 acres, the development features 10 high-rise towers (2B + G + 22/24 floors) comprising 1RK, 1, 2, 3, and 4 BHK apartments alongside row houses/villas set in a garden-centric community.",
+    "specs": {
+        "possession": "August 2030",
+        "landArea": "29 Acres",
+        "config": "1RK, 1, 2, 3 & 4 BHK Apartments & Row Houses / Villas"
+    },
+    "floorPlans": [
+        {
+            "type": "Studio",
+            "sba": "559 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 75 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "1 BHK",
+            "sba": "793 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 97 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "2 BHK",
+            "sba": "1,126 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.34 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK",
+            "sba": "1,743 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.92 Cr*",
+            "img": ""
+        },
+        {
+            "type": "4 BHK",
+            "sba": "2,200 – 2,586 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.86 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3.5 BHK Villa",
+            "sba": "2,045 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.28 Cr*",
+            "img": ""
+        },
+        {
+            "type": "4.5 BHK Villa",
+            "sba": "2,586 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.86 Cr*",
+            "img": ""
+        }
+    ],
+    "amenities": [
+        { "name": "Gymnasium", "icon": "fa-solid fa-dumbbell" },
+        { "name": "Clubhouse (80,000 sq ft)", "icon": "fa-solid fa-building-user" },
+        { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
+        { "name": "Amphitheater", "icon": "fa-solid fa-masks-theater" },
+        { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
+        { "name": "Landscaped Gardens", "icon": "fa-solid fa-tree" },
+        { "name": "Indoor Games Room", "icon": "fa-solid fa-gamepad" },
+        { "name": "Sports Courts", "icon": "fa-solid fa-basketball" }
+    ],
+    "connectivity": [
+        { "label": "Bellary Road (NH 44)", "distance": "0.5 km", "icon": "fa-solid fa-route" },
+        { "label": "Prestige Tech Cloud", "distance": "1.0 km", "icon": "fa-solid fa-briefcase" },
+        { "label": "Sri Venkateshwara Central School", "distance": "2.75 km", "icon": "fa-solid fa-school" },
+        { "label": "The North Bangalore Hospital", "distance": "3.5 km", "icon": "fa-solid fa-hospital" },
+        { "label": "Doddajala / Chikkajala Metro Station", "distance": "5.0 km", "icon": "fa-solid fa-train-subway" },
+        { "label": "Kempegowda International Airport", "distance": "7.9 km", "icon": "fa-solid fa-plane" }
+    ]
+  },
+  {
+    "id": "nikoo-homes-4",
+    "reraId": "PRM/KA/RERA/1251/472/PR/210731/004208",
+    "title": "Nikoo Homes 4",
+    "badge": "Ready to Move",
+    "category": "ready-to-move",
+    "theme": "Integrated Township Residential Community",
+    "location": "Bhartiya City, Thanisandra Main Road, North Bengaluru",
+    "searchLocation": "thanisandra main road bhartiya city north bengaluru",
+    "price": "₹ 57.38 Lakhs*",
+    "mainImg": "",
+    "gallery": [],
+    "overview": "Nikoo Homes 4 (Nikoo Homes IV) is a residential project by Bhartiya Urban situated within the Bhartiya City integrated township on Thanisandra Main Road, North Bengaluru. Spread across 4.07 acres, the project comprises 3 high-rise towers (2B + G + 32 floors) with 716 residential units offered in 1, 2, 2.5, 3, 3.5, and 4 BHK configurations including Loft duplexes.",
+    "specs": {
+        "possession": "July 2025",
+        "landArea": "4.07 Acres",
+        "config": "1, 2, 2.5, 3, 3.5 & 4 BHK Apartments & Lofts"
+    },
+    "floorPlans": [
+        {
+            "type": "1 BHK",
+            "sba": "650 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 57.38 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "1.5 BHK",
+            "sba": "950 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 68 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "2 BHK",
+            "sba": "1,000 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 75 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "2.5 BHK",
+            "sba": "1,250 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 88 Lakhs*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK",
+            "sba": "1,500 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.04 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK + Study",
+            "sba": "1,800 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.20 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK Loft (Duplex)",
+            "sba": "2,100 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.40 Cr*",
+            "img": ""
+        },
+        {
+            "type": "4 BHK",
+            "sba": "2,400 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.80 Cr*",
+            "img": ""
+        }
+    ],
+    "amenities": [
+        { "name": "Gymnasium", "icon": "fa-solid fa-dumbbell" },
+        { "name": "Clubhouse", "icon": "fa-solid fa-building-user" },
+        { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
+        { "name": "Badminton Court", "icon": "fa-solid fa-table-tennis-paddle-ball" },
+        { "name": "Multipurpose Sports Court", "icon": "fa-solid fa-basketball" },
+        { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
+        { "name": "Senior Citizens Zone", "icon": "fa-solid fa-chair" },
+        { "name": "Jogging Track", "icon": "fa-solid fa-person-running" },
+        { "name": "Party Area", "icon": "fa-solid fa-champagne-glasses" }
+    ],
+    "connectivity": [
+        { "label": "Chaman Bhartiya School", "distance": "2.0 km", "icon": "fa-solid fa-school" },
+        { "label": "Bhartiya City Mall", "distance": "1.0 km", "icon": "fa-solid fa-location-dot" },
+        { "label": "Aster CMI Hospital", "distance": "1.0 km", "icon": "fa-solid fa-hospital" },
+        { "label": "Manyata Tech Park", "distance": "6.0 km", "icon": "fa-solid fa-briefcase" },
+        { "label": "Yelahanka Junction Railway Station", "distance": "7.0 km", "icon": "fa-solid fa-train" },
+        { "label": "Kempegowda International Airport", "distance": "22.0 km", "icon": "fa-solid fa-plane" }
+    ]
+  },
+  {
+    "id": "nikoo-homes-2",
+    "reraId": "PRM/KA/RERA/1251/309/PR/171014/000197",
+    "title": "Nikoo Homes II",
+    "badge": "Ready to Move",
+    "category": "ready-to-move",
+    "theme": "Integrated Township Residential Community",
+    "location": "Bhartiya City, Thanisandra Main Road, North Bengaluru",
+    "searchLocation": "thanisandra main road bhartiya city north bengaluru",
+    "price": "₹ 1.15 Cr*",
+    "mainImg": "",
+    "gallery": [],
+    "overview": "Nikoo Homes II is a residential project by Bhartiya Urban located within the Bhartiya City township on Thanisandra Main Road, North Bengaluru. The project offers 1, 2, 3, and 4 BHK apartments, studios, and loft duplexes set within a sprawling 125-acre integrated city township with extensive open spaces and modern urban amenities.",
+    "specs": {
+        "possession": "June 2021",
+        "landArea": "8.46 Acres",
+        "config": "1, 2, 3 & 4 BHK Apartments & Lofts"
+    },
+    "floorPlans": [
+        {
+            "type": "1 BHK",
+            "sba": "510 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.15 Cr*",
+            "img": ""
+        },
+        {
+            "type": "2 BHK",
+            "sba": "1,079 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.30 Cr*",
+            "img": ""
+        },
+        {
+            "type": "3 BHK",
+            "sba": "1,686 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 1.70 Cr*",
+            "img": ""
+        },
+        {
+            "type": "4 BHK",
+            "sba": "2,400 Sq. Ft.",
+            "carpet": "",
+            "price": "₹ 2.20 Cr*",
+            "img": ""
+        }
+    ],
+    "amenities": [
+        { "name": "Gymnasium", "icon": "fa-solid fa-dumbbell" },
+        { "name": "The Black Swan Clubhouse", "icon": "fa-solid fa-building-user" },
+        { "name": "Swimming Pool", "icon": "fa-solid fa-person-swimming" },
+        { "name": "Sky Park / Sky Gardens", "icon": "fa-solid fa-tree" },
+        { "name": "Badminton Court", "icon": "fa-solid fa-table-tennis-paddle-ball" },
+        { "name": "Multipurpose Sports Court", "icon": "fa-solid fa-basketball" },
+        { "name": "Children's Play Area", "icon": "fa-solid fa-child-reaching" },
+        { "name": "Jogging Pathway", "icon": "fa-solid fa-person-running" }
+    ],
+    "connectivity": [
+        { "label": "Bhartiya City Mall", "distance": "0.5 km", "icon": "fa-solid fa-location-dot" },
+        { "label": "Chaman Bhartiya School", "distance": "2.0 km", "icon": "fa-solid fa-school" },
+        { "label": "Aster CMI Hospital", "distance": "1.0 km", "icon": "fa-solid fa-hospital" },
+        { "label": "Manyata Tech Park", "distance": "4.0 km", "icon": "fa-solid fa-briefcase" },
+        { "label": "Yelahanka Junction Railway Station", "distance": "6.5 km", "icon": "fa-solid fa-train" },
+        { "label": "Kempegowda International Airport", "distance": "22.0 km", "icon": "fa-solid fa-plane" }
+    ]
+  }
+];
+
+export const builderFaq = [
+  {
+    "question": "Who is the owner of Nikoo Homes?",
+    "answer": "Nikoo Homes is owned and developed by Bhartiya Urban, the real estate arm of the Bhartiya Group, which was founded and is chaired by Snehdeep Aggarwal."
+  },
+  {
+    "question": "Is Nikoo Homes a grade builder?",
+    "answer": "Nikoo Homes is considered a mid-to-high tier or premium builder brand rather than a traditional top-tier \"A-grade\" developer in Bangalore, though its massive integrated township concept sets it apart. Nikoo Homes is developed by Bhartiya Urban (part of the Bhartiya Group)."
+  },
+  {
+    "question": "How much do Nikoo homes cost?",
+    "answer": "Bhartiya City Nikoo Homes apartments typically cost between ₹70 Lakhs and ₹3.5 Crores, depending entirely on the specific phase, configuration, size, and whether you are purchasing a brand-new unit or a resale flat. The average property rate ranges from approximately ₹11,000 to ₹16,000 per sq. ft."
+  },
+  {
+    "question": "How many floors are in Nikoo Homes?",
+    "answer": "The number of floors in Nikoo Homes varies by phase and tower, ranging generally from 16 to 36 floors (plus basements and ground floors) across different projects in Bhartiya City, Bengaluru."
+  },
+  {
+    "question": "What recreational and lifestyle features are available?",
+    "answer": "Residents have access to the 80,000 sq. ft. Black Swan hub featuring music studios and a rooftop infinity pool. Standard phase amenities include a fully equipped gym, clubhouse, swimming pools, meditation zones, and an 8km dedicated cycling and jogging track."
+  }
+];
+
+export const popularLocations = [
+  'Thanisandra Main Road',
+  'Bagalur',
+  'Kogilu'
+];
+
+export const builderName = 'BHARTIYA GROUP';

@@ -1,0 +1,13 @@
+Options -MultiViews
+RewriteEngine On
+RewriteRule ^privacy-policy/?$ privacy-policy.html [L]
+RewriteRule ^residences/?$ residences/index.html [L]
+RewriteRule ^about/?$ about/index.html [L]
+RewriteRule ^faq/?$ faq/index.html [L]
+RewriteRule ^contact/?$ contact/index.html [L]
+RewriteRule ^nikoo-homes-8/?$ nikoo-homes-8/index.html [L]
+RewriteRule ^nikoo-homes-9/?$ nikoo-homes-9/index.html [L]
+RewriteRule ^nikoo-homes-6/?$ nikoo-homes-6/index.html [L]
+RewriteRule ^bhartiya-garden-estate/?$ bhartiya-garden-estate/index.html [L]
+RewriteRule ^nikoo-homes-4/?$ nikoo-homes-4/index.html [L]
+RewriteRule ^nikoo-homes-2/?$ nikoo-homes-2/index.html [L]
