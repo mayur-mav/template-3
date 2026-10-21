@@ -15,6 +15,7 @@ const siteOrigin = process.env.SITE_ORIGIN?.replace(/\/$/, '');
 const apacheRules = ['Options -MultiViews', 'RewriteEngine On', 'RewriteRule ^privacy-policy/?$ privacy-policy.html [L]', ...allRoutes.map(route => `RewriteRule ^${route}/?$ ${route}/index.html [L]`)].join('\n');
 function routedHtml(route = '') {
  let html = sourceHtml.replace('<head>', `<head>\n    <base href="${basePath}">`);
+ if (propertyIds.includes(route)) html = html.replace('<body ', '<body data-property-route-loading="true" ');
  if (siteOrigin) html = html.replace('</head>', `    <link rel="canonical" href="${siteOrigin}${basePath}${route ? `${route}/` : ''}">\n</head>`);
  return html;
 }

@@ -143,6 +143,7 @@ function openPropertyDetail(id, updateUrl = true) {
   renderSidebarUnitOptions(p);
   selectFloorPlan(p.id,0);
   document.getElementById('catalogView').classList.add('hidden'); document.getElementById('detailView').classList.remove('hidden');
+  document.body.removeAttribute('data-property-route-loading');
   document.getElementById('siteFooter')?.classList.add('hidden');
   document.getElementById('detailBackButton')?.classList.remove('hidden');
   document.getElementById('detailBackButton')?.classList.add('inline-flex');
@@ -361,6 +362,7 @@ function loadBuilderData() {
     renderPopularLocations(popularLocations);
     restoreRoute();
   }).catch(() => {
+    document.body.removeAttribute('data-property-route-loading');
     if (errorBox) errorBox.innerHTML = `<p class="col-span-full text-center text-red-700">Could not load data/${builder}.js.</p>`;
   });
 }
