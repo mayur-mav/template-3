@@ -297,3 +297,105 @@ body.privacy-page {
     padding: 0 32px;
   }
 }
+/* Builder theme for the privacy page header and action. */
+:root {
+  --policy-header-bg: #581C87;
+  --policy-header-text: #FFFFFF;
+  --policy-accent: #D97706;
+  --policy-accent-hover: #B45309;
+  --policy-action-text: #1E1B4B;
+}
+
+.privacy-header {
+  border-bottom-color: color-mix(in srgb, var(--policy-header-text) 18%, transparent);
+  background: var(--policy-header-bg);
+  box-shadow: 0 2px 14px rgba(10, 20, 32, 0.14);
+}
+
+.privacy-brand,
+.privacy-brand-name {
+  color: var(--policy-header-text);
+}
+
+.privacy-logo-mark {
+  border-color: var(--policy-accent);
+  background: color-mix(in srgb, var(--policy-header-bg) 82%, white);
+  color: var(--policy-accent);
+}
+
+.privacy-brand small {
+  color: color-mix(in srgb, var(--policy-header-text) 78%, transparent);
+}
+
+.privacy-back {
+  background: var(--policy-accent);
+  color: var(--policy-action-text);
+  transition: background-color 0.2s ease;
+}
+
+.privacy-back:hover,
+.privacy-back:focus-visible {
+  background: var(--policy-accent-hover);
+  color: var(--policy-action-text);
+}
+/* Override Template 3's base privacy header styles with builder colors. */
+.template-three .privacy-header {
+  border-bottom-color: color-mix(in srgb, var(--policy-header-text) 18%, transparent);
+  background: var(--policy-header-bg);
+  box-shadow: 0 2px 14px rgba(10, 20, 32, 0.14);
+}
+
+.template-three .privacy-brand,
+.template-three .privacy-brand-name {
+  color: var(--policy-header-text);
+}
+
+.template-three .privacy-brand small {
+  color: color-mix(in srgb, var(--policy-header-text) 78%, transparent);
+}
+
+.template-three .privacy-back {
+  background: var(--policy-accent);
+  color: var(--policy-action-text);
+  transition: background-color 0.2s ease;
+}
+
+.template-three .privacy-back:hover,
+.template-three .privacy-back:focus-visible {
+  background: var(--policy-accent-hover);
+  color: var(--policy-action-text);
+}
+/* Match privacy content text to this builder's accessible brand palette. */
+:root {
+  --policy-text-primary: #1E1B4B;
+  --policy-text-secondary: #5B5568;
+  --policy-text-muted: #655F73;
+  --policy-text-accent: #92400E;
+}
+
+.template-three .privacy-content h1,
+.template-three .privacy-content h2,
+.template-three .privacy-content h3 {
+  color: var(--policy-text-primary);
+}
+
+.template-three .privacy-eyebrow,
+.template-three .privacy-intro,
+.template-three .privacy-content section p,
+.template-three .privacy-content li,
+.template-three .privacy-contact {
+  color: var(--policy-text-secondary);
+}
+
+.template-three .privacy-footer {
+  color: var(--policy-text-muted);
+}
+
+.template-three .privacy-content a,
+.template-three .privacy-contact a {
+  color: var(--policy-text-accent);
+}
+/* Use each builder's accent color for its privacy-page wordmark. */
+.template-three .privacy-brand-name {
+  color: var(--policy-accent);
+}

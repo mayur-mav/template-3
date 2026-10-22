@@ -1,23 +1,23 @@
 :root {
   /* --- BRAND COLOR TOKENS --- */
-  --theme-topbar-bg: #1E3A2B;
+  --theme-topbar-bg: #143C47;
   --theme-topbar-text: #FFFFFF;
-  --theme-hero-title-color: #0F1E17;
-  --theme-hero-text-shadow: 0 2px 10px rgba(255,255,255,.65), 0 4px 22px rgba(15,30,23,.45);
-  --theme-hero-badge-bg: #E8F5E9;
-  --theme-hero-badge-text: #1B4332;
-  --theme-primary-accent: #2D6A4F;
-  --theme-primary-accent-hover: #1B4332;
+  --theme-hero-title-color: #102A33;
+  --theme-hero-text-shadow: 0 2px 10px rgba(255, 255, 255, 0.7), 0 4px 22px rgba(16, 42, 51, 0.45);
+  --theme-hero-badge-bg: #E5F3F2;
+  --theme-hero-badge-text: #14525A;
+  --theme-primary-accent: #087F8C;
+  --theme-primary-accent-hover: #086872;
   --theme-btn-text: #FFFFFF;
-  --theme-text-primary: #173528;
-  --theme-text-secondary: #526558;
-  --theme-text-muted: #5F6D64;
-  --theme-text-accent: #1B4332;
+  --theme-text-primary: #17343B;
+  --theme-text-secondary: #4E666D;
+  --theme-text-muted: #627A80;
+  --theme-text-accent: #14525A;
   --theme-hero-image-title: #FFFFFF;
-  --theme-page-bg: #F7F9F7;
+  --theme-page-bg: #F4F8F8;
   --theme-card-bg: #FFFFFF;
-  --theme-card-border: 1px solid #E0EADF;
-  --theme-card-shadow: 0 10px 30px rgba(30,58,43,.10);
+  --theme-card-border: 1px solid #D6E5E5;
+  --theme-card-shadow: 0 12px 30px rgba(20, 60, 71, 0.12);
   --theme-card-radius: 12px;
 }
 .no-scrollbar::-webkit-scrollbar {
