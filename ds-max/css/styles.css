@@ -1138,3 +1138,46 @@ body[data-property-route-loading="true"] #siteFooter {
 #enquiry #formProjectToggle i {
   color: var(--theme-text-secondary) !important;
 }
+
+/* Keep decorative brand accents legible on their actual surfaces. */
+body > header button > span:first-child,
+.nav-section-link.nav-link-active,
+#mobileNavigation .nav-section-link.nav-link-active,
+#mobileNavigation .nav-section-link:hover,
+#mobileNavigation .nav-section-link:focus-visible {
+  color: var(--theme-topbar-text) !important;
+}
+
+.nav-section-link.nav-link-active,
+#mobileNavigation .nav-section-link.nav-link-active {
+  border-bottom-color: var(--theme-primary-accent) !important;
+  text-decoration-color: var(--theme-primary-accent) !important;
+}
+
+#hero h1 span {
+  color: #fff !important;
+  text-shadow: 0 2px 10px rgb(0 0 0 / 0.72);
+}
+
+#detailView .bg-sobhaNavy .text-sobhaGold,
+#enquiry .bg-sobhaNavy .text-sobhaGold {
+  color: var(--theme-topbar-text) !important;
+}
+
+.amenity-item i,
+.connectivity-label i,
+#detailView .amenity-item i,
+#detailView .connectivity-label i {
+  color: var(--theme-text-accent) !important;
+}
+
+footer a {
+  color: var(--theme-topbar-text) !important;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+#projectsContainer .project-carousel-arrow:hover {
+  background: var(--theme-topbar-bg);
+  color: var(--theme-topbar-text);
+}

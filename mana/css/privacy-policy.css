@@ -301,7 +301,7 @@ body.privacy-page {
 :root {
   --policy-header-bg: #2C1810;
   --policy-header-text: #FFFFFF;
-  --policy-accent: #C85A32;
+  --policy-accent: #B34B26;
   --policy-accent-hover: #A84424;
   --policy-action-text: #FFFFFF;
 }
@@ -397,5 +397,5 @@ body.privacy-page {
 }
 /* Use each builder's accent color for its privacy-page wordmark. */
 .template-three .privacy-brand-name {
-  color: var(--policy-accent);
+  color: var(--policy-header-text);
 }

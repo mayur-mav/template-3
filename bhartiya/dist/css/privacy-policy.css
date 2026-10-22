@@ -136,3 +136,7 @@ body.privacy-page { min-height: 100vh; margin: 0; background: #fff; color: #171d
 .template-three .privacy-brand-name {
   color: var(--policy-accent);
 }
+/* Keep the privacy-page wordmark legible on the dark header. */
+.template-three .privacy-brand-name { color: var(--policy-header-text); }
+
+.template-three .privacy-brand-name { color: var(--policy-header-text); }
