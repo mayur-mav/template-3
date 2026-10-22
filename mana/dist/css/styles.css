@@ -11,7 +11,7 @@
   --theme-btn-text: #FFFFFF;
   --theme-text-primary: #30231D;
   --theme-text-secondary: #6A5A51;
-  --theme-text-muted: #8D7B70;
+  --theme-text-muted: #6A5A51;
   --theme-text-accent: #8C3213;
   --theme-hero-image-title: #FFFFFF;
   --theme-page-bg: #FAF7F5;
@@ -872,4 +872,167 @@ footer a {
 body[data-property-route-loading="true"] #catalogView,
 body[data-property-route-loading="true"] #siteFooter {
   display: none !important;
+}
+/* Contrast safeguards: keep text readable on dark feature panels and muted copy. */
+#detailView .bg-sobhaNavy,
+#detailView section.bg-sobhaNavy {
+  color: var(--theme-topbar-text) !important;
+}
+
+#detailView .bg-sobhaNavy h1,
+#detailView .bg-sobhaNavy h2,
+#detailView .bg-sobhaNavy h3,
+#detailView .bg-sobhaNavy p,
+#detailView .bg-sobhaNavy li,
+#detailView .bg-sobhaNavy label,
+#detailView .bg-sobhaNavy small,
+#detailView .bg-sobhaNavy strong,
+#detailView .bg-sobhaNavy span {
+  color: var(--theme-topbar-text) !important;
+}
+
+#detailView .bg-sobhaNavy .text-sobhaGold {
+  color: var(--theme-primary-accent) !important;
+}
+#enquiry .bg-sobhaNavy {
+  color: var(--theme-topbar-text) !important;
+}
+
+#enquiry .bg-sobhaNavy h1,
+#enquiry .bg-sobhaNavy h2,
+#enquiry .bg-sobhaNavy h3,
+#enquiry .bg-sobhaNavy p,
+#enquiry .bg-sobhaNavy li,
+#enquiry .bg-sobhaNavy label,
+#enquiry .bg-sobhaNavy small,
+#enquiry .bg-sobhaNavy strong,
+#enquiry .bg-sobhaNavy span {
+  color: var(--theme-topbar-text) !important;
+}
+
+#enquiry .bg-sobhaNavy .text-sobhaGold {
+  color: var(--theme-primary-accent) !important;
+}
+/* Restore dark text inside white form columns nested within dark feature wrappers. */
+#enquiry .bg-sobhaNavy > div:last-child label,
+#enquiry .bg-sobhaNavy > div:last-child h1,
+#enquiry .bg-sobhaNavy > div:last-child h2,
+#enquiry .bg-sobhaNavy > div:last-child h3,
+#enquiry .bg-sobhaNavy > div:last-child p,
+#enquiry .bg-sobhaNavy > div:last-child li,
+#enquiry .bg-sobhaNavy > div:last-child small,
+#enquiry .bg-sobhaNavy > div:last-child strong,
+#enquiry .bg-sobhaNavy > div:last-child span,
+#detailView .bg-white label,
+#detailView .bg-white h1,
+#detailView .bg-white h2,
+#detailView .bg-white h3,
+#detailView .bg-white p,
+#detailView .bg-white li,
+#detailView .bg-white small,
+#detailView .bg-white strong,
+#detailView .bg-white span {
+  color: var(--theme-text-primary) !important;
+}
+/* Responsive, theme-aware navigation contrast for phone and tablet menus. */
+#mobileMenuToggle {
+  color: var(--theme-topbar-text) !important;
+  border-color: color-mix(in srgb, var(--theme-topbar-text) 38%, transparent) !important;
+  background: transparent !important;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+}
+
+#mobileNavigation {
+  background: var(--theme-topbar-bg) !important;
+  border-color: color-mix(in srgb, var(--theme-topbar-text) 18%, transparent) !important;
+}
+
+#mobileNavigation .nav-section-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--theme-topbar-text) !important;
+  border-color: color-mix(in srgb, var(--theme-topbar-text) 14%, transparent) !important;
+}
+
+#mobileNavigation .nav-section-link:hover,
+#mobileNavigation .nav-section-link:focus-visible {
+  color: var(--theme-primary-accent) !important;
+}
+
+#mobileMenuToggle:focus-visible,
+#mobileNavigation .nav-section-link:focus-visible {
+  outline: 2px solid var(--theme-primary-accent) !important;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1023px) {
+  #headerNavLinks {
+    display: none !important;
+  }
+
+  #mobileMenuToggle {
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #mobileMenuToggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  body > header > div {
+    padding-inline: .75rem;
+    gap: .4rem;
+  }
+
+  body > header > div > button:first-child {
+    min-width: 0;
+    max-width: 48vw;
+  }
+
+  body > header > div > button:first-child span:first-child {
+    font-size: .95rem;
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+
+  body > header > div > div {
+    gap: .35rem;
+  }
+
+  body > header > div > div > button:first-child {
+    padding-inline: .55rem;
+    font-size: .58rem;
+    letter-spacing: .08em;
+  }
+}
+/* Match the custom project selector to the neighboring enquiry text fields. */
+#enquiry #formProjectToggle {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0 !important;
+  background: #f9fafb !important;
+  box-shadow: none !important;
+  padding: .75rem;
+  color: var(--theme-text-primary) !important;
+  font: inherit;
+  font-size: .75rem;
+  line-height: 1.5;
+}
+
+#enquiry #formProjectToggle:hover,
+#enquiry #formProjectToggle[aria-expanded="true"] {
+  border-color: var(--theme-primary-accent) !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+#enquiry #formProjectToggle i {
+  color: var(--theme-text-secondary) !important;
 }
