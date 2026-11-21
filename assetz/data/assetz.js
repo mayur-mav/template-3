@@ -9,6 +9,8 @@ export const builderData = [
     badge: "New Launch",
     category: "new-launch",
     theme: "Sustainable Luxury Plotted Enclave amidst Wide Green Spaces",
+    coordinates: { lat: 13.2384, lon: 77.6892 },
+    mapsQuery: "Assetz City of Palms, Devanahalli, Bengaluru",
     location:
       "Doddacheemanahalli, Off IVC Road & Chapparakallu Road, Devanahalli, North Bengaluru",
     searchLocation:
@@ -133,6 +135,8 @@ export const builderData = [
     badge: "New Launch",
     category: "new-launch",
     theme: "Japanese-Inspired Biophilic Eco-Luxe Luxury Residences",
+    coordinates: { lat: 13.1492, lon: 77.5684 },
+    mapsQuery: "Assetz Miru and Miyo, Doddaballapur Road, Yelahanka, Bengaluru",
     location:
       "Singanayakanahalli / Honnenahalli, Off Doddaballapur Road, Yelahanka, North Bengaluru",
     searchLocation:
@@ -260,6 +264,8 @@ export const builderData = [
     badge: "New Launch",
     category: "new-launch",
     theme: "Boutique Low-Density Eco-Luxe High-Rise Residences",
+    coordinates: { lat: 12.8941, lon: 77.7082 },
+    mapsQuery: "Assetz Muse and Maison, Gattahalli, Sarjapur Road, Bengaluru",
     location: "Gattahalli, Off Hosa Road / Sarjapur Road, South-East Bengaluru",
     searchLocation:
       "gattahalli hosa road sarjapur road electronic city south east bengaluru",
@@ -367,6 +373,8 @@ export const builderData = [
     badge: "New Launch",
     category: "new-launch",
     theme: "80-Acre Japanese-Inspired Nature Sanctuary & Lakefront Living",
+    coordinates: { lat: 12.8872, lon: 77.6621 },
+    mapsQuery: "Assetz Mizumi Reserve, Kudlu, HSR Extension, Bengaluru",
     location:
       "Kudlu Main Road / Choodasandra, Off HSR Layout Extension & Hosur Road, South-East Bengaluru",
     searchLocation:
@@ -485,6 +493,8 @@ export const builderData = [
     badge: "New Launch",
     category: "new-launch",
     theme: "Carbon-Healing Sustainable Eco-Luxe High-Rise Enclave",
+    coordinates: { lat: 12.8963, lon: 77.6985 },
+    mapsQuery: "Assetz Melodies of Life Apartments, Choodasandra, Sarjapur Road, Bengaluru",
     location:
       "Choodasandra, Off Hosa Road & Sarjapur Road, South-East Bengaluru",
     searchLocation:
@@ -598,6 +608,8 @@ export const builderData = [
     badge: "Ongoing",
     category: "ongoing",
     theme: "Sustainable High-Rise Nature Sanctuary with 87% Open Space",
+    coordinates: { lat: 12.8864, lon: 77.5452 },
+    mapsQuery: "Assetz Meru and Meadow, Doddakallasandra, Kanakapura Road, Bengaluru",
     location: "Doddakallasandra, Off Kanakapura Main Road, South Bengaluru",
     searchLocation:
       "kanakapura road doddakallasandra vasanthapura south bengaluru nice road metro",
@@ -714,6 +726,8 @@ export const builderData = [
     badge: "New Launch",
     category: "new-launch",
     theme: "Quiet Luxury & Japanese-Inspired Eco-Luxe High-Rise Enclave",
+    coordinates: { lat: 13.1245, lon: 77.6324 },
+    mapsQuery: "Assetz Zen and Sato, Sathanur, Bagalur Road, Yelahanka, Bengaluru",
     location: "Sathanur, Off Bagalur Main Road, Yelahanka, North Bengaluru",
     searchLocation:
       "yelahanka sathanur bagalur main road cogelu cross airport corridor north bengaluru",
@@ -826,6 +840,8 @@ export const builderData = [
     badge: "Ongoing",
     category: "ongoing",
     theme: "191-Acre Lakeside Eco-Luxe Plotted Community Sanctuary",
+    coordinates: { lat: 13.2421, lon: 77.6954 },
+    mapsQuery: "Assetz The Secret Lake, IVC Road, Devanahalli, Bengaluru",
     location: "Off IVC Road, Devanahalli, North Bengaluru",
     searchLocation:
       "devanahalli ivc road airport corridor north bengaluru plots",
@@ -953,6 +969,8 @@ export const builderData = [
     category: "new-launch",
     theme:
       "Biophilic Sustainable Eco-Luxe High-Rise Enclave with 90% Open Space",
+    coordinates: { lat: 12.8893, lon: 77.7215 },
+    mapsQuery: "Assetz Trees and Tandem, Kodathi, Sarjapur Road, Bengaluru",
     location: "Kodathi / Chokkasandra, Off Sarjapur Road, South-East Bengaluru",
     searchLocation:
       "kodathi chokkasandra sarjapur road huskur road rga tech park south east bengaluru",
@@ -1065,6 +1083,8 @@ export const builderData = [
     badge: "Ongoing",
     category: "ongoing",
     theme: "Boutique Japanese-Inspired Uncrowded Eco-Luxe High-Rise Living",
+    coordinates: { lat: 12.8914, lon: 77.7023 },
+    mapsQuery: "Assetz Ren and Rei, Gattahalli, Sarjapur Road, Bengaluru",
     location:
       "Gattahalli, Off Rayasandra Main Road & Hosa Road / Sarjapur Road, South-East Bengaluru",
     searchLocation:
@@ -1175,6 +1195,8 @@ export const builderData = [
     badge: "Ready to Move",
     category: "ready-to-move",
     theme: "Ultra-Luxury Urban High-Rise Sanctuary with 79% Open Space",
+    coordinates: { lat: 13.0182, lon: 77.5512 },
+    mapsQuery: "Assetz 22 and Crest, Yeshwanthpur, Bengaluru",
     location:
       "Yeshwanthpur Industrial Suburb, Near Mahalakshmi Layout, Yeshwanthpur, West Bengaluru",
     searchLocation:
@@ -1286,6 +1308,8 @@ export const builderData = [
     category: "ready-to-move",
     theme:
       "39-Acre Nature-Centric Plotted Sanctuary with Miyawaki Urban Forest",
+    coordinates: { lat: 12.8963, lon: 77.6985 },
+    mapsQuery: "Assetz Melodies of Life, Choodasandra, Sarjapur Road, Bengaluru",
     location:
       "Choodasandra, Off Hosa Road & Sarjapur Road, South-East Bengaluru",
     searchLocation:
@@ -1414,6 +1438,8 @@ export const builderData = [
     category: "new-launch",
     theme:
       "Japanese-Inspired Eco-Luxe Integrated Township with 50,000 Sq. Ft. Retail",
+    coordinates: { lat: 13.1652, lon: 77.6923 },
+    mapsQuery: "Assetz Sora and Saki, KIADB Aerospace Park, Bagalur, Bengaluru",
     location:
       "Gummanahalli, KIADB Aerospace Park, Off Bagalur Main Road, North Bengaluru",
     searchLocation:
@@ -1535,6 +1561,8 @@ export const builderData = [
     category: "ongoing",
     theme:
       "The Black Series - Japanese 'Shibui' Minimalist Ultra-Luxury High-Rise Sanctuary",
+    coordinates: { lat: 12.9694, lon: 77.7491 },
+    mapsQuery: "Assetz 66 and Shibui, Whitefield Main Road, Bengaluru",
     location:
       "Whitefield Main Road, Sathya Sai Layout, Whitefield, East Bengaluru",
     searchLocation:
@@ -1648,6 +1676,8 @@ export const builderData = [
     badge: "Ongoing",
     category: "ongoing",
     theme: "23-Acre Sustainable Nature-Infused Plotted Sanctuary",
+    coordinates: { lat: 13.2651, lon: 77.7123 },
+    mapsQuery: "Assetz Promise of Spring, NH 44, Devanahalli, Bengaluru",
     location:
       "NH 44, Avathi Village, Kasaba Hobli, Devanahalli, North Bengaluru",
     searchLocation:
@@ -1770,6 +1800,8 @@ export const builderData = [
     badge: "Ongoing",
     category: "ongoing",
     theme: "Lakefront Eco-Luxe High-Rise Sanctuary with 69% Open Space",
+    coordinates: { lat: 12.8712, lon: 77.6254 },
+    mapsQuery: "Assetz Canvas and Cove, Begur, NICE Road, Bengaluru",
     location: "Near NICE Ring Road, AECS C Block, Begur, South Bengaluru",
     searchLocation:
       "begur aecs c block nice ring road singasandra hosur road south bengaluru",
@@ -1890,6 +1922,8 @@ export const builderData = [
     category: "ongoing",
     theme:
       "New York SoHo-Inspired Architecture & Carbon-Healing Eco-Luxe High-Rise Enclave",
+    coordinates: { lat: 13.0762, lon: 77.5983 },
+    mapsQuery: "Assetz Soho and Sky, Jakkur, Bengaluru",
     location: "Jakkur, North Bengaluru",
     searchLocation:
       "jakkur north bengaluru hebbal manyata tech park airport corridor",
@@ -1997,6 +2031,8 @@ export const builderData = [
     badge: "Ready to Move",
     category: "ready-to-move",
     theme: "177-Acre Golf-Centric Ultra-Luxury Villa & Plotted Sanctuary",
+    coordinates: { lat: 12.8361, lon: 77.7652 },
+    mapsQuery: "Assetz 18 and Oak, Sevaganapalli, Sarjapur-Attibele Road, Bengaluru",
     location: "Sevaganapalli, Off Sarjapur-Attibele Road, South-East Bengaluru",
     searchLocation:
       "sarjapur attibele road sevaganapalli clover greens golf course south east bengaluru",

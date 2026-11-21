@@ -248,6 +248,1090 @@ function renderSidebarUnitOptions(project) {
     .setAttribute("aria-expanded", "false");
 }
 
+
+/* ==================== PROJECT HIGHLIGHTS ==================== */
+function getHighlightIcon(text, defaultIcon = "fa-solid fa-circle-check") {
+  if (!text || typeof text !== "string") return defaultIcon;
+  const lower = text.toLowerCase();
+  if (lower.includes("rera") || lower.includes("approv") || lower.includes("certif") || lower.includes("legal") || lower.includes("bda") || lower.includes("bbmp")) return "fa-solid fa-certificate";
+  if (lower.includes("wall") || lower.includes("privacy") || lower.includes("security") || lower.includes("gated")) return "fa-solid fa-shield-halved";
+  if (lower.includes("road") || lower.includes("location") || lower.includes("connect") || lower.includes("metro") || lower.includes("highway") || lower.includes("expressway") || lower.includes("airport") || lower.includes("tech park")) return "fa-solid fa-location-dot";
+  if (lower.includes("acre") || lower.includes("land") || lower.includes("garden") || lower.includes("open space") || lower.includes("landscape") || /\bpark\b/.test(lower) || lower.includes("green")) return "fa-solid fa-tree";
+  if (lower.includes("pool") || lower.includes("swim")) return "fa-solid fa-person-swimming";
+  if (lower.includes("gym") || lower.includes("fit") || lower.includes("sport") || lower.includes("court") || lower.includes("jog")) return "fa-solid fa-dumbbell";
+  if (lower.includes("club") || lower.includes("amenit") || lower.includes("lifestyle") || lower.includes("hall")) return "fa-solid fa-hotel";
+  if (lower.includes("bhk") || lower.includes("config") || lower.includes("plot") || lower.includes("villa") || lower.includes("flat") || lower.includes("layout")) return "fa-solid fa-layer-group";
+  if (lower.includes("possess") || lower.includes("timeline") || lower.includes("launch") || lower.includes("date") || lower.includes("schedul")) return "fa-regular fa-calendar-check";
+  return defaultIcon;
+}
+
+function generatePropertyHighlights(property) {
+  if (Array.isArray(property.highlights) && property.highlights.length > 0) {
+    return property.highlights.map(h => {
+      if (typeof h === "string") {
+        return {
+          icon: getHighlightIcon(h),
+          title: "Key Feature",
+          text: h
+        };
+      }
+      return {
+        icon: h.icon || getHighlightIcon(`${h.title || ""} ${h.text || ""}`),
+        title: h.title || "Key Feature",
+        text: h.text || h.description || ""
+      };
+    });
+  }
+
+  const items = [];
+
+  // 1. RERA
+  if (property.reraId) {
+    items.push({
+      icon: "fa-solid fa-certificate",
+      title: "RERA Registered",
+      text: `Officially registered with Karnataka RERA: ${property.reraId}. Fully approved with clear titles.`
+    });
+  }
+
+  // 2. Land Area / Master Plan
+  if (property.specs?.landArea) {
+    items.push({
+      icon: "fa-solid fa-tree",
+      title: "Master Land Parcel",
+      text: `Sprawling across ${property.specs.landArea} with open landscaped green spaces and recreational avenues.`
+    });
+  }
+
+  // 3. Configurations
+  if (property.specs?.config) {
+    items.push({
+      icon: "fa-solid fa-layer-group",
+      title: "Curated Typologies",
+      text: `Thoughtfully planned ${property.specs.config} homes with expansive floor plans and cross-ventilation.`
+    });
+  }
+
+  // 4. Possession Timeline
+  if (property.specs?.possession) {
+    items.push({
+      icon: "fa-regular fa-calendar-check",
+      title: "Handover Timeline",
+      text: `Possession scheduled for ${property.specs.possession} with structured milestone-linked construction.`
+    });
+  }
+
+  // 5. Exclusive Amenities
+  const firstAmenity = property.amenities?.[0];
+  const amenityName = typeof firstAmenity === "string" ? firstAmenity : firstAmenity?.name;
+  if (amenityName) {
+    items.push({
+      icon: "fa-solid fa-hotel",
+      title: "World-Class Living",
+      text: `Includes ${amenityName} alongside wellness zones, children's play areas, and sports facilities.`
+    });
+  }
+
+  // 6. Strategic Location
+  const firstConn = property.connectivity?.[0];
+  const connLabel = typeof firstConn === "string" ? firstConn : firstConn?.label;
+  if (connLabel) {
+    items.push({
+      icon: "fa-solid fa-location-dot",
+      title: "Strategic Corridor",
+      text: `Convenient proximity to ${connLabel} with seamless connectivity across major IT & economic hubs.`
+    });
+  }
+
+  return items;
+}
+
+function renderPropertyHighlights(property) {
+  const container = document.getElementById("detailHighlights");
+  if (!container) return;
+  const highlights = generatePropertyHighlights(property);
+  container.replaceChildren();
+
+  highlights.forEach(h => {
+    const card = document.createElement("div");
+    card.className = "highlight-card";
+
+    const iconWrap = document.createElement("div");
+    iconWrap.className = "highlight-icon-wrap";
+    const icon = document.createElement("i");
+    icon.className = h.icon || "fa-solid fa-circle-check";
+    icon.setAttribute("aria-hidden", "true");
+    iconWrap.appendChild(icon);
+
+    const textWrap = document.createElement("div");
+    textWrap.className = "highlight-text-wrap";
+
+    const title = document.createElement("strong");
+    title.className = "highlight-title";
+    title.textContent = h.title;
+
+    const text = document.createElement("span");
+    text.className = "highlight-text";
+    text.textContent = h.text;
+
+    textWrap.append(title, text);
+    card.append(iconWrap, textWrap);
+    container.appendChild(card);
+  });
+}
+
+/* ==================== HOME LOAN EMI CALCULATOR ==================== */
+let emiBasePrice = 10100000;
+let emiCurrentPropertyName = "Assetz City of Palms";
+let emiUserModifiedPrice = false;
+
+function parseIndianPrice(priceStr) {
+  if (!priceStr || typeof priceStr !== "string") return null;
+  const clean = priceStr.replace(/,/g, "").trim();
+  const crMatch = clean.match(/([\d.]+)\s*(?:cr|crore)/i);
+  if (crMatch) {
+    const val = parseFloat(crMatch[1]);
+    if (!isNaN(val) && val > 0) return Math.round(val * 10000000);
+  }
+  const lMatch = clean.match(/([\d.]+)\s*(?:l|lac|lakh)/i);
+  if (lMatch) {
+    const val = parseFloat(lMatch[1]);
+    if (!isNaN(val) && val > 0) return Math.round(val * 100000);
+  }
+  const numMatch = clean.match(/(\d+)/);
+  if (numMatch) {
+    const val = parseInt(numMatch[1], 10);
+    if (!isNaN(val) && val > 0) return val;
+  }
+  return null;
+}
+
+function formatINR(val) {
+  if (isNaN(val) || val === null || val === undefined) return "₹0";
+  return "₹" + Math.round(val).toLocaleString("en-IN");
+}
+
+function formatINRShort(val) {
+  if (isNaN(val) || val <= 0) return "₹0";
+  if (val >= 10000000) {
+    const cr = (val / 10000000).toFixed(2).replace(/\.00$/, "").replace(/(\.[1-9])0$/, "$1");
+    return `₹${cr} Cr`;
+  }
+  if (val >= 100000) {
+    const l = (val / 100000).toFixed(2).replace(/\.00$/, "").replace(/(\.[1-9])0$/, "$1");
+    return `₹${l} Lakh`;
+  }
+  return "₹" + Math.round(val).toLocaleString("en-IN");
+}
+
+function calculateEmi(principal, annualRate, tenureYears) {
+  if (principal <= 0 || tenureYears <= 0) {
+    return { emi: 0, totalPayment: 0, totalInterest: 0, principalPct: 50, interestPct: 50 };
+  }
+  const r = (annualRate / 12) / 100;
+  const n = tenureYears * 12;
+  if (r === 0) {
+    const emi = Math.round(principal / n);
+    return { emi, totalPayment: principal, totalInterest: 0, principalPct: 100, interestPct: 0 };
+  }
+  const factor = Math.pow(1 + r, n);
+  const emi = Math.round(principal * r * (factor / (factor - 1)));
+  const totalPayment = emi * n;
+  const totalInterest = Math.max(0, totalPayment - principal);
+  const principalPct = totalPayment > 0 ? (principal / totalPayment) * 100 : 50;
+  const interestPct = totalPayment > 0 ? (totalInterest / totalPayment) * 100 : 50;
+  return { emi, totalPayment, totalInterest, principalPct, interestPct };
+}
+
+function getPropertySliderLimits(price) {
+  if (!price || price <= 0) return { min: 2500000, max: 250000000, step: 100000 };
+  let min, max, step;
+  if (price < 15000000) {
+    min = Math.max(2500000, Math.floor((price * 0.4) / 500000) * 500000);
+    max = Math.ceil((price * 2.5) / 2500000) * 2500000;
+    step = 100000;
+  } else if (price < 50000000) {
+    min = Math.floor((price * 0.4) / 1000000) * 1000000;
+    max = Math.ceil((price * 2.2) / 5000000) * 5000000;
+    step = 100000;
+  } else {
+    min = Math.floor((price * 0.4) / 2500000) * 2500000;
+    max = Math.ceil((price * 2.0) / 10000000) * 10000000;
+    step = 500000;
+  }
+  return { min, max, step };
+}
+
+function updateSliderTrack(slider) {
+  if (!slider) return;
+  const min = parseFloat(slider.min) || 0;
+  const max = parseFloat(slider.max) || 100;
+  const val = parseFloat(slider.value) || 0;
+  const percentage = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
+  slider.style.background = `linear-gradient(to right, #C5A059 0%, #C5A059 ${percentage}%, #E2E8F0 ${percentage}%, #E2E8F0 100%)`;
+}
+
+function updateEmiCalculator() {
+  const propSlider = document.getElementById("emiPropSlider");
+  const downSlider = document.getElementById("emiDownSlider");
+  const tenureSlider = document.getElementById("emiTenureSlider");
+  const rateSlider = document.getElementById("emiRateSlider");
+  if (!propSlider || !downSlider || !tenureSlider || !rateSlider) return;
+
+  const propVal = parseFloat(propSlider.value) || 0;
+  const downPct = parseFloat(downSlider.value) || 20;
+  const tenureYears = parseInt(tenureSlider.value, 10) || 20;
+  const rate = parseFloat(rateSlider.value) || 8.5;
+
+  const downPaymentAmt = Math.round(propVal * (downPct / 100));
+  const loanAmount = Math.max(0, propVal - downPaymentAmt);
+  const result = calculateEmi(loanAmount, rate, tenureYears);
+
+  // Property value displays
+  const propDisplay = document.getElementById("emiPropDisplay");
+  const propSub = document.getElementById("emiPropSub");
+  if (propDisplay) propDisplay.textContent = formatINR(propVal);
+  if (propSub) propSub.textContent = `(${formatINRShort(propVal)})`;
+
+  // Down payment displays
+  const downPctDisplay = document.getElementById("emiDownPctDisplay");
+  const downAmountDisplay = document.getElementById("emiDownAmountDisplay");
+  const loanAmountDisplay = document.getElementById("emiLoanAmount");
+  if (downPctDisplay) downPctDisplay.textContent = `${Math.round(downPct)}%`;
+  if (downAmountDisplay) downAmountDisplay.textContent = formatINR(downPaymentAmt);
+  if (loanAmountDisplay) loanAmountDisplay.textContent = formatINR(loanAmount);
+
+  // Tenure displays
+  const tenureDisplay = document.getElementById("emiTenureDisplay");
+  const tenureMonths = document.getElementById("emiTenureMonths");
+  if (tenureDisplay) tenureDisplay.textContent = `${tenureYears} Years`;
+  if (tenureMonths) tenureMonths.textContent = `(${tenureYears * 12} Months)`;
+
+  // Rate displays
+  const rateDisplay = document.getElementById("emiRateDisplay");
+  if (rateDisplay) rateDisplay.textContent = `${rate.toFixed(2)}%`;
+
+  // Results: Hero Card
+  const monthlyOutput = document.getElementById("emiMonthlyOutput");
+  const heroFootnote = document.getElementById("emiHeroFootnote");
+  if (monthlyOutput) monthlyOutput.textContent = formatINR(result.emi);
+  if (heroFootnote) heroFootnote.textContent = `*For ${formatINRShort(loanAmount)} loan at ${rate.toFixed(2)}% for ${tenureYears} yrs`;
+
+  // SVG Donut Chart (Circumference = 2 * PI * 38 = 238.761)
+  const C = 238.761;
+  const principalLength = Math.max(0, Math.min(C, (result.principalPct / 100) * C));
+  const interestLength = Math.max(0, C - principalLength);
+
+  const donutPrincipal = document.getElementById("emiDonutPrincipal");
+  const donutInterest = document.getElementById("emiDonutInterest");
+  if (donutPrincipal) {
+    donutPrincipal.setAttribute("stroke-dasharray", `${principalLength.toFixed(2)} ${C.toFixed(2)}`);
+    donutPrincipal.setAttribute("stroke-dashoffset", "0");
+  }
+  if (donutInterest) {
+    donutInterest.setAttribute("stroke-dasharray", `${interestLength.toFixed(2)} ${C.toFixed(2)}`);
+    donutInterest.setAttribute("stroke-dashoffset", `-${principalLength.toFixed(2)}`);
+  }
+
+  // Center total
+  const centerVal = document.getElementById("emiDonutCenterVal");
+  if (centerVal) centerVal.textContent = formatINRShort(result.totalPayment);
+
+  // Legend
+  const legPrincipalVal = document.getElementById("emiLegendPrincipalVal");
+  const legPrincipalPct = document.getElementById("emiLegendPrincipalPct");
+  const legInterestVal = document.getElementById("emiLegendInterestVal");
+  const legInterestPct = document.getElementById("emiLegendInterestPct");
+  if (legPrincipalVal) legPrincipalVal.textContent = formatINR(loanAmount);
+  if (legPrincipalPct) legPrincipalPct.textContent = `(${Math.round(result.principalPct)}%)`;
+  if (legInterestVal) legInterestVal.textContent = formatINR(result.totalInterest);
+  if (legInterestPct) legInterestPct.textContent = `(${Math.round(result.interestPct)}%)`;
+
+  // Breakdown table
+  const tableDown = document.getElementById("emiTableDown");
+  const tableDownPct = document.getElementById("emiTableDownPct");
+  const tablePrincipal = document.getElementById("emiTablePrincipal");
+  const tableInterest = document.getElementById("emiTableInterest");
+  const tableTotal = document.getElementById("emiTableTotal");
+  if (tableDown) tableDown.textContent = formatINR(downPaymentAmt);
+  if (tableDownPct) tableDownPct.textContent = `(${Math.round(downPct)}%)`;
+  if (tablePrincipal) tablePrincipal.textContent = formatINR(loanAmount);
+  if (tableInterest) tableInterest.textContent = formatINR(result.totalInterest);
+  if (tableTotal) tableTotal.textContent = formatINR(result.totalPayment);
+
+  // Update slider tracks
+  updateSliderTrack(propSlider);
+  updateSliderTrack(downSlider);
+  updateSliderTrack(tenureSlider);
+  updateSliderTrack(rateSlider);
+}
+
+function initEmiCalculator() {
+  const calcSection = document.getElementById("detailEmiSection");
+  if (!calcSection) return;
+
+  const propSlider = document.getElementById("emiPropSlider");
+  const downSlider = document.getElementById("emiDownSlider");
+  const tenureSlider = document.getElementById("emiTenureSlider");
+  const rateSlider = document.getElementById("emiRateSlider");
+  const resetBtn = document.getElementById("emiResetPriceBtn");
+
+  if (propSlider) {
+    propSlider.addEventListener("input", () => {
+      emiUserModifiedPrice = true;
+      const syncLabel = document.getElementById("emiSyncProperty");
+      if (syncLabel) {
+        syncLabel.textContent = `${emiCurrentPropertyName} (Custom Value)`;
+      }
+      updateEmiCalculator();
+    });
+  }
+
+  if (downSlider) {
+    downSlider.addEventListener("input", updateEmiCalculator);
+  }
+
+  if (tenureSlider) {
+    tenureSlider.addEventListener("input", () => {
+      const years = parseInt(tenureSlider.value, 10);
+      document.querySelectorAll(".emi-chip").forEach((chip) => {
+        chip.classList.toggle("active", parseInt(chip.dataset.years, 10) === years);
+      });
+      updateEmiCalculator();
+    });
+  }
+
+  if (rateSlider) {
+    rateSlider.addEventListener("input", updateEmiCalculator);
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      emiUserModifiedPrice = false;
+      if (propSlider) {
+        const limits = getPropertySliderLimits(emiBasePrice);
+        propSlider.min = String(limits.min);
+        propSlider.max = String(limits.max);
+        propSlider.step = String(limits.step);
+        propSlider.value = String(emiBasePrice);
+
+        const minLbl = document.getElementById("emiPropMinLbl");
+        const maxLbl = document.getElementById("emiPropMaxLbl");
+        if (minLbl) minLbl.textContent = formatINRShort(limits.min);
+        if (maxLbl) maxLbl.textContent = formatINRShort(limits.max);
+      }
+      const syncLabel = document.getElementById("emiSyncProperty");
+      if (syncLabel) {
+        syncLabel.textContent = emiCurrentPropertyName;
+      }
+      updateEmiCalculator();
+    });
+  }
+
+  document.querySelectorAll(".emi-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll(".emi-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      const years = parseInt(chip.dataset.years, 10);
+      if (tenureSlider) {
+        tenureSlider.value = String(years);
+      }
+      updateEmiCalculator();
+    });
+  });
+
+  updateEmiCalculator();
+}
+
+function syncEmiCalculatorWithProperty(property) {
+  if (!property) return;
+  emiCurrentPropertyName = property.title || property.name;
+  const parsed = parseIndianPrice(property.price);
+  if (parsed) {
+    emiBasePrice = parsed;
+  }
+  emiUserModifiedPrice = false;
+
+  const propSlider = document.getElementById("emiPropSlider");
+  if (propSlider && parsed) {
+    const limits = getPropertySliderLimits(parsed);
+    propSlider.min = String(limits.min);
+    propSlider.max = String(limits.max);
+    propSlider.step = String(limits.step);
+    propSlider.value = String(parsed);
+
+    const minLbl = document.getElementById("emiPropMinLbl");
+    const maxLbl = document.getElementById("emiPropMaxLbl");
+    if (minLbl) minLbl.textContent = formatINRShort(limits.min);
+    if (maxLbl) maxLbl.textContent = formatINRShort(limits.max);
+  }
+
+  const syncLabel = document.getElementById("emiSyncProperty");
+  if (syncLabel) {
+    syncLabel.textContent = emiCurrentPropertyName;
+  }
+
+  updateEmiCalculator();
+}
+
+function syncEmiCalculatorWithFloorPlan(fp) {
+  if (!fp || emiUserModifiedPrice) return;
+  const parsed = parseIndianPrice(fp.price);
+  if (parsed) {
+    emiBasePrice = parsed;
+    const propSlider = document.getElementById("emiPropSlider");
+    if (propSlider) {
+      const limits = getPropertySliderLimits(parsed);
+      propSlider.min = String(limits.min);
+      propSlider.max = String(limits.max);
+      propSlider.step = String(limits.step);
+      propSlider.value = String(parsed);
+
+      const minLbl = document.getElementById("emiPropMinLbl");
+      const maxLbl = document.getElementById("emiPropMaxLbl");
+      if (minLbl) minLbl.textContent = formatINRShort(limits.min);
+      if (maxLbl) maxLbl.textContent = formatINRShort(limits.max);
+    }
+    const syncLabel = document.getElementById("emiSyncProperty");
+    if (syncLabel) {
+      syncLabel.textContent = `${emiCurrentPropertyName} (${fp.type})`;
+    }
+    updateEmiCalculator();
+  }
+}
+
+/* ==================== PROJECT COMPARISON ==================== */
+function getSimilarProjects(item) {
+  if (!Array.isArray(projectsData)) return [];
+  const others = projectsData.filter((candidate) => candidate.id !== item.id);
+  return others
+    .map((candidate) => {
+      let score = 0;
+      if (candidate.category === item.category) score += 3;
+      if (candidate.badge === item.badge) score += 2;
+      const itemLoc = (item.searchLocation || item.location || "").toLowerCase();
+      const candLoc = (candidate.searchLocation || candidate.location || "").toLowerCase();
+      const itemWords = itemLoc.split(/\s+/).filter(w => w.length > 3);
+      itemWords.forEach(w => {
+        if (candLoc.includes(w)) score += 1;
+      });
+      return { candidate, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 2)
+    .map(({ candidate }) => candidate);
+}
+
+function renderProjectComparison(item) {
+  const container = document.getElementById("detailComparisonGrid");
+  if (!container) return;
+  const similar = getSimilarProjects(item);
+  const projects = [item, ...similar];
+  container.replaceChildren();
+
+  projects.forEach((project, index) => {
+    const projectCard = document.createElement("article");
+    projectCard.className = `project-comparison-card${index === 0 ? " is-current" : ""}`;
+
+    const card = document.createElement("div");
+    card.className = "comparison-project-card";
+
+    const imageWrap = document.createElement("div");
+    imageWrap.className = "comparison-project-image-wrap";
+    const image = document.createElement("img");
+    image.className = "comparison-project-image";
+    image.src = project.mainImg || project.thumbnail || (project.gallery && project.gallery[0]) || "";
+    image.alt = `${project.title} project`;
+    image.loading = "lazy";
+    image.decoding = "async";
+    imageWrap.appendChild(image);
+
+    if (index === 0) {
+      const currentLabel = document.createElement("span");
+      currentLabel.className = "comparison-current-label";
+      currentLabel.textContent = "Current Project";
+      imageWrap.appendChild(currentLabel);
+    }
+    card.appendChild(imageWrap);
+
+    const name = document.createElement("div");
+    name.className = "comparison-project-name";
+    const projectName = document.createElement("span");
+    projectName.textContent = project.title;
+    const location = document.createElement("span");
+    location.className = "comparison-project-location";
+    location.textContent = project.location;
+    name.append(projectName, location);
+    card.appendChild(name);
+
+    const projectAction = document.createElement("button");
+    projectAction.type = "button";
+    projectAction.className = `comparison-project-link${index !== 0 ? " btn-outline" : ""}`;
+    if (index === 0) {
+      projectAction.innerHTML = '<i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now';
+      projectAction.setAttribute("aria-label", `Enquire about ${project.title}`);
+      projectAction.onclick = () => triggerEnquiryScroll();
+    } else {
+      projectAction.innerHTML = '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details';
+      projectAction.setAttribute("aria-label", `View ${project.title} details`);
+      projectAction.onclick = () => openPropertyDetail(project.id);
+    }
+    card.appendChild(projectAction);
+
+    const specs = document.createElement("div");
+    specs.className = "comparison-project-specs";
+    const rows = [
+      ["Starting Price", project.price || "On Request"],
+      ["Configuration", project.specs?.config || "Luxury Residences"],
+      ["Project Area", project.specs?.landArea || "Prime Acres"],
+      ["Status", project.badge || "Ongoing"],
+      ["Possession", project.specs?.possession || "Coming Soon"]
+    ];
+
+    rows.forEach(([label, value]) => {
+      const row = document.createElement("div");
+      row.className = "comparison-project-spec";
+      const specLabel = document.createElement("span");
+      specLabel.className = "comparison-project-spec-label";
+      specLabel.textContent = label;
+      const specValue = document.createElement("span");
+      specValue.className = "comparison-project-spec-value";
+      specValue.textContent = value;
+      row.append(specLabel, specValue);
+      specs.appendChild(row);
+    });
+
+    card.appendChild(specs);
+    projectCard.appendChild(card);
+    container.appendChild(projectCard);
+  });
+}
+
+
+/* ==================== PROJECT GALLERY LOGIC ==================== */
+let projectGalleryImages = [];
+let currentGalleryCategory = 'photo';
+let currentGalleryIndex = 0;
+let projectGalleryTrigger = null;
+
+function getProjectGalleryImages(item) {
+  if (!item) return [];
+  const galleryImages = (item.gallery || item.images || [])
+    .filter(image => typeof image === 'string' && image.trim())
+    .map((src, index) => ({ src, alt: `${item.title} project image ${index + 1}`, type: 'photo' }));
+  
+  const thumbnail = (item.mainImg || item.thumbnail) && !galleryImages.some(image => image.src === (item.mainImg || item.thumbnail))
+    ? [{ src: item.mainImg || item.thumbnail, alt: `${item.title} project view`, type: 'photo' }]
+    : [];
+
+  const floorPlanImages = (item.floorPlans || [])
+    .filter(plan => typeof (plan.img || plan.image) === 'string' && (plan.img || plan.image).trim())
+    .map(plan => ({ src: plan.img || plan.image, alt: `${item.title} ${plan.type || plan.bhk} floor plan`, type: 'floor-plan' }));
+
+  return [...thumbnail, ...galleryImages, ...floorPlanImages];
+}
+
+function getGalleryCategoryImages(category = currentGalleryCategory) {
+  return projectGalleryImages.filter(image => image.type === category);
+}
+
+function renderProjectGallerySection(item) {
+  const section = document.getElementById('detailGallerySection');
+  if (!section) return;
+  projectGalleryImages = getProjectGalleryImages(item);
+  const preview = projectGalleryImages.find(image => image.type === 'photo') || projectGalleryImages[0];
+  const previewImage = document.getElementById('projectGalleryPreviewImage');
+  if (previewImage) {
+    previewImage.src = preview?.src || '';
+    previewImage.alt = preview?.alt || `${item.title} gallery preview`;
+  }
+  const countEl = document.getElementById('projectGalleryImageCount');
+  if (countEl) {
+    const photoCount = projectGalleryImages.filter(i => i.type === 'photo').length;
+    const fpCount = projectGalleryImages.filter(i => i.type === 'floor-plan').length;
+    countEl.textContent = `${photoCount} Photos${fpCount > 0 ? ` & ${fpCount} Plans` : ''}`;
+  }
+}
+
+function openProjectGallery(trigger) {
+  const dialog = document.getElementById('projectGalleryDialog');
+  if (!dialog || dialog.open || !projectGalleryImages.length) return;
+  projectGalleryTrigger = trigger;
+  const titleEl = document.getElementById('projectGalleryTitle');
+  if (titleEl) titleEl.textContent = activeProject?.title || 'Project Gallery';
+  dialog.showModal();
+  const initialCategory = projectGalleryImages.some(image => image.type === 'photo') ? 'photo' : 'floor-plan';
+  setProjectGalleryCategory(initialCategory);
+  document.getElementById('projectGalleryClose')?.focus();
+}
+
+function closeProjectGallery() {
+  const dialog = document.getElementById('projectGalleryDialog');
+  if (dialog?.open) dialog.close();
+}
+
+function setProjectGalleryCategory(category) {
+  const selectedCategory = category === 'floor-plan' ? 'floor-plan' : 'photo';
+  const images = getGalleryCategoryImages(selectedCategory);
+  if (!images.length) return;
+  currentGalleryCategory = selectedCategory;
+  currentGalleryIndex = 0;
+  const dialog = document.getElementById('projectGalleryDialog');
+  if (dialog) dialog.classList.toggle('is-floor-plan', selectedCategory === 'floor-plan');
+
+  const projectTab = document.getElementById('projectGalleryProjectTab');
+  const floorPlanTab = document.getElementById('projectGalleryFloorPlanTab');
+  if (projectTab) projectTab.hidden = !getGalleryCategoryImages('photo').length;
+  if (floorPlanTab) floorPlanTab.hidden = !getGalleryCategoryImages('floor-plan').length;
+  [projectTab, floorPlanTab].forEach(tab => {
+    if (!tab) return;
+    const selected = tab.dataset.galleryCategory === selectedCategory;
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  });
+
+  const thumbnails = document.getElementById('projectGalleryThumbnails');
+  if (thumbnails) {
+    thumbnails.replaceChildren();
+    images.forEach((image, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = `project-gallery-thumbnail${selectedCategory === 'floor-plan' ? ' is-floor-plan' : ''}`;
+      button.dataset.galleryIndex = String(index);
+      button.setAttribute('aria-label', `Show ${image.alt}`);
+      button.setAttribute('aria-pressed', String(index === 0));
+      const thumbnailImage = document.createElement('img');
+      thumbnailImage.src = image.src;
+      thumbnailImage.alt = '';
+      thumbnailImage.loading = 'lazy';
+      thumbnailImage.decoding = 'async';
+      button.appendChild(thumbnailImage);
+      thumbnails.appendChild(button);
+    });
+  }
+
+  updateProjectGalleryImage();
+}
+
+function selectProjectGalleryImage(index) {
+  const images = getGalleryCategoryImages();
+  if (!images[index]) return;
+  currentGalleryIndex = index;
+  updateProjectGalleryImage();
+}
+
+function updateProjectGalleryImage() {
+  const images = getGalleryCategoryImages();
+  const image = images[currentGalleryIndex];
+  if (!image) return;
+  const currentImage = document.getElementById('projectGalleryCurrentImage');
+  if (currentImage) {
+    currentImage.src = image.src;
+    currentImage.alt = image.alt;
+    currentImage.loading = 'eager';
+    currentImage.decoding = 'async';
+    currentImage.classList.toggle('is-floor-plan', currentGalleryCategory === 'floor-plan');
+  }
+  const counter = document.getElementById('projectGalleryCounter');
+  if (counter) {
+    counter.textContent = `${currentGalleryIndex + 1} / ${images.length}`;
+  }
+  document.querySelectorAll('.project-gallery-thumbnail').forEach((thumbnail, index) => {
+    thumbnail.setAttribute('aria-pressed', String(index === currentGalleryIndex));
+    if (index === currentGalleryIndex) {
+      thumbnail.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    }
+  });
+}
+
+function changeProjectGalleryImage(direction) {
+  const images = getGalleryCategoryImages();
+  if (!images.length) return;
+  currentGalleryIndex = (currentGalleryIndex + direction + images.length) % images.length;
+  updateProjectGalleryImage();
+}
+
+function initProjectGalleryListeners() {
+  document.getElementById('projectGalleryPreview')?.addEventListener('click', event => openProjectGallery(event.currentTarget));
+  document.getElementById('projectGalleryClose')?.addEventListener('click', closeProjectGallery);
+  document.getElementById('projectGalleryDialog')?.addEventListener('click', event => {
+    if (event.target === event.currentTarget) closeProjectGallery();
+  });
+  document.querySelectorAll('.project-gallery-tab').forEach(tab => {
+    tab.addEventListener('click', () => setProjectGalleryCategory(tab.dataset.galleryCategory));
+  });
+  document.getElementById('projectGalleryThumbnails')?.addEventListener('click', event => {
+    const thumbnail = event.target.closest('[data-gallery-index]');
+    if (thumbnail) selectProjectGalleryImage(Number(thumbnail.dataset.galleryIndex));
+  });
+  document.getElementById('projectGalleryPrevious')?.addEventListener('click', () => changeProjectGalleryImage(-1));
+  document.getElementById('projectGalleryNext')?.addEventListener('click', () => changeProjectGalleryImage(1));
+  document.addEventListener('keydown', event => {
+    const dialog = document.getElementById('projectGalleryDialog');
+    if (!dialog?.open) return;
+    if (event.key === 'Escape') closeProjectGallery();
+    if (event.key === 'ArrowLeft') changeProjectGalleryImage(-1);
+    if (event.key === 'ArrowRight') changeProjectGalleryImage(1);
+  });
+}
+
+/* ==================== STRATEGIC CONNECTIVITY & LEAFLET MAP LOGIC ==================== */
+let connectivityLeafletMap = null;
+let connectivityPreviewMap = null;
+let connectivityOriginMarker = null;
+let connectivityPreviewMarker = null;
+let connectivityRouteLayer = null;
+let connectivityMapPropertyId = null;
+let connectivityMapPlaces = [];
+const connectivityRouteCache = new Map();
+let connectivityRouteController = null;
+let connectivityRouteRequestId = 0;
+let connectivitySearchTimer = null;
+
+function ensureCoordinates(item) {
+  if (item?.coordinates?.lat && item?.coordinates?.lon) {
+    return item.coordinates;
+  }
+  return { lat: 13.0, lon: 77.6 };
+}
+
+function getConnectivityDestination(place) {
+  if (!place) return '';
+  return place.destination || `${place.label}, Bengaluru, Karnataka`;
+}
+
+function getConnectivityDirectionsUrl(item, place) {
+  const url = new URL('https://www.google.com/maps/dir/');
+  url.searchParams.set('api', '1');
+  const coords = ensureCoordinates(item);
+  const origin = item.mapsQuery || `${coords.lat},${coords.lon}`;
+  url.searchParams.set('origin', origin);
+  url.searchParams.set('destination', getConnectivityDestination(place));
+  url.searchParams.set('travelmode', 'driving');
+  return url.href;
+}
+
+function initializeConnectivityPreview(item) {
+  if (!window.L || !item) return;
+  const previewElement = document.getElementById('connectivity-map-preview-canvas');
+  if (!previewElement) return;
+  const coords = ensureCoordinates(item);
+
+  if (!connectivityPreviewMap) {
+    connectivityPreviewMap = window.L.map(previewElement, {
+      attributionControl: true,
+      boxZoom: false,
+      dragging: false,
+      doubleClickZoom: false,
+      keyboard: false,
+      scrollWheelZoom: false,
+      touchZoom: false,
+      zoomControl: false
+    }).setView([coords.lat, coords.lon], 13);
+    window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(connectivityPreviewMap);
+  } else {
+    connectivityPreviewMap.setView([coords.lat, coords.lon], 13);
+    connectivityPreviewMarker?.remove();
+  }
+
+  connectivityPreviewMarker = window.L.circleMarker([coords.lat, coords.lon], {
+    radius: 9,
+    color: '#FFFFFF',
+    weight: 3,
+    fillColor: '#143C47',
+    fillOpacity: 1
+  }).addTo(connectivityPreviewMap);
+  connectivityPreviewMarker.bindTooltip(item.title);
+  requestAnimationFrame(() => connectivityPreviewMap?.invalidateSize());
+}
+
+function initializeConnectivityMap(item) {
+  const status = document.getElementById('connectivity-map-route-status');
+  if (!window.L) {
+    if (status) status.textContent = 'The interactive map could not be loaded. Use Google Maps directions instead.';
+    return false;
+  }
+
+  const mapElement = document.getElementById('connectivity-map-canvas');
+  if (!mapElement) return false;
+  const coords = ensureCoordinates(item);
+
+  const propertyPlaces = [
+    [coords.lat, coords.lon],
+    ...connectivityMapPlaces
+      .map(place => place.coordinates ? [place.coordinates.lat, place.coordinates.lon] : null)
+      .filter(Boolean)
+  ];
+  const projectBounds = window.L.latLngBounds(propertyPlaces.length > 1 ? propertyPlaces : [[coords.lat, coords.lon]]);
+
+  if (!connectivityLeafletMap) {
+    connectivityLeafletMap = window.L.map(mapElement, { scrollWheelZoom: false }).fitBounds(
+      projectBounds,
+      { padding: [30, 30], maxZoom: 14 }
+    );
+    window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> | Routing: <a href="https://project-osrm.org/" target="_blank" rel="noopener noreferrer">OSRM</a>'
+    }).addTo(connectivityLeafletMap);
+    connectivityRouteLayer = window.L.layerGroup().addTo(connectivityLeafletMap);
+  } else if (connectivityMapPropertyId !== item.id) {
+    connectivityRouteLayer.clearLayers();
+    connectivityOriginMarker?.remove();
+    connectivityLeafletMap.fitBounds(projectBounds, { padding: [30, 30], maxZoom: 14 });
+  }
+
+  if (connectivityMapPropertyId !== item.id || !connectivityOriginMarker) {
+    connectivityOriginMarker = window.L.circleMarker([coords.lat, coords.lon], {
+      radius: 9,
+      color: '#FFFFFF',
+      weight: 3,
+      fillColor: '#143C47',
+      fillOpacity: 1
+    }).addTo(connectivityLeafletMap);
+    connectivityOriginMarker.bindTooltip(`${item.title} (Property)`);
+  }
+  connectivityMapPropertyId = item.id;
+  requestAnimationFrame(() => connectivityLeafletMap?.invalidateSize());
+  return true;
+}
+
+function renderConnectivityDestinationMarker(place) {
+  if (!place.coordinates || !connectivityRouteLayer) return;
+  const destinationMarker = window.L.circleMarker([place.coordinates.lat, place.coordinates.lon], {
+    radius: 7,
+    color: '#FFFFFF',
+    weight: 3,
+    fillColor: '#C5A059',
+    fillOpacity: 1
+  }).addTo(connectivityRouteLayer);
+  destinationMarker.bindTooltip(place.label);
+}
+
+function renderConnectivityRoute(item, place, route) {
+  if (!connectivityRouteLayer) return;
+  connectivityRouteLayer.clearLayers();
+  const routeCoordinates = route.geometry.coordinates.slice();
+  const originCoord = ensureCoordinates(item);
+  const originCoordinate = [originCoord.lon, originCoord.lat];
+  const destinationCoordinate = [place.coordinates.lon, place.coordinates.lat];
+
+  const firstRouteCoordinate = routeCoordinates[0];
+  const lastRouteCoordinate = routeCoordinates[routeCoordinates.length - 1];
+
+  if (firstRouteCoordinate[0] !== originCoordinate[0] || firstRouteCoordinate[1] !== originCoordinate[1]) {
+    routeCoordinates.unshift(originCoordinate);
+  }
+  if (lastRouteCoordinate[0] !== destinationCoordinate[0] || lastRouteCoordinate[1] !== destinationCoordinate[1]) {
+    routeCoordinates.push(destinationCoordinate);
+  }
+
+  const routeLine = window.L.geoJSON({
+    ...route.geometry,
+    coordinates: routeCoordinates
+  }, {
+    style: {
+      color: '#143C47',
+      weight: 5,
+      opacity: 0.85
+    }
+  }).addTo(connectivityRouteLayer);
+
+  renderConnectivityDestinationMarker(place);
+  const routeBounds = routeLine.getBounds();
+  if (routeBounds.isValid()) {
+    connectivityLeafletMap.fitBounds(routeBounds, { padding: [48, 48], maxZoom: 16 });
+  }
+}
+
+async function updateConnectivityRoute(item, place) {
+  const status = document.getElementById('connectivity-map-route-status');
+  if (!place.coordinates || !initializeConnectivityMap(item)) {
+    if (!place.coordinates && status) {
+      status.textContent = `A map location is not available for ${place.label}. Open Google Maps for directions.`;
+    }
+    return;
+  }
+
+  connectivityRouteController?.abort();
+  connectivityRouteController = new AbortController();
+  const requestId = ++connectivityRouteRequestId;
+  connectivityRouteLayer?.clearLayers();
+  renderConnectivityDestinationMarker(place);
+  const routeKey = `${item.id}:${place.id}`;
+  const cachedRoute = connectivityRouteCache.get(routeKey);
+  if (cachedRoute) {
+    renderConnectivityRoute(item, place, cachedRoute);
+    if (status) status.textContent = `Route to ${place.label}`;
+    return;
+  }
+
+  if (status) status.textContent = `Loading route to ${place.label}…`;
+  const origin = ensureCoordinates(item);
+  const destination = place.coordinates;
+  const routeUrl = `https://router.project-osrm.org/route/v1/driving/${origin.lon},${origin.lat};${destination.lon},${destination.lat}?overview=full&geometries=geojson&steps=false`;
+
+  try {
+    const response = await fetch(routeUrl, { signal: connectivityRouteController.signal });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const result = await response.json();
+    const route = result.routes?.[0];
+    if (result.code !== 'Ok' || !route?.geometry?.coordinates?.length) {
+      throw new Error('No route');
+    }
+    connectivityRouteCache.set(routeKey, route);
+    if (requestId !== connectivityRouteRequestId) return;
+    renderConnectivityRoute(item, place, route);
+    if (status) status.textContent = `Route to ${place.label}`;
+  } catch (error) {
+    if (error.name === 'AbortError' || requestId !== connectivityRouteRequestId) return;
+    // Fallback: draw straight polyline between origin and destination
+    if (connectivityRouteLayer) {
+      window.L.polyline([[origin.lat, origin.lon], [destination.lat, destination.lon]], {
+        color: '#143C47',
+        weight: 4,
+        dashArray: '6, 8',
+        opacity: 0.8
+      }).addTo(connectivityRouteLayer);
+    }
+    if (status) status.textContent = `Direct line to ${place.label}. Open Google Maps for turn-by-turn directions.`;
+  }
+}
+
+function selectConnectivityMapPlace(placeId) {
+  const place = connectivityMapPlaces.find(candidate => candidate.id === placeId);
+  if (!activeProject || !place) return;
+
+  const directionsLink = document.getElementById('connectivity-map-directions-link');
+  if (directionsLink) {
+    directionsLink.href = getConnectivityDirectionsUrl(activeProject, place);
+    directionsLink.textContent = `Directions to ${place.label} in Google Maps →`;
+  }
+
+  document.querySelectorAll('.connectivity-map-place').forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.connectivityPlace === placeId));
+  });
+
+  updateConnectivityRoute(activeProject, place);
+}
+
+function renderConnectivityMapPlaces(query = '') {
+  const list = document.getElementById('connectivity-map-list');
+  if (!list) return;
+  const normalizedQuery = query.trim().toLowerCase();
+  const places = connectivityMapPlaces.filter(place =>
+    `${place.label} ${place.distance || ''}`.toLowerCase().includes(normalizedQuery)
+  );
+  list.replaceChildren();
+  const countEl = document.getElementById('connectivity-map-count');
+  if (countEl) countEl.textContent = `${places.length} places`;
+
+  if (!places.length) {
+    const empty = document.createElement('p');
+    empty.className = 'connectivity-map-no-results';
+    empty.textContent = 'No listed destinations match your search.';
+    list.appendChild(empty);
+    return;
+  }
+
+  places.forEach((place, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'connectivity-map-place';
+    button.dataset.connectivityPlace = place.id;
+    button.setAttribute('aria-pressed', String(index === 0));
+
+    const icon = document.createElement('span');
+    icon.className = 'connectivity-map-place-icon';
+    const iconElement = document.createElement('i');
+    iconElement.className = place.icon || 'fa-solid fa-location-dot';
+    iconElement.setAttribute('aria-hidden', 'true');
+    icon.appendChild(iconElement);
+
+    const details = document.createElement('span');
+    details.className = 'connectivity-map-place-details';
+    const name = document.createElement('span');
+    name.textContent = place.label;
+    const distance = document.createElement('span');
+    distance.textContent = place.distance || 'Nearby';
+    details.append(name, distance);
+
+    button.append(icon, details);
+    list.appendChild(button);
+  });
+}
+
+function openConnectivityMap() {
+  if (!activeProject) return;
+  const map = document.getElementById('connectivity-map');
+  const search = document.getElementById('connectivity-map-search-input');
+  if (!map) return;
+
+  const projectTitle = document.getElementById('connectivity-map-project');
+  if (projectTitle) {
+    projectTitle.textContent = `${activeProject.title} · ${activeProject.location}`;
+  }
+
+  const coords = ensureCoordinates(activeProject);
+  connectivityMapPlaces = (activeProject.connectivity || []).map((place, index) => {
+    const raw = typeof place === 'string' ? { label: place, distance: '' } : place;
+    // Derive offset coordinates if destination doesn't have explicit coords
+    const offsetLat = coords.lat + (index % 2 === 0 ? 0.012 : -0.012) * ((index + 1) * 0.6);
+    const offsetLon = coords.lon + (index % 3 === 0 ? 0.015 : -0.015) * ((index + 1) * 0.6);
+    return {
+      ...raw,
+      id: `${activeProject.id}-conn-${index + 1}`,
+      coordinates: raw.coordinates || { lat: offsetLat, lon: offsetLon }
+    };
+  });
+
+  if (search) search.value = '';
+  map.hidden = false;
+  document.body.classList.add('connectivity-map-open');
+
+  initializeConnectivityMap(activeProject);
+  renderConnectivityMapPlaces('');
+
+  const directionsLink = document.getElementById('connectivity-map-directions-link');
+  if (directionsLink) {
+    const query = activeProject.mapsQuery || `${coords.lat},${coords.lon}`;
+    directionsLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    directionsLink.textContent = 'Open property location in Google Maps →';
+  }
+
+  if (connectivityMapPlaces.length > 0) {
+    selectConnectivityMapPlace(connectivityMapPlaces[0].id);
+  }
+  document.getElementById('connectivity-map-close')?.focus();
+}
+
+function closeConnectivityMap() {
+  const map = document.getElementById('connectivity-map');
+  if (!map || map.hidden) return;
+  map.hidden = true;
+  document.body.classList.remove('connectivity-map-open');
+  connectivityRouteRequestId++;
+  connectivityRouteController?.abort();
+  clearTimeout(connectivitySearchTimer);
+}
+
+function initConnectivityMapListeners() {
+  document.getElementById('connectivity-map-open')?.addEventListener('click', openConnectivityMap);
+  document.getElementById('connectivity-map-close')?.addEventListener('click', closeConnectivityMap);
+  document.getElementById('connectivity-map-search-input')?.addEventListener('input', event => {
+    clearTimeout(connectivitySearchTimer);
+    connectivitySearchTimer = setTimeout(() => renderConnectivityMapPlaces(event.target.value), 250);
+  });
+  document.getElementById('connectivity-map-list')?.addEventListener('click', event => {
+    const placeButton = event.target.closest('[data-connectivity-place]');
+    if (!placeButton) return;
+    event.preventDefault();
+    selectConnectivityMapPlace(placeButton.dataset.connectivityPlace);
+  });
+}
+
 function openPropertyDetail(id, updateUrl = true) {
   const p = projectsData.find((x) => x.id === id);
   if (!p) return;
@@ -345,11 +1429,16 @@ function openPropertyDetail(id, updateUrl = true) {
         typeof item === "string"
           ? { label: item, distance: "", icon: "fa-solid fa-location-dot" }
           : item;
-      return `<div class="connectivity-item"><span class="connectivity-label"><i class="${entry.icon || "fa-solid fa-location-dot"} text-sobhaGold" aria-hidden="true"></i><span>${entry.label}</span></span>${entry.distance ? `<span class="connectivity-distance">${entry.distance}</span>` : ""}</div>`;
+      return `<div class="connectivity-item loc-item"><span class="connectivity-label"><i class="${entry.icon || "fa-solid fa-location-dot"}" aria-hidden="true"></i><span>${entry.label}</span></span>${entry.distance ? `<span class="connectivity-distance">${entry.distance}</span>` : ""}</div>`;
     })
     .join("");
   addListExpansion(connectivityList, 4, "connectivity");
   renderSidebarUnitOptions(p);
+  renderPropertyHighlights(p);
+  renderProjectGallerySection(p);
+  initializeConnectivityPreview(p);
+  syncEmiCalculatorWithProperty(p);
+  renderProjectComparison(p);
   selectFloorPlan(p.id, 0);
   document.getElementById("catalogView").classList.add("hidden");
   document.getElementById("detailView").classList.remove("hidden");
@@ -597,6 +1686,7 @@ function selectFloorPlan(id, index) {
   document
     .getElementById("sidebarUnitToggle")
     ?.setAttribute("aria-expanded", "false");
+  syncEmiCalculatorWithFloorPlan(fp);
 }
 function setGalleryImage(i) {
   const img = document.getElementById("mainGalleryImage");
@@ -779,6 +1869,9 @@ function loadBuilderData() {
       renderPopularLocations(popularLocations);
       restoreRoute();
       initDetailSubnav();
+      initEmiCalculator();
+      initProjectGalleryListeners();
+      initConnectivityMapListeners();
     })
     .catch(() => {
       document.body.removeAttribute("data-property-route-loading");
@@ -927,9 +2020,13 @@ function handleSubnavScrollspy() {
 
   const sectionTargets = [
     "detailOverviewSection",
+    "detailHighlightsSection",
+    "detailGallerySection",
     "detailFloorPlansSection",
+    "detailEmiSection",
     "detailAmenitiesSection",
     "detailConnectivitySection",
+    "detailComparisonSection",
     "detailEnquirySidebar"
   ];
 
@@ -1083,3 +2180,9 @@ window.quickSearch = quickSearch;
 window.handleHeroSearch = handleHeroSearch;
 window.resetFilters = resetFilters;
 window.toggleFaq = toggleFaq;
+window.initEmiCalculator = initEmiCalculator;
+window.updateEmiCalculator = updateEmiCalculator;
+window.openProjectGallery = openProjectGallery;
+window.closeProjectGallery = closeProjectGallery;
+window.openConnectivityMap = openConnectivityMap;
+window.closeConnectivityMap = closeConnectivityMap;

@@ -42,6 +42,103 @@ function createAssetzPropertyOverview(property, allProperties = []) {
   return [para1, para2];
 }
 
+
+function getHighlightIcon(text, defaultIcon = "fa-solid fa-circle-check") {
+  if (!text || typeof text !== "string") return defaultIcon;
+  const lower = text.toLowerCase();
+  if (lower.includes("rera") || lower.includes("approv") || lower.includes("certif") || lower.includes("legal") || lower.includes("bda") || lower.includes("bbmp")) return "fa-solid fa-certificate";
+  if (lower.includes("wall") || lower.includes("privacy") || lower.includes("security") || lower.includes("gated")) return "fa-solid fa-shield-halved";
+  if (lower.includes("road") || lower.includes("location") || lower.includes("connect") || lower.includes("metro") || lower.includes("highway") || lower.includes("expressway") || lower.includes("airport") || lower.includes("tech park")) return "fa-solid fa-location-dot";
+  if (lower.includes("acre") || lower.includes("land") || lower.includes("garden") || lower.includes("open space") || lower.includes("landscape") || /\bpark\b/.test(lower) || lower.includes("green")) return "fa-solid fa-tree";
+  if (lower.includes("pool") || lower.includes("swim")) return "fa-solid fa-person-swimming";
+  if (lower.includes("gym") || lower.includes("fit") || lower.includes("sport") || lower.includes("court") || lower.includes("jog")) return "fa-solid fa-dumbbell";
+  if (lower.includes("club") || lower.includes("amenit") || lower.includes("lifestyle") || lower.includes("hall")) return "fa-solid fa-hotel";
+  if (lower.includes("bhk") || lower.includes("config") || lower.includes("plot") || lower.includes("villa") || lower.includes("flat") || lower.includes("layout")) return "fa-solid fa-layer-group";
+  if (lower.includes("possess") || lower.includes("timeline") || lower.includes("launch") || lower.includes("date") || lower.includes("schedul")) return "fa-regular fa-calendar-check";
+  return defaultIcon;
+}
+
+function generatePropertyHighlights(property) {
+  if (Array.isArray(property.highlights) && property.highlights.length > 0) {
+    return property.highlights.map(h => {
+      if (typeof h === "string") {
+        return {
+          icon: getHighlightIcon(h),
+          title: "Key Feature",
+          text: h
+        };
+      }
+      return {
+        icon: h.icon || getHighlightIcon(`${h.title || ""} ${h.text || ""}`),
+        title: h.title || "Key Feature",
+        text: h.text || h.description || ""
+      };
+    });
+  }
+
+  const items = [];
+
+  // 1. RERA
+  if (property.reraId) {
+    items.push({
+      icon: "fa-solid fa-certificate",
+      title: "RERA Registered",
+      text: `Officially registered with Karnataka RERA: ${property.reraId}. Fully approved with clear titles.`
+    });
+  }
+
+  // 2. Land Area / Master Plan
+  if (property.specs?.landArea) {
+    items.push({
+      icon: "fa-solid fa-tree",
+      title: "Master Land Parcel",
+      text: `Sprawling across ${property.specs.landArea} with open landscaped green spaces and recreational avenues.`
+    });
+  }
+
+  // 3. Configurations
+  if (property.specs?.config) {
+    items.push({
+      icon: "fa-solid fa-layer-group",
+      title: "Curated Typologies",
+      text: `Thoughtfully planned ${property.specs.config} homes with expansive floor plans and cross-ventilation.`
+    });
+  }
+
+  // 4. Possession Timeline
+  if (property.specs?.possession) {
+    items.push({
+      icon: "fa-regular fa-calendar-check",
+      title: "Handover Timeline",
+      text: `Possession scheduled for ${property.specs.possession} with structured milestone-linked construction.`
+    });
+  }
+
+  // 5. Exclusive Amenities
+  const firstAmenity = property.amenities?.[0];
+  const amenityName = typeof firstAmenity === "string" ? firstAmenity : firstAmenity?.name;
+  if (amenityName) {
+    items.push({
+      icon: "fa-solid fa-hotel",
+      title: "World-Class Living",
+      text: `Includes ${amenityName} alongside wellness zones, children's play areas, and sports facilities.`
+    });
+  }
+
+  // 6. Strategic Location
+  const firstConn = property.connectivity?.[0];
+  const connLabel = typeof firstConn === "string" ? firstConn : firstConn?.label;
+  if (connLabel) {
+    items.push({
+      icon: "fa-solid fa-location-dot",
+      title: "Strategic Corridor",
+      text: `Convenient proximity to ${connLabel} with seamless connectivity across major IT & economic hubs.`
+    });
+  }
+
+  return items;
+}
+
 import { cpSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -140,7 +237,77 @@ function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
     html = seoReplaceId(html, "specPossession", seoEscape(property.specs?.possession || ""));
     html = seoReplaceId(html, "specLandArea", seoEscape(property.specs?.landArea || ""));
     html = seoReplaceId(html, "specConfig", seoEscape(property.specs?.config || ""));
-    html = seoReplaceId(html, "specRera", seoEscape(property.reraId || ""));
+        html = seoReplaceId(html, "specRera", seoEscape(property.reraId || ""));
+
+    // Pre-render gallery preview Century style
+    const galleryItems = (property.gallery || property.images || []).filter(img => typeof img === 'string' && img.trim());
+    const previewImg = property.mainImg || property.thumbnail || galleryItems[0] || "";
+    const fpCount = (property.floorPlans || []).length;
+    const photoCount = galleryItems.length || 1;
+    const countText = `${photoCount} Photos${fpCount > 0 ? ` & ${fpCount} Plans` : ''}`;
+
+    if (previewImg) {
+      html = html.replace(/(<img\b[^>]*\bid="projectGalleryPreviewImage"[^>]*\bsrc=")[^"]*(")/i, `$1${seoEscape(previewImg)}$2`);
+      html = html.replace(/(<img\b[^>]*\bid="projectGalleryPreviewImage"[^>]*\balt=")[^"]*(")/i, `$1${seoEscape(projectName)} gallery preview$2`);
+    }
+    html = seoReplaceId(html, "projectGalleryImageCount", seoEscape(countText));
+
+
+    const highlights = generatePropertyHighlights(property);
+    const highlightsHtml = highlights.map(h => `
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="${h.icon}" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          <strong class="highlight-title">${seoEscape(h.title)}</strong>
+          <span class="highlight-text">${seoEscape(h.text)}</span>
+        </div>
+      </div>
+    `).join("");
+    html = seoReplaceId(html, "detailHighlights", highlightsHtml);
+
+    html = seoReplaceId(html, "emiSyncProperty", seoEscape(projectName));
+
+    const others = seo.properties.filter(c => String(c.id) !== String(property.id));
+    const similar = others.slice(0, 2);
+    const compProjects = [property, ...similar];
+    const compHtml = compProjects.map((p, idx) => {
+      const isCurr = idx === 0;
+      const imgSrc = p.mainImg || p.thumbnail || (p.gallery && p.gallery[0]) || "";
+      const pTitle = p.title || p.name;
+      return `
+        <article class="project-comparison-card${isCurr ? " is-current" : ""}">
+          <div class="comparison-project-card">
+            <div class="comparison-project-image-wrap">
+              <img class="comparison-project-image" src="${seoEscape(imgSrc)}" alt="${seoEscape(pTitle)} project" loading="lazy" decoding="async">
+              ${isCurr ? '<span class="comparison-current-label">Current Project</span>' : ''}
+            </div>
+            <div class="comparison-project-name">
+              <span>${seoEscape(pTitle)}</span>
+              <span class="comparison-project-location">${seoEscape(p.location || "")}</span>
+            </div>
+            <button type="button" class="comparison-project-link${!isCurr ? " btn-outline" : ""}" ${isCurr ? 'onclick="triggerEnquiryScroll()"' : `onclick="openPropertyDetail('${p.id}')"`}>
+              ${isCurr ? '<i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now' : '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details'}
+            </button>
+            <div class="comparison-project-specs">
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Starting Price</span><span class="comparison-project-spec-value">${seoEscape(p.price || "On Request")}</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value">${seoEscape(p.specs?.config || "Luxury Residences")}</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value">${seoEscape(p.specs?.landArea || "Prime Acres")}</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value">${seoEscape(p.badge || "Ongoing")}</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value">${seoEscape(p.specs?.possession || "Coming Soon")}</span></div>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+    html = seoReplaceId(html, "detailComparisonGrid", compHtml);
+
+    const connItems = (property.connectivity || []).slice(0, 4);
+    const connHtml = connItems.map(item => {
+      const entry = typeof item === "string" ? { label: item, distance: "", icon: "fa-solid fa-location-dot" } : item;
+      return `<div class="connectivity-item loc-item"><span class="connectivity-label"><i class="${entry.icon || "fa-solid fa-location-dot"}" aria-hidden="true"></i><span>${seoEscape(entry.label)}</span></span>${entry.distance ? `<span class="connectivity-distance">${seoEscape(entry.distance)}</span>` : ""}</div>`;
+    }).join("");
+    const expandBtnHtml = (property.connectivity || []).length > 4 ? `\n<button type="button" class="list-expansion-toggle font-serif" aria-expanded="false">Explore connectivity details →</button>` : "";
+    html = seoReplaceId(html, "connectivityList", connHtml + expandBtnHtml);
 
     // Pre-render gallery images Century style
     const mainImg = property.mainImg || property.thumbnail || property.gallery?.[0] || "";

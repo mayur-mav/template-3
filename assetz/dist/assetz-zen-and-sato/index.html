@@ -49,7 +49,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-      <link rel="preload" as="image" href="https://media.justflip.in/builder-brand-pages/assetz/assetz-zen-and-sato/thumbnail.webp" fetchpriority="high">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="preload" as="image" href="https://media.justflip.in/builder-brand-pages/assetz/assetz-zen-and-sato/thumbnail.webp" fetchpriority="high">
 <style>body[data-property-route-loading="true"] #catalogView{display:none!important}body[data-property-route-loading="true"] #detailView{display:block!important}</style>
     <meta property="og:title" content="Assetz Zen &amp; Sato | Assetz Property Group">
     <meta property="og:description" content="Assetz Zen &amp; Sato is a Japanese-inspired quiet luxury high-rise residential project by Assetz Property Group, located in Sathanur off Bagalur Main Road...">
@@ -160,9 +161,13 @@
           </button>
           <div class="subnav-track" id="subnavTrack" role="tablist">
             <button type="button" class="subnav-tab active" role="tab" id="subnav-tab-overview" data-target="detailOverviewSection" aria-selected="true" tabindex="0">Overview</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-highlights" data-target="detailHighlightsSection" aria-selected="false" tabindex="-1">Highlights</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-gallery" data-target="detailGallerySection" aria-selected="false" tabindex="-1">Project Gallery</button>
             <button type="button" class="subnav-tab" role="tab" id="subnav-tab-floorplans" data-target="detailFloorPlansSection" aria-selected="false" tabindex="-1">Floor Plans</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-emi" data-target="detailEmiSection" aria-selected="false" tabindex="-1">Financial Estimator</button>
             <button type="button" class="subnav-tab" role="tab" id="subnav-tab-amenities" data-target="detailAmenitiesSection" aria-selected="false" tabindex="-1">Amenities</button>
             <button type="button" class="subnav-tab" role="tab" id="subnav-tab-connectivity" data-target="detailConnectivitySection" aria-selected="false" tabindex="-1">Connectivity</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-comparison" data-target="detailComparisonSection" aria-selected="false" tabindex="-1">Compare</button>
             <button type="button" class="subnav-tab" role="tab" id="subnav-tab-enquiry" data-target="detailEnquirySidebar" aria-selected="false" tabindex="-1">Enquire</button>
           </div>
           <button type="button" class="subnav-arrow subnav-arrow-right" id="subnavArrowRight" aria-label="Scroll tabs right">
@@ -1004,6 +1009,87 @@
                 </div>
               </section>
 
+              <!-- Project Highlights -->
+              <section id="detailHighlightsSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Key Advantages</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
+                    Project Highlights
+                  </h2>
+                  <div id="detailHighlights" class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          <strong class="highlight-title">RERA Registered</strong>
+          <span class="highlight-text">Officially registered with Karnataka RERA: PRM/KA/RERA/1251/472/PR/080525/007728. Fully approved with clear titles.</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          <strong class="highlight-title">Master Land Parcel</strong>
+          <span class="highlight-text">Sprawling across 7.00 Acres with open landscaped green spaces and recreational avenues.</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          <strong class="highlight-title">Curated Typologies</strong>
+          <span class="highlight-text">Thoughtfully planned 3 &amp; 4 BHK High-Rise Luxury Residences (412 Units) homes with expansive floor plans and cross-ventilation.</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          <strong class="highlight-title">Handover Timeline</strong>
+          <span class="highlight-text">Possession scheduled for May 2030 with structured milestone-linked construction.</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-hotel" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          <strong class="highlight-title">World-Class Living</strong>
+          <span class="highlight-text">Includes Grand Modern Lifestyle Clubhouse alongside wellness zones, children&#39;s play areas, and sports facilities.</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          <strong class="highlight-title">Strategic Corridor</strong>
+          <span class="highlight-text">Convenient proximity to REVA University with seamless connectivity across major IT &amp; economic hubs.</span>
+        </div>
+      </div>
+    </div>
+                </div>
+              </section>
+
+                            <!-- Project Gallery -->
+              <section id="detailGallerySection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Visual Showcase</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-2">
+                    Project Gallery
+                  </h2>
+                  <p class="text-xs sm:text-sm text-gray-600 mb-6">Browse project photos, architectural views, and available floor plans.</p>
+                  <button class="project-gallery-preview" id="projectGalleryPreview" type="button" aria-haspopup="dialog">
+                    <img id="projectGalleryPreviewImage" src="https://media.justflip.in/builder-brand-pages/assetz/assetz-zen-and-sato/thumbnail.webp" alt="Assetz Zen &amp; Sato gallery preview" loading="lazy" decoding="async">
+                    <span class="project-gallery-preview-overlay">
+                      <span class="project-gallery-image-count" id="projectGalleryImageCount">3 Photos &amp; 2 Plans</span>
+                      <span class="project-gallery-preview-action"><i class="fa-solid fa-images" aria-hidden="true"></i> View gallery</span>
+                    </span>
+                  </button>
+                </div>
+              </section>
+
               <!-- Interactive Floor Plans -->
               <section id="detailFloorPlansSection" class="detail-section-block scroll-mt-28">
                 <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
@@ -1067,6 +1153,183 @@
                 </div>
               </section>
 
+              <!-- Home Loan EMI Financial Estimator -->
+              <section id="detailEmiSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                  <div class="emi-header-row">
+                    <div>
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Financial Planning</span>
+                      </div>
+                      <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-4">
+                        Home Loan EMI Calculator
+                      </h2>
+                      <p class="emi-section-intro">Estimate monthly loan installments with dynamic property pricing and customizable loan terms.</p>
+                    </div>
+                    <div class="emi-sync-badge" id="emiSyncBadge">
+                      <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+                      <span>Synced with: <strong id="emiSyncProperty">Assetz Zen &amp; Sato</strong></span>
+                    </div>
+                  </div>
+
+                  <div class="emi-calculator-container">
+                    <!-- Left Column: Controls & Sliders -->
+                    <div class="emi-controls-col">
+                      <!-- Property Value Slider -->
+                      <div class="emi-control-group">
+                        <div class="emi-label-row">
+                          <label for="emiPropSlider" class="emi-label">
+                            <i class="fa-solid fa-indian-rupee-sign" aria-hidden="true"></i> Property Value
+                          </label>
+                          <div class="emi-val-wrap">
+                            <span class="emi-val-display" id="emiPropDisplay">₹1,01,00,000</span>
+                            <span class="emi-val-sub" id="emiPropSub">(₹1.01 Cr)</span>
+                          </div>
+                        </div>
+                        <div class="emi-slider-wrap">
+                          <input type="range" class="emi-slider" id="emiPropSlider" min="2500000" max="25000000" step="100000" value="10100000" aria-label="Property Value">
+                        </div>
+                        <div class="emi-range-limits">
+                          <span id="emiPropMinLbl">₹25 Lakh</span>
+                          <button type="button" class="emi-reset-link" id="emiResetPriceBtn" title="Reset to project price">
+                            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset to Project Price
+                          </button>
+                          <span id="emiPropMaxLbl">₹2.50 Cr</span>
+                        </div>
+                      </div>
+
+                      <!-- Down Payment Slider -->
+                      <div class="emi-control-group">
+                        <div class="emi-label-row">
+                          <label for="emiDownSlider" class="emi-label">
+                            <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i> Down Payment
+                          </label>
+                          <div class="emi-val-wrap">
+                            <span class="emi-val-pill" id="emiDownPctDisplay">20%</span>
+                            <span class="emi-val-display" id="emiDownAmountDisplay">₹20,20,000</span>
+                          </div>
+                        </div>
+                        <div class="emi-slider-wrap">
+                          <input type="range" class="emi-slider" id="emiDownSlider" min="10" max="80" step="1" value="20" aria-label="Down Payment Percentage">
+                        </div>
+                        <div class="emi-range-limits">
+                          <span>10% (Min)</span>
+                          <span class="emi-loan-caption">Loan Amount: <strong id="emiLoanAmount">₹80,80,000</strong></span>
+                          <span>80%</span>
+                        </div>
+                      </div>
+
+                      <!-- Loan Tenure Slider & Quick Chips -->
+                      <div class="emi-control-group">
+                        <div class="emi-label-row">
+                          <label for="emiTenureSlider" class="emi-label">
+                            <i class="fa-regular fa-clock" aria-hidden="true"></i> Loan Tenure
+                          </label>
+                          <div class="emi-val-wrap">
+                            <span class="emi-val-display" id="emiTenureDisplay">20 Years</span>
+                            <span class="emi-val-sub" id="emiTenureMonths">(240 Months)</span>
+                          </div>
+                        </div>
+                        <div class="emi-slider-wrap">
+                          <input type="range" class="emi-slider" id="emiTenureSlider" min="5" max="30" step="1" value="20" aria-label="Loan Tenure in Years">
+                        </div>
+                        <div class="emi-tenure-chips" role="radiogroup" aria-label="Quick Loan Tenure selection">
+                          <button type="button" class="emi-chip" data-years="5">5 Yrs</button>
+                          <button type="button" class="emi-chip" data-years="10">10 Yrs</button>
+                          <button type="button" class="emi-chip" data-years="15">15 Yrs</button>
+                          <button type="button" class="emi-chip active" data-years="20">20 Yrs</button>
+                          <button type="button" class="emi-chip" data-years="25">25 Yrs</button>
+                          <button type="button" class="emi-chip" data-years="30">30 Yrs</button>
+                        </div>
+                      </div>
+
+                      <!-- Interest Rate Slider -->
+                      <div class="emi-control-group">
+                        <div class="emi-label-row">
+                          <label for="emiRateSlider" class="emi-label">
+                            <i class="fa-solid fa-percent" aria-hidden="true"></i> Interest Rate (% p.a.)
+                          </label>
+                          <div class="emi-val-wrap">
+                            <span class="emi-val-display" id="emiRateDisplay">8.50%</span>
+                          </div>
+                        </div>
+                        <div class="emi-slider-wrap">
+                          <input type="range" class="emi-slider" id="emiRateSlider" min="6.5" max="15" step="0.05" value="8.5" aria-label="Interest Rate per annum">
+                        </div>
+                        <div class="emi-range-limits">
+                          <span>6.5%</span>
+                          <span class="emi-bank-note"><i class="fa-solid fa-building-columns"></i> Benchmark home loan rates</span>
+                          <span>15.0%</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right Column: Results & Interactive SVG Chart -->
+                    <div class="emi-results-col">
+                      <!-- Hero EMI Card -->
+                      <div class="emi-hero-card">
+                        <span class="emi-hero-label">Estimated Monthly EMI</span>
+                        <div class="emi-hero-amount" id="emiMonthlyOutput">₹70,086</div>
+                        <span class="emi-hero-footnote" id="emiHeroFootnote">*For ₹80.80 Lakh loan at 8.50% for 20 yrs</span>
+                      </div>
+
+                      <!-- Visual Donut Chart + Legend -->
+                      <div class="emi-chart-box">
+                        <div class="emi-donut-wrapper">
+                          <svg class="emi-donut-svg" viewBox="0 0 100 100" width="100" height="100" aria-label="Principal versus interest breakdown chart" role="img">
+                            <circle class="emi-donut-meter" cx="50" cy="50" r="38" />
+                            <circle class="emi-donut-segment emi-segment-principal" id="emiDonutPrincipal" cx="50" cy="50" r="38" stroke-dasharray="119.38 238.76" stroke-dashoffset="0" />
+                            <circle class="emi-donut-segment emi-segment-interest" id="emiDonutInterest" cx="50" cy="50" r="38" stroke-dasharray="119.38 238.76" stroke-dashoffset="-119.38" />
+                          </svg>
+                          <div class="emi-donut-center">
+                            <span class="emi-donut-center-lbl">Total</span>
+                            <span class="emi-donut-center-val" id="emiDonutCenterVal">₹1.68 Cr</span>
+                          </div>
+                        </div>
+                        <div class="emi-chart-legend">
+                          <div class="emi-legend-item">
+                            <span class="emi-legend-bullet bullet-principal"></span>
+                            <div class="emi-legend-info">
+                              <span class="emi-legend-title">Principal Loan</span>
+                              <strong class="emi-legend-value" id="emiLegendPrincipalVal">₹80,80,000</strong>
+                              <span class="emi-legend-pct" id="emiLegendPrincipalPct">(48%)</span>
+                            </div>
+                          </div>
+                          <div class="emi-legend-item">
+                            <span class="emi-legend-bullet bullet-interest"></span>
+                            <div class="emi-legend-info">
+                              <span class="emi-legend-title">Total Interest</span>
+                              <strong class="emi-legend-value" id="emiLegendInterestVal">₹87,40,640</strong>
+                              <span class="emi-legend-pct" id="emiLegendInterestPct">(52%)</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Summary Breakdown List -->
+                      <div class="emi-breakdown-table">
+                        <div class="emi-breakdown-row">
+                          <span class="emi-row-title">Down Payment <span id="emiTableDownPct" class="text-xs text-gray-400">(20%)</span></span>
+                          <strong class="emi-row-value" id="emiTableDown">₹20,20,000</strong>
+                        </div>
+                        <div class="emi-breakdown-row">
+                          <span class="emi-row-title">Principal Loan Amount</span>
+                          <strong class="emi-row-value" id="emiTablePrincipal">₹80,80,000</strong>
+                        </div>
+                        <div class="emi-breakdown-row">
+                          <span class="emi-row-title">Total Interest Payable</span>
+                          <strong class="emi-row-value" id="emiTableInterest">₹87,40,640</strong>
+                        </div>
+                        <div class="emi-breakdown-row emi-row-total">
+                          <span class="emi-row-title">Total Amount Payable</span>
+                          <strong class="emi-row-value" id="emiTableTotal">₹1,68,20,640</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               <!-- Amenities Grid -->
               <section id="detailAmenitiesSection" class="detail-section-block scroll-mt-28">
                 <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
@@ -1085,21 +1348,115 @@
                 </div>
               </section>
 
-              <!-- Connectivity & Location -->
+                            <!-- Connectivity & Location -->
               <section id="detailConnectivitySection" class="detail-section-block scroll-mt-28">
                 <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Prime Neighborhood</span>
                   </div>
                   <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
-                    Location & Neighborhood Highlights
+                    Location &amp; Strategic Connectivity
                   </h2>
-                  <div
-                    id="connectivityList"
-                    class="bg-[#FAF8F5] p-5 sm:p-6 border border-gray-200 rounded-xl space-y-3 text-xs sm:text-sm text-gray-700"
-                  >
-                    <!-- Dynamic JS Injection -->
+                  <div class="connectivity-overview">
+                    <div class="connectivity-map-preview">
+                      <div id="connectivity-map-preview-canvas" class="connectivity-map-preview-canvas" role="img" aria-label="Map preview of the property location"></div>
+                      <button class="connectivity-map-trigger" id="connectivity-map-open" type="button">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        Show on Map
+                      </button>
+                    </div>
+                    <div class="connectivity-destinations">
+                      <h3 class="font-serif text-base sm:text-lg font-bold text-sobhaNavy mb-3">Nearby Destinations</h3>
+                      <div
+                        id="connectivityList"
+                        class="location-matrix"
+                      ><div class="connectivity-item loc-item"><span class="connectivity-label"><i class="fa-solid fa-school" aria-hidden="true"></i><span>REVA University</span></span><span class="connectivity-distance">1.0 km</span></div><div class="connectivity-item loc-item"><span class="connectivity-label"><i class="fa-solid fa-route" aria-hidden="true"></i><span>Bagalur Main Road</span></span><span class="connectivity-distance">1.2 km</span></div><div class="connectivity-item loc-item"><span class="connectivity-label"><i class="fa-solid fa-school" aria-hidden="true"></i><span>Delhi Public School (Yelahanka)</span></span><span class="connectivity-distance">3.5 km</span></div><div class="connectivity-item loc-item"><span class="connectivity-label"><i class="fa-solid fa-route" aria-hidden="true"></i><span>Bellary Road (NH 44)</span></span><span class="connectivity-distance">5.0 km</span></div>
+<button type="button" class="list-expansion-toggle font-serif" aria-expanded="false">Explore connectivity details →</button></div>
+                    </div>
                   </div>
+                </div>
+              </section>
+
+              <!-- Compare Similar Projects -->
+              <section id="detailComparisonSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Portfolio Comparison</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-4">
+                    Compare Similar Projects
+                  </h2>
+                  <p class="project-comparison-intro">Compare this project with other Assetz Property Group homes before you decide.</p>
+                  <div class="project-comparison-grid" id="detailComparisonGrid">
+        <article class="project-comparison-card is-current">
+          <div class="comparison-project-card">
+            <div class="comparison-project-image-wrap">
+              <img class="comparison-project-image" src="https://media.justflip.in/builder-brand-pages/assetz/assetz-zen-and-sato/thumbnail.webp" alt="Assetz Zen &amp; Sato project" loading="lazy" decoding="async">
+              <span class="comparison-current-label">Current Project</span>
+            </div>
+            <div class="comparison-project-name">
+              <span>Assetz Zen &amp; Sato</span>
+              <span class="comparison-project-location">Sathanur, Off Bagalur Main Road, Yelahanka, North Bengaluru</span>
+            </div>
+            <button type="button" class="comparison-project-link" onclick="triggerEnquiryScroll()">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now
+            </button>
+            <div class="comparison-project-specs">
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Starting Price</span><span class="comparison-project-spec-value">₹ 2.98 Cr*</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value">3 &amp; 4 BHK High-Rise Luxury Residences (412 Units)</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value">7.00 Acres</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value">New Launch</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value">May 2030</span></div>
+            </div>
+          </div>
+        </article>
+      
+        <article class="project-comparison-card">
+          <div class="comparison-project-card">
+            <div class="comparison-project-image-wrap">
+              <img class="comparison-project-image" src="https://media.justflip.in/builder-brand-pages/assetz/assetz-city-of-palms/thumbnail.webp" alt="Assetz City of Palms project" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="comparison-project-name">
+              <span>Assetz City of Palms</span>
+              <span class="comparison-project-location">Doddacheemanahalli, Off IVC Road &amp; Chapparakallu Road, Devanahalli, North Bengaluru</span>
+            </div>
+            <button type="button" class="comparison-project-link btn-outline" onclick="openPropertyDetail('assetz-city-of-palms')">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details
+            </button>
+            <div class="comparison-project-specs">
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Starting Price</span><span class="comparison-project-spec-value">₹ 1.01 Cr*</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value">Residential Villa Plots — 620 Total Plots</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value">35.00 Acres (Total Master Plan)</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value">New Launch</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value">February 2029</span></div>
+            </div>
+          </div>
+        </article>
+      
+        <article class="project-comparison-card">
+          <div class="comparison-project-card">
+            <div class="comparison-project-image-wrap">
+              <img class="comparison-project-image" src="https://media.justflip.in/builder-brand-pages/assetz/assetz-miru-and-miyo/thumbnail.webp" alt="Assetz Miru &amp; Miyo project" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="comparison-project-name">
+              <span>Assetz Miru &amp; Miyo</span>
+              <span class="comparison-project-location">Singanayakanahalli / Honnenahalli, Off Doddaballapur Road, Yelahanka, North Bengaluru</span>
+            </div>
+            <button type="button" class="comparison-project-link btn-outline" onclick="openPropertyDetail('assetz-miru-and-miyo')">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details
+            </button>
+            <div class="comparison-project-specs">
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Starting Price</span><span class="comparison-project-spec-value">₹ 2.04 Cr*</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value">Spacious 3 BHK Luxury Residences (350 Units)</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value">6.35 Acres</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value">New Launch</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value">March 2031</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
                 </div>
               </section>
             </div>
@@ -1521,5 +1878,83 @@
       </button>
     </div>
 
-  </body>
+      <!-- Project Gallery Modal Dialog -->
+    <dialog class="project-gallery-dialog" id="projectGalleryDialog" aria-labelledby="projectGalleryTitle">
+      <div class="project-gallery-dialog-content">
+        <div class="project-gallery-dialog-header">
+          <div>
+            <span class="connectivity-map-eyebrow text-xs uppercase tracking-widest text-[#C5A059] font-bold">PROJECT VISUALS</span>
+            <h2 id="projectGalleryTitle" class="font-serif text-lg sm:text-xl font-bold text-white">Project Gallery</h2>
+          </div>
+          <button class="project-gallery-close" id="projectGalleryClose" type="button" aria-label="Close gallery">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="project-gallery-tabs" role="tablist" aria-label="Gallery media categories">
+          <button class="project-gallery-tab" id="projectGalleryProjectTab" type="button" role="tab" aria-selected="true" data-gallery-category="photo">
+            Project Photos
+          </button>
+          <button class="project-gallery-tab" id="projectGalleryFloorPlanTab" type="button" role="tab" aria-selected="false" data-gallery-category="floor-plan" tabindex="-1">
+            Floor Plans
+          </button>
+        </div>
+        <div class="project-gallery-viewer" id="projectGalleryViewer" role="region" aria-roledescription="carousel" aria-label="Gallery viewer">
+          <div class="project-gallery-main">
+            <button class="project-gallery-nav project-gallery-previous" id="projectGalleryPrevious" type="button" aria-label="Previous image">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <img class="project-gallery-current-image" id="projectGalleryCurrentImage" src="" alt="" decoding="async" draggable="false">
+            <button class="project-gallery-nav project-gallery-next" id="projectGalleryNext" type="button" aria-label="Next image">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+            <span class="project-gallery-counter" id="projectGalleryCounter" aria-live="polite"></span>
+          </div>
+          <div class="project-gallery-thumbnails" id="projectGalleryThumbnails" aria-label="Gallery thumbnails"></div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Full-screen Interactive Connectivity Map Modal -->
+    <section class="connectivity-map" id="connectivity-map" aria-labelledby="connectivity-map-title" aria-modal="true" role="dialog" hidden>
+      <header class="connectivity-map-header">
+        <div class="connectivity-map-heading">
+          <span class="connectivity-map-eyebrow">LOCATION &amp; CONNECTIVITY</span>
+          <h2 id="connectivity-map-title">Connectivity Map</h2>
+          <p id="connectivity-map-project"></p>
+        </div>
+        <label class="connectivity-map-search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <span class="sr-only">Search listed destinations</span>
+          <input id="connectivity-map-search-input" type="search" placeholder="Search listed destinations" autocomplete="off">
+        </label>
+        <button class="connectivity-map-close" id="connectivity-map-close" type="button" aria-label="Close map">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          <span>Back to property</span>
+        </button>
+      </header>
+      <div class="connectivity-map-layout">
+        <aside class="connectivity-map-sidebar" aria-label="Property connectivity">
+          <div class="connectivity-map-sidebar-heading">
+            <h3>Listed destinations</h3>
+            <span id="connectivity-map-count"></span>
+          </div>
+          <p class="connectivity-map-hint">Choose a destination from this property's connectivity list to view its route.</p>
+          <div class="connectivity-map-list" id="connectivity-map-list"></div>
+          <div class="connectivity-map-directions">
+            <a id="connectivity-map-directions-link" href="#" target="_blank" rel="noopener noreferrer">
+              Open directions in Google Maps
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+            <small>Destinations come from this property's connectivity data. The route line is provided by OSRM; open Google Maps for turn-by-turn directions.</small>
+          </div>
+        </aside>
+        <div class="connectivity-map-canvas">
+          <div id="connectivity-map-canvas" class="connectivity-leaflet-map" role="application" aria-label="Map showing the property and selected destination"></div>
+          <p id="connectivity-map-route-status" class="connectivity-map-route-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+</body>
 </html>
