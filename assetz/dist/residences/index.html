@@ -42,7 +42,7 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/styles.css?v=2.4" />
+    <link rel="stylesheet" href="css/styles.css?v=2.7" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <meta property="og:title" content="Assetz Property Group Bangalore | Assetz Apartments">
@@ -788,7 +788,7 @@
             <div>
               <button
                 id="detailBackButton"
-                onclick="showCatalogView()"
+                onclick="handleDetailBackClick(event)"
                 class="hidden items-center gap-2 text-xs uppercase font-bold text-white hover:text-sobhaGold transition-colors bg-white/10 hover:bg-white/20 px-3 py-2 rounded-sm border border-white/20 mb-5"
               >
                 <svg
@@ -968,7 +968,7 @@
             <div class="detail-main-content lg:col-span-8 space-y-8 sm:space-y-12 min-w-0">
               <!-- Overview -->
               <section id="detailOverviewSection" class="detail-section-block scroll-mt-28">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Project Narrative</span>
                   </div>
@@ -991,7 +991,7 @@
 
               <!-- Project Highlights -->
               <section id="detailHighlightsSection" class="detail-section-block scroll-mt-28">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Key Advantages</span>
                   </div>
@@ -1006,7 +1006,7 @@
 
                             <!-- Project Gallery -->
               <section id="detailGallerySection" class="detail-section-block scroll-mt-28">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Visual Showcase</span>
                   </div>
@@ -1029,7 +1029,7 @@
 
               <!-- Interactive Floor Plans -->
               <section id="detailFloorPlansSection" class="detail-section-block scroll-mt-28">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Configuration & Layouts</span>
                   </div>
@@ -1092,7 +1092,7 @@
 
               <!-- Home Loan EMI Financial Estimator -->
               <section id="detailEmiSection" class="detail-section-block scroll-mt-28">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
                   <div class="emi-header-row">
                     <div>
                       <div class="flex items-center gap-2 mb-2">
@@ -1269,7 +1269,7 @@
 
               <!-- Amenities Grid -->
               <section id="detailAmenitiesSection" class="detail-section-block scroll-mt-28">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Curated Facilities</span>
                   </div>
@@ -1287,7 +1287,7 @@
 
                             <!-- Connectivity & Location -->
               <section id="detailConnectivitySection" class="detail-section-block scroll-mt-28">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Prime Neighborhood</span>
                   </div>
@@ -1317,7 +1317,7 @@
 
               <!-- Compare Similar Projects -->
               <section id="detailComparisonSection" class="detail-section-block scroll-mt-28">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Portfolio Comparison</span>
                   </div>
@@ -1737,7 +1737,7 @@
         if (!seen) window.setTimeout(openDialog, 3500);
       })();
     </script>
-    <script src="js/main.js?v=2.4"></script>
+    <script src="js/main.js?v=2.7"></script>
   
     <!-- MOBILE BOTTOM STICKY ACTION BAR -->
     <div id="mobileBottomBar" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-2.5 flex items-center justify-between gap-3 shadow-lg">

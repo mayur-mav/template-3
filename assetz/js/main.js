@@ -792,7 +792,7 @@ function renderProjectComparison(item) {
     } else {
       projectAction.innerHTML = '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details';
       projectAction.setAttribute("aria-label", `View ${project.title} details`);
-      projectAction.onclick = () => openPropertyDetail(project.id);
+      projectAction.onclick = () => navigateToComparedProperty(project.id);
     }
     card.appendChild(projectAction);
 
@@ -1350,9 +1350,36 @@ function initConnectivityMapListeners() {
   });
 }
 
-function openPropertyDetail(id, updateUrl = true) {
+
+function navigateToComparedProperty(targetId) {
+  if (activeProject) {
+    const curPath = window.location.pathname;
+    const previousId = activeProject.id;
+    try {
+      history.replaceState({
+        propertyId: previousId,
+        returnToSection: "detailComparisonSection"
+      }, "", curPath);
+      sessionStorage.setItem("assetz_return_to_section_" + previousId, "detailComparisonSection");
+      sessionStorage.setItem("assetz_navigated_from_comparison", "true");
+    } catch (e) {}
+  }
+  openPropertyDetail(targetId, true, { fromComparison: true, smooth: true });
+}
+
+function handleDetailBackClick(event) {
+  if (event) event.preventDefault();
+  if (window.history.length > 1 && (window.history.state?.fromComparison || sessionStorage.getItem("assetz_navigated_from_comparison") === "true")) {
+    window.history.back();
+    return;
+  }
+  showCatalogView(true);
+}
+
+function openPropertyDetail(id, updateUrl = true, options = {}) {
   const p = projectsData.find((x) => x.id === id);
   if (!p) return;
+  const previousProject = activeProject;
   activeProject = p;
 
   const displayedBuilderName = document.body.dataset.builderName || "Assetz Property Group";
@@ -1448,16 +1475,22 @@ function openPropertyDetail(id, updateUrl = true) {
     .join("");
   addListExpansion(amenitiesGrid, 6, "amenities");
   const connectivityList = document.getElementById("connectivityList");
-  connectivityList.innerHTML = p.connectivity
-    .map((item) => {
-      const entry =
-        typeof item === "string"
-          ? { label: item, distance: "", icon: "fa-solid fa-location-dot" }
-          : item;
-      return `<div class="connectivity-item loc-item"><span class="connectivity-label"><i class="${entry.icon || "fa-solid fa-location-dot"}" aria-hidden="true"></i><span>${entry.label}</span></span>${entry.distance ? `<span class="connectivity-distance">${entry.distance}</span>` : ""}</div>`;
-    })
-    .join("");
-  addListExpansion(connectivityList, 4, "connectivity");
+  if (connectivityList) {
+    const oldConnToggle = connectivityList.nextElementSibling;
+    if (oldConnToggle?.classList.contains("list-expansion-toggle")) {
+      oldConnToggle.remove();
+    }
+    const connItems = (p.connectivity || []).slice(0, 4);
+    connectivityList.innerHTML = connItems
+      .map((item) => {
+        const entry =
+          typeof item === "string"
+            ? { label: item, distance: "", icon: "fa-solid fa-location-dot" }
+            : item;
+        return `<div class="connectivity-item loc-item"><span class="connectivity-label"><i class="${entry.icon || "fa-solid fa-location-dot"}" aria-hidden="true"></i><span>${entry.label}</span></span>${entry.distance ? `<span class="connectivity-distance">${entry.distance}</span>` : ""}</div>`;
+      })
+      .join("");
+  }
   renderSidebarUnitOptions(p);
   renderPropertyHighlights(p);
   renderProjectGallerySection(p);
@@ -1473,35 +1506,66 @@ function openPropertyDetail(id, updateUrl = true) {
   document.getElementById("detailBackButton")?.classList.add("inline-flex");
   closeMobileNavigation();
 
+  const detailViewEl = document.getElementById("detailView");
+
   if (updateUrl) {
     const basePath = getSiteBasePath();
     const cleanId = encodeURIComponent(id);
     const targetPath = `${basePath}${cleanId}`;
     if (window.location.pathname !== targetPath && window.location.pathname.replace(/\/$/, "") !== `/${cleanId}`) {
-      history.pushState({ propertyId: id }, "", targetPath);
+      if (previousProject && options.fromComparison) {
+        history.replaceState({
+          propertyId: activeProject.id,
+          returnToSection: "detailComparisonSection"
+        }, "", window.location.pathname);
+      }
+      history.pushState({ propertyId: id, fromComparison: Boolean(options.fromComparison) }, "", targetPath);
     }
   }
 
-  // Force scroll to top of page immediately and after layout rendering
-  const forceScrollToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-    const subnav = document.getElementById("detailSubnavBar");
-    if (subnav) subnav.classList.remove("is-visible");
-    const track = document.getElementById("subnavTrack");
-    if (track) track.scrollLeft = 0;
-    const firstTab = document.querySelector('.subnav-tab[data-target="detailOverviewSection"]');
-    if (firstTab) {
-      document.querySelectorAll(".subnav-tab").forEach(t => t.classList.remove("active"));
-      firstTab.classList.add("active");
-    }
-  };
+  // Handle Target Scroll (Comparison return vs. Smooth Top Redirect)
+  const targetSection = options.targetSection || null;
+  const isSmooth = options.smooth !== false;
 
-  forceScrollToTop();
-  requestAnimationFrame(forceScrollToTop);
-  setTimeout(forceScrollToTop, 40);
-  setTimeout(forceScrollToTop, 120);
+  if (detailViewEl && isSmooth) {
+    detailViewEl.classList.add("is-transitioning");
+    setTimeout(() => detailViewEl.classList.remove("is-transitioning"), 220);
+  }
+
+  if (targetSection) {
+    const scrollToSection = () => {
+      const el = document.getElementById(targetSection);
+      if (el) {
+        if (typeof window.smoothScrollTo === "function") {
+          window.smoothScrollTo(targetSection);
+        } else {
+          el.scrollIntoView({ behavior: isSmooth ? "smooth" : "auto", block: "start" });
+        }
+      }
+    };
+    requestAnimationFrame(() => {
+      scrollToSection();
+      setTimeout(scrollToSection, 80);
+      setTimeout(scrollToSection, 200);
+    });
+  } else {
+    // Smooth scroll to top of page
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: isSmooth ? "smooth" : "auto" });
+      const subnav = document.getElementById("detailSubnavBar");
+      if (subnav) subnav.classList.remove("is-visible");
+      const track = document.getElementById("subnavTrack");
+      if (track) track.scrollLeft = 0;
+      const firstTab = document.querySelector('.subnav-tab[data-target="detailOverviewSection"]');
+      if (firstTab) {
+        document.querySelectorAll(".subnav-tab").forEach(t => t.classList.remove("active"));
+        firstTab.classList.add("active");
+      }
+    };
+    scrollToTop();
+    requestAnimationFrame(scrollToTop);
+    setTimeout(scrollToTop, 50);
+  }
 }
 function addListExpansion(list, collapsedLimit, label) {
   list.classList.toggle(
@@ -1627,12 +1691,25 @@ function navigateToSection(id) {
     ),
   );
 }
-function restoreRoute({ scroll = true } = {}) {
+function restoreRoute({ scroll = true, state = null } = {}) {
+  const currentState = state !== null && state !== undefined ? state : window.history.state;
   const path =
     decodeURIComponent(window.location.pathname).replace(/\/$/, "") || "/";
   const project = projectsData.find((item) => `/${item.id}` === path);
   if (project) {
-    openPropertyDetail(project.id, false);
+    let returnSection = currentState?.returnToSection;
+    if (!returnSection) {
+      try {
+        returnSection = sessionStorage.getItem("assetz_return_to_section_" + project.id);
+        if (returnSection) {
+          sessionStorage.removeItem("assetz_return_to_section_" + project.id);
+        }
+      } catch (e) {}
+    }
+    openPropertyDetail(project.id, false, {
+      targetSection: returnSection || null,
+      smooth: true
+    });
     return;
   }
   showCatalogView(false);
@@ -1931,7 +2008,7 @@ if (document.readyState === "loading")
 else loadBuilderData();
 
 window.addEventListener("resize", updateProjectCarouselArrows);
-window.addEventListener("popstate", () => restoreRoute());
+window.addEventListener("popstate", (event) => restoreRoute({ state: event.state }));
 document
   .getElementById("projectsContainer")
   ?.addEventListener("scroll", updateProjectCarouselArrows, { passive: true });
@@ -2198,7 +2275,7 @@ function initDetailSubnav() {
   }, { passive: true });
 }
 
-window.smoothScrollTo = function(elementId) {
+function smoothScrollTo(elementId) {
   const el = document.getElementById(elementId);
   if (!el) return;
   const header = document.querySelector("header");
@@ -2213,6 +2290,9 @@ window.smoothScrollTo = function(elementId) {
   });
 };
 
+window.smoothScrollTo = smoothScrollTo;
+window.navigateToComparedProperty = navigateToComparedProperty;
+window.handleDetailBackClick = handleDetailBackClick;
 window.openPropertyDetail = openPropertyDetail;
 window.selectFloorPlan = selectFloorPlan;
 window.showCatalogView = showCatalogView;

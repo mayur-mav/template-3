@@ -285,7 +285,7 @@ function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
               <span>${seoEscape(pTitle)}</span>
               <span class="comparison-project-location">${seoEscape(p.location || "")}</span>
             </div>
-            <button type="button" class="comparison-project-link${!isCurr ? " btn-outline" : ""}" ${isCurr ? 'onclick="triggerEnquiryScroll()"' : `onclick="openPropertyDetail('${p.id}'); return false;"`}>
+            <button type="button" class="comparison-project-link${!isCurr ? " btn-outline" : ""}" ${isCurr ? 'onclick="triggerEnquiryScroll()"' : `onclick="navigateToComparedProperty('${p.id}'); return false;"`}>
               ${isCurr ? '<i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now' : '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details'}
             </button>
             <div class="comparison-project-specs">
@@ -306,8 +306,7 @@ function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
       const entry = typeof item === "string" ? { label: item, distance: "", icon: "fa-solid fa-location-dot" } : item;
       return `<div class="connectivity-item loc-item"><span class="connectivity-label"><i class="${entry.icon || "fa-solid fa-location-dot"}" aria-hidden="true"></i><span>${seoEscape(entry.label)}</span></span>${entry.distance ? `<span class="connectivity-distance">${seoEscape(entry.distance)}</span>` : ""}</div>`;
     }).join("");
-    const expandBtnHtml = (property.connectivity || []).length > 4 ? `\n<button type="button" class="list-expansion-toggle font-serif" aria-expanded="false">Explore connectivity details →</button>` : "";
-    html = seoReplaceId(html, "connectivityList", connHtml + expandBtnHtml);
+    html = seoReplaceId(html, "connectivityList", connHtml);
 
     // Pre-render gallery images Century style
     const mainImg = property.mainImg || property.thumbnail || property.gallery?.[0] || "";
