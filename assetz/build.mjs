@@ -54,7 +54,7 @@ function getHighlightIcon(text, defaultIcon = "fa-solid fa-circle-check") {
   if (lower.includes("gym") || lower.includes("fit") || lower.includes("sport") || lower.includes("court") || lower.includes("jog")) return "fa-solid fa-dumbbell";
   if (lower.includes("club") || lower.includes("amenit") || lower.includes("lifestyle") || lower.includes("hall")) return "fa-solid fa-hotel";
   if (lower.includes("bhk") || lower.includes("config") || lower.includes("plot") || lower.includes("villa") || lower.includes("flat") || lower.includes("layout")) return "fa-solid fa-layer-group";
-  if (lower.includes("possess") || lower.includes("timeline") || lower.includes("launch") || lower.includes("date") || lower.includes("schedul")) return "fa-regular fa-calendar-check";
+  if (lower.includes("possess") || lower.includes("timeline") || lower.includes("launch") || lower.includes("date") || lower.includes("schedul")) return "fa-solid fa-calendar-check";
   return defaultIcon;
 }
 
@@ -108,7 +108,7 @@ function generatePropertyHighlights(property) {
   // 4. Possession Timeline
   if (property.specs?.possession) {
     items.push({
-      icon: "fa-regular fa-calendar-check",
+      icon: "fa-solid fa-calendar-check",
       title: "Handover Timeline",
       text: `Possession scheduled for ${property.specs.possession} with structured milestone-linked construction.`
     });
@@ -279,13 +279,13 @@ function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
           <div class="comparison-project-card">
             <div class="comparison-project-image-wrap">
               <img class="comparison-project-image" src="${seoEscape(imgSrc)}" alt="${seoEscape(pTitle)} project" loading="lazy" decoding="async">
-              ${isCurr ? '<span class="comparison-current-label">Current Project</span>' : ''}
+              ${isCurr ? '<span class="comparison-current-label" style="background:#143C47 !important; color:#FFFFFF !important; border:1px solid #C5A059 !important; font-weight:800 !important;">Current Project</span>' : ''}
             </div>
             <div class="comparison-project-name">
               <span>${seoEscape(pTitle)}</span>
               <span class="comparison-project-location">${seoEscape(p.location || "")}</span>
             </div>
-            <button type="button" class="comparison-project-link${!isCurr ? " btn-outline" : ""}" ${isCurr ? 'onclick="triggerEnquiryScroll()"' : `onclick="openPropertyDetail('${p.id}')"`}>
+            <button type="button" class="comparison-project-link${!isCurr ? " btn-outline" : ""}" ${isCurr ? 'onclick="triggerEnquiryScroll()"' : `onclick="openPropertyDetail('${p.id}'); return false;"`}>
               ${isCurr ? '<i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now' : '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details'}
             </button>
             <div class="comparison-project-specs">

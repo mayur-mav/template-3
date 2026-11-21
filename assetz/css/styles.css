@@ -839,13 +839,13 @@ footer,
 footer p,
 #siteFooter p,
 footer .text-slate-300,
-#siteFooter .text-slate-300 {
-  color: #CBD5E1 !important;
-}
-
+#siteFooter .text-slate-300,
 footer .text-slate-400,
-#siteFooter .text-slate-400 {
-  color: #94A3B8 !important;
+#siteFooter .text-slate-400,
+footer div,
+#siteFooter div {
+  color: #FFFFFF !important;
+  opacity: 0.95 !important;
 }
 
 footer strong,
@@ -875,10 +875,10 @@ footer a:hover,
   color: var(--theme-text-primary);
 }
 
-#catalogView p:not(footer p):not(#siteFooter p),
+#catalogView p:not(footer p):not(#siteFooter p):not(#hero p):not(.bg-sobhaNavy p):not(.bg-gradient-to-br p):not([style*="color: #ffffff"]):not([style*="color:#ffffff"]):not([style*="color: #FFFFFF"]):not([style*="color:#FFFFFF"]),
 #catalogView li:not(footer li):not(#siteFooter li),
 #catalogView label,
-#detailView p,
+#detailView p:not(section.bg-sobhaNavy p):not(.emi-hero-card p):not([style*="color: #ffffff"]):not([style*="color:#ffffff"]):not([style*="color: #FFFFFF"]):not([style*="color:#FFFFFF"]),
 #detailView li,
 #detailView label,
 #detailView .connectivity-item {
@@ -1894,39 +1894,49 @@ footer a {
   min-width: 0;
 }
 
-.emi-hero-card {
-  background: linear-gradient(135deg, #143C47 0%, #0F2D35 100%);
-  border-radius: 12px;
-  padding: 20px;
-  color: #FFFFFF;
-  text-align: center;
-  box-shadow: 0 4px 16px rgba(20, 60, 71, 0.18);
-  border: 1px solid rgba(197, 160, 89, 0.3);
+.emi-hero-card,
+#detailView .emi-hero-card,
+#detailView .bg-white .emi-hero-card {
+  background: linear-gradient(135deg, #143C47 0%, #0F2D35 100%) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  box-shadow: 0 4px 16px rgba(20, 60, 71, 0.18) !important;
+  border: 1px solid rgba(197, 160, 89, 0.3) !important;
 }
 
-.emi-hero-label {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #C5A059;
-  font-weight: 700;
-  margin-bottom: 6px;
+.emi-hero-label,
+#detailView .emi-hero-label,
+#detailView .bg-white .emi-hero-label {
+  display: block !important;
+  font-size: 0.78rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  margin-bottom: 6px !important;
+  opacity: 0.95 !important;
 }
 
-.emi-hero-amount {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  line-height: 1.1;
-  margin-bottom: 6px;
+.emi-hero-amount,
+#detailView .emi-hero-amount,
+#detailView .bg-white .emi-hero-amount {
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  line-height: 1.1 !important;
+  margin-bottom: 6px !important;
 }
 
-.emi-hero-footnote {
-  display: block;
-  font-size: 0.72rem;
-  color: #94A3B8;
+.emi-hero-footnote,
+#detailView .emi-hero-footnote,
+#detailView .bg-white .emi-hero-footnote {
+  display: block !important;
+  font-size: 0.75rem !important;
+  color: #FFFFFF !important;
+  opacity: 0.9 !important;
 }
 
 .emi-chart-box {
@@ -2105,13 +2115,13 @@ footer a {
 
 /* ==================== PROJECT COMPARISON GRID ==================== */
 .project-comparison-section {
-  margin-top: 0;
+  scroll-margin-top: 135px;
+  margin-top: 40px;
 }
 
 .project-comparison-intro {
-  font-size: 0.875rem;
-  color: #4B5563;
-  margin-top: -8px;
+  color: #64748B;
+  font-size: 0.92rem;
   margin-bottom: 20px;
   line-height: 1.5;
 }
@@ -2120,18 +2130,18 @@ footer a {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   overflow: hidden;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
+  border: 1px solid #CBD5E1;
+  border-radius: 10px;
   background: #FFFFFF;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .project-comparison-card {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  padding: 16px;
-  border-right: 1px solid #E5E7EB;
+  padding: 14px 16px;
+  border-right: 1px solid #CBD5E1;
   background: #FFFFFF;
   transition: background-color 0.2s ease;
 }
@@ -2145,11 +2155,17 @@ footer a {
   border-top: 3px solid #C5A059;
 }
 
+.project-comparison-card.is-current .comparison-project-location,
+.project-comparison-card.is-current .comparison-project-spec-label {
+  color: #475569;
+  font-weight: 600;
+}
+
 .comparison-project-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-rows: auto minmax(48px, auto) auto;
+  gap: 10px;
   height: 100%;
 }
 
@@ -2158,7 +2174,7 @@ footer a {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 6px;
   background: #E2E8F0;
 }
 
@@ -2174,19 +2190,24 @@ footer a {
   transform: scale(1.04);
 }
 
-.comparison-current-label {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: #143C47;
-  color: #FFFFFF;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.comparison-current-label,
+#detailView .comparison-current-label,
+#detailView .bg-white .comparison-current-label,
+.comparison-project-card .comparison-current-label {
+  position: absolute !important;
+  top: 8px !important;
+  left: 8px !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  background: #143C47 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #C5A059 !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  z-index: 2 !important;
 }
 
 .comparison-project-name {
@@ -2194,11 +2215,16 @@ footer a {
   font-family: "Playfair Display", Georgia, serif;
   font-size: 1.05rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
+  min-height: 52px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  min-height: 48px;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
+.comparison-project-name > span {
+  display: block;
 }
 
 .comparison-project-location {
@@ -2206,6 +2232,7 @@ footer a {
   color: #64748B;
   font-size: 0.78rem;
   font-weight: 400;
+  line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -2213,95 +2240,137 @@ footer a {
 }
 
 .comparison-project-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  min-height: 40px;
-  padding: 8px 14px;
-  border: 1px solid #143C47;
-  border-radius: 8px;
-  background: #143C47;
-  color: #FFFFFF;
-  font-size: 0.8rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  min-height: 40px !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
 }
 
-.comparison-project-link:hover {
-  background: #C5A059;
-  border-color: #C5A059;
-  color: #143C47;
+/* Enquire Now button (Current Project) */
+.comparison-project-link:not(.btn-outline) {
+  background: #143C47 !important;
+  border: 1px solid #143C47 !important;
+  color: #FFFFFF !important;
+}
+.comparison-project-link:not(.btn-outline) i {
+  color: #FFFFFF !important;
+  font-size: 0.88rem !important;
+  transition: color 0.2s ease !important;
+}
+.comparison-project-link:not(.btn-outline):hover {
+  background: #C5A059 !important;
+  border-color: #C5A059 !important;
+  color: #143C47 !important;
+}
+.comparison-project-link:not(.btn-outline):hover i {
+  color: #143C47 !important;
 }
 
+/* View Details button (Other Projects) */
 .comparison-project-link.btn-outline {
-  background: #FFFFFF;
-  color: #143C47;
-  border-color: #CBD5E1;
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #143C47 !important;
+}
+.comparison-project-link.btn-outline i {
+  color: #143C47 !important;
+  font-size: 0.88rem !important;
+  transition: color 0.2s ease !important;
 }
 
-.comparison-project-link.btn-outline:hover {
-  background: #143C47;
-  color: #FFFFFF;
-  border-color: #143C47;
+/* View Details Hover: Navy background, crisp white text AND crisp white icon */
+.comparison-project-link.btn-outline:hover,
+.comparison-project-link.btn-outline:focus-visible {
+  background: #143C47 !important;
+  border-color: #143C47 !important;
+  color: #FFFFFF !important;
+}
+.comparison-project-link.btn-outline:hover i,
+.comparison-project-link.btn-outline:focus-visible i {
+  color: #FFFFFF !important;
 }
 
 .comparison-project-specs {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid #E5E7EB;
-  margin-top: 4px;
+  display: grid;
+  gap: 0;
+  margin: 14px -16px -14px;
 }
 
 .comparison-project-spec {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 10px 0;
-  border-bottom: 1px solid #F1F5F9;
-}
-
-.comparison-project-spec:last-child {
-  border-bottom: none;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 16px;
+  min-height: 62px;
+  border-top: 1px solid #CBD5E1 !important;
+  border-bottom: none !important;
+  background: transparent;
 }
 
 .comparison-project-spec-label {
   color: #64748B;
   font-size: 0.72rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .comparison-project-spec-value {
   color: #143C47;
   font-size: 0.88rem;
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
-/* ==================== RESPONSIVE BREAKPOINTS ==================== */
-@media (max-width: 1024px) {
-  .emi-calculator-container {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-    padding: 18px;
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 768px) {
+    .project-comparison-grid {
+      grid-template-rows: auto minmax(52px, auto) auto repeat(5, auto);
+    }
+    .project-comparison-card {
+      grid-row: span 8;
+      display: grid;
+      grid-template-rows: subgrid;
+    }
+    .comparison-project-card {
+      grid-row: span 8;
+      display: grid;
+      grid-template-rows: subgrid;
+      gap: 10px;
+    }
+    .comparison-project-specs {
+      grid-row: span 5;
+      display: grid;
+      grid-template-rows: subgrid;
+      margin: 14px -16px -14px;
+    }
+    .comparison-project-spec {
+      min-height: 0;
+    }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .project-comparison-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) !important;
   }
   .project-comparison-card {
-    border-right: 0;
-    border-bottom: 1px solid #E5E7EB;
+    border-right: none !important;
+    border-bottom: 2px solid #CBD5E1 !important;
   }
   .project-comparison-card:last-child {
-    border-bottom: 0;
+    border-bottom: none !important;
   }
   .comparison-project-image-wrap {
     max-height: 220px;
@@ -3016,4 +3085,272 @@ footer a {
     height: 56px;
     flex: 0 0 88px;
   }
+}
+
+
+/* ==================== HIGH CONTRAST & VISIBLE FONT ICONS ==================== */
+/* Universal Font Awesome rendering rules */
+.fa, .fas, .fa-solid, .far, .fa-regular, .fab, .fa-brands {
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+}
+
+/* Project Gallery preview button and count */
+.project-gallery-preview {
+  background: #143C47 !important;
+}
+
+.project-gallery-preview-overlay {
+  background: linear-gradient(to top, rgba(10, 20, 30, 0.95) 0%, rgba(10, 20, 30, 0.55) 55%, transparent 100%) !important;
+  color: #FFFFFF !important;
+  z-index: 2 !important;
+}
+
+.project-gallery-image-count {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85) !important;
+}
+
+.project-gallery-preview-action {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 18px !important;
+  border: 1px solid #C5A059 !important;
+  border-radius: 8px !important;
+  background: #143C47 !important;
+  color: #FFFFFF !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.project-gallery-preview-action i {
+  color: #C5A059 !important;
+  font-size: 1.05rem !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+.project-gallery-preview:hover .project-gallery-preview-action {
+  background: #1e4d5a !important;
+  border-color: #dfb76c !important;
+  color: #FFFFFF !important;
+  transform: scale(1.02) !important;
+}
+
+/* Gallery Modal Icons */
+.project-gallery-close i {
+  color: #FFFFFF !important;
+  font-size: 1.2rem !important;
+}
+.project-gallery-close:hover i {
+  color: #EF4444 !important;
+}
+.project-gallery-nav i {
+  color: #C5A059 !important;
+  font-size: 1.15rem !important;
+}
+.project-gallery-nav:hover i {
+  color: #143C47 !important;
+}
+
+/* Floor Plans section icons */
+#detailFloorPlansSection i.fa-file-pdf,
+#detailFloorPlansSection i.fa-compass-drafting {
+  color: #C5A059 !important;
+}
+#detailFloorPlansSection a.bg-sobhaNavy i,
+#detailFloorPlansSection button.bg-sobhaNavy i {
+  color: #FFFFFF !important;
+}
+
+/* Highlights section icons */
+.highlight-icon-wrap {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 10px !important;
+  background: rgba(197, 160, 89, 0.12) !important;
+  flex-shrink: 0 !important;
+}
+.highlight-icon-wrap i {
+  color: #C5A059 !important;
+  font-size: 1.15rem !important;
+  line-height: 1 !important;
+}
+
+/* EMI Calculator icons */
+.emi-sync-badge i,
+.emi-label i,
+.emi-bank-note i,
+.emi-reset-btn i {
+  color: #C5A059 !important;
+}
+
+/* Amenities icons */
+.amenity-card i,
+.amenity-item i {
+  color: #C5A059 !important;
+  font-size: 1.25rem !important;
+}
+
+/* Location & Connectivity icons */
+.connectivity-map-trigger i {
+  color: #C5A059 !important;
+  font-size: 1rem !important;
+}
+.connectivity-label > i {
+  color: #C5A059 !important;
+  font-size: 1rem !important;
+}
+.connectivity-map-search i {
+  color: #64748B !important;
+}
+.connectivity-map-close i {
+  color: #143C47 !important;
+}
+.connectivity-map-place-icon i {
+  color: #C5A059 !important;
+}
+.connectivity-map-directions a i {
+  color: #C5A059 !important;
+}
+
+/* Comparison section icons */
+.comparison-project-link:not(.btn-outline) i {
+  color: #FFFFFF !important;
+}
+.comparison-project-link.btn-outline i {
+  color: #143C47 !important;
+}
+.comparison-project-link.btn-outline:hover i,
+.comparison-project-link.btn-outline:focus-visible i {
+  color: #FFFFFF !important;
+}
+
+/* Sticky Enquiry Sidebar & Callout */
+#detailEnquirySidebar i.fa-phone {
+  color: #C5A059 !important;
+}
+
+/* Back button */
+#detailBackButton i {
+  color: #C5A059 !important;
+}
+
+/* Mobile floating bottom bar */
+#mobileBottomBar a i.fa-whatsapp {
+  color: #25D366 !important;
+}
+#mobileBottomBar button i {
+  color: #C5A059 !important;
+}
+
+#detailView #projectGalleryPreview,
+#detailView #projectGalleryPreview *,
+#detailView #projectGalleryPreview span,
+#detailView .project-gallery-image-count,
+#detailView .project-gallery-preview-action,
+#detailView .project-gallery-preview-action span {
+  color: #FFFFFF !important;
+}
+#detailView .project-gallery-preview-action i {
+  color: #C5A059 !important;
+}
+
+
+/* ==================== HIGH-CONTRAST TEXT & VISIBILITY FIXES ==================== */
+/* 1. Hero Section Paragraph: Crisp white with drop shadow */
+#hero p,
+#catalogView #hero p,
+#hero p.text-gray-200,
+#catalogView #hero p.text-gray-200,
+.hero-subtitle,
+#hero [class*="text-gray-"] {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85), 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+  opacity: 0.95 !important;
+}
+
+/* 2. Schedule A Private Site Visit: Crisp white text on dark navy card */
+#siteVisitSection p,
+#catalogView #siteVisitSection p,
+#enquiry .bg-sobhaNavy p,
+#catalogView #enquiry .bg-sobhaNavy p,
+#enquiry .bg-gradient-to-br p,
+#catalogView #enquiry .bg-gradient-to-br p,
+.bg-sobhaNavy p.text-gray-300,
+#siteVisitSection div[class*="text-gray-"],
+#enquiry .bg-gradient-to-br div[class*="text-gray-"] {
+  color: #FFFFFF !important;
+  opacity: 0.95 !important;
+}
+
+/* 3. Estimator Hero Box: High contrast white for label, amount, and footnote */
+.emi-hero-card,
+.emi-hero-card *,
+.emi-hero-card span,
+.emi-hero-card div,
+#detailView .emi-hero-card,
+#detailView .emi-hero-card *,
+#detailView .emi-hero-card span,
+#detailView .emi-hero-card div,
+#detailView .bg-white .emi-hero-card,
+#detailView .bg-white .emi-hero-card *,
+#detailView .bg-white .emi-hero-card span,
+#detailView .bg-white .emi-hero-card div {
+  color: #FFFFFF !important;
+}
+.emi-hero-card .emi-hero-label,
+#detailView .emi-hero-card .emi-hero-label,
+#detailView .bg-white .emi-hero-card .emi-hero-label {
+  color: #FFFFFF !important;
+  opacity: 0.95 !important;
+  font-weight: 700 !important;
+}
+.emi-hero-card .emi-hero-amount,
+#detailView .emi-hero-card .emi-hero-amount,
+#detailView .bg-white .emi-hero-card .emi-hero-amount {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
+.emi-hero-card .emi-hero-footnote,
+#detailView .emi-hero-card .emi-hero-footnote,
+#detailView .bg-white .emi-hero-card .emi-hero-footnote {
+  color: #FFFFFF !important;
+  opacity: 0.9 !important;
+}
+
+/* 4. Compare Similar Projects: High-contrast badge */
+.comparison-current-label,
+#detailView .comparison-current-label,
+#detailView .bg-white .comparison-current-label,
+.comparison-project-card .comparison-current-label {
+  background: #143C47 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #C5A059 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 5. Detail Page Hero Location & Subtitle */
+#detailLocation,
+#detailView #detailLocation,
+#detailView section.bg-sobhaNavy p,
+#detailView section.bg-sobhaNavy [class*="text-gray-"] {
+  color: #FFFFFF !important;
+  opacity: 0.95 !important;
 }

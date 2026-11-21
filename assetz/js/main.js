@@ -1,4 +1,21 @@
 
+function updatePageMetadata(title, description) {
+  if (title) document.title = title;
+  if (description) {
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+  }
+}
+if (typeof window !== "undefined" && "scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+
 function setImageSource(image, src, { loading = 'lazy', priority = 'auto' } = {}) {
   if (!image || !src) return;
   image.loading = loading;
@@ -261,7 +278,7 @@ function getHighlightIcon(text, defaultIcon = "fa-solid fa-circle-check") {
   if (lower.includes("gym") || lower.includes("fit") || lower.includes("sport") || lower.includes("court") || lower.includes("jog")) return "fa-solid fa-dumbbell";
   if (lower.includes("club") || lower.includes("amenit") || lower.includes("lifestyle") || lower.includes("hall")) return "fa-solid fa-hotel";
   if (lower.includes("bhk") || lower.includes("config") || lower.includes("plot") || lower.includes("villa") || lower.includes("flat") || lower.includes("layout")) return "fa-solid fa-layer-group";
-  if (lower.includes("possess") || lower.includes("timeline") || lower.includes("launch") || lower.includes("date") || lower.includes("schedul")) return "fa-regular fa-calendar-check";
+  if (lower.includes("possess") || lower.includes("timeline") || lower.includes("launch") || lower.includes("date") || lower.includes("schedul")) return "fa-solid fa-calendar-check";
   return defaultIcon;
 }
 
@@ -315,7 +332,7 @@ function generatePropertyHighlights(property) {
   // 4. Possession Timeline
   if (property.specs?.possession) {
     items.push({
-      icon: "fa-regular fa-calendar-check",
+      icon: "fa-solid fa-calendar-check",
       title: "Handover Timeline",
       text: `Possession scheduled for ${property.specs.possession} with structured milestone-linked construction.`
     });
@@ -514,8 +531,8 @@ function updateEmiCalculator() {
   // Results: Hero Card
   const monthlyOutput = document.getElementById("emiMonthlyOutput");
   const heroFootnote = document.getElementById("emiHeroFootnote");
-  if (monthlyOutput) monthlyOutput.textContent = formatINR(result.emi);
-  if (heroFootnote) heroFootnote.textContent = `*For ${formatINRShort(loanAmount)} loan at ${rate.toFixed(2)}% for ${tenureYears} yrs`;
+  if (monthlyOutput) { monthlyOutput.textContent = formatINR(result.emi); monthlyOutput.style.color = "#FFFFFF"; }
+  if (heroFootnote) { heroFootnote.textContent = `*For ${formatINRShort(loanAmount)} loan at ${rate.toFixed(2)}% for ${tenureYears} yrs`; heroFootnote.style.color = "#FFFFFF"; }
 
   // SVG Donut Chart (Circumference = 2 * PI * 38 = 238.761)
   const C = 238.761;
@@ -749,6 +766,7 @@ function renderProjectComparison(item) {
     if (index === 0) {
       const currentLabel = document.createElement("span");
       currentLabel.className = "comparison-current-label";
+      currentLabel.style.cssText = "background:#143C47 !important; color:#FFFFFF !important; border:1px solid #C5A059 !important; font-weight:800 !important;";
       currentLabel.textContent = "Current Project";
       imageWrap.appendChild(currentLabel);
     }
@@ -1336,6 +1354,13 @@ function openPropertyDetail(id, updateUrl = true) {
   const p = projectsData.find((x) => x.id === id);
   if (!p) return;
   activeProject = p;
+
+  const displayedBuilderName = document.body.dataset.builderName || "Assetz Property Group";
+  updatePageMetadata(
+    `${p.title} | ${displayedBuilderName} Bangalore`,
+    p.overview || `Explore ${p.title} by ${displayedBuilderName} in ${p.location}.`
+  );
+
   const put = (id, value) => {
     const el = document.getElementById(id);
     if (el) el.textContent = value;
@@ -1346,7 +1371,7 @@ function openPropertyDetail(id, updateUrl = true) {
   const overEl = document.getElementById("detailOverview");
   if (overEl) {
     const overviewParas = createAssetzPropertyOverview(p, projectsData || []);
-        overEl.innerHTML = overviewParas.map((para) => {
+    overEl.innerHTML = overviewParas.map((para) => {
       const registration = para.match(/^(.*) RERA registration number: (.+).$/);
       if (!registration) {
         return `<p class="overview-text leading-relaxed text-slate-700 mb-4">${para}</p>`;
@@ -1440,12 +1465,14 @@ function openPropertyDetail(id, updateUrl = true) {
   syncEmiCalculatorWithProperty(p);
   renderProjectComparison(p);
   selectFloorPlan(p.id, 0);
+
   document.getElementById("catalogView").classList.add("hidden");
   document.getElementById("detailView").classList.remove("hidden");
   document.body.removeAttribute("data-property-route-loading");
-    document.getElementById("detailBackButton")?.classList.remove("hidden");
+  document.getElementById("detailBackButton")?.classList.remove("hidden");
   document.getElementById("detailBackButton")?.classList.add("inline-flex");
   closeMobileNavigation();
+
   if (updateUrl) {
     const basePath = getSiteBasePath();
     const cleanId = encodeURIComponent(id);
@@ -1454,9 +1481,28 @@ function openPropertyDetail(id, updateUrl = true) {
       history.pushState({ propertyId: id }, "", targetPath);
     }
   }
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
 
+  // Force scroll to top of page immediately and after layout rendering
+  const forceScrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    const subnav = document.getElementById("detailSubnavBar");
+    if (subnav) subnav.classList.remove("is-visible");
+    const track = document.getElementById("subnavTrack");
+    if (track) track.scrollLeft = 0;
+    const firstTab = document.querySelector('.subnav-tab[data-target="detailOverviewSection"]');
+    if (firstTab) {
+      document.querySelectorAll(".subnav-tab").forEach(t => t.classList.remove("active"));
+      firstTab.classList.add("active");
+    }
+  };
+
+  forceScrollToTop();
+  requestAnimationFrame(forceScrollToTop);
+  setTimeout(forceScrollToTop, 40);
+  setTimeout(forceScrollToTop, 120);
+}
 function addListExpansion(list, collapsedLimit, label) {
   list.classList.toggle(
     "list-collapsed",
@@ -2075,7 +2121,10 @@ function setActiveSubnavTab(targetTab) {
     tab.setAttribute("tabindex", isActive ? "0" : "-1");
   });
 
-  targetTab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  if (track && targetTab) {
+    const targetLeft = targetTab.offsetLeft - (track.clientWidth - targetTab.clientWidth) / 2;
+    track.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+  }
   updateSubnavArrows();
 }
 
