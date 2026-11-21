@@ -45,15 +45,16 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-  <style>body[data-property-route-loading="true"] #catalogView{display:none!important}body[data-property-route-loading="true"] #detailView{display:block!important}</style>
+      <link rel="preload" as="image" href="https://media.justflip.in/builder-brand-pages/assetz/assetz-trees-and-tandem/thumbnail.webp" fetchpriority="high">
+<style>body[data-property-route-loading="true"] #catalogView{display:none!important}body[data-property-route-loading="true"] #detailView{display:block!important}</style>
     <meta property="og:title" content="Assetz Trees &amp; Tandem | Assetz Property Group">
     <meta property="og:description" content="Assetz Trees &amp; Tandem is a biophilic, eco-conscious high-rise residential project by Assetz Property Group, located in Kodathi / Chokkasandra off...">
 </head>
-  <body
+  <body data-property-route-loading="true"
     data-builder="assetz"
     class="font-sans bg-white text-sobhaDarkText antialiased flex flex-col min-h-screen selection:bg-sobhaGold selection:text-sobhaNavy"
   >
@@ -151,7 +152,26 @@
           </button>
         </div>
       </div>
-      <nav
+            <!-- Sticky Sub-Navigation Tabs Bar for Project Details (Scrolls into view past hero) -->
+      <nav class="detail-subnav-bar" id="detailSubnavBar" aria-label="Project sections navigation">
+        <div class="subnav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <button type="button" class="subnav-arrow subnav-arrow-left" id="subnavArrowLeft" aria-label="Scroll tabs left">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="subnav-track" id="subnavTrack" role="tablist">
+            <button type="button" class="subnav-tab active" role="tab" id="subnav-tab-overview" data-target="detailOverviewSection" aria-selected="true" tabindex="0">Overview</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-floorplans" data-target="detailFloorPlansSection" aria-selected="false" tabindex="-1">Floor Plans</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-amenities" data-target="detailAmenitiesSection" aria-selected="false" tabindex="-1">Amenities</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-connectivity" data-target="detailConnectivitySection" aria-selected="false" tabindex="-1">Connectivity</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-enquiry" data-target="detailEnquirySidebar" aria-selected="false" tabindex="-1">Enquire</button>
+          </div>
+          <button type="button" class="subnav-arrow subnav-arrow-right" id="subnavArrowRight" aria-label="Scroll tabs right">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+
+<nav
         id="mobileNavigation"
         hidden
         class="hidden lg:hidden border-t border-gray-100 bg-white px-4 py-2 shadow-md"
@@ -425,31 +445,20 @@
       >
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-4xl mx-auto text-center">
-            <p
-              class="text-sobhaNavy uppercase tracking-[0.2em] text-xs font-semibold mb-3"
-            >
-              18+ Years of Excellence
-            </p>
+            <span class="section-subtitle">18+ Years of Excellence</span>
             <h2
               class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-6 leading-tight"
             >
               Life Reimagined, A Future Shaped By Better Design.
             </h2>
-            <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">
-              Established in 2006, Assetz Property Group is one of Bengaluru's
-              premier real estate developers. Guided by our foundational
-              motto—"Life Reimagined"—and driven by a strict "Better Design"
-              philosophy, we craft residential ecosystems that seamlessly
-              integrate architectural aesthetics, generous living spaces, and
-              environmental responsibility.
-            </p>
-            <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-              As pioneers of sustainable development, Assetz integrates
-              carbon-healing initiatives, zero-water waste management, and
-              energy-efficient systems across all projects. Backed by global
-              investment standards, we deliver world-class residential
-              communities and IT business parks across prime growth hubs.
-            </p>
+            <div class="space-y-5 text-gray-600 text-sm sm:text-base leading-relaxed max-w-4xl mx-auto text-left sm:text-center">
+              <p>
+                Established in 2006, Assetz Property Group (widely recognized as Assetz Group Bangalore) is one of South India's premier real estate developers, headquartered in Singapore with its operational center in Karnataka. Guided by our foundational motto—"Life Reimagined"—and driven by a strict "Better Design" philosophy, Assetz builders have delivered over 20 million square feet of landmark commercial IT business parks (including the pioneering LEED Platinum-certified Embassy TechVillage) and luxury residential communities. As pioneers of sustainable architecture, Assetz Property Group Bangalore seamlessly integrates carbon-healing green campuses, 75%+ open green spaces, zero-water waste management, and global institutional investment backing across Bengaluru’s key growth hubs.
+              </p>
+              <p>
+                Explore the exclusive portfolio of Assetz Property Bangalore, offering premier apartments for sale in Bangalore, luxury flats for sale in Bangalore, and ready to move flats in Bangalore across prime IT corridors. Compare projects from top Assetz builders, from iconic lakefront communities like Assetz East Point Bangalore in Bellandur to sustainable high-rise apartments and luxury plotted developments in Devanahalli, Whitefield, and Sarjapur Road. Discover premier Assetz apartments, evaluate master floor plans, and stay informed on Assetz upcoming projects in Bangalore engineered for long-term appreciation, wellness, and refined luxury living.
+              </p>
+            </div>
           </div>
           <div
             class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mt-10 sm:mt-14"
@@ -696,10 +705,84 @@
           <div id="faqList" class="space-y-4"></div>
         </div>
       </section>
+    
+      <!-- 9. FOOTER -->
+    <footer
+      id="siteFooter"
+      class="bg-[#0b1220] text-slate-300 text-sm py-12 sm:py-16 mt-auto"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="pb-8 border-b border-white/10">
+          <div>
+            <button
+              onclick="showCatalogView()"
+              data-builder-name
+              class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight block focus:outline-none"
+            >
+              Assetz Property Group
+            </button>
+            <p
+              class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
+            >
+              Bengaluru
+            </p>
+            <div
+              class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 md:items-center"
+            >
+              <p class="text-sm text-slate-300">
+                Explore <span id="footerPropertyCount">0</span> properties by
+                <span data-builder-name>Assetz Property Group</span> featured on this
+                page.
+              </p>
+              <p
+                class="md:justify-self-end max-w-xl leading-relaxed text-slate-300"
+              >
+                This page is published and maintained by
+                <strong class="text-white">M&amp;A Ventures</strong>, an
+                <strong class="text-white">Authorised Channel Partner</strong>.
+                It is not the developer’s official website.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="py-7 border-b border-white/10 text-sm leading-7 text-slate-300"
+        >
+          <p>
+            Disclaimer: this website is operated by an Authorised Channel
+            Partner and is not the developer’s official website. All images are
+            artistic impressions and representative imagery, indicative only.
+            Floor plans, layouts, furniture, fixtures and fittings shown are for
+            illustrative purposes only and do not form part of the offering.
+            Plans, specifications, areas and amenities are subject to change
+            basis receipt of approvals and NOCs; dimensions and areas may
+            change. Drive times are approximate. Nothing on this page
+            constitutes an offer or a contract. Project information on this page
+            is taken from the developer’s brochure and applicable RERA records.
+          </p>
+        </div>
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-7 text-xs text-slate-400"
+        >
+          <p>
+            © 2026 · M&amp;A Ventures · Authorised Channel Partner ·
+            <a
+              href="/privacy-policy"
+              class="text-slate-300 underline underline-offset-2 hover:text-white"
+              >Privacy Policy</a
+            >
+          </p>
+          <p>
+            Residential properties by
+            <span data-builder-name>Assetz Property Group</span>
+          </p>
+        </div>
+      </div>
+    </footer>
     </div>
 
     <!-- 8. PROPERTY FULL DETAIL PAGE VIEW (SPA ROUTE TARGET) -->
-    <div id="detailView" class="hidden fade-in bg-white min-h-screen">
+    <div id="detailView" class="hidden fade-in bg-[#FAF8F5] min-h-screen pb-20 sm:pb-0">
       <!-- Detail view hero banner & gallery header -->
       <section
         class="bg-sobhaNavy text-white py-8 sm:py-12 border-b border-white/10"
@@ -772,7 +855,7 @@
               <span
                 id="detailPrice"
                 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaGold"
-              ></span>
+              >₹ 2.26 Cr*</span>
               <span class="text-[10px] text-gray-300 mt-0.5"
                 >*Govt Taxes & Charges Extra</span
               >
@@ -782,11 +865,11 @@
           <!-- Main Gallery Showcase -->
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div
-              class="lg:col-span-2 relative h-72 sm:h-96 bg-gray-800 rounded overflow-hidden group"
+              class="lg:col-span-2 relative h-72 sm:h-96 bg-[#FAF8F5] border border-gray-200 rounded overflow-hidden group"
             >
               <img
                 id="mainGalleryImage"
-                src=""
+                src="https://media.justflip.in/builder-brand-pages/assetz/assetz-trees-and-tandem/thumbnail.webp"
                 alt="Main Project Gallery"
                 class="w-full h-full object-cover transition-all duration-500"
               />
@@ -801,11 +884,11 @@
                 onclick="setGalleryImage(0)"
                 aria-pressed="true"
                 aria-label="Show first project image"
-                class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold"
+                class="relative h-32 sm:h-44 bg-[#FAF8F5] border border-gray-200 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold"
               >
                 <img
                   id="thumb0"
-                  src=""
+                  src="https://media.justflip.in/builder-brand-pages/assetz/assetz-trees-and-tandem/gallery/exterior-view.webp"
                   class="w-full h-full object-cover hover:scale-105 transition-transform"
                 />
               </button>
@@ -813,11 +896,11 @@
                 onclick="setGalleryImage(1)"
                 aria-pressed="false"
                 aria-label="Show second project image"
-                class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none"
+                class="relative h-32 sm:h-44 bg-[#FAF8F5] border border-gray-200 rounded overflow-hidden focus:outline-none"
               >
                 <img
                   id="thumb1"
-                  src=""
+                  src="https://media.justflip.in/builder-brand-pages/assetz/assetz-trees-and-tandem/gallery/interior-view.webp"
                   class="w-full h-full object-cover hover:scale-105 transition-transform"
                 />
               </button>
@@ -841,7 +924,7 @@
               <p
                 id="specPossession"
                 class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"
-              ></p>
+              >August 2029</p>
             </div>
             <div
               class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center"
@@ -854,7 +937,7 @@
               <p
                 id="specLandArea"
                 class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"
-              ></p>
+              >7.00 Acres</p>
             </div>
             <div
               class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center"
@@ -867,7 +950,7 @@
               <p
                 id="specConfig"
                 class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"
-              ></p>
+              >Spacious 3 BHK Luxury High-Rise Residences (364 Units)</p>
             </div>
             <div
               class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center"
@@ -880,7 +963,7 @@
               <p
                 id="specRera"
                 class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"
-              ></p>
+              >PRM/KA/RERA/1251/308/PR/280325/007636</p>
             </div>
           </div>
         </div>
@@ -889,125 +972,142 @@
       <!-- Detail Content Main Grid -->
       <section class="py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="detail-body-layout grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <!-- Left Column: Overview, Floor Plans & Amenities -->
-            <div class="lg:col-span-8 space-y-12">
+            <div class="detail-main-content lg:col-span-8 space-y-8 sm:space-y-12 min-w-0">
               <!-- Overview -->
-              <div>
-                <h2
-                  class="font-serif text-2xl font-bold text-sobhaNavy mb-4 pb-2 border-b-2 border-sobhaGold inline-block"
-                >
-                  Architectural Overview
-                </h2>
-                <p
-                  id="detailOverview"
-                  class="text-gray-600 text-sm leading-relaxed mt-4"
-                >Assetz Trees &amp; Tandem is a biophilic, eco-conscious high-rise residential project by Assetz Property Group, located in Kodathi / Chokkasandra off Sarjapur Road in South-East Bengaluru. Spanning 7.0 acres with a rare 90% open green space cover, the development features 2 high-rise towers (22 floors) housing 364 luxury 3 BHK residences. Designed with private elevated garden spaces, wide living balconies (115 to 170 sq. ft.), laminated wooden bedroom flooring, and 3-track UPVC sliding windows, the project is anchored by a grand 3-acre clubhouse and 30+ lifestyle amenities.</p>
-              </div>
+              <section id="detailOverviewSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Project Narrative</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-5">
+                    Architectural Overview
+                  </h2>
+                  <div
+                    id="detailOverview"
+                    class="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed"
+                  ><p class="overview-text leading-relaxed text-slate-700 mb-4">Assetz Trees &amp; Tandem is a biophilic, eco-conscious high-rise residential project by Assetz Property Group, located in Kodathi / Chokkasandra off Sarjapur Road in South-East Bengaluru. Spanning 7.0 acres with a rare 90% open green space cover, the development features 2 high-rise towers (22 floors) housing 364 luxury 3 BHK residences. Designed with private elevated garden spaces, wide living balconies (115 to 170 sq. ft.), laminated wooden bedroom flooring, and 3-track UPVC sliding windows, the project is anchored by a grand 3-acre clubhouse and 30+ lifestyle amenities. Buyers researching ready to move flats in Bangalore can explore Assetz Property Group homes in Kodathi / Chokkasandra, Off Sarjapur Road, South-East Bengaluru, with project status, location, and configuration details available to compare.</p>
+                    <p class="overview-text leading-relaxed text-slate-700 mb-4">Assetz Trees &amp; Tandem is listed with Spacious 3 BHK Luxury High-Rise Residences (364 Units) across 7.00 Acres, with new launch status and possession scheduled for August 2029. Listed floor plan options include 3 BHK (Type A) and 3 BHK (Type B). Residents can explore lifestyle amenities such as 3-Acre Grand Lifestyle Clubhouse, 90% Dedicated Open Green Spaces &amp; Organic Gardens, Outdoor Swimming Pool &amp; Children&#39;s Splash Deck and Fully Equipped Gymnasium &amp; Yoga Deck, with nearby destinations including Sarjapur Main Road (1.5 km), RGA Tech Park (5.5 km) and Wipro Corporate Office (Sarjapur Road) (6.0 km). Review this Assetz Property Group project’s floor plans, amenities, and connectivity when comparing homes in Bengaluru.</p>
+              <div class="overview-rera-card mt-5 pt-4 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-50/80 p-3.5 sm:p-4 rounded-xl border border-emerald-200/90">
+                <div class="flex items-center gap-2.5 text-emerald-900 text-xs sm:text-sm font-semibold">
+                  <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 text-[10px]">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                  </span>
+                  <span>Official Karnataka RERA Registered</span>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                  <span class="text-[10px] sm:text-xs uppercase tracking-wider text-emerald-800 font-bold">RERA No:</span>
+                  <span class="overview-rera font-mono text-xs font-bold text-slate-900 bg-white px-2.5 py-1 rounded border border-emerald-200 break-all select-all">PRM/KA/RERA/1251/308/PR/280325/007636</span>
+                </div>
+              </div></div>
+                </div>
+              </section>
 
               <!-- Interactive Floor Plans -->
-              <div>
-                <h2
-                  class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block"
-                >
-                  Floor Plans & Configurations
-                </h2>
+              <section id="detailFloorPlansSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Configuration & Layouts</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
+                    Floor Plans & Configurations
+                  </h2>
 
-                <div class="bg-sobhaLightBg p-6 border border-gray-200 rounded">
-                  <!-- Floor Plan Selectors -->
+                  <!-- Floor Plan Selectors (responsive pills) -->
                   <div
                     id="floorPlanTabs"
-                    class="flex flex-wrap gap-2 mb-6 border-b border-gray-200 pb-4"
+                    class="flex flex-nowrap overflow-x-auto no-scrollbar gap-2 mb-6 pb-2 border-b border-gray-100 sm:flex-wrap"
                   >
                     <!-- Dynamic JS Injection -->
                   </div>
 
-                  <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
-                  >
-                    <div
-                      class="bg-white p-4 border border-gray-200 rounded text-center"
-                    >
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="bg-[#FAF8F5] p-4 sm:p-6 border border-gray-200 rounded-xl text-center min-h-[280px] flex items-center justify-center">
                       <img
                         id="floorPlanImg"
                         src=""
                         alt="Floor Plan"
-                        class="w-full h-64 object-contain mx-auto"
+                        class="hidden w-full h-64 object-contain mx-auto"
                       />
+                      <div id="floorPlanPlaceholder" class="w-full flex flex-col items-center justify-center py-6 text-center">
+                        <div class="w-14 h-14 rounded-full bg-sobhaNavy/5 text-sobhaNavy flex items-center justify-center mb-3">
+                          <i class="fa-solid fa-compass-drafting text-2xl text-sobhaGold"></i>
+                        </div>
+                        <p class="font-serif text-base font-bold text-sobhaNavy mb-1">Architectural Layout Schematic</p>
+                        <p class="text-xs text-gray-500 max-w-xs mx-auto mb-4">Official master architectural layout and dimensions sheet available upon request.</p>
+                        <button type="button" onclick="triggerEnquiryScroll()" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sobhaNavy bg-white border border-sobhaGold px-4 py-2.5 rounded-full shadow-xs hover:bg-sobhaNavy hover:text-white transition-all">
+                          <i class="fa-regular fa-file-pdf text-sobhaGold"></i> Request Detailed Plan
+                        </button>
+                      </div>
                     </div>
                     <div class="space-y-4">
                       <h3
                         id="fpTitle"
-                        class="font-serif text-xl font-bold text-sobhaNavy"
+                        class="font-serif text-xl sm:text-2xl font-bold text-sobhaNavy"
                       ></h3>
-                      <div class="space-y-2 text-xs sm:text-sm text-gray-600">
-                        <p
-                          class="flex justify-between border-b border-gray-200 pb-2"
-                        >
-                          <span class="text-gray-400"
-                            >Super Built-up Area:</span
-                          >
-                          <span
-                            id="fpSba"
-                            class="font-bold text-sobhaNavy"
-                          ></span>
+                      <div class="space-y-3 text-xs sm:text-sm text-gray-600">
+                        <p class="flex justify-between border-b border-gray-100 pb-2.5">
+                          <span class="text-gray-400 font-medium">Super Built-up Area:</span>
+                          <span id="fpSba" class="font-bold text-sobhaNavy"></span>
                         </p>
-                        <p
-                          class="flex justify-between border-b border-gray-200 pb-2"
-                        >
-                          <span class="text-gray-400">Estimated Price:</span>
-                          <span
-                            id="fpPrice"
-                            class="font-bold text-sobhaGold"
-                          ></span>
+                        <p class="flex justify-between border-b border-gray-100 pb-2.5">
+                          <span class="text-gray-400 font-medium">Estimated Starting Price:</span>
+                          <span id="fpPrice" class="font-bold text-sobhaGold text-base"></span>
                         </p>
                       </div>
                       <button
                         onclick="requestFloorPlanBrochure()"
-                        class="w-full bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-xs uppercase tracking-wider py-3 transition-colors mt-4"
+                        class="w-full bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-xs uppercase tracking-wider py-3 rounded-lg transition-colors mt-4 shadow-sm"
                       >
                         Download High-Res Floor Plan PDF
                       </button>
                     </div>
                   </div>
                 </div>
-              </div>
+              </section>
 
               <!-- Amenities Grid -->
-              <div>
-                <h2
-                  class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block"
-                >
-                  World-Class Amenities
-                </h2>
-                <div
-                  id="amenitiesGrid"
-                  class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
-                >
-                  <!-- Dynamic JS Injection -->
+              <section id="detailAmenitiesSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Curated Facilities</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
+                    World-Class Amenities
+                  </h2>
+                  <div
+                    id="amenitiesGrid"
+                    class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
+                  >
+                    <!-- Dynamic JS Injection -->
+                  </div>
                 </div>
-              </div>
+              </section>
 
               <!-- Connectivity & Location -->
-              <div>
-                <h2
-                  class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block"
-                >
-                  Location & Neighborhood Highlights
-                </h2>
-                <div
-                  id="connectivityList"
-                  class="bg-sobhaLightBg p-6 border border-gray-200 rounded space-y-3 text-xs sm:text-sm text-gray-700"
-                >
-                  <!-- Dynamic JS Injection -->
+              <section id="detailConnectivitySection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Prime Neighborhood</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
+                    Location & Neighborhood Highlights
+                  </h2>
+                  <div
+                    id="connectivityList"
+                    class="bg-[#FAF8F5] p-5 sm:p-6 border border-gray-200 rounded-xl space-y-3 text-xs sm:text-sm text-gray-700"
+                  >
+                    <!-- Dynamic JS Injection -->
+                  </div>
                 </div>
-              </div>
+              </section>
             </div>
 
             <!-- Right Sticky Sidebar CTA -->
-            <div class="lg:col-span-4">
+            <div class="detail-sidebar lg:col-span-4 min-w-0" id="detailEnquirySidebar">
               <div
-                class="sticky top-28 bg-white border-2 border-sobhaNavy p-6 shadow-xl space-y-6"
+                class="sticky top-28 bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 shadow-lg space-y-6 scroll-mt-28"
               >
                 <div class="border-b border-gray-200 pb-4">
                   <p
@@ -1113,79 +1213,7 @@
       </section>
     </div>
 
-    <!-- 9. FOOTER -->
-    <footer
-      id="siteFooter"
-      class="bg-[#0b1220] text-slate-300 text-sm py-12 sm:py-16 mt-auto"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="pb-8 border-b border-white/10">
-          <div>
-            <button
-              onclick="showCatalogView()"
-              data-builder-name
-              class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight block focus:outline-none"
-            >
-              SOBHA Limited
-            </button>
-            <p
-              class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
-            >
-              Bengaluru
-            </p>
-            <div
-              class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 md:items-center"
-            >
-              <p class="text-sm text-slate-300">
-                Explore <span id="footerPropertyCount">0</span> properties by
-                <span data-builder-name>SOBHA Limited</span> featured on this
-                page.
-              </p>
-              <p
-                class="md:justify-self-end max-w-xl leading-relaxed text-slate-300"
-              >
-                This page is published and maintained by
-                <strong class="text-white">M&amp;A Ventures</strong>, an
-                <strong class="text-white">Authorised Channel Partner</strong>.
-                It is not the developer’s official website.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="py-7 border-b border-white/10 text-sm leading-7 text-slate-300"
-        >
-          <p>
-            Disclaimer: this website is operated by an Authorised Channel
-            Partner and is not the developer’s official website. All images are
-            artistic impressions and representative imagery, indicative only.
-            Floor plans, layouts, furniture, fixtures and fittings shown are for
-            illustrative purposes only and do not form part of the offering.
-            Plans, specifications, areas and amenities are subject to change
-            basis receipt of approvals and NOCs; dimensions and areas may
-            change. Drive times are approximate. Nothing on this page
-            constitutes an offer or a contract. Project information on this page
-            is taken from the developer’s brochure and applicable RERA records.
-          </p>
-        </div>
-        <div
-          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-7 text-xs text-slate-400"
-        >
-          <p>
-            © 2026 · M&amp;A Ventures · Authorised Channel Partner ·
-            <a
-              href="/privacy-policy"
-              class="text-slate-300 underline underline-offset-2 hover:text-white"
-              >Privacy Policy</a
-            >
-          </p>
-          <p>
-            Residential properties by
-            <span data-builder-name>SOBHA Limited</span>
-          </p>
-        </div>
-      </div>
-    </footer>
+    
     <!-- WhatsApp brochure request -->
     <button
       id="whatsappLauncher"
@@ -1466,7 +1494,7 @@
           event.preventDefault();
           if (!form.reportValidity()) return;
           const phone = phoneInput.value.trim();
-          const message = `Hi, I would like the SOBHA e-brochure. My WhatsApp number is ${phone}. Please share floor plans, pricing, and payment schedules.`;
+          const message = `Hi, I would like the Assetz Property Group e-brochure. My WhatsApp number is ${phone}. Please share floor plans, pricing, and payment schedules.`;
           closeDialog();
           window.open(
             `https://wa.me/918004250000?text=${encodeURIComponent(message)}`,
@@ -1482,5 +1510,16 @@
       })();
     </script>
     <script src="js/main.js"></script>
+  
+    <!-- MOBILE BOTTOM STICKY ACTION BAR -->
+    <div id="mobileBottomBar" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-2.5 flex items-center justify-between gap-3 shadow-lg">
+      <a href="tel:+918040000000" class="flex-1 inline-flex items-center justify-center gap-2 bg-[#FAF8F5] text-sobhaNavy border border-gray-300 py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gray-100 transition-colors">
+        <i class="fa-solid fa-phone text-sobhaGold" aria-hidden="true"></i> Call
+      </a>
+      <button type="button" onclick="triggerEnquiryScroll()" class="flex-[2] inline-flex items-center justify-center gap-2 bg-sobhaNavy text-white py-2.5 px-4 rounded-lg text-xs font-bold uppercase tracking-wider shadow-md hover:bg-sobhaGold hover:text-sobhaNavy transition-all">
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i> Enquire Now
+      </button>
+    </div>
+
   </body>
 </html>

@@ -1,3 +1,47 @@
+
+const assetzSearchTerms = [
+  'Assetz Property Group in Bangalore',
+  'Assetz apartments',
+  'Assetz builders',
+  'Assetz upcoming projects in Bangalore',
+  'Assetz property Bangalore',
+  'Assetz group Bangalore',
+  'apartments for sale in Bangalore',
+  'flats for sale in Bangalore',
+  'ready to move flats in Bangalore'
+];
+
+function formatOverviewList(values) {
+  if (!values || values.length === 0) return '';
+  if (values.length < 2) return values[0] || '';
+  return `${values.slice(0, -1).join(', ')} and ${values[values.length - 1]}`;
+}
+
+function createAssetzPropertyOverview(property, allProperties = []) {
+  const projectIndex = Array.isArray(allProperties)
+    ? allProperties.findIndex(({ id }) => id === property.id)
+    : 0;
+  const isReady = /ready/i.test(property.category || property.badge || '');
+  const searchTerm = isReady
+    ? 'ready to move flats in Bangalore'
+    : assetzSearchTerms[(projectIndex >= 0 ? projectIndex : 0) % assetzSearchTerms.length];
+
+  const floorPlans = formatOverviewList((property.floorPlans || []).slice(0, 3).map(fp => fp.bhk || fp.type));
+  const amenities = formatOverviewList((property.amenities || []).slice(0, 4).map(a => typeof a === 'string' ? a : a.name));
+  const nearbyPlaces = formatOverviewList((property.connectivity || []).slice(0, 3).map(c => `${c.label || c.place || c.title} (${c.distance || c.time || 'nearby'})`));
+
+  const baseDescription = property.overview || property.description || `${property.title} is an iconic sustainable development by Assetz Property Group located in ${property.location}.`;
+
+  const para1 = `${baseDescription} Buyers researching ${searchTerm} can explore Assetz Property Group homes in ${property.location}, with project status, location, and configuration details available to compare.`;
+
+  const statusText = property.badge || (property.category === 'ready-to-move' ? 'Ready to Move' : property.category === 'new-launch' ? 'New Launch' : 'Ongoing');
+  const reraStr = property.reraId ? ` RERA registration number: ${property.reraId.replace(/\.$/, '')}.` : '';
+
+  const para2 = `${property.title} is listed with ${property.specs?.config || property.bhk || 'luxury residences'} across ${property.specs?.landArea || property.area || 'generous acreage'}, with ${statusText.toLowerCase()} status and possession scheduled for ${property.specs?.possession || property.possession || 'upcoming handover'}. Listed floor plan options include ${floorPlans || property.specs?.config || property.bhk || 'spacious layouts'}. Residents can explore lifestyle amenities such as ${amenities || 'the community’s curated luxury facilities'}, with nearby destinations including ${nearbyPlaces || property.location}. Review this Assetz Property Group project’s floor plans, amenities, and connectivity when comparing homes in Bengaluru.${reraStr}`;
+
+  return [para1, para2];
+}
+
 import { cpSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -34,8 +78,30 @@ function seoShorten(value, fallback) {
 }
 
 function seoReplaceId(html, id, content) {
-  const pattern = new RegExp(`(<([a-z][a-z0-9]*)\\b[^>]*\\bid="${id}"[^>]*>)[\\s\\S]*?(<\\/\\2>)`, "i");
-  return html.replace(pattern, (_match, opening, _tag, closing) => `${opening}${content}${closing}`);
+  const openRegex = new RegExp(`<([a-z][a-z0-9]*)\\b[^>]*\\bid="${id}"[^>]*>`, 'i');
+  const openMatch = openRegex.exec(html);
+  if (!openMatch) return html;
+
+  const tag = openMatch[1].toLowerCase();
+  const startContent = openMatch.index + openMatch[0].length;
+  let depth = 1;
+  const tagRegex = new RegExp(`</?${tag}\\b[^>]*>`, 'gi');
+  tagRegex.lastIndex = startContent;
+
+  let match;
+  while ((match = tagRegex.exec(html)) !== null) {
+    if (match[0].startsWith('</')) {
+      depth--;
+      if (depth === 0) {
+        return html.slice(0, startContent) + content + html.slice(match.index);
+      }
+    } else if (!match[0].endsWith('/>')) {
+      depth++;
+    }
+  }
+
+  const elementPattern = new RegExp(`(<([a-z][a-z0-9]*)\\b[^>]*\\bid="${id}"[^>]*>)[\\s\\S]*?(<\\/\\2>)`, 'i');
+  return html.replace(elementPattern, `$1${content}$3`);
 }
 
 function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
@@ -49,7 +115,46 @@ function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
   if (property) {
     html = seoReplaceId(html, "detailTitle", seoEscape(projectName));
     html = seoReplaceId(html, "detailLocation", seoEscape(property.location || ""));
-    html = seoReplaceId(html, "detailOverview", seoEscape(property.overview || description));
+    const overviewParas = createAssetzPropertyOverview(property, seo.properties);
+    const overviewHtml = overviewParas.map((para) => {
+      const registration = para.match(/^(.*) RERA registration number: (.+)\.$/);
+      if (!registration) {
+        return `<p class="overview-text leading-relaxed text-slate-700 mb-4">${seoEscape(para)}</p>`;
+      }
+      return `<p class="overview-text leading-relaxed text-slate-700 mb-4">${seoEscape(registration[1])}</p>
+              <div class="overview-rera-card mt-5 pt-4 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-50/80 p-3.5 sm:p-4 rounded-xl border border-emerald-200/90">
+                <div class="flex items-center gap-2.5 text-emerald-900 text-xs sm:text-sm font-semibold">
+                  <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 text-[10px]">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                  </span>
+                  <span>Official Karnataka RERA Registered</span>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                  <span class="text-[10px] sm:text-xs uppercase tracking-wider text-emerald-800 font-bold">RERA No:</span>
+                  <span class="overview-rera font-mono text-xs font-bold text-slate-900 bg-white px-2.5 py-1 rounded border border-emerald-200 break-all select-all">${seoEscape(registration[2])}</span>
+                </div>
+              </div>`;
+    }).join("\n                    ");
+    html = seoReplaceId(html, "detailOverview", overviewHtml);
+    html = seoReplaceId(html, "detailPrice", seoEscape(property.price || ""));
+    html = seoReplaceId(html, "specPossession", seoEscape(property.specs?.possession || ""));
+    html = seoReplaceId(html, "specLandArea", seoEscape(property.specs?.landArea || ""));
+    html = seoReplaceId(html, "specConfig", seoEscape(property.specs?.config || ""));
+    html = seoReplaceId(html, "specRera", seoEscape(property.reraId || ""));
+
+    // Pre-render gallery images Century style
+    const mainImg = property.mainImg || property.thumbnail || property.gallery?.[0] || "";
+    const gallery = Array.isArray(property.gallery) && property.gallery.length ? property.gallery : (property.images || [mainImg]);
+    if (mainImg) {
+      html = html.replace(/(<img\b[^>]*\bid="mainGalleryImage"[^>]*\bsrc=")[^"]*(")/i, `$1${seoEscape(mainImg)}$2`);
+      html = html.replace('</head>', `    <link rel="preload" as="image" href="${seoEscape(mainImg)}" fetchpriority="high">\n</head>`);
+    }
+    if (gallery[0]) {
+      html = html.replace(/(<img\b[^>]*\bid="thumb0"[^>]*\bsrc=")[^"]*(")/i, `$1${seoEscape(gallery[0])}$2`);
+    }
+    if (gallery[1]) {
+      html = html.replace(/(<img\b[^>]*\bid="thumb1"[^>]*\bsrc=")[^"]*(")/i, `$1${seoEscape(gallery[1])}$2`);
+    }
     html = html.replace("</head>", '<style>body[data-property-route-loading="true"] #catalogView{display:none!important}body[data-property-route-loading="true"] #detailView{display:block!important}</style>\n</head>');
   } else {
     html = html.replace(/(<h1\b[^>]*>)[\s\S]*?(<\/h1>)/i, (_match, opening, closing) => `${opening}${seoEscape(seo.heading)}${closing}`);
@@ -99,7 +204,7 @@ function routedHtml(route = "") {
     `<head>\n    <base href="${basePath}">`,
   );
   if (propertyIds.includes(route))
-    html = html.replace("<body ", '<body data-property-route-loading="true" ');
+    html = html.replace(/<body\b/i, '<body data-property-route-loading="true"');
   if (siteOrigin)
     html = html.replace(
       "</head>",

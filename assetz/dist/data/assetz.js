@@ -1,3 +1,6 @@
+const imageCdnPrefix = 'https://media.justflip.in/builder-brand-pages/';
+const assetzImage = suffix => `${imageCdnPrefix}${suffix.replace(/^\/+/, '')}`;
+
 export const builderData = [
   {
     id: "assetz-city-of-palms",
@@ -11,8 +14,12 @@ export const builderData = [
     searchLocation:
       "devanahalli ivc road doddacheemanahalli chapparkallu road north bengaluru airport corridor",
     price: "₹ 1.01 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-city-of-palms/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-city-of-palms/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-city-of-palms/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-city-of-palms/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz City of Palms is a premium luxury residential plotted development by Assetz Property Group located off IVC Road in Devanahalli, North Bengaluru. Spanning a massive 35-acre master development (with Phase 1 covering ~25 acres and offering 442 plots out of a total 642 plots), the gated community features expansive green parks, wide paved internal roads, underground utility cabling, and a modern clubhouse designed for custom luxury villa construction.",
     specs: {
@@ -26,28 +33,28 @@ export const builderData = [
         sba: "1,200 Sq. Ft.",
         carpet: "",
         price: "₹ 1.01 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-city-of-palms/floor-plans/plan-1.webp'),
       },
       {
         type: "30 x 50 Plot",
         sba: "1,500 Sq. Ft.",
         carpet: "",
         price: "₹ 1.35 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-city-of-palms/floor-plans/plan-2.webp'),
       },
       {
         type: "40 x 60 Plot",
         sba: "2,400 Sq. Ft.",
         carpet: "",
         price: "₹ 2.10 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-city-of-palms/floor-plans/plan-3.webp'),
       },
       {
         type: "Odd Plots",
         sba: "5,074 Sq. Ft.",
         carpet: "",
         price: "₹ 4.57 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-city-of-palms/floor-plans/plan-4.webp'),
       },
     ],
     amenities: [
@@ -131,8 +138,12 @@ export const builderData = [
     searchLocation:
       "yelahanka singanayakanahalli honnenahalli doddaballapur road north bengaluru airport corridor",
     price: "₹ 2.04 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-miru-and-miyo/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-miru-and-miyo/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-miru-and-miyo/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-miru-and-miyo/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Miru & Miyo is a Japanese-inspired biophilic eco-luxe residential project by Assetz Property Group, located off Doddaballapur Road in Yelahanka, North Bengaluru. Spanning 6.35 acres with 77% dedicated open green space, the project features 3 high-rise towers (2B + G + 19 Floors) housing approximately 350 spacious 3 BHK luxury residences. Centered around a 23,000 sq. ft. modern clubhouse and 30+ lifestyle amenities, the homes feature zero-waste water management, laminated wooden flooring in bedrooms, and 3-track UPVC sliding doors with mosquito mesh.",
     specs: {
@@ -146,28 +157,28 @@ export const builderData = [
         sba: "1,774 Sq. Ft.",
         carpet: "",
         price: "₹ 2.04 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-miru-and-miyo/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK Grand (Type 2)",
         sba: "1,800 Sq. Ft.",
         carpet: "",
         price: "₹ 2.07 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-miru-and-miyo/floor-plans/plan-2.webp'),
       },
       {
         type: "3 BHK Luxe (Type 3)",
         sba: "1,898 Sq. Ft.",
         carpet: "",
         price: "₹ 2.18 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-miru-and-miyo/floor-plans/plan-3.webp'),
       },
       {
         type: "3 BHK Luxury (Type 4)",
         sba: "1,970 Sq. Ft.",
         carpet: "",
         price: "₹ 2.27 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-miru-and-miyo/floor-plans/plan-4.webp'),
       },
     ],
     amenities: [
@@ -253,8 +264,12 @@ export const builderData = [
     searchLocation:
       "gattahalli hosa road sarjapur road electronic city south east bengaluru",
     price: "₹ 2.11 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-muse-and-maison/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-muse-and-maison/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-muse-and-maison/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-muse-and-maison/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Muse & Maison is a high-end, low-density boutique residential project by Assetz Property Group located in Gattahalli, off Hosa Road and Sarjapur Road in South-East Bengaluru. Spread across 2.14 acres with 78% open spaces, the development comprises a single high-rise tower (Basement + Ground + 16 Floors) housing just 128 exclusive 3 BHK luxury residences. Anchored by a 13,000 sq. ft. modern clubhouse, the project features temperature-controlled swimming pools, padel tennis courts, biophilic design elements, and terracotta jaali screens for passive cooling.",
     specs: {
@@ -268,14 +283,14 @@ export const builderData = [
         sba: "1,830 Sq. Ft.",
         carpet: "",
         price: "₹ 2.11 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-muse-and-maison/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK Corner Unit",
         sba: "1,881 Sq. Ft.",
         carpet: "",
         price: "₹ 2.17 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-muse-and-maison/floor-plans/plan-2.webp'),
       },
     ],
     amenities: [
@@ -357,8 +372,12 @@ export const builderData = [
     searchLocation:
       "kudlu choodasandra hsr layout extension hosur road hosa road south east bengaluru",
     price: "₹ 2.56 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-mizumi-reserve/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-mizumi-reserve/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-mizumi-reserve/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-mizumi-reserve/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Mizumi Reserve is a expansive 80-acre Japanese-inspired lakeside residential township development by Assetz Property Group, located in Kudlu / Choodasandra off HSR Layout Extension and Hosur Road. Featuring 77% open green spaces, Phase 1 spans over 9.5 acres with 3 high-rise towers (22 floors) housing 440 luxury 3 & 4 BHK residences. Anchored by a grand 63,000 sq. ft. clubhouse, units feature large living balconies (up to 170 sq. ft.), laminated wooden flooring in bedrooms, and 3-track UPVC sliding doors with mosquito mesh.",
     specs: {
@@ -373,21 +392,21 @@ export const builderData = [
         sba: "1,901 Sq. Ft.",
         carpet: "",
         price: "₹ 2.56 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-mizumi-reserve/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK Grand",
         sba: "2,165 Sq. Ft.",
         carpet: "",
         price: "₹ 2.85 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-mizumi-reserve/floor-plans/plan-2.webp'),
       },
       {
         type: "4 BHK + Maid's Signature",
         sba: "2,477 Sq. Ft.",
         carpet: "",
         price: "₹ 3.21 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-mizumi-reserve/floor-plans/plan-3.webp'),
       },
     ],
     amenities: [
@@ -471,8 +490,12 @@ export const builderData = [
     searchLocation:
       "choodasandra hosa road sarjapur road electronic city hsr layout south east bengaluru",
     price: "₹ 2.38 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-melodies-of-life-apartments/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-melodies-of-life-apartments/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-melodies-of-life-apartments/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-melodies-of-life-apartments/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Melodies of Life Apartments is a carbon-healing, sustainable luxury residential apartment enclave by Assetz Property Group, located in Choodasandra, off Hosa Road and Sarjapur Road in South-East Bengaluru. Built on a 3.03-acre land parcel, the project comprises 2 high-rise towers (B + G + 13 Floors) offering exclusive 3 BHK residences. The development is part of the larger Melodies of Life township ecosystem, featuring biophilic design, carbon-healing landscapes, energy-efficient fixtures, and access to dual 38,000 sq. ft. clubhouses.",
     specs: {
@@ -486,14 +509,14 @@ export const builderData = [
         sba: "1,853 Sq. Ft.",
         carpet: "",
         price: "₹ 2.41 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-melodies-of-life-apartments/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK (Type 2)",
         sba: "1,827 Sq. Ft.",
         carpet: "",
         price: "₹ 2.38 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-melodies-of-life-apartments/floor-plans/plan-2.webp'),
       },
     ],
     amenities: [
@@ -579,8 +602,12 @@ export const builderData = [
     searchLocation:
       "kanakapura road doddakallasandra vasanthapura south bengaluru nice road metro",
     price: "₹ 2.55 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-meru-and-meadow/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-meru-and-meadow/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-meru-and-meadow/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-meru-and-meadow/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Meru & Meadow is a premium eco-luxe high-rise residential development by Assetz Property Group located just off Kanakapura Road near Doddakallasandra in South Bengaluru. Spread across 5 acres with an impressive 87% open green area, the project comprises 2 high-rise towers (2B + Ground + 30 Floors) offering around 520 spacious luxury 3 BHK residences. Anchored by a massive 63,000 sq. ft. clubhouse and over 30 lifestyle amenities, the development emphasizes sustainable design, high carpet efficiency, and seamless connectivity via the nearby Namma Metro line.",
     specs: {
@@ -594,21 +621,21 @@ export const builderData = [
         sba: "1,897 Sq. Ft.",
         carpet: "",
         price: "₹ 2.55 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-meru-and-meadow/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK Grand",
         sba: "2,061 Sq. Ft.",
         carpet: "",
         price: "₹ 2.72 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-meru-and-meadow/floor-plans/plan-2.webp'),
       },
       {
         type: "3 BHK Signature",
         sba: "2,111 Sq. Ft.",
         carpet: "",
         price: "₹ 2.95 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-meru-and-meadow/floor-plans/plan-3.webp'),
       },
     ],
     amenities: [
@@ -691,8 +718,12 @@ export const builderData = [
     searchLocation:
       "yelahanka sathanur bagalur main road cogelu cross airport corridor north bengaluru",
     price: "₹ 2.98 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-zen-and-sato/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-zen-and-sato/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-zen-and-sato/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-zen-and-sato/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Zen & Sato is a Japanese-inspired quiet luxury high-rise residential project by Assetz Property Group, located in Sathanur off Bagalur Main Road in Yelahanka, North Bengaluru. Spanning 7.0 acres with 74% open green spaces, the project features 4 high-rise towers (2B + G + 14 Floors) comprising 412 spacious luxury residences. Designed around biophilic principles with large living balconies (up to 216 sq. ft.), the development offers dedicated padel and pickleball courts, a community farmers' market, and high carpet efficiency.",
     specs: {
@@ -706,14 +737,14 @@ export const builderData = [
         sba: "2,159 Sq. Ft.",
         carpet: "",
         price: "₹ 2.98 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-zen-and-sato/floor-plans/plan-1.webp'),
       },
       {
         type: "4 BHK",
         sba: "2,955 Sq. Ft.",
         carpet: "",
         price: "₹ 4.13 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-zen-and-sato/floor-plans/plan-2.webp'),
       },
     ],
     amenities: [
@@ -799,8 +830,12 @@ export const builderData = [
     searchLocation:
       "devanahalli ivc road airport corridor north bengaluru plots",
     price: "₹ 78.00 L*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-the-secret-lake/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-the-secret-lake/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-the-secret-lake/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-the-secret-lake/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz The Secret Lake is a premium, nature-infused residential plotted development by Assetz Property Group, situated off IVC Road in Devanahalli, North Bengaluru. Bordering a natural 191-acre lake, the master-planned project spans over 44.18 acres with 20+ acres dedicated to lush green open spaces and forest corridors. Featuring 701 villa plots, the gated enclave is anchored by a 19,000 sq. ft. modern lifestyle clubhouse and wide chamber-free internal road networks designed for custom luxury villa living.",
     specs: {
@@ -814,28 +849,28 @@ export const builderData = [
         sba: "1,200 Sq. Ft.",
         carpet: "",
         price: "₹ 78.00 L*",
-        img: "",
+        img: assetzImage('assetz/assetz-the-secret-lake/floor-plans/plan-1.webp'),
       },
       {
         type: "30 x 50 Plot",
         sba: "1,500 Sq. Ft.",
         carpet: "",
         price: "₹ 97.50 L*",
-        img: "",
+        img: assetzImage('assetz/assetz-the-secret-lake/floor-plans/plan-2.webp'),
       },
       {
         type: "30 x 60 Plot",
         sba: "2,400 Sq. Ft. ",
         carpet: "",
         price: "₹ 1.56 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-the-secret-lake/floor-plans/plan-3.webp'),
       },
       {
         type: "Odd Plots",
         sba: "3,200 Sq. Ft.",
         carpet: "",
         price: "₹ 2.08 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-the-secret-lake/floor-plans/plan-4.webp'),
       },
     ],
     amenities: [
@@ -922,8 +957,12 @@ export const builderData = [
     searchLocation:
       "kodathi chokkasandra sarjapur road huskur road rga tech park south east bengaluru",
     price: "₹ 2.26 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-trees-and-tandem/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-trees-and-tandem/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-trees-and-tandem/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-trees-and-tandem/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Trees & Tandem is a biophilic, eco-conscious high-rise residential project by Assetz Property Group, located in Kodathi / Chokkasandra off Sarjapur Road in South-East Bengaluru. Spanning 7.0 acres with a rare 90% open green space cover, the development features 2 high-rise towers (22 floors) housing 364 luxury 3 BHK residences. Designed with private elevated garden spaces, wide living balconies (115 to 170 sq. ft.), laminated wooden bedroom flooring, and 3-track UPVC sliding windows, the project is anchored by a grand 3-acre clubhouse and 30+ lifestyle amenities.",
     specs: {
@@ -937,14 +976,14 @@ export const builderData = [
         sba: "2,142 Sq. Ft.",
         carpet: "",
         price: "₹ 2.46 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-trees-and-tandem/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK (Type B)",
         sba: "1,885 Sq. Ft.",
         carpet: "",
         price: "₹ 2.26 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-trees-and-tandem/floor-plans/plan-2.webp'),
       },
     ],
     amenities: [
@@ -1031,8 +1070,12 @@ export const builderData = [
     searchLocation:
       "gattahalli rayasandra main road hosa road sarjapur road electronic city hsr layout south east bengaluru",
     price: "₹ 1.89 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-ren-and-rei/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-ren-and-rei/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-ren-and-rei/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-ren-and-rei/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Ren & Rei is a Japanese-inspired boutique high-rise residential project by Assetz Property Group, located in Gattahalli, off Rayasandra Main Road and Hosa Road near Sarjapur Road in South-East Bengaluru. Spanning 3.79 acres with over 73% open spaces, the development features 2 high-rise towers (Basement + Ground + 13 Floors) housing just 218 premium 3 BHK residences (only 4 units per floor per core). Anchored by a 14,000 sq. ft. clubhouse and biophilic landscaping, the homes are designed with zero wasted corridor space, laminated wooden bedroom flooring, and 3-track UPVC windows.",
     specs: {
@@ -1046,14 +1089,14 @@ export const builderData = [
         sba: "1,796 Sq. Ft.",
         carpet: "",
         price: "₹ 1.89 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-ren-and-rei/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK (Type 2)",
         sba: "1,821 Sq. Ft.",
         carpet: "",
         price: "₹ 1.92 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-ren-and-rei/floor-plans/plan-2.webp'),
       },
     ],
     amenities: [
@@ -1137,8 +1180,12 @@ export const builderData = [
     searchLocation:
       "yeshwanthpur mahalakshmi layout chord road west bengaluru metro station",
     price: "₹ 2.58 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-22-and-crest/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-22-and-crest/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-22-and-crest/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-22-and-crest/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz 22 & Crest is a luxury high-rise residential project by Assetz Property Group, located in the Yeshwanthpur Industrial Suburb near Mahalakshmi Layout in West Bengaluru. Spanning 1.79 acres with 79% dedicated open green space, the project comprises 2 high-rise towers featuring 122 spacious 3 BHK luxury residences. Designed to optimize natural light and airflow, the community offers state-of-the-art sports facilities, a modern clubhouse, and rapid access to major transit hubs and commercial centers.",
     specs: {
@@ -1152,14 +1199,14 @@ export const builderData = [
         sba: "1,518 Sq. Ft.",
         carpet: "",
         price: "₹ 2.58 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-22-and-crest/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK 3T",
         sba: "1,931 Sq. Ft.",
         carpet: "",
         price: "₹ 3.28 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-22-and-crest/floor-plans/plan-2.webp'),
       },
     ],
     amenities: [
@@ -1244,8 +1291,12 @@ export const builderData = [
     searchLocation:
       "choodasandra hosa road sarjapur road electronic city hsr layout south east bengaluru plots",
     price: "₹ 1.44 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-melodies-of-life/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-melodies-of-life/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-melodies-of-life/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-melodies-of-life/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Melodies of Life is a premier 39-acre nature-inspired residential plotted township by Assetz Property Group, located in Choodasandra, off Hosa Road and Sarjapur Road in South-East Bengaluru. Featuring over 505 villa-sized plots amidst 1,000+ planted trees and a 15,000 sq. ft. Miyawaki urban forest, the master-planned layout dedicates over 45% of its land to open green spaces and avenues. Anchored by a grand 22,000+ sq. ft. lifestyle clubhouse with 25+ amenities, it provides seamless dual entry/exit access connecting both Electronic City and the Sarjapur IT corridor.",
     specs: {
@@ -1259,28 +1310,28 @@ export const builderData = [
         sba: "1,200 Sq. Ft.",
         carpet: "",
         price: "₹ 1.44 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-melodies-of-life/floor-plans/plan-1.webp'),
       },
       {
         type: "30 x 50 Plot",
         sba: "1,500 Sq. Ft.",
         carpet: "",
         price: "₹ 1.80 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-melodies-of-life/floor-plans/plan-2.webp'),
       },
       {
         type: "30 x 60 Plot",
         sba: "1,800 Sq. Ft.",
         carpet: "",
         price: "₹ 2.16 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-melodies-of-life/floor-plans/plan-3.webp'),
       },
       {
         type: "40 x 60 Plot",
         sba: "2,400 Sq. Ft.",
         carpet: "",
         price: "₹ 3.07 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-melodies-of-life/floor-plans/plan-4.webp'),
       },
     ],
     amenities: [
@@ -1368,8 +1419,12 @@ export const builderData = [
     searchLocation:
       "gummanahalli bagalur kiadb aerospace park north bengaluru airport corridor",
     price: "₹ 2.04 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-sora-and-saki/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-sora-and-saki/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-sora-and-saki/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-sora-and-saki/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Sora & Saki is a Japanese-inspired eco-luxury residential and integrated retail township by Assetz Property Group, located in Gummanahalli within the KIADB Aerospace Park off Bagalur Main Road in North Bengaluru. Spanning 11.28 acres with 74% dedicated open green space, the development features 7 high-rise towers (Basement + Ground + 18 Floors) housing over 900 luxury 3 & 4 BHK apartments. Designed around biophilic principles, the project integrates 50,000 sq. ft. of high-street retail, a 2.5-acre central amenity park, expansive living balconies (up to 135 sq. ft.), and zero-waste environmental infrastructure.",
     specs: {
@@ -1383,21 +1438,21 @@ export const builderData = [
         sba: "1,670 Sq. Ft.",
         carpet: "",
         price: "₹ 2.04 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-sora-and-saki/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK (Type 2)",
         sba: "1,785 Sq. Ft.",
         carpet: "",
         price: "₹ 2.21 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-sora-and-saki/floor-plans/plan-2.webp'),
       },
       {
         type: "4 BHK",
         sba: "2,168 Sq. Ft.",
         carpet: "",
         price: "₹ 2.64 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-sora-and-saki/floor-plans/plan-3.webp'),
       },
     ],
     amenities: [
@@ -1485,8 +1540,12 @@ export const builderData = [
     searchLocation:
       "whitefield main road sathya sai layout hoodi itpl nexus mall east bengaluru",
     price: "₹ 4.28 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-66-and-shibui/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-66-and-shibui/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-66-and-shibui/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-66-and-shibui/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz 66 & Shibui (The Black Series) is an ultra-exclusive, Japanese Shibui-inspired luxury residential project by Assetz Property Group, located directly on Whitefield Main Road in Sathya Sai Layout, East Bengaluru. Spanning 2 acres, this boutique high-density development comprises a single 12-storey tower featuring only 96 bespoke 3 & 4 BHK signature residences. Defined by its striking black clay tile exterior façade, Italian marble flooring in living spaces, and expansive balconies, the project offers a tranquil sanctuary right next to Nexus Whitefield Mall and major IT corridors.",
     specs: {
@@ -1500,14 +1559,14 @@ export const builderData = [
         sba: "2,154 Sq. Ft.",
         carpet: "",
         price: "₹ 3.25 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-66-and-shibui/floor-plans/plan-1.webp'),
       },
       {
         type: "4 BHK",
         sba: "3,044 Sq. Ft.",
         carpet: "",
         price: "₹ 4.28 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-66-and-shibui/floor-plans/plan-2.webp'),
       },
     ],
     amenities: [
@@ -1594,8 +1653,12 @@ export const builderData = [
     searchLocation:
       "devanahalli nh 44 avathi village airport corridor north bengaluru plots",
     price: "₹ 1.26 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-promise-of-spring/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-promise-of-spring/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-promise-of-spring/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-promise-of-spring/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Promise of Spring is an expansive 23-acre eco-luxe residential plotted development by Assetz Property Group, located right off NH 44 near Avathi Village in Devanahalli, North Bengaluru. Featuring 320 custom villa plots amidst 47% open green spaces, 5,000+ planted trees, and a dedicated 1-acre central park, the community is anchored by a lavish 3-acre clubhouse and comprehensive underground infrastructure designed for sustainable luxury villa living near the airport corridor.",
     specs: {
@@ -1609,28 +1672,28 @@ export const builderData = [
         sba: "1,200 Sq. Ft.",
         carpet: "",
         price: "₹ 78.00 L*",
-        img: "",
+        img: assetzImage('assetz/assetz-promise-of-spring/floor-plans/plan-1.webp'),
       },
       {
         type: "30 x 50 Plot",
         sba: "1,500 Sq. Ft.",
         carpet: "",
         price: "₹ 99.00 L*",
-        img: "",
+        img: assetzImage('assetz/assetz-promise-of-spring/floor-plans/plan-2.webp'),
       },
       {
         type: "40 x 50 Plot",
         sba: "2,000 Sq. Ft.",
         carpet: "",
         price: "₹ 1.30 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-promise-of-spring/floor-plans/plan-3.webp'),
       },
       {
         type: "Odd Plot",
         sba: "3,300 Sq. Ft.",
         carpet: "",
         price: "₹ 2.15 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-promise-of-spring/floor-plans/plan-4.webp'),
       },
     ],
     amenities: [
@@ -1711,8 +1774,12 @@ export const builderData = [
     searchLocation:
       "begur aecs c block nice ring road singasandra hosur road south bengaluru",
     price: "₹ 1.86 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-canvas-and-cove/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-canvas-and-cove/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-canvas-and-cove/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-canvas-and-cove/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Canvas & Cove is a premium lakefront high-rise residential township by Assetz Property Group located near Begur Lake and the NICE Ring Road in South Bengaluru. Spanning 17 acres with 69% open green spaces, the project features 7 high-rise towers (Basement + Ground + 28 Floors) housing spacious 3 and 4 BHK luxury residences. Designed for sustainable living, the enclave offers scenic lake views, large living balconies, and comprehensive fitness and recreation infrastructure.",
     specs: {
@@ -1726,21 +1793,21 @@ export const builderData = [
         sba: "447 Sq. Ft.",
         carpet: "",
         price: "₹ 60 L*",
-        img: "",
+        img: assetzImage('assetz/assetz-canvas-and-cove/floor-plans/plan-1.webp'),
       },
       {
         type: "2 BHK",
         sba: "983 Sq. Ft.",
         carpet: "",
         price: "₹ 1.20 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-canvas-and-cove/floor-plans/plan-2.webp'),
       },
       {
         type: "3 BHK",
         sba: "1,898 Sq. Ft.",
         carpet: "",
         price: "₹ 1.80 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-canvas-and-cove/floor-plans/plan-3.webp'),
       },
     ],
     amenities: [
@@ -1827,8 +1894,12 @@ export const builderData = [
     searchLocation:
       "jakkur north bengaluru hebbal manyata tech park airport corridor",
     price: "₹ 2.66 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-soho-and-sky/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-soho-and-sky/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-soho-and-sky/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-soho-and-sky/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz Soho & Sky is an upscale residential high-rise development by Assetz Property Group inspired by the iconic architectural character of New York's SoHo district, located in Jakkur, North Bengaluru. Spanning 4.51 acres with roughly 78% open green spaces, the low-density community features 5 high-rise towers comprising thoughtfully crafted luxury 3 and 4 BHK residences. The project is anchored by a 16,000 sq. ft. lifestyle clubhouse, zero-waste organic conversion systems, and advanced water conservation infrastructure.",
     specs: {
@@ -1842,21 +1913,21 @@ export const builderData = [
         sba: "2,015 Sq. Ft.",
         carpet: "",
         price: "₹ 2.66 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-soho-and-sky/floor-plans/plan-1.webp'),
       },
       {
         type: "3 BHK Grand",
         sba: "2,489 Sq. Ft.",
         carpet: "",
         price: "₹ 3.28 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-soho-and-sky/floor-plans/plan-2.webp'),
       },
       {
         type: "4 BHK Signature",
         sba: "2,799 Sq. Ft.",
         carpet: "",
         price: "₹ 3.69 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-soho-and-sky/floor-plans/plan-3.webp'),
       },
     ],
     amenities: [
@@ -1930,8 +2001,12 @@ export const builderData = [
     searchLocation:
       "sarjapur attibele road sevaganapalli clover greens golf course south east bengaluru",
     price: "₹ 3.68 Cr*",
-    mainImg: "",
-    gallery: [],
+    mainImg: assetzImage('assetz/assetz-18-and-oak/thumbnail.webp'),
+    gallery: [
+      assetzImage('assetz/assetz-18-and-oak/gallery/exterior-view.webp'),
+      assetzImage('assetz/assetz-18-and-oak/gallery/interior-view.webp'),
+      assetzImage('assetz/assetz-18-and-oak/gallery/amenities-1.webp'),
+    ],
     overview:
       "Assetz 18 & Oak is a premier 177-acre golf-centric ultra-luxury villa and plotted township by Assetz Property Group, located in Sevaganapalli off Sarjapur-Attibele Road in South-East Bengaluru. Set right around an 18-hole championship golf course (Clover Greens), the development features 246 bespoke 3, 4, and 5 BHK luxury golf villas and estate plots with panoramic fairway views. The community offers an uncrowded environment anchored by a full-fledged golf club, swimming pools, tennis courts, and high-end lifestyle amenities.",
     specs: {
@@ -1945,14 +2020,14 @@ export const builderData = [
         sba: "3,425 Sq. Ft. - 5,492 Sq. Ft.",
         carpet: "",
         price: "₹ 3.68 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-18-and-oak/floor-plans/plan-1.webp'),
       },
       {
         type: "5 BHK Villa",
         sba: "6,755 Sq. Ft.",
         carpet: "",
         price: "₹ 7.56 Cr*",
-        img: "",
+        img: assetzImage('assetz/assetz-18-and-oak/floor-plans/plan-2.webp'),
       },
     ],
     amenities: [
