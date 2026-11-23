@@ -13,13 +13,35 @@
     />
 
 
-    <!-- Google Fonts -->
+    <!-- Preconnect & Preload Critical Resources -->
+    <link rel="preconnect" href="https://media.justflip.in" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+      fetchpriority="high"
+    />
+
+    <!-- Google Fonts (Non-Render-Blocking) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -43,8 +65,34 @@
       };
     </script>
     <link rel="stylesheet" href="css/styles.css?v=3.9" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Font Awesome Icons (Non-Render-Blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
+
+    <!-- Leaflet CSS (Non-Render-Blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      />
+    </noscript>
     <meta property="og:title" content="Assetz Property Group Bangalore | Assetz Apartments">
     <meta property="og:description" content="Explore Assetz Property Group Bangalore, Assetz apartments, Assetz East Point Bangalore in Bellandur, and Assetz upcoming projects in Bangalore.">
 </head>
@@ -219,8 +267,13 @@
         <div class="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
-            alt="SOBHA Luxury Residence Banner"
+            alt="Assetz Luxury Residence Banner"
             class="w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="2000"
+            height="1200"
           />
           <div
             class="absolute inset-0 bg-gradient-to-r from-sobhaNavy/90 via-sobhaNavy/70 to-sobhaNavy/40"
@@ -856,6 +909,11 @@
                 src=""
                 alt="Main Project Gallery"
                 class="w-full h-full object-cover transition-all duration-500"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="1200"
+                height="800"
               />
               <div
                 class="absolute bottom-4 left-4 bg-sobhaNavy/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded"
@@ -873,6 +931,9 @@
                 <img
                   id="thumb0"
                   src=""
+                  alt="Assetz Project Gallery Thumbnail 1"
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover hover:scale-105 transition-transform"
                 />
               </button>
@@ -885,6 +946,9 @@
                 <img
                   id="thumb1"
                   src=""
+                  alt="Assetz Project Gallery Thumbnail 2"
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover hover:scale-105 transition-transform"
                 />
               </button>
@@ -1044,6 +1108,8 @@
                         id="floorPlanImg"
                         src=""
                         alt="Floor Plan"
+                        loading="lazy"
+                        decoding="async"
                         class="hidden w-full h-64 object-contain mx-auto"
                       />
                       <div id="floorPlanPlaceholder" class="w-full flex flex-col items-center justify-center py-6 text-center">

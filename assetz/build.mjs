@@ -328,11 +328,40 @@ function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
     }).join("");
     html = seoReplaceId(html, "connectivityList", connHtml);
 
+    // Pre-render Floor Plans tabs and initial floor plan details Century style
+    if (Array.isArray(property.floorPlans) && property.floorPlans.length > 0) {
+      const fpTabsHtml = property.floorPlans.map((fp, i) =>
+        `<button id="fpBtn-${i}" onclick="selectFloorPlan('${property.id}',${i})" class="fp-tab-btn px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${i === 0 ? "bg-sobhaNavy text-white shadow-md border-sobhaNavy" : "bg-white text-gray-700 border-gray-200 hover:border-sobhaGold"}">${seoEscape(fp.type)}</button>`
+      ).join("");
+      html = seoReplaceId(html, "floorPlanTabs", fpTabsHtml);
+      const firstFp = property.floorPlans[0];
+      html = seoReplaceId(html, "fpTitle", seoEscape(firstFp.type || ""));
+      html = seoReplaceId(html, "fpSba", seoEscape(firstFp.sba || ""));
+      html = seoReplaceId(html, "fpPrice", seoEscape(firstFp.price || ""));
+      const planSrc = firstFp.img || firstFp.image;
+      if (planSrc) {
+        html = html.replace(/(<img\b[^>]*\bid="floorPlanImg"[^>]*\bsrc=")[^"]*(")/i, `$1${seoEscape(planSrc)}$2`);
+        html = html.replace(/id="floorPlanImg"\s+class="hidden\s+/i, 'id="floorPlanImg" class="');
+        html = html.replace(/id="floorPlanPlaceholder"\s+class="w-full\s+/i, 'id="floorPlanPlaceholder" class="hidden w-full ');
+      }
+    }
+
+    // Pre-render Amenities grid Century style
+    if (Array.isArray(property.amenities) && property.amenities.length > 0) {
+      const amenitiesHtml = property.amenities.map((item) => {
+        const name = typeof item === "string" ? item : item.name;
+        const icon = typeof item === "string" ? "fa-solid fa-star" : item.icon;
+        return `<div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="${seoEscape(icon)} text-sobhaGold" aria-hidden="true"></i><span>${seoEscape(name)}</span></div>`;
+      }).join("");
+      html = seoReplaceId(html, "amenitiesGrid", amenitiesHtml);
+    }
+
     // Pre-render gallery images Century style
     const mainImg = property.mainImg || property.thumbnail || property.gallery?.[0] || "";
     const gallery = Array.isArray(property.gallery) && property.gallery.length ? property.gallery : (property.images || [mainImg]);
     if (mainImg) {
       html = html.replace(/(<img\b[^>]*\bid="mainGalleryImage"[^>]*\bsrc=")[^"]*(")/i, `$1${seoEscape(mainImg)}$2`);
+      html = html.replace(/<link\s+rel="preload"\s+as="image"[^>]*unsplash[^>]*>/i, "");
       html = html.replace('</head>', `    <link rel="preload" as="image" href="${seoEscape(mainImg)}" fetchpriority="high">\n</head>`);
     }
     if (gallery[0]) {

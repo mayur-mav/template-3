@@ -2829,9 +2829,11 @@ footer a {
   font-size: 1.1rem;
 }
 
-.project-gallery-close:hover {
-  background: #EF4444;
-  border-color: #EF4444;
+.project-gallery-close:hover,
+.project-gallery-close:focus-visible {
+  background: #DC2626 !important;
+  border-color: #DC2626 !important;
+  color: #FFFFFF !important;
 }
 
 .project-gallery-tabs {
@@ -2967,6 +2969,7 @@ footer a {
 
 .project-gallery-thumbnail:hover {
   transform: scale(1.05);
+  border-color: #C5A059;
 }
 
 .project-gallery-thumbnail[aria-pressed="true"] {
@@ -3439,8 +3442,9 @@ footer a {
   color: #FFFFFF !important;
   font-size: 1.2rem !important;
 }
-.project-gallery-close:hover i {
-  color: #EF4444 !important;
+.project-gallery-close:hover i,
+.project-gallery-close:focus-visible i {
+  color: #FFFFFF !important;
 }
 .project-gallery-nav i {
   color: #C5A059 !important;
@@ -3506,6 +3510,10 @@ footer a {
 }
 .connectivity-map-close i {
   color: #143C47 !important;
+}
+.connectivity-map-close:hover i,
+.connectivity-map-close:focus-visible i {
+  color: #FFFFFF !important;
 }
 .connectivity-map-place-icon i {
   color: #C5A059 !important;

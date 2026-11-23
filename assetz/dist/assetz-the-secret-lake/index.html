@@ -13,13 +13,30 @@
     />
 
 
-    <!-- Google Fonts -->
+    <!-- Preconnect & Preload Critical Resources -->
+    <link rel="preconnect" href="https://media.justflip.in" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    
+
+    <!-- Google Fonts (Non-Render-Blocking) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -43,8 +60,34 @@
       };
     </script>
     <link rel="stylesheet" href="css/styles.css?v=3.9" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Font Awesome Icons (Non-Render-Blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
+
+    <!-- Leaflet CSS (Non-Render-Blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      />
+    </noscript>
     <link rel="preload" as="image" href="https://media.justflip.in/builder-brand-pages/assetz/assetz-the-secret-lake/thumbnail.webp" fetchpriority="high">
 <style>body[data-property-route-loading="true"] #catalogView{display:none!important}body[data-property-route-loading="true"] #detailView{display:block!important}</style>
     <meta property="og:title" content="Assetz The Secret Lake | Assetz Property Group">
@@ -221,8 +264,13 @@
         <div class="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
-            alt="SOBHA Luxury Residence Banner"
+            alt="Assetz Luxury Residence Banner"
             class="w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="2000"
+            height="1200"
           />
           <div
             class="absolute inset-0 bg-gradient-to-r from-sobhaNavy/90 via-sobhaNavy/70 to-sobhaNavy/40"
@@ -858,6 +906,11 @@
                 src="https://media.justflip.in/builder-brand-pages/assetz/assetz-the-secret-lake/thumbnail.webp"
                 alt="Main Project Gallery"
                 class="w-full h-full object-cover transition-all duration-500"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="1200"
+                height="800"
               />
               <div
                 class="absolute bottom-4 left-4 bg-sobhaNavy/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded"
@@ -875,6 +928,9 @@
                 <img
                   id="thumb0"
                   src="https://media.justflip.in/builder-brand-pages/assetz/assetz-the-secret-lake/gallery/exterior-view.webp"
+                  alt="Assetz Project Gallery Thumbnail 1"
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover hover:scale-105 transition-transform"
                 />
               </button>
@@ -887,6 +943,9 @@
                 <img
                   id="thumb1"
                   src="https://media.justflip.in/builder-brand-pages/assetz/assetz-the-secret-lake/gallery/interior-view.webp"
+                  alt="Assetz Project Gallery Thumbnail 2"
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover hover:scale-105 transition-transform"
                 />
               </button>
@@ -1088,19 +1147,19 @@
                   <div
                     id="floorPlanTabs"
                     class="flex flex-nowrap overflow-x-auto no-scrollbar gap-2 mb-6 pb-2 border-b border-gray-100 sm:flex-wrap"
-                  >
-                    <!-- Dynamic JS Injection -->
-                  </div>
+                  ><button id="fpBtn-0" onclick="selectFloorPlan('assetz-the-secret-lake',0)" class="fp-tab-btn px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 bg-sobhaNavy text-white shadow-md border-sobhaNavy">30 x 40 Plot</button><button id="fpBtn-1" onclick="selectFloorPlan('assetz-the-secret-lake',1)" class="fp-tab-btn px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 bg-white text-gray-700 border-gray-200 hover:border-sobhaGold">30 x 50 Plot</button><button id="fpBtn-2" onclick="selectFloorPlan('assetz-the-secret-lake',2)" class="fp-tab-btn px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 bg-white text-gray-700 border-gray-200 hover:border-sobhaGold">30 x 60 Plot</button><button id="fpBtn-3" onclick="selectFloorPlan('assetz-the-secret-lake',3)" class="fp-tab-btn px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 bg-white text-gray-700 border-gray-200 hover:border-sobhaGold">Odd Plots</button></div>
 
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                     <div class="bg-[#FAF8F5] p-4 sm:p-6 border border-gray-200 rounded-xl text-center min-h-[280px] flex items-center justify-center">
                       <img
                         id="floorPlanImg"
-                        src=""
+                        src="https://media.justflip.in/builder-brand-pages/assetz/assetz-the-secret-lake/floor-plans/plan-1.webp"
                         alt="Floor Plan"
+                        loading="lazy"
+                        decoding="async"
                         class="hidden w-full h-64 object-contain mx-auto"
                       />
-                      <div id="floorPlanPlaceholder" class="w-full flex flex-col items-center justify-center py-6 text-center">
+                      <div id="floorPlanPlaceholder" class="hidden w-full flex flex-col items-center justify-center py-6 text-center">
                         <div class="w-14 h-14 rounded-full bg-sobhaNavy/5 text-sobhaNavy flex items-center justify-center mb-3">
                           <i class="fa-solid fa-compass-drafting text-2xl text-sobhaGold"></i>
                         </div>
@@ -1115,15 +1174,15 @@
                       <h3
                         id="fpTitle"
                         class="font-serif text-xl sm:text-2xl font-bold text-sobhaNavy"
-                      ></h3>
+                      >30 x 40 Plot</h3>
                       <div class="space-y-3 text-xs sm:text-sm text-gray-600">
                         <p class="flex justify-between border-b border-gray-100 pb-2.5">
                           <span class="text-gray-400 font-medium">Super Built-up Area:</span>
-                          <span id="fpSba" class="font-bold text-sobhaNavy"></span>
+                          <span id="fpSba" class="font-bold text-sobhaNavy">1,200 Sq. Ft.</span>
                         </p>
                         <p class="flex justify-between border-b border-gray-100 pb-2.5">
                           <span class="text-gray-400 font-medium">Estimated Starting Price:</span>
-                          <span id="fpPrice" class="font-bold text-sobhaGold text-base"></span>
+                          <span id="fpPrice" class="font-bold text-sobhaGold text-base">₹ 78.00 L*</span>
                         </p>
                       </div>
                       <button
@@ -1326,9 +1385,7 @@
                   <div
                     id="amenitiesGrid"
                     class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
-                  >
-                    <!-- Dynamic JS Injection -->
-                  </div>
+                  ><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-building-user text-sobhaGold" aria-hidden="true"></i><span>19,000 Sq. Ft. Grand Lifestyle Clubhouse</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-water text-sobhaGold" aria-hidden="true"></i><span>191-Acre Natural Lake View Promenade</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-tree text-sobhaGold" aria-hidden="true"></i><span>20+ Acres Dedicated Greenery &amp; Forest Parks</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-person-swimming text-sobhaGold" aria-hidden="true"></i><span>Adults&#39; Swimming Pool &amp; Kids&#39; Splash Deck</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-dumbbell text-sobhaGold" aria-hidden="true"></i><span>Fully Equipped Gymnasium &amp; Fitness Center</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-person-biking text-sobhaGold" aria-hidden="true"></i><span>Dedicated Cycling Tracks &amp; Pedestrian Pathways</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-child-reaching text-sobhaGold" aria-hidden="true"></i><span>Children&#39;s Adventure Play Area &amp; Pet Park</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-plug text-sobhaGold" aria-hidden="true"></i><span>Underground Power, Water &amp; Sewage Networks</span></div></div>
                 </div>
               </section>
 
