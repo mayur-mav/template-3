@@ -62,19 +62,20 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between"
       >
         <!-- Brand Logo -->
-        <button
-          onclick="showCatalogView()"
+        <a
+          href="/"
+          onclick="navigateToSection('hero'); return false;"
           class="flex flex-col text-left group focus:outline-none"
         >
           <span
-            class="font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-sobhaNavy group-hover:text-sobhaGold transition-colors duration-300"
+            class="font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-white group-hover:text-[#E2B96A] transition-colors duration-300"
             >ASSETZ</span
           >
           <span
-            class="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium"
+            class="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-white/80 group-hover:text-white font-medium transition-colors duration-300"
             >LIFE REIMAGINED</span
           >
-        </button>
+        </a>
 
         <!-- Shared section navigation for catalog and property detail views -->
         <nav
@@ -84,31 +85,31 @@
           <a
             href="/"
             onclick="navigateToSection('hero'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#E2B96A] transition-colors py-2 border-b-2 border-transparent hover:border-[#E2B96A]"
             >Overview</a
           >
           <a
             href="/residences"
             onclick="navigateToSection('projects'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#E2B96A] transition-colors py-2 border-b-2 border-transparent hover:border-[#E2B96A]"
             >Residences</a
           >
           <a
             href="/about"
             onclick="navigateToSection('legacy'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#E2B96A] transition-colors py-2 border-b-2 border-transparent hover:border-[#E2B96A]"
             >About Us</a
           >
           <a
             href="/contact"
             onclick="navigateToSection('enquiry'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#E2B96A] transition-colors py-2 border-b-2 border-transparent hover:border-[#E2B96A]"
             >Contact</a
           >
           <a
             href="/faq"
             onclick="navigateToSection('faq'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#E2B96A] transition-colors py-2 border-b-2 border-transparent hover:border-[#E2B96A]"
             >FAQ</a
           >
         </nav>
@@ -128,7 +129,7 @@
             aria-controls="mobileNavigation"
             aria-expanded="false"
             aria-label="Open navigation menu"
-            class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-gray-200 text-sobhaNavy"
+            class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-white/30 text-white hover:text-[#E2B96A] hover:border-[#E2B96A] transition-colors bg-white/5"
           >
             <svg
               id="mobileMenuIcon"
@@ -174,37 +175,37 @@
 <nav
         id="mobileNavigation"
         hidden
-        class="hidden lg:hidden border-t border-gray-100 bg-white px-4 py-2 shadow-md"
+        class="hidden lg:hidden border-t border-white/10 bg-[#143C47] px-4 py-2 shadow-md"
         aria-label="Mobile navigation"
       >
         <a
           href="/"
           onclick="navigateToSection('hero'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#E2B96A] border-b border-white/10"
           >Overview</a
         >
         <a
           href="/residences"
           onclick="navigateToSection('projects'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#E2B96A] border-b border-white/10"
           >Residences</a
         >
         <a
           href="/about"
           onclick="navigateToSection('legacy'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#E2B96A] border-b border-white/10"
           >About Us</a
         >
         <a
           href="/contact"
           onclick="navigateToSection('enquiry'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#E2B96A] border-b border-white/10"
           >Contact</a
         >
         <a
           href="/faq"
           onclick="navigateToSection('faq'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#E2B96A] border-b border-transparent"
           >FAQ</a
         >
       </nav>
@@ -710,13 +711,14 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="pb-8 border-b border-white/10">
           <div>
-            <button
-              onclick="showCatalogView()"
+            <a
+              href="/"
+              onclick="navigateToSection('hero'); return false;"
               data-builder-name
               class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight block focus:outline-none"
             >
               Assetz Property Group
-            </button>
+            </a>
             <p
               class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
             >
@@ -811,24 +813,17 @@
                 <span
                   id="detailBadge"
                   class="bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1"
-                ></span>
+                >New Launch</span>
                 <span
                   id="detailTheme"
                   class="text-sobhaGold text-xs uppercase tracking-widest font-semibold"
                 ></span>
-                <button
-                  id="detailReraToggle"
-                  type="button"
-                  onclick="toggleReraId(this)"
-                  aria-expanded="false"
-                  class="hidden bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1 cursor-pointer hover:bg-sobhaGoldHover transition-colors"
+                <span
+                  id="detailReraBadge"
+                  class="bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1 select-none pointer-events-none cursor-default"
                 >
                   ✓ RERA Verified
-                </button>
-                <span
-                  id="detailReraValue"
-                  class="hidden text-xs text-gray-200"
-                ></span>
+                </span>
               </div>
               <h1
                 id="detailTitle"

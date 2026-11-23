@@ -136,7 +136,8 @@ textarea {
   border-color: #000;
 }
 .project-filter-btn[aria-pressed="false"]:hover {
-  color: #112236;
+  color: var(--theme-primary-accent, #087F8C) !important;
+  background-color: rgba(8, 127, 140, 0.08) !important;
 }
 #projectsContainer > article {
   min-width: 0;
@@ -710,21 +711,76 @@ body > header {
     transparent
   ) !important;
 }
-body > header button > span:first-child {
-  color: var(--theme-primary-accent) !important;
+body > header a.group > span:first-child,
+body > header button > span:first-child,
+body > header a[onclick*="navigateToSection"] > span:first-child {
+  color: #FFFFFF !important;
+  transition: color 0.25s ease !important;
 }
-body > header button > span:last-child {
-  color: var(--theme-topbar-text) !important;
-  opacity: 0.78;
+body > header a.group:hover > span:first-child,
+body > header a.group:focus-visible > span:first-child,
+body > header button:hover > span:first-child,
+body > header button:focus-visible > span:first-child,
+body > header a[onclick*="navigateToSection"]:hover > span:first-child {
+  color: #E2B96A !important;
 }
-body > header .nav-section-link {
-  color: var(--theme-topbar-text) !important;
+body > header a.group > span:last-child,
+body > header button > span:last-child,
+body > header a[onclick*="navigateToSection"] > span:last-child {
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.25s ease !important;
 }
-.nav-section-link.nav-link-active,
+body > header a.group:hover > span:last-child,
+body > header a.group:focus-visible > span:last-child,
+body > header button:hover > span:last-child,
+body > header button:focus-visible > span:last-child,
+body > header a[onclick*="navigateToSection"]:hover > span:last-child {
+  color: #FFFFFF !important;
+}
+body > header #headerNavLinks .nav-section-link {
+  color: #FFFFFF !important;
+  border-bottom-color: transparent !important;
+  opacity: 0.92;
+  transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease !important;
+}
+body > header #headerNavLinks .nav-section-link:hover,
+body > header #headerNavLinks .nav-section-link:focus-visible {
+  color: #E2B96A !important;
+  border-bottom-color: #E2B96A !important;
+  opacity: 1 !important;
+}
+body > header #headerNavLinks .nav-section-link.nav-link-active {
+  color: #E2B96A !important;
+  border-bottom-color: #E2B96A !important;
+  opacity: 1 !important;
+}
+body > header #mobileMenuToggle {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background: transparent !important;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease !important;
+}
+body > header #mobileMenuToggle:hover,
+body > header #mobileMenuToggle:focus-visible {
+  color: #E2B96A !important;
+  border-color: #E2B96A !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+#mobileNavigation {
+  background: var(--theme-topbar-bg) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+#mobileNavigation .nav-section-link {
+  color: #FFFFFF !important;
+  transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+#mobileNavigation .nav-section-link:hover,
+#mobileNavigation .nav-section-link:focus-visible,
 #mobileNavigation .nav-section-link.nav-link-active {
-  color: var(--theme-primary-accent) !important;
-  border-bottom-color: var(--theme-primary-accent) !important;
-  text-decoration-color: var(--theme-primary-accent) !important;
+  color: #E2B96A !important;
+  border-bottom-color: #E2B96A !important;
+  text-decoration-color: #E2B96A !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
 }
 body > header .bg-sobhaNavy,
 #hero button.bg-sobhaGold,
@@ -737,12 +793,21 @@ body > header .bg-sobhaNavy,
   color: var(--theme-btn-text) !important;
 }
 body > header .bg-sobhaNavy:hover,
+body > header .bg-sobhaNavy:focus-visible {
+  background: #E2B96A !important;
+  border-color: #E2B96A !important;
+  color: #143C47 !important;
+}
 #hero button.bg-sobhaGold:hover,
 #detailView button.bg-sobhaNavy:hover,
-#detailView button.bg-sobhaGold:hover,
-#projectsContainer .project-card button:not(.project-image):hover {
+#detailView button.bg-sobhaGold:hover {
   background: var(--theme-primary-accent-hover) !important;
   border-color: var(--theme-primary-accent-hover) !important;
+}
+#projectsContainer .project-card button:not(.project-image):hover {
+  background: #E2B96A !important;
+  border-color: #E2B96A !important;
+  color: #143C47 !important;
 }
 #hero h1 {
   color: var(--theme-hero-title-color) !important;
@@ -1184,17 +1249,18 @@ body[data-property-route-loading="true"] #siteFooter {
 
 /* Keep decorative brand accents legible on their actual surfaces. */
 body > header button > span:first-child,
-.nav-section-link.nav-link-active,
+body > header a > span:first-child,
+#headerNavLinks .nav-section-link.nav-link-active,
 #mobileNavigation .nav-section-link.nav-link-active,
 #mobileNavigation .nav-section-link:hover,
 #mobileNavigation .nav-section-link:focus-visible {
-  color: var(--theme-topbar-text) !important;
+  color: #E2B96A !important;
 }
 
-.nav-section-link.nav-link-active,
+#headerNavLinks .nav-section-link.nav-link-active,
 #mobileNavigation .nav-section-link.nav-link-active {
-  border-bottom-color: var(--theme-primary-accent) !important;
-  text-decoration-color: var(--theme-primary-accent) !important;
+  border-bottom-color: #E2B96A !important;
+  text-decoration-color: #E2B96A !important;
 }
 
 #hero h1 span {
@@ -1203,8 +1269,25 @@ body > header button > span:first-child,
 }
 
 #detailView .bg-sobhaNavy .text-sobhaGold,
+#detailView #detailPrice,
 #enquiry .bg-sobhaNavy .text-sobhaGold {
-  color: var(--theme-topbar-text) !important;
+  color: #E2B96A !important;
+}
+
+#popularLocations {
+  color: #FFFFFF !important;
+}
+#popularLocations button {
+  color: #FFFFFF !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.6) !important;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+#popularLocations button:hover,
+#popularLocations button:focus-visible {
+  color: #E2B96A !important;
+  text-decoration-color: #E2B96A !important;
 }
 
 .amenity-item i,

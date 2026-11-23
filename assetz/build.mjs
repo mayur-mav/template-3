@@ -225,6 +225,12 @@ function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
 
   if (property) {
     html = seoReplaceId(html, "detailTitle", seoEscape(projectName));
+    html = seoReplaceId(html, "detailBadge", seoEscape(property.badge || ""));
+    if (property.reraId) {
+      html = html.replace(/(<span\b[^>]*\bid="detailReraBadge"[^>]*\bclass=")[^"]*(")/i, `$1bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1 select-none pointer-events-none cursor-default$2`);
+    } else {
+      html = html.replace(/(<span\b[^>]*\bid="detailReraBadge"[^>]*\bclass=")[^"]*(")/i, `$1hidden bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1 select-none pointer-events-none cursor-default$2`);
+    }
     html = seoReplaceId(html, "detailLocation", seoEscape(property.location || ""));
     const overviewParas = createAssetzPropertyOverview(property, seo.properties);
     const overviewHtml = overviewParas.map((para) => {

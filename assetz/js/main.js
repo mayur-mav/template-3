@@ -213,7 +213,7 @@ function renderPopularLocations(locations) {
     const button = document.createElement("button");
     button.type = "button";
     button.className =
-      "hover:text-sobhaGold underline underline-offset-4 transition-colors";
+      "text-white hover:text-sobhaGold underline underline-offset-4 transition-colors font-medium";
     button.textContent = location;
     button.addEventListener("click", () => quickSearch(location));
     list.append(button);
@@ -1453,16 +1453,10 @@ function openPropertyDetail(id, updateUrl = true, options = {}) {
     }).join("");
   }
   const detailTheme = document.getElementById("detailTheme");
-  const detailReraToggle = document.getElementById("detailReraToggle");
-  const detailReraValue = document.getElementById("detailReraValue");
+  const detailReraBadge = document.getElementById("detailReraBadge");
   if (detailTheme) detailTheme.textContent = p.reraId ? "" : p.theme;
-  if (detailReraToggle) {
-    detailReraToggle.classList.toggle("hidden", !p.reraId);
-    detailReraToggle.setAttribute("aria-expanded", "false");
-  }
-  if (detailReraValue) {
-    detailReraValue.textContent = p.reraId ? `RERA ID: ${p.reraId}` : "";
-    detailReraValue.classList.add("hidden");
+  if (detailReraBadge) {
+    detailReraBadge.classList.toggle("hidden", !p.reraId);
   }
   const loc = document.querySelector("#detailLocation span");
   if (loc) loc.textContent = p.location;
@@ -1635,14 +1629,6 @@ function addListExpansion(list, collapsedLimit, label) {
         : "Show fewer connectivity details →";
   });
   list.insertAdjacentElement("afterend", button);
-}
-
-function toggleReraId(button) {
-  const value = button.nextElementSibling;
-  if (!value) return;
-  const expanded = button.getAttribute("aria-expanded") === "true";
-  button.setAttribute("aria-expanded", String(!expanded));
-  value.classList.toggle("hidden", expanded);
 }
 
 function showCatalogView(updateUrl = true) {
