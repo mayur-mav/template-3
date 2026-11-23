@@ -49,6 +49,9 @@ createServer((request, response) => {
   }
   response.writeHead(200, {
     "Content-Type": types[extname(file)] || "application/octet-stream",
+    "Cache-Control": "no-cache, no-store, must-revalidate",
+    "Pragma": "no-cache",
+    "Expires": "0",
   });
   createReadStream(file).pipe(response);
 }).listen(port, () =>

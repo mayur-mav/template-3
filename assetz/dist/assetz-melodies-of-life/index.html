@@ -42,7 +42,7 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/styles.css?v=2.7" />
+    <link rel="stylesheet" href="css/styles.css?v=3.6" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="preload" as="image" href="https://media.justflip.in/builder-brand-pages/assetz/assetz-melodies-of-life/thumbnail.webp" fetchpriority="high">
@@ -788,9 +788,7 @@
             class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6"
           >
             <div>
-              <button
-                id="detailBackButton"
-                onclick="handleDetailBackClick(event)"
+              <a href="/residences" id="detailBackButton" onclick="showCatalogView(); return false;" role="button"
                 class="hidden items-center gap-2 text-xs uppercase font-bold text-white hover:text-sobhaGold transition-colors bg-white/10 hover:bg-white/20 px-3 py-2 rounded-sm border border-white/20 mb-5"
               >
                 <svg
@@ -808,7 +806,7 @@
                   />
                 </svg>
                 Back to Residences
-              </button>
+              </a>
               <div class="flex flex-wrap items-center gap-3 mb-2">
                 <span
                   id="detailBadge"
@@ -847,7 +845,7 @@
               >
               <span
                 id="detailPrice"
-                class="font-serif text-2xl sm:text-3xl font-bold text-sobhaGold"
+                class="font-sans text-2xl sm:text-3xl font-bold text-sobhaGold"
               >₹ 1.44 Cr*</span>
               <span class="text-[10px] text-gray-300 mt-0.5"
                 >*Govt Taxes & Charges Extra</span
@@ -1181,7 +1179,7 @@
                           <input type="range" class="emi-slider" id="emiPropSlider" min="2500000" max="25000000" step="100000" value="10100000" aria-label="Property Value">
                         </div>
                         <div class="emi-range-limits">
-                          <span id="emiPropMinLbl">₹25 Lakh</span>
+                          <span id="emiPropMinLbl">₹25 L</span>
                           <button type="button" class="emi-reset-link" id="emiResetPriceBtn" title="Reset to project price">
                             <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset to Project Price
                           </button>
@@ -1261,7 +1259,7 @@
                       <div class="emi-hero-card" style="background: linear-gradient(135deg, #143C47 0%, #0F2D35 100%) !important; color: #FFFFFF !important;">
                         <span class="emi-hero-label" style="color: #FFFFFF !important; font-weight: 700 !important; opacity: 0.95 !important;">Estimated Monthly EMI</span>
                         <div class="emi-hero-amount" id="emiMonthlyOutput" style="color: #FFFFFF !important; font-weight: 800 !important;">₹70,086</div>
-                        <span class="emi-hero-footnote" id="emiHeroFootnote" style="color: #FFFFFF !important; opacity: 0.9 !important;">*For ₹80.80 Lakh loan at 8.50% for 20 yrs</span>
+                        <span class="emi-hero-footnote" id="emiHeroFootnote" style="color: #FFFFFF !important; opacity: 0.9 !important;">*For ₹80.80 L loan at 8.50% for 20 yrs</span>
                       </div>
 
                       <!-- Visual Donut Chart + Legend -->
@@ -1313,7 +1311,7 @@
                         </div>
                         <div class="emi-breakdown-row emi-row-total">
                           <span class="emi-row-title">Total Amount Payable</span>
-                          <strong class="emi-row-value" id="emiTableTotal">₹1,68,20,640</strong>
+                          <strong class="emi-row-value" id="emiTableTotal">₹1,88,40,640</strong>
                         </div>
                       </div>
                     </div>
@@ -1856,7 +1854,7 @@
         if (!seen) window.setTimeout(openDialog, 3500);
       })();
     </script>
-    <script src="js/main.js?v=2.7"></script>
+    <script src="js/main.js?v=3.6"></script>
   
     <!-- MOBILE BOTTOM STICKY ACTION BAR -->
     <div id="mobileBottomBar" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-2.5 flex items-center justify-between gap-3 shadow-lg">

@@ -1683,7 +1683,7 @@ footer a {
   border-radius: 16px;
   padding: 24px;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 28px;
   position: relative;
   overflow: hidden;
@@ -1704,6 +1704,7 @@ footer a {
   flex-direction: column;
   gap: 16px;
   min-width: 0;
+  height: 100%;
 }
 
 .emi-control-group {
@@ -1750,7 +1751,9 @@ footer a {
 }
 
 .emi-val-display {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  letter-spacing: -0.01em;
   font-size: 1.15rem;
   font-weight: 700;
   color: #143C47;
@@ -1928,6 +1931,7 @@ footer a {
   flex-direction: column;
   gap: 16px;
   min-width: 0;
+  height: 100%;
 }
 
 .emi-hero-card,
@@ -1958,9 +1962,11 @@ footer a {
 .emi-hero-amount,
 #detailView .emi-hero-amount,
 #detailView .bg-white .emi-hero-amount {
-  font-family: "Playfair Display", Georgia, serif !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
   font-size: 2.25rem !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
   color: #FFFFFF !important;
   line-height: 1.1 !important;
   margin-bottom: 6px !important;
@@ -2039,7 +2045,8 @@ footer a {
 }
 
 .emi-donut-center-val {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
   font-size: 0.85rem;
   font-weight: 700;
   color: #143C47;
@@ -2144,7 +2151,8 @@ footer a {
 }
 
 .emi-row-total .emi-row-value {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
   font-size: 1.05rem;
   color: #C5A059;
 }
@@ -2270,7 +2278,6 @@ footer a {
   font-weight: 400;
   line-height: 1.3;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -3553,4 +3560,464 @@ footer a {
 }
 #detailView.is-transitioning {
   opacity: 0.85;
+}
+
+/* Simple, clean sans-serif tabular fonts for numbers everywhere */
+.emi-hero-amount,
+.emi-val-display,
+.emi-val-sub,
+.emi-val-pill,
+.emi-donut-center-val,
+.emi-legend-value,
+.emi-legend-pct,
+.emi-row-value,
+.emi-range-limits,
+.emi-range-limits span,
+.emi-loan-caption strong,
+.emi-chip,
+.emi-hero-footnote,
+#detailPrice,
+.comparison-project-spec-value {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+}
+
+/* Century-style Exact Balanced Financial Estimator & Tabular Numbers */
+.emi-calculator-container {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 16px !important;
+  padding: 28px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) !important;
+  gap: 28px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  align-items: stretch !important;
+}
+
+.emi-calculator-container::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #143C47 0%, #C5A059 100%) !important;
+}
+
+.emi-controls-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+.emi-control-group {
+  background: #FAF8F5 !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 12px !important;
+  padding: 16px 18px !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+}
+
+.emi-control-group:hover,
+.emi-control-group:focus-within {
+  border-color: #C5A059 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Tenure chips: single neat line, no awkward 4+2 wrapping */
+.emi-tenure-chips {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 6px !important;
+  margin-top: 10px !important;
+  width: 100% !important;
+}
+
+.emi-chip {
+  flex: 1 1 0 !important;
+  padding: 5px 2px !important;
+  border-radius: 6px !important;
+  font-size: 0.74rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.emi-results-col {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  gap: 14px !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+/* Hero EMI Card: Century Style */
+.emi-hero-card,
+#detailView .emi-hero-card,
+#detailView .bg-white .emi-hero-card {
+  background: linear-gradient(135deg, #143C47 0%, #0F2D35 100%) !important;
+  border-radius: 12px !important;
+  padding: 20px 18px !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 16px rgba(20, 60, 71, 0.18) !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.emi-hero-label,
+#detailView .emi-hero-label,
+#detailView .bg-white .emi-hero-label {
+  display: block !important;
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-bottom: 4px !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.emi-hero-amount,
+#detailView .emi-hero-amount,
+#detailView .bg-white .emi-hero-amount,
+#detailView .emi-hero-card .emi-hero-amount {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  line-height: 1 !important;
+  font-size: clamp(2rem, 2.2vw, 2.35rem) !important;
+  font-weight: 700 !important;
+  color: #C5A059 !important;
+  letter-spacing: -0.5px !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  margin-bottom: 4px !important;
+}
+
+/* Footnote: No ellipsis truncation, full text legible */
+.emi-hero-footnote,
+#detailView .emi-hero-footnote,
+#detailView .bg-white .emi-hero-footnote {
+  display: inline-block !important;
+  font-size: 0.74rem !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  margin-top: 4px !important;
+  opacity: 0.95 !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  padding: 4px 12px !important;
+  border-radius: 12px !important;
+  white-space: normal !important;
+  max-width: 100% !important;
+  line-height: 1.3 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Donut Chart Box: Century Style */
+.emi-chart-box {
+  background: #FAF8F5 !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 12px !important;
+  padding: 16px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex: 1 1 0% !important;
+  min-height: 140px !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+}
+
+.emi-chart-box:hover {
+  border-color: #C5A059 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.emi-donut-wrapper {
+  position: relative !important;
+  width: 95px !important;
+  height: 95px !important;
+  flex-shrink: 0 !important;
+}
+
+.emi-donut-center-lbl {
+  display: block !important;
+  font-size: 0.62rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  color: #64748B !important;
+  line-height: 1 !important;
+}
+
+.emi-donut-center-val {
+  display: block !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #143C47 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+.emi-chart-legend {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.emi-legend-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+}
+
+.emi-legend-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 3px !important;
+  margin-top: 4px !important;
+  flex-shrink: 0 !important;
+}
+
+.emi-legend-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1px !important;
+  line-height: 1.3 !important;
+}
+
+.emi-legend-title {
+  color: #64748B !important;
+  font-size: 0.76rem !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+}
+
+.emi-legend-value {
+  color: #143C47 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+.emi-legend-pct {
+  color: #64748B !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+}
+
+/* Breakdown Table: Century Style with Full In-Card Breathing Room */
+.emi-breakdown-table {
+  background: #FAF8F5 !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 12px !important;
+  padding: 14px 16px 16px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  flex: 0 0 auto !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  transition: all 0.2s ease !important;
+}
+
+.emi-breakdown-table:hover {
+  border-color: #C5A059 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.emi-breakdown-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 0.84rem !important;
+  color: #475569 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.emi-row-title {
+  color: #475569 !important;
+  white-space: nowrap !important;
+  font-size: 0.82rem !important;
+  flex-shrink: 0 !important;
+}
+
+.emi-row-value,
+.emi-breakdown-row strong {
+  color: #143C47 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+  text-align: right !important;
+  flex-shrink: 0 !important;
+}
+
+.emi-breakdown-row.emi-row-total,
+#detailView .emi-breakdown-row.emi-row-total {
+  border-top: 1.5px dashed #CBD5E1 !important;
+  padding-top: 10px !important;
+  padding-bottom: 2px !important;
+  margin-top: 4px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.emi-breakdown-row.emi-row-total .emi-row-title,
+#detailView .emi-breakdown-row.emi-row-total .emi-row-title {
+  color: #143C47 !important;
+  font-weight: 700 !important;
+  font-size: 0.84rem !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+.emi-breakdown-row.emi-row-total strong,
+#detailView .emi-breakdown-row.emi-row-total strong,
+#detailView .bg-white .emi-breakdown-row.emi-row-total strong,
+#detailView #emiTableTotal,
+#emiTableTotal {
+  color: #C5A059 !important;
+  font-size: clamp(0.92rem, 1.05vw, 1.05rem) !important;
+  font-weight: 700 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+  white-space: nowrap !important;
+  text-align: right !important;
+  flex-shrink: 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Simple Sans-Serif Tabular Numbers Everywhere */
+.emi-val-wrap {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 6px !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+}
+
+.emi-val-display {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #143C47 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.emi-val-sub {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-size: 0.85rem !important;
+  color: #C5A059 !important;
+  font-weight: 600 !important;
+}
+
+.emi-val-pill,
+#detailView .emi-val-pill,
+#detailView .bg-white .emi-val-pill {
+  background: #C5A059 !important;
+  color: #FFFFFF !important;
+  padding: 2px 8px !important;
+  border-radius: 12px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+}
+
+.emi-range-limits,
+.emi-range-limits span,
+.emi-loan-caption strong,
+#detailPrice,
+.comparison-project-spec-value {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+}
+
+/* Responsive adjustments for calculator across all devices */
+@media (max-width: 1200px) {
+  .emi-calculator-container {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+    padding: 22px !important;
+  }
+  .emi-controls-col,
+  .emi-results-col {
+    height: auto !important;
+  }
+  .emi-tenure-chips {
+    flex-wrap: wrap !important;
+  }
+  .emi-chip {
+    flex: 1 1 calc(33.333% - 6px) !important;
+  }
+  .emi-chart-box,
+  .emi-breakdown-table {
+    flex: none !important;
+    min-height: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .emi-calculator-container {
+    padding: 16px !important;
+    gap: 16px !important;
+  }
+  .emi-breakdown-table {
+    padding: 12px 14px 14px 14px !important;
+  }
+  .emi-breakdown-row.emi-row-total .emi-row-title,
+  #detailView .emi-breakdown-row.emi-row-total .emi-row-title {
+    font-size: 0.8rem !important;
+  }
+  .emi-breakdown-row.emi-row-total strong,
+  #detailView .emi-breakdown-row.emi-row-total strong,
+  #detailView #emiTableTotal,
+  #emiTableTotal {
+    font-size: 0.96rem !important;
+  }
 }

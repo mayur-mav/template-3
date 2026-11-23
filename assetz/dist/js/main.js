@@ -436,7 +436,7 @@ function formatINRShort(val) {
   }
   if (val >= 100000) {
     const l = (val / 100000).toFixed(2).replace(/\.00$/, "").replace(/(\.[1-9])0$/, "$1");
-    return `₹${l} Lakh`;
+    return `₹${l} L`;
   }
   return "₹" + Math.round(val).toLocaleString("en-IN");
 }
@@ -574,7 +574,8 @@ function updateEmiCalculator() {
   if (tableDownPct) tableDownPct.textContent = `(${Math.round(downPct)}%)`;
   if (tablePrincipal) tablePrincipal.textContent = formatINR(loanAmount);
   if (tableInterest) tableInterest.textContent = formatINR(result.totalInterest);
-  if (tableTotal) tableTotal.textContent = formatINR(result.totalPayment);
+  const totalAmountPayable = downPaymentAmt + result.totalPayment;
+  if (tableTotal) tableTotal.textContent = formatINR(totalAmountPayable);
 
   // Update slider tracks
   updateSliderTrack(propSlider);
@@ -1369,10 +1370,6 @@ function navigateToComparedProperty(targetId) {
 
 function handleDetailBackClick(event) {
   if (event) event.preventDefault();
-  if (window.history.length > 1 && (window.history.state?.fromComparison || sessionStorage.getItem("assetz_navigated_from_comparison") === "true")) {
-    window.history.back();
-    return;
-  }
   showCatalogView(true);
 }
 
@@ -1608,14 +1605,10 @@ function toggleReraId(button) {
 }
 
 function showCatalogView(updateUrl = true) {
-  if (
-    updateUrl &&
-    projectsData.some(
-      (project) =>
-        `/${project.id}` === window.location.pathname.replace(/\/$/, ""),
-    )
-  )
-    history.pushState(null, "", "/");
+  if (updateUrl) {
+    navigateToSection("projects");
+    return;
+  }
   document.getElementById("detailView")?.classList.add("hidden");
   document.getElementById("detailSubnavBar")?.classList.remove("is-visible");
   document.getElementById("catalogView")?.classList.remove("hidden");
