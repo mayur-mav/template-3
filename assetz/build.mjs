@@ -46,15 +46,20 @@ function createAssetzPropertyOverview(property, allProperties = []) {
 function getHighlightIcon(text, defaultIcon = "fa-solid fa-circle-check") {
   if (!text || typeof text !== "string") return defaultIcon;
   const lower = text.toLowerCase();
-  if (lower.includes("rera") || lower.includes("approv") || lower.includes("certif") || lower.includes("legal") || lower.includes("bda") || lower.includes("bbmp")) return "fa-solid fa-certificate";
+  if (lower.includes("rera") || lower.includes("approv") || lower.includes("certif") || lower.includes("legal") || lower.includes("bda") || lower.includes("bbmp") || lower.includes("bmrda")) return "fa-solid fa-certificate";
   if (lower.includes("wall") || lower.includes("privacy") || lower.includes("security") || lower.includes("gated")) return "fa-solid fa-shield-halved";
-  if (lower.includes("road") || lower.includes("location") || lower.includes("connect") || lower.includes("metro") || lower.includes("highway") || lower.includes("expressway") || lower.includes("airport") || lower.includes("tech park")) return "fa-solid fa-location-dot";
+  if (lower.includes("road") || lower.includes("location") || lower.includes("connect") || lower.includes("metro") || lower.includes("highway") || lower.includes("expressway") || lower.includes("station") || lower.includes("airport") || lower.includes("tech park")) return "fa-solid fa-location-dot";
   if (lower.includes("acre") || lower.includes("land") || lower.includes("garden") || lower.includes("open space") || lower.includes("landscape") || /\bpark\b/.test(lower) || lower.includes("green")) return "fa-solid fa-tree";
   if (lower.includes("pool") || lower.includes("swim")) return "fa-solid fa-person-swimming";
-  if (lower.includes("gym") || lower.includes("fit") || lower.includes("sport") || lower.includes("court") || lower.includes("jog")) return "fa-solid fa-dumbbell";
-  if (lower.includes("club") || lower.includes("amenit") || lower.includes("lifestyle") || lower.includes("hall")) return "fa-solid fa-hotel";
-  if (lower.includes("bhk") || lower.includes("config") || lower.includes("plot") || lower.includes("villa") || lower.includes("flat") || lower.includes("layout")) return "fa-solid fa-layer-group";
-  if (lower.includes("possess") || lower.includes("timeline") || lower.includes("launch") || lower.includes("date") || lower.includes("schedul")) return "fa-solid fa-calendar-check";
+  if (lower.includes("gym") || lower.includes("fit") || lower.includes("sport") || lower.includes("court") || lower.includes("jog") || lower.includes("arena")) return "fa-solid fa-dumbbell";
+  if (lower.includes("club") || lower.includes("amenit") || lower.includes("lifestyle") || lower.includes("hall") || lower.includes("resort") || lower.includes("luxury")) return "fa-solid fa-hotel";
+  if (lower.includes("tower") || lower.includes("floor") || lower.includes("high-rise") || lower.includes("architecture") || /\bunits?\b/.test(lower) || lower.includes("structure")) return "fa-solid fa-building";
+  if (lower.includes("bhk") || lower.includes("config") || lower.includes("plot") || lower.includes("villa") || lower.includes("flat") || lower.includes("layout") || lower.includes("typolog")) return "fa-solid fa-layer-group";
+  if (lower.includes("ready") || lower.includes("possess") || lower.includes("timeline") || lower.includes("launch") || lower.includes("date") || lower.includes("schedul") || lower.includes("move-in") || lower.includes("keys") || lower.includes("handover")) return "fa-solid fa-key";
+  if (lower.includes("vastu") || lower.includes("vaastu") || lower.includes("facing")) return "fa-solid fa-compass";
+  if (lower.includes("lake") || lower.includes("water") || lower.includes("view") || lower.includes("scenic")) return "fa-solid fa-water";
+  if (lower.includes("cable") || lower.includes("led") || lower.includes("solar") || lower.includes("smart") || lower.includes("power") || lower.includes("electric")) return "fa-solid fa-bolt";
+  if (lower.includes("price") || lower.includes("offer") || lower.includes("crore") || lower.includes("lakh") || lower.includes("payment") || lower.includes("emi")) return "fa-solid fa-indian-rupee-sign";
   return defaultIcon;
 }
 
@@ -62,16 +67,25 @@ function generatePropertyHighlights(property) {
   if (Array.isArray(property.highlights) && property.highlights.length > 0) {
     return property.highlights.map(h => {
       if (typeof h === "string") {
+        let title = "";
+        let text = h;
+        if (h.includes(": ") && !h.startsWith("http")) {
+          const parts = h.split(": ");
+          if (parts[0].length <= 40) {
+            title = parts[0].trim();
+            text = parts.slice(1).join(": ").trim();
+          }
+        }
         return {
           icon: getHighlightIcon(h),
-          title: "Key Feature",
-          text: h
+          title: title,
+          text: text
         };
       }
       return {
-        icon: h.icon || getHighlightIcon(`${h.title || ""} ${h.text || ""}`),
-        title: h.title || "Key Feature",
-        text: h.text || h.description || ""
+        icon: h.icon || getHighlightIcon(`${h.title || ""} ${h.text || h.description || ""}`),
+        title: h.title || h.heading || h.label || "",
+        text: h.text || h.description || h.value || ""
       };
     });
   }
@@ -258,8 +272,8 @@ function applyBuilderSeo(html, seo, route, basePath, siteOrigin) {
       <div class="highlight-card">
         <div class="highlight-icon-wrap"><i class="${h.icon}" aria-hidden="true"></i></div>
         <div class="highlight-text-wrap">
-          <strong class="highlight-title">${seoEscape(h.title)}</strong>
-          <span class="highlight-text">${seoEscape(h.text)}</span>
+          ${h.title ? `<strong class="highlight-title">${seoEscape(h.title)}</strong>` : ""}
+          ${h.text ? `<span class="highlight-text">${seoEscape(h.text)}</span>` : ""}
         </div>
       </div>
     `).join("");

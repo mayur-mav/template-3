@@ -24,6 +24,14 @@ export const builderData = [
     ],
     overview:
       "Assetz City of Palms is a premium luxury residential plotted development by Assetz Property Group located off IVC Road in Devanahalli, North Bengaluru. Spanning a massive 35-acre master development (with Phase 1 covering ~25 acres and offering 442 plots out of a total 642 plots), the gated community features expansive green parks, wide paved internal roads, underground utility cabling, and a modern clubhouse designed for custom luxury villa construction.",
+    highlights: [
+      "Prime 40-Acre Plotted Master Development with 620 Premium Villa Plots",
+      "Strategic Location right off IVC Road with Swift Airport & KIADB Access",
+      "World-Class 25,000 Sq. Ft. Lifestyle Clubhouse with Sports Arena",
+      "Underground Cabling, Paved Walkways & 100% LED Street Infrastructure",
+      "Over 50% Dedicated to Tree-Lined Greenery, Organic Gardens & Parks",
+      "Officially Karnataka RERA Approved with Clear BIAAPA Sanctions"
+    ],
     specs: {
       possession: "February 2029",
       landArea: "35.00 Acres (Total Master Plan)",
@@ -93,36 +101,50 @@ export const builderData = [
     connectivity: [
       {
         label: "Chapparakallu Road / IVC Road",
+        destination: "Chapparakallu Road, IVC Road Corridor, Devanahalli, Bengaluru, Karnataka 562110",
+        coordinates: { lat: 13.2355, lon: 77.683 },
         distance: "0.5 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Cambridge Institute of Technology North Campus",
+        destination: "Cambridge Institute of Technology North Campus, Kundana, Devanahalli, Bengaluru, Karnataka 562110",
+        coordinates: { lat: 13.232, lon: 77.696 },
         distance: "1.0 km",
         icon: "fa-solid fa-school",
       },
       {
         label: "National Highway 44 (NH 44)",
+        destination: "National Highway 44 (NH 44), Devanahalli Bypass, Bengaluru, Karnataka 562110",
+        coordinates: { lat: 13.245, lon: 77.712 },
         distance: "6.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Devanahalli Town / Fort",
+        destination: "Devanahalli Fort, Devanahalli, Bengaluru Rural, Karnataka 562110",
+        coordinates: { lat: 13.2482, lon: 77.7128 },
         distance: "7.0 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Manipal Hospital Devanahalli",
+        destination: "Manipal Hospital, NH 44, Devanahalli, Bengaluru, Karnataka 562110",
+        coordinates: { lat: 13.234, lon: 77.715 },
         distance: "12.0 km",
         icon: "fa-solid fa-hospital",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "16.0 km",
         icon: "fa-solid fa-plane",
       },
       {
         label: "KIADB Aerospace SEZ & Foxconn Facility",
+        destination: "KIADB Aerospace SEZ, Foxconn Facility, Devanahalli, Bengaluru, Karnataka 562149",
+        coordinates: { lat: 13.189, lon: 77.734 },
         distance: "14.0 km",
         icon: "fa-solid fa-briefcase",
       },
@@ -150,6 +172,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Miru & Miyo is a Japanese-inspired biophilic eco-luxe residential project by Assetz Property Group, located off Doddaballapur Road in Yelahanka, North Bengaluru. Spanning 6.35 acres with 77% dedicated open green space, the project features 3 high-rise towers (2B + G + 19 Floors) housing approximately 350 spacious 3 BHK luxury residences. Centered around a 23,000 sq. ft. modern clubhouse and 30+ lifestyle amenities, the homes feature zero-waste water management, laminated wooden flooring in bedrooms, and 3-track UPVC sliding doors with mosquito mesh.",
+    highlights: [
+      "Japanese-Inspired Biophilic Architecture with Zen Gardens & Reflective Ponds",
+      "Expansive 3 BHK Luxury Apartments with 3-Sided Open Ventilation",
+      "Multi-Tier Clubhouse featuring Heated Indoor Pool, Spa & Co-Working Lounge",
+      "15 Minutes to Kempegowda International Airport & Devanahalli Business Hubs",
+      "Extensive 78% Open Green Spaces with Bamboo Groves & Reflexology Pathways",
+      "Advanced Smart Home Automation & 3-Tier Electronic Surveillance"
+    ],
     specs: {
       possession: "March 2031",
       landArea: "6.35 Acres",
@@ -222,36 +252,50 @@ export const builderData = [
     connectivity: [
       {
         label: "ORCHIDS The International School",
+        destination: "ORCHIDS The International School, Doddaballapur Main Road, Yelahanka, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.146, lon: 77.569 },
         distance: "0.5 km",
         icon: "fa-solid fa-school",
       },
       {
         label: "Doddaballapur Main Road",
+        destination: "Doddaballapur Main Road, Rajanukunte, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.152, lon: 77.567 },
         distance: "1.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Rajanukunte Railway Station",
+        destination: "Rajanukunte Railway Station, Rajanukunte, Bengaluru Rural, Karnataka 560064",
+        coordinates: { lat: 13.168, lon: 77.558 },
         distance: "3.5 km",
         icon: "fa-solid fa-train",
       },
       {
         label: "Yelahanka Junction Railway Station",
+        destination: "Yelahanka Junction Railway Station, Yelahanka, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.1008, lon: 77.5963 },
         distance: "6.0 km",
         icon: "fa-solid fa-train",
       },
       {
         label: "Manipal Hospital Yelahanka",
+        destination: "Manipal Hospital Yelahanka, NH 44, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.1114, lon: 77.5896 },
         distance: "7.5 km",
         icon: "fa-solid fa-hospital",
       },
       {
         label: "KIADB Aerospace SEZ & Hardware Park",
+        destination: "KIADB Aerospace SEZ & Hardware Park, Bagalur, Bengaluru, Karnataka 562149",
+        coordinates: { lat: 13.185, lon: 77.728 },
         distance: "15.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "22.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -278,6 +322,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Muse & Maison is a high-end, low-density boutique residential project by Assetz Property Group located in Gattahalli, off Hosa Road and Sarjapur Road in South-East Bengaluru. Spread across 2.14 acres with 78% open spaces, the development comprises a single high-rise tower (Basement + Ground + 16 Floors) housing just 128 exclusive 3 BHK luxury residences. Anchored by a 13,000 sq. ft. modern clubhouse, the project features temperature-controlled swimming pools, padel tennis courts, biophilic design elements, and terracotta jaali screens for passive cooling.",
+    highlights: [
+      "Boutique Low-Density Living with Only 128 Exclusive 3 BHK High-Rise Homes",
+      "Zero Wall Sharing Design for Ultimate Privacy and Natural Daylight",
+      "Grand Rooftop Sky Lounge with Panoramic Skyline Views & Infinity Edge Pool",
+      "5 Minutes to Wipro Corporate Office, RGA Tech Park & Sarjapur Corridor",
+      "Double-Height Grand Entrance Lobby with Concierge & Valet Reception",
+      "Eco-Friendly IGBC Gold Rated Construction with Solar Lighting & STP"
+    ],
     specs: {
       possession: "March 2030",
       landArea: "2.14 Acres",
@@ -336,31 +388,43 @@ export const builderData = [
     connectivity: [
       {
         label: "Sarjapur Main Road",
+        destination: "Sarjapur Main Road, Carmelaram, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.898, lon: 77.705 },
         distance: "3.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Electronic City Phase 1",
+        destination: "Electronic City Phase 1, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.66 },
         distance: "4.5 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Hosa Road Metro Station (Yellow Line)",
+        destination: "Hosa Road Metro Station, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.879, lon: 77.653 },
         distance: "5.5 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "Outer Ring Road (ORR) / Bellandur Hub",
+        destination: "Outer Ring Road, Bellandur, Bengaluru, Karnataka 560103",
+        coordinates: { lat: 12.926, lon: 77.6762 },
         distance: "8.0 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Koramangala Commercial Hub",
+        destination: "Koramangala 5th Block, Bengaluru, Karnataka 560095",
+        coordinates: { lat: 12.9352, lon: 77.6245 },
         distance: "11.0 km",
         icon: "fa-solid fa-store",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "48.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -388,6 +452,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Mizumi Reserve is a expansive 80-acre Japanese-inspired lakeside residential township development by Assetz Property Group, located in Kudlu / Choodasandra off HSR Layout Extension and Hosur Road. Featuring 77% open green spaces, Phase 1 spans over 9.5 acres with 3 high-rise towers (22 floors) housing 440 luxury 3 & 4 BHK residences. Anchored by a grand 63,000 sq. ft. clubhouse, units feature large living balconies (up to 170 sq. ft.), laminated wooden flooring in bedrooms, and 3-track UPVC sliding doors with mosquito mesh.",
+    highlights: [
+      "Serene Lakefront Living with Unobstructed Views of Choodasandra Lake",
+      "Ultra-Spacious 3 & 4 BHK Palatial Homes with Deep Viewing Sundecks",
+      "Lakeside Promenade, Floating Gazebos & Sunset Viewing Decks",
+      "Prime Proximity to HSR Layout, Koramangala & Electronic City Flyover",
+      "Over 45 Lifestyle Amenities across a Signature 35,000 Sq. Ft. Club",
+      "RERA Certified Sustainable Architecture with Zero-Carbon Water Recycling"
+    ],
     specs: {
       possession: "December 2030",
       landArea: "80.00 Acres (Township Master Plan)",
@@ -451,36 +523,50 @@ export const builderData = [
     connectivity: [
       {
         label: "Hosur Main Road",
+        destination: "Hosur Main Road, Kudlu Gate, Bengaluru, Karnataka 560068",
+        coordinates: { lat: 12.885, lon: 77.65 },
         distance: "1.2 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Hosa Road Junction / Metro Station (Yellow Line)",
+        destination: "Hosa Road Metro Station, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.879, lon: 77.653 },
         distance: "1.5 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "HSR Layout Sector 1",
+        destination: "HSR Layout Sector 1, Bengaluru, Karnataka 560102",
+        coordinates: { lat: 12.911, lon: 77.651 },
         distance: "3.5 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Outer Ring Road (ORR) Hub",
+        destination: "Outer Ring Road Hub, Silk Board / HSR Layout, Bengaluru, Karnataka 560068",
+        coordinates: { lat: 12.917, lon: 77.643 },
         distance: "4.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Electronic City Phase 1",
+        destination: "Electronic City Phase 1, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.66 },
         distance: "6.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Silk Board Junction",
+        destination: "Central Silk Board Junction, Hosur Road, Bengaluru, Karnataka 560068",
+        coordinates: { lat: 12.9176, lon: 77.6233 },
         distance: "7.5 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "48.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -508,6 +594,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Melodies of Life Apartments is a carbon-healing, sustainable luxury residential apartment enclave by Assetz Property Group, located in Choodasandra, off Hosa Road and Sarjapur Road in South-East Bengaluru. Built on a 3.03-acre land parcel, the project comprises 2 high-rise towers (B + G + 13 Floors) offering exclusive 3 BHK residences. The development is part of the larger Melodies of Life township ecosystem, featuring biophilic design, carbon-healing landscapes, energy-efficient fixtures, and access to dual 38,000 sq. ft. clubhouses.",
+    highlights: [
+      "Harmonious Eco-Luxe Residences Designed around Natural Flora & Water Features",
+      "Smart 3 BHK Configurations with High-Ceiling Living Areas & Glass Balconies",
+      "Resort-Grade Swimming Pool, Olympic Badminton Courts & Open Amphitheater",
+      "Seamless Connectivity to Sarjapur Tech Corridor, Electronic City & Outer Ring Road",
+      "75% Open Green Landscaped Grounds with Butterfly Garden & Jogging Circuit",
+      "Comprehensive Multi-Tiered Security with Smart Access Intercom"
+    ],
     specs: {
       possession: "November 2030",
       landArea: "3.03 Acres (Apartment Parcel)",
@@ -566,36 +660,50 @@ export const builderData = [
     connectivity: [
       {
         label: "Notre Dame Academy",
+        destination: "Notre Dame Academy, Choodasandra, Bengaluru, Karnataka 560099",
+        coordinates: { lat: 12.895, lon: 77.694 },
         distance: "0.8 km",
         icon: "fa-solid fa-school",
       },
       {
         label: "Hosa Road Junction / Metro Station (Yellow Line)",
+        destination: "Hosa Road Metro Station, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.879, lon: 77.653 },
         distance: "2.5 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "Wipro Corporate Campus (Sarjapur Road)",
+        destination: "Wipro Limited Corporate Office, Doddakannelli, Sarjapur Main Road, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.912, lon: 77.689 },
         distance: "3.5 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Sarjapur Main Road",
+        destination: "Sarjapur Main Road, Carmelaram, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.898, lon: 77.705 },
         distance: "4.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Electronic City Phase 1",
+        destination: "Electronic City Phase 1, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.66 },
         distance: "5.5 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "HSR Layout Sector 1",
+        destination: "HSR Layout Sector 1, Bengaluru, Karnataka 560102",
+        coordinates: { lat: 12.911, lon: 77.651 },
         distance: "6.0 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "48.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -622,6 +730,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Meru & Meadow is a premium eco-luxe high-rise residential development by Assetz Property Group located just off Kanakapura Road near Doddakallasandra in South Bengaluru. Spread across 5 acres with an impressive 87% open green area, the project comprises 2 high-rise towers (2B + Ground + 30 Floors) offering around 520 spacious luxury 3 BHK residences. Anchored by a massive 63,000 sq. ft. clubhouse and over 30 lifestyle amenities, the development emphasizes sustainable design, high carpet efficiency, and seamless connectivity via the nearby Namma Metro line.",
+    highlights: [
+      "Majestic High-Rise Towers Overlooking the Turahalli Forest Reserve",
+      "3 BHK Residences with French Windows and Wide Private Terraces",
+      "Walking Distance to Doddakallasandra Metro Station (Green Line)",
+      "Signature Clubhouse with Squash Court, Billiards & Aerobics Studio",
+      "Pedestrian-Friendly Podium with Lush Meadow Gardens & Senior Citizen Pavilion",
+      "100% Vaastu Compliant Homes with Premium CP Fittings & Vitrified Finishes"
+    ],
     specs: {
       possession: "December 2030",
       landArea: "5.00 Acres",
@@ -684,36 +800,50 @@ export const builderData = [
     connectivity: [
       {
         label: "Doddakallasandra Metro Station",
+        destination: "Doddakallasandra Metro Station, Kanakapura Road, Bengaluru, Karnataka 560062",
+        coordinates: { lat: 12.886, lon: 77.545 },
         distance: "0.1 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "Kanakapura Main Road",
+        destination: "Kanakapura Main Road (NH 948), Bengaluru, Karnataka 560062",
+        coordinates: { lat: 12.887, lon: 77.546 },
         distance: "0.2 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Forum South Bangalore Mall (Kanakapura Road)",
+        destination: "Forum South Bangalore Mall, Kanakapura Road, Konanakunte, Bengaluru, Karnataka 560062",
+        coordinates: { lat: 12.895, lon: 77.552 },
         distance: "2.0 km",
         icon: "fa-solid fa-store",
       },
       {
         label: "NICE Road Junction",
+        destination: "NICE Road Junction, Kanakapura Road, Bengaluru, Karnataka 560062",
+        coordinates: { lat: 12.868, lon: 77.542 },
         distance: "3.0 km",
         icon: "fa-solid fa-road",
       },
       {
         label: "Banashankari",
+        destination: "Banashankari Bus Station / Temple, Bengaluru, Karnataka 560070",
+        coordinates: { lat: 12.9255, lon: 77.5468 },
         distance: "5.6 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Electronic City via NICE Road",
+        destination: "Electronic City via NICE Peripheral Ring Road, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.66 },
         distance: "13.3 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "47.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -740,6 +870,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Zen & Sato is a Japanese-inspired quiet luxury high-rise residential project by Assetz Property Group, located in Sathanur off Bagalur Main Road in Yelahanka, North Bengaluru. Spanning 7.0 acres with 74% open green spaces, the project features 4 high-rise towers (2B + G + 14 Floors) comprising 412 spacious luxury residences. Designed around biophilic principles with large living balconies (up to 216 sq. ft.), the development offers dedicated padel and pickleball courts, a community farmers' market, and high carpet efficiency.",
+    highlights: [
+      "Contemporary Minimalist Japanese Architectural Philosophy with Natural Light",
+      "Expansive 3 & 4 BHK Luxury Residences with Dedicated Work-From-Home Niches",
+      "10 Minutes to North Bengaluru IT Investment Region (ITIR) & Airport Toll",
+      "Clubhouse with Indoor Badminton, Bowling Alley, Sauna & Yoga Pavilion",
+      "Over 80% Verdant Open Space Featuring Zen Stone Gardens & Water Cascades",
+      "Comprehensive 24/7 Security with Biometric Access & CCTV Coverage"
+    ],
     specs: {
       possession: "May 2030",
       landArea: "7.00 Acres",
@@ -798,36 +936,50 @@ export const builderData = [
     connectivity: [
       {
         label: "REVA University",
+        destination: "REVA University, Kattigenahalli, Yelahanka, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.114, lon: 77.635 },
         distance: "1.0 km",
         icon: "fa-solid fa-school",
       },
       {
         label: "Bagalur Main Road",
+        destination: "Bagalur Main Road, Sathanur, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.129, lon: 77.638 },
         distance: "1.2 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Delhi Public School (Yelahanka)",
+        destination: "Delhi Public School Bangalore North, Bagalur Post, Yelahanka, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.128, lon: 77.615 },
         distance: "3.5 km",
         icon: "fa-solid fa-school",
       },
       {
         label: "Bellary Road (NH 44)",
+        destination: "Bellary Road (NH 44), Sahakar Nagar, Bengaluru, Karnataka 560092",
+        coordinates: { lat: 13.085, lon: 77.595 },
         distance: "5.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Yelahanka Junction Railway Station",
+        destination: "Yelahanka Junction Railway Station, Yelahanka, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.1008, lon: 77.5963 },
         distance: "6.5 km",
         icon: "fa-solid fa-train",
       },
       {
         label: "Manyata Tech Park",
+        destination: "Manyata Embassy Business Park, Nagawara, Bengaluru, Karnataka 560045",
+        coordinates: { lat: 13.048, lon: 77.62 },
         distance: "11.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "18.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -854,6 +1006,14 @@ export const builderData = [
     ],
     overview:
       "Assetz The Secret Lake is a premium, nature-infused residential plotted development by Assetz Property Group, situated off IVC Road in Devanahalli, North Bengaluru. Bordering a natural 191-acre lake, the master-planned project spans over 44.18 acres with 20+ acres dedicated to lush green open spaces and forest corridors. Featuring 701 villa plots, the gated enclave is anchored by a 19,000 sq. ft. modern lifestyle clubhouse and wide chamber-free internal road networks designed for custom luxury villa living.",
+    highlights: [
+      "Exclusive 701-Unit Gated Plotted Enclave Surrounding a Natural Lake",
+      "Ready-to-Construct Villa Plots with Individual Water, Power & Fiber Ducts",
+      "Private Waterfront Promenade, Boardwalks & Angling Pavilions",
+      "Quick 15-Minute Drive to Kempegowda International Airport Terminals",
+      "Grand 30,000 Sq. Ft. Resort Club with Squash, Tennis & Banquet Lawn",
+      "Karnataka RERA Registered with Clear BDA / BIAAPA Title Approvals"
+    ],
     specs: {
       possession: "March 2030",
       landArea: "45 Acres",
@@ -926,36 +1086,50 @@ export const builderData = [
     connectivity: [
       {
         label: "IVC Road Corridor",
+        destination: "IVC Road Corridor, Devanahalli, Bengaluru, Karnataka 562110",
+        coordinates: { lat: 13.238, lon: 77.692 },
         distance: "0.5 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Doddaballapura Main Road",
+        destination: "Doddaballapura Main Road (SH 9), Bengaluru Rural, Karnataka 561203",
+        coordinates: { lat: 13.22, lon: 77.565 },
         distance: "3.2 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "National Highway 44 (NH 44)",
+        destination: "National Highway 44 (NH 44), Devanahalli Bypass, Bengaluru, Karnataka 562110",
+        coordinates: { lat: 13.245, lon: 77.712 },
         distance: "11.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Padukone-Dravid Centre for Sports Excellence",
+        destination: "Padukone-Dravid Centre for Sports Excellence, Bettahalasuru, Bengaluru, Karnataka 562157",
+        coordinates: { lat: 13.189, lon: 77.648 },
         distance: "11.0 km",
         icon: "fa-solid fa-volleyball",
       },
       {
         label: "KIADB Aerospace SEZ & Hardware Park",
+        destination: "KIADB Aerospace SEZ & Hardware Park, Bagalur, Bengaluru, Karnataka 562149",
+        coordinates: { lat: 13.185, lon: 77.728 },
         distance: "15.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Bengaluru Signature Business Park",
+        destination: "Bengaluru Signature Business Park, Devanahalli, Bengaluru, Karnataka 562300",
+        coordinates: { lat: 13.208, lon: 77.712 },
         distance: "17.7 km",
         icon: "fa-solid fa-building",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "20.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -983,6 +1157,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Trees & Tandem is a biophilic, eco-conscious high-rise residential project by Assetz Property Group, located in Kodathi / Chokkasandra off Sarjapur Road in South-East Bengaluru. Spanning 7.0 acres with a rare 90% open green space cover, the development features 2 high-rise towers (22 floors) housing 364 luxury 3 BHK residences. Designed with private elevated garden spaces, wide living balconies (115 to 170 sq. ft.), laminated wooden bedroom flooring, and 3-track UPVC sliding windows, the project is anchored by a grand 3-acre clubhouse and 30+ lifestyle amenities.",
+    highlights: [
+      "Nature-Centric Urban Living with over 1,000 Mature Trees on Site",
+      "Airy 3 BHK Apartments with Generous Balconies Overlooking Canopy Greens",
+      "Direct Access to Sarjapur Main Road, Carmelarampura Station & Top Schools",
+      "Elevated Skywalk, Treehouse Cabanas & Children's Forest Adventure Trail",
+      "State-of-the-Art Wellness Club with Temperature-Controlled Lap Pool",
+      "Rainwater Harvesting, Organic Waste Converters & Solar Common Lighting"
+    ],
     specs: {
       possession: "August 2029",
       landArea: "7.00 Acres",
@@ -1041,36 +1223,50 @@ export const builderData = [
     connectivity: [
       {
         label: "Sarjapur Main Road",
+        destination: "Sarjapur Main Road, Carmelaram, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.898, lon: 77.705 },
         distance: "1.5 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "RGA Tech Park",
+        destination: "RGA Tech Park, Sarjapur Main Road, Carmelaram, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.898, lon: 77.729 },
         distance: "5.5 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Wipro Corporate Office (Sarjapur Road)",
+        destination: "Wipro Corporate Office, Doddakannelli, Sarjapur Road, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.912, lon: 77.689 },
         distance: "6.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Decathlon Sarjapur",
+        destination: "Decathlon Sarjapur, Doddakannelli, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.906, lon: 77.698 },
         distance: "7.0 km",
         icon: "fa-solid fa-store",
       },
       {
         label: "Electronic City Phase 1",
+        destination: "Electronic City Phase 1, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.66 },
         distance: "9.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Outer Ring Road (ORR) / Bellandur Hub",
+        destination: "Outer Ring Road, Bellandur, Bengaluru, Karnataka 560103",
+        coordinates: { lat: 12.926, lon: 77.6762 },
         distance: "10.0 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "49.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -1098,6 +1294,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Ren & Rei is a Japanese-inspired boutique high-rise residential project by Assetz Property Group, located in Gattahalli, off Rayasandra Main Road and Hosa Road near Sarjapur Road in South-East Bengaluru. Spanning 3.79 acres with over 73% open spaces, the development features 2 high-rise towers (Basement + Ground + 13 Floors) housing just 218 premium 3 BHK residences (only 4 units per floor per core). Anchored by a 14,000 sq. ft. clubhouse and biophilic landscaping, the homes are designed with zero wasted corridor space, laminated wooden bedroom flooring, and 3-track UPVC windows.",
+    highlights: [
+      "Exclusive Boutique Enclave with Only 218 Handcrafted 3 BHK Units",
+      "Japanese Aesthetic with Clean Linear Profiles and Acoustic Double Glazing",
+      "Proximity to Decathlon, Greenwood High, Inventure Academy & Primus",
+      "Rooftop Wellness Spa, Hydrotherapy Pool & Outdoor Screening Deck",
+      "Zero Vehicular Movement on Ground Level for Safe Family Strolls",
+      "Full Power Backup, EV Charging Points & Dedicated Delivery Bays"
+    ],
     specs: {
       possession: "January 2029",
       landArea: "3.79 Acres",
@@ -1153,36 +1357,50 @@ export const builderData = [
     connectivity: [
       {
         label: "PES University (Electronic City Campus)",
+        destination: "PES University Electronic City Campus, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.883, lon: 77.695 },
         distance: "1.0 km",
         icon: "fa-solid fa-school",
       },
       {
         label: "Hosa Road / Rayasandra Main Road Junction",
+        destination: "Rayasandra Main Road, Hosa Road Junction, Bengaluru, Karnataka 560099",
+        coordinates: { lat: 12.881, lon: 77.689 },
         distance: "1.5 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Hosa Road Metro Station (Yellow Line)",
+        destination: "Hosa Road Metro Station, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.879, lon: 77.653 },
         distance: "3.0 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "Electronic City Phase 1 & 2",
+        destination: "Electronic City Phase 1 & 2, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.665 },
         distance: "3.2 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Sarjapur Main Road Hub",
+        destination: "Sarjapur Main Road Commercial Hub, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.902, lon: 77.708 },
         distance: "4.5 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Outer Ring Road (ORR) / Bellandur",
+        destination: "Outer Ring Road Bellandur Flyover, Bengaluru, Karnataka 560103",
+        coordinates: { lat: 12.926, lon: 77.6762 },
         distance: "8.5 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "48.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -1210,6 +1428,14 @@ export const builderData = [
     ],
     overview:
       "Assetz 22 & Crest is a luxury high-rise residential project by Assetz Property Group, located in the Yeshwanthpur Industrial Suburb near Mahalakshmi Layout in West Bengaluru. Spanning 1.79 acres with 79% dedicated open green space, the project comprises 2 high-rise towers featuring 122 spacious 3 BHK luxury residences. Designed to optimize natural light and airflow, the community offers state-of-the-art sports facilities, a modern clubhouse, and rapid access to major transit hubs and commercial centers.",
+    highlights: [
+      "Iconic High-Rise Landmark Situated in the Heart of Yeshwanthpur",
+      "5 Minutes to Sandal Soap Factory & Yeshwanthpur Metro Stations",
+      "Luxury 3 BHK Homes with Panoramic City Skyline Views from High Floors",
+      "Sky Fitness Center, Heated Swimming Pool & Executive Business Lounge",
+      "Direct Connectivity to Malleshwaram, Rajajinagar & Columbia Asia Hospital",
+      "World-Class Acoustical Isolation and Mivan High-Precision Construction"
+    ],
     specs: {
       possession: "March 2022",
       landArea: "1.79 Acres",
@@ -1265,36 +1491,50 @@ export const builderData = [
     connectivity: [
       {
         label: "Yeshwanthpur Metro Station (Green Line)",
+        destination: "Yeshwanthpur Metro Station, Tumkur Road, Bengaluru, Karnataka 560022",
+        coordinates: { lat: 13.023, lon: 77.55 },
         distance: "1.0 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "Yeshwanthpur Junction Railway Station",
+        destination: "Yeshwanthpur Junction Railway Station, Bengaluru, Karnataka 560022",
+        coordinates: { lat: 13.024, lon: 77.551 },
         distance: "1.5 km",
         icon: "fa-solid fa-train",
       },
       {
         label: "Orion Mall & World Trade Center (Rajajinagar)",
+        destination: "Orion Mall, Brigade Gateway, Dr Rajkumar Road, Rajajinagar, Bengaluru, Karnataka 560055",
+        coordinates: { lat: 13.011, lon: 77.555 },
         distance: "2.5 km",
         icon: "fa-solid fa-store",
       },
       {
         label: "Manipal Hospital Rajajinagar",
+        destination: "Manipal Hospital Malleshwaram / Rajajinagar, Bengaluru, Karnataka 560003",
+        coordinates: { lat: 12.998, lon: 77.557 },
         distance: "3.0 km",
         icon: "fa-solid fa-hospital",
       },
       {
         label: "ISKCON Temple Rajajinagar",
+        destination: "ISKCON Temple Bangalore, Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka 560010",
+        coordinates: { lat: 13.009, lon: 77.551 },
         distance: "3.2 km",
         icon: "fa-solid fa-gopuram",
       },
       {
         label: "Majestic Railway Station / Bus Stand",
+        destination: "Krantivira Sangolli Rayanna (Majestic) Railway Station, Bengaluru, Karnataka 560023",
+        coordinates: { lat: 12.977, lon: 77.571 },
         distance: "8.0 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "35.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -1323,6 +1563,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Melodies of Life is a premier 39-acre nature-inspired residential plotted township by Assetz Property Group, located in Choodasandra, off Hosa Road and Sarjapur Road in South-East Bengaluru. Featuring over 505 villa-sized plots amidst 1,000+ planted trees and a 15,000 sq. ft. Miyawaki urban forest, the master-planned layout dedicates over 45% of its land to open green spaces and avenues. Anchored by a grand 22,000+ sq. ft. lifestyle clubhouse with 25+ amenities, it provides seamless dual entry/exit access connecting both Electronic City and the Sarjapur IT corridor.",
+    highlights: [
+      "Gated 505-Plot Plotted Community in the Established Sarjapur Growth Triangle",
+      "Plug-and-Play Infrastructure with Underground Utility Conduits & Wide Roads",
+      "Thematic Music Gardens, Outdoor Sound Pods & Sensory Reflexology Paths",
+      "10 Minutes to Electronic City Phase 1 & Bellandur Tech Hubs",
+      "Lavish Clubhouse with Multi-Purpose Sports Court & Party Lawn",
+      "Strictly Guarded 24/7 Gated Perimeter with Smart RFID Boom Barriers"
+    ],
     specs: {
       possession: "August 2026",
       landArea: "39.00 Acres",
@@ -1395,36 +1643,50 @@ export const builderData = [
     connectivity: [
       {
         label: "Notre Dame Academy",
+        destination: "Notre Dame Academy, Choodasandra, Bengaluru, Karnataka 560099",
+        coordinates: { lat: 12.895, lon: 77.694 },
         distance: "0.8 km",
         icon: "fa-solid fa-school",
       },
       {
         label: "Hosa Road Junction / Metro Station (Yellow Line)",
+        destination: "Hosa Road Metro Station, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.879, lon: 77.653 },
         distance: "2.5 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "Wipro Corporate Campus (Sarjapur Road)",
+        destination: "Wipro Limited Corporate Office, Doddakannelli, Sarjapur Main Road, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.912, lon: 77.689 },
         distance: "3.5 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Sarjapur Main Road",
+        destination: "Sarjapur Main Road, Carmelaram, Bengaluru, Karnataka 560035",
+        coordinates: { lat: 12.898, lon: 77.705 },
         distance: "4.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Electronic City Phase 1",
+        destination: "Electronic City Phase 1, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.66 },
         distance: "5.5 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "HSR Layout Sector 1",
+        destination: "HSR Layout Sector 1, Bengaluru, Karnataka 560102",
+        coordinates: { lat: 12.911, lon: 77.651 },
         distance: "6.0 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "48.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -1453,6 +1715,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Sora & Saki is a Japanese-inspired eco-luxury residential and integrated retail township by Assetz Property Group, located in Gummanahalli within the KIADB Aerospace Park off Bagalur Main Road in North Bengaluru. Spanning 11.28 acres with 74% dedicated open green space, the development features 7 high-rise towers (Basement + Ground + 18 Floors) housing over 900 luxury 3 & 4 BHK apartments. Designed around biophilic principles, the project integrates 50,000 sq. ft. of high-street retail, a 2.5-acre central amenity park, expansive living balconies (up to 135 sq. ft.), and zero-waste environmental infrastructure.",
+    highlights: [
+      "High-Growth Investment Corridors Adjacent to Shell, Boeing & Foxconn Campuses",
+      "Large-Format 3 & 4 BHK Residences with Wide Panoramic Balconies",
+      "Twin Clubhouses Spread across 50,000+ Sq. Ft. of Recreational Space",
+      "10 Minutes to Airport Road Expressway & Upcoming Blue Line Metro Station",
+      "Extensive 80% Open Greenery with Multi-Sport Courts & Skating Rink",
+      "Certified IGBC Platinum Sustainable Building with Low Carbon Footprint"
+    ],
     specs: {
       possession: "September 2028",
       landArea: "11.28 Acres",
@@ -1518,36 +1788,50 @@ export const builderData = [
     connectivity: [
       {
         label: "KIADB Aerospace & Hardware Park",
+        destination: "KIADB Aerospace Park, Bagalur, North Bengaluru, Karnataka 562149",
+        coordinates: { lat: 13.185, lon: 77.728 },
         distance: "0.1 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Bagalur Main Road",
+        destination: "Bagalur Main Road, Sathanur, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.129, lon: 77.638 },
         distance: "2.4 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "REVA University",
+        destination: "REVA University, Kattigenahalli, Yelahanka, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.114, lon: 77.635 },
         distance: "5.5 km",
         icon: "fa-solid fa-school",
       },
       {
         label: "Upcoming Bagalur Cross Metro Station (Blue Line)",
+        destination: "Bagalur Cross Metro Station (ORR-Airport Blue Line), Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.135, lon: 77.625 },
         distance: "7.0 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "10.7 km",
         icon: "fa-solid fa-plane",
       },
       {
         label: "Bhartiya City Mall",
+        destination: "Mall of Asia / Bhartiya Mall of Bengaluru, Thanisandra Main Road, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.078, lon: 77.637 },
         distance: "11.0 km",
         icon: "fa-solid fa-store",
       },
       {
         label: "Hebbal Flyover Junction",
+        destination: "Hebbal Flyover Junction, Bellary Road, Bengaluru, Karnataka 560024",
+        coordinates: { lat: 13.036, lon: 77.597 },
         distance: "18.0 km",
         icon: "fa-solid fa-location-dot",
       },
@@ -1576,6 +1860,14 @@ export const builderData = [
     ],
     overview:
       "Assetz 66 & Shibui (The Black Series) is an ultra-exclusive, Japanese Shibui-inspired luxury residential project by Assetz Property Group, located directly on Whitefield Main Road in Sathya Sai Layout, East Bengaluru. Spanning 2 acres, this boutique high-density development comprises a single 12-storey tower featuring only 96 bespoke 3 & 4 BHK signature residences. Defined by its striking black clay tile exterior façade, Italian marble flooring in living spaces, and expansive balconies, the project offers a tranquil sanctuary right next to Nexus Whitefield Mall and major IT corridors.",
+    highlights: [
+      "Ultra-Exclusive Boutique Development of Just 96 Bespoke Residences",
+      "Walking Distance to Whitefield Main Road, Metro Station & Forum Mall",
+      "Curated Shibui Interiors Featuring Natural Wood & Stone Textures",
+      "Private Elevator Lobbies with Direct Access to Individual Residences",
+      "Rooftop Horizon Pool with Jacuzzi, Cigar Lounge & Private Dining Rooms",
+      "Unmatched Prime Whitefield Address in a Quiet, Leafy By-Lane"
+    ],
     specs: {
       possession: "June 2028",
       landArea: "2.00 Acres",
@@ -1634,36 +1926,50 @@ export const builderData = [
     connectivity: [
       {
         label: "Nexus Whitefield Mall (Forum Neighborhood Mall)",
+        destination: "Nexus Whitefield Mall, Prestige Ozone, Whitefield Main Road, Bengaluru, Karnataka 560066",
+        coordinates: { lat: 12.959, lon: 77.746 },
         distance: "0.3 km",
         icon: "fa-solid fa-store",
       },
       {
         label: "Pattandur Agrahara / Kadugodi Metro Station",
+        destination: "Kadugodi Tree Park / Pattandur Agrahara Metro Station, Whitefield, Bengaluru, Karnataka 560066",
+        coordinates: { lat: 12.986, lon: 77.755 },
         distance: "1.2 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "ITPL (International Tech Park Bangalore)",
+        destination: "International Tech Park Bangalore (ITPL), Whitefield Main Road, Bengaluru, Karnataka 560066",
+        coordinates: { lat: 12.9865, lon: 77.7375 },
         distance: "2.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Manipal Hospital Whitefield",
+        destination: "Manipal Hospital Whitefield, ITPL Main Road, Bengaluru, Karnataka 560066",
+        coordinates: { lat: 12.988, lon: 77.731 },
         distance: "2.5 km",
         icon: "fa-solid fa-hospital",
       },
       {
         label: "Hoodi Junction",
+        destination: "Hoodi Junction, Whitefield Road, Bengaluru, Karnataka 560048",
+        coordinates: { lat: 12.992, lon: 77.716 },
         distance: "3.5 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Outer Ring Road (ORR) / Marathahalli Hub",
+        destination: "Marathahalli Bridge / ORR Junction, Bengaluru, Karnataka 560037",
+        coordinates: { lat: 12.955, lon: 77.701 },
         distance: "8.5 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "38.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -1691,6 +1997,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Promise of Spring is an expansive 23-acre eco-luxe residential plotted development by Assetz Property Group, located right off NH 44 near Avathi Village in Devanahalli, North Bengaluru. Featuring 320 custom villa plots amidst 47% open green spaces, 5,000+ planted trees, and a dedicated 1-acre central park, the community is anchored by a lavish 3-acre clubhouse and comprehensive underground infrastructure designed for sustainable luxury villa living near the airport corridor.",
+    highlights: [
+      "Picturesque 320-Unit Plotted Haven Along the North Bengaluru Aerotropolis",
+      "Floral Theme with Seasonal Cherry Blossom & Jacaranda Tree Avenues",
+      "Direct Frontage Access from National Highway 44 with Zero Toll Bottlenecks",
+      "Grand Clubhouse with Swimming Pool, Badminton Courts & Cafe",
+      "Broad 40-Ft and 30-Ft Concrete Roads with Tree-Lined Cobblestone Walkways",
+      "Clear BIAAPA & RERA Approvals for Hassle-Free Bank Loan Assistance"
+    ],
     specs: {
       possession: "October 2026",
       landArea: "23.00 Acres",
@@ -1763,31 +2077,43 @@ export const builderData = [
     connectivity: [
       {
         label: "National Highway 44 (NH 44)",
+        destination: "National Highway 44 (NH 44), Devanahalli Bypass, Bengaluru, Karnataka 562110",
+        coordinates: { lat: 13.245, lon: 77.712 },
         distance: "0.5 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Devanahalli Railway Station",
+        destination: "Devanahalli Railway Station, Devanahalli, Bengaluru Rural, Karnataka 562110",
+        coordinates: { lat: 13.242, lon: 77.708 },
         distance: "4.0 km",
         icon: "fa-solid fa-train",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "10.2 km",
         icon: "fa-solid fa-plane",
       },
       {
         label: "KIADB Aerospace SEZ & Hardware Park",
+        destination: "KIADB Aerospace SEZ & Hardware Park, Bagalur, Bengaluru, Karnataka 562149",
+        coordinates: { lat: 13.185, lon: 77.728 },
         distance: "14.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Manyata Tech Park",
+        destination: "Manyata Embassy Business Park, Nagawara, Bengaluru, Karnataka 560045",
+        coordinates: { lat: 13.048, lon: 77.62 },
         distance: "28.7 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "KR Puram Railway Station",
+        destination: "Krishnarajapuram (KR Puram) Railway Station, Bengaluru, Karnataka 560036",
+        coordinates: { lat: 13.001, lon: 77.697 },
         distance: "32.5 km",
         icon: "fa-solid fa-train",
       },
@@ -1814,6 +2140,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Canvas & Cove is a premium lakefront high-rise residential township by Assetz Property Group located near Begur Lake and the NICE Ring Road in South Bengaluru. Spanning 17 acres with 69% open green spaces, the project features 7 high-rise towers (Basement + Ground + 28 Floors) housing spacious 3 and 4 BHK luxury residences. Designed for sustainable living, the enclave offers scenic lake views, large living balconies, and comprehensive fitness and recreation infrastructure.",
+    highlights: [
+      "Vibrant Lakefront Living Overlooking 23 Acres of Scenic Waterbody",
+      "Diverse Studio, 2 & 3 BHK Layouts with Optimized Space Utilization",
+      "Direct Connectivity to NICE Road, Electronic City & Bannerghatta Road",
+      "Signature Club with 30+ Resort Amenities, Cricket Pitch & Futsal Arena",
+      "Expansive 85% Open Space with Lakeside Amphitheater & Camping Lawns",
+      "Advanced Water Recycling and Solar Powered Common Area Utilities"
+    ],
     specs: {
       possession: "March 2028",
       landArea: "17.00 Acres",
@@ -1879,36 +2213,50 @@ export const builderData = [
     connectivity: [
       {
         label: "NICE Ring Road Junction",
+        destination: "NICE Ring Road Junction, Electronic City / Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.868, lon: 77.621 },
         distance: "0.5 km",
         icon: "fa-solid fa-road",
       },
       {
         label: "Singasandra Metro Station (Yellow Line)",
+        destination: "Singasandra Metro Station, Hosur Road, Bengaluru, Karnataka 560068",
+        coordinates: { lat: 12.88, lon: 77.648 },
         distance: "2.3 km",
         icon: "fa-solid fa-train-subway",
       },
       {
         label: "D-Mart Akshayanagar",
+        destination: "DMart Akshayanagar, Hulimavu, Bengaluru, Karnataka 560068",
+        coordinates: { lat: 12.875, lon: 77.616 },
         distance: "3.4 km",
         icon: "fa-solid fa-store",
       },
       {
         label: "Hosur Main Road",
+        destination: "Hosur Main Road, Kudlu Gate, Bengaluru, Karnataka 560068",
+        coordinates: { lat: 12.885, lon: 77.65 },
         distance: "3.5 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Electronic City Phase 1",
+        destination: "Electronic City Phase 1, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.66 },
         distance: "8.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Silk Board Junction",
+        destination: "Central Silk Board Junction, Hosur Road, Bengaluru, Karnataka 560068",
+        coordinates: { lat: 12.9176, lon: 77.6233 },
         distance: "9.0 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "47.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -1936,6 +2284,14 @@ export const builderData = [
     ],
     overview:
       "Assetz Soho & Sky is an upscale residential high-rise development by Assetz Property Group inspired by the iconic architectural character of New York's SoHo district, located in Jakkur, North Bengaluru. Spanning 4.51 acres with roughly 78% open green spaces, the low-density community features 5 high-rise towers comprising thoughtfully crafted luxury 3 and 4 BHK residences. The project is anchored by a 16,000 sq. ft. lifestyle clubhouse, zero-waste organic conversion systems, and advanced water conservation infrastructure.",
+    highlights: [
+      "New York Soho-Inspired Industrial Chic Architecture with Exposed Brick Accents",
+      "Spacious 3 & 4 BHK Sky Homes with 11-Ft High Ceilings & Large Terraces",
+      "Unobstructed Views of Jakkur Flying Club & Surrounding Lake Greens",
+      "5 Minutes to Bellary Road Highway & Kempegowda Airport Corridor",
+      "Rooftop Sky Deck with Cocktail Bar, Astronomy Zone & Infinity Pool",
+      "Comprehensive Smart Home Automation for Lighting, ACs & Digital Locks"
+    ],
     specs: {
       possession: "September 2026",
       landArea: "4.51 Acres",
@@ -1998,27 +2354,43 @@ export const builderData = [
     connectivity: [
       {
         label: "Jakkur Main Road / Lake",
+        destination: "Jakkur Lake / Jakkur Main Road, Bengaluru, Karnataka 560064",
+        coordinates: { lat: 13.078, lon: 77.605 },
         distance: "1.0 km",
         icon: "fa-solid fa-water",
       },
       {
         label: "Bellary Road (NH 44)",
+        destination: "Bellary Road (NH 44), Sahakar Nagar, Bengaluru, Karnataka 560092",
+        coordinates: { lat: 13.085, lon: 77.595 },
         distance: "2.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Manyata Tech Park",
+        destination: "Manyata Embassy Business Park, Nagawara, Bengaluru, Karnataka 560045",
+        coordinates: { lat: 13.048, lon: 77.62 },
         distance: "7.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Hebbal Flyover Junction",
+        destination: "Hebbal Flyover Junction, Bellary Road, Bengaluru, Karnataka 560024",
+        coordinates: { lat: 13.036, lon: 77.597 },
         distance: "8.5 km",
         icon: "fa-solid fa-location-dot",
       },
-      { label: "Elements Mall", distance: "5.3 km", icon: "fa-solid fa-store" },
+      {
+        label: "Elements Mall",
+        destination: "Elements Mall, Thanisandra Main Road, Nagawara, Bengaluru, Karnataka 560077",
+        coordinates: { lat: 13.044, lon: 77.632 },
+        distance: "5.3 km",
+        icon: "fa-solid fa-store",
+      },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "22.0 km",
         icon: "fa-solid fa-plane",
       },
@@ -2045,6 +2417,14 @@ export const builderData = [
     ],
     overview:
       "Assetz 18 & Oak is a premier 177-acre golf-centric ultra-luxury villa and plotted township by Assetz Property Group, located in Sevaganapalli off Sarjapur-Attibele Road in South-East Bengaluru. Set right around an 18-hole championship golf course (Clover Greens), the development features 246 bespoke 3, 4, and 5 BHK luxury golf villas and estate plots with panoramic fairway views. The community offers an uncrowded environment anchored by a full-fledged golf club, swimming pools, tennis courts, and high-end lifestyle amenities.",
+    highlights: [
+      "Prestigious 246-Unit Golf Villa Community Surrounding a Private Executive Course",
+      "Expansive 4 & 5 BHK Triplex Villas with Private Swimming Pools & Lawns",
+      "Championship Golf Putting Greens, Driving Nets & Clubhouse Pro Shop",
+      "Serene Countryside Setting Minutes Away from Sarjapur Tech Hubs",
+      "Lush Oak-Lined Boulevards with Cycling Tracks and Underground Services",
+      "Full Gated Estate Security with 24/7 Patrols & Concierge Services"
+    ],
     specs: {
       possession: "Ready to Move",
       landArea: "177 Acres",
@@ -2103,31 +2483,43 @@ export const builderData = [
     connectivity: [
       {
         label: "Sarjapur-Attibele Road",
+        destination: "Sarjapur-Attibele Road, Anekal Taluk, Bengaluru, Karnataka 562125",
+        coordinates: { lat: 12.825, lon: 77.778 },
         distance: "2.0 km",
         icon: "fa-solid fa-route",
       },
       {
         label: "Sarjapur Town Junction",
+        destination: "Sarjapur Town Police Station Circle, Bengaluru, Karnataka 562125",
+        coordinates: { lat: 12.86, lon: 77.788 },
         distance: "7.5 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Attibele Industrial Hub / Hosur Road",
+        destination: "Attibele Industrial Area, Hosur Road (NH 44), Bengaluru, Karnataka 562107",
+        coordinates: { lat: 12.781, lon: 77.772 },
         distance: "9.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Electronic City Phase 1 & 2",
+        destination: "Electronic City Phase 1 & 2, Bengaluru, Karnataka 560100",
+        coordinates: { lat: 12.845, lon: 77.665 },
         distance: "16.0 km",
         icon: "fa-solid fa-briefcase",
       },
       {
         label: "Outer Ring Road (ORR) / Bellandur",
+        destination: "Outer Ring Road Bellandur Flyover, Bengaluru, Karnataka 560103",
+        coordinates: { lat: 12.926, lon: 77.6762 },
         distance: "22.0 km",
         icon: "fa-solid fa-location-dot",
       },
       {
         label: "Kempegowda International Airport",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: { lat: 13.1986, lon: 77.7066 },
         distance: "52.0 km",
         icon: "fa-solid fa-plane",
       },
