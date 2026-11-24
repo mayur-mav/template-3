@@ -6,20 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DS MAX Sky Sanjeevini | DS-MAX Properties</title>
 
-    <!-- Meta Description, Canonical and Meta Keywords-->
+    <!-- Meta Description, Canonical and Meta Keywords -->
     <meta
       name="description"
       content="DS MAX Sky Sanjeevini is a super-luxurious high-rise residential development by DS-MAX Properties, strategically located at Nagarur Colony in..."
     />
 
 
-    <!-- Google Fonts -->
+    <!-- Preconnect & Preload Critical Resources -->
+    <link rel="preconnect" href="https://media.justflip.in" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+      fetchpriority="high"
+    />
+
+    <!-- Google Fonts (Non-Render-Blocking) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -42,18 +64,40 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css?v=3.9" />
+
+    <!-- Font Awesome Icons (Non-Render-Blocking) -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
-  <style>body[data-property-route-loading="true"] #catalogView{display:none!important}body[data-property-route-loading="true"] #detailView{display:block!important}</style>
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
+
+    <!-- Leaflet CSS (Non-Render-Blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      />
+    </noscript>
+<style>body[data-property-route-loading="true"] #catalogView{display:none!important}body[data-property-route-loading="true"] #detailView{display:block!important}</style>
     <meta property="og:title" content="DS MAX Sky Sanjeevini | DS-MAX Properties">
     <meta property="og:description" content="DS MAX Sky Sanjeevini is a super-luxurious high-rise residential development by DS-MAX Properties, strategically located at Nagarur Colony in...">
 </head>
-  <body
+  <body data-property-route-loading="true"
     data-builder="dsmax"
     class="font-sans bg-white text-sobhaDarkText antialiased flex flex-col min-h-screen selection:bg-sobhaGold selection:text-sobhaNavy"
   >
@@ -65,19 +109,20 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between"
       >
         <!-- Brand Logo -->
-        <button
-          onclick="showCatalogView()"
+        <a
+          href="/"
+          onclick="navigateToSection('hero'); return false;"
           class="flex flex-col text-left group focus:outline-none"
         >
           <span
-            class="font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-sobhaNavy group-hover:text-sobhaGold transition-colors duration-300"
+            class="font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-white group-hover:text-[#f59e0b] transition-colors duration-300"
             >DS-MAX</span
           >
           <span
-            class="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium"
-            >The Joy Of Rebirth</span
+            class="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-white/80 group-hover:text-white font-medium transition-colors duration-300"
+            >THE JOY OF REBIRTH</span
           >
-        </button>
+        </a>
 
         <!-- Shared section navigation for catalog and property detail views -->
         <nav
@@ -87,31 +132,31 @@
           <a
             href="/"
             onclick="navigateToSection('hero'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#f59e0b] transition-colors py-2 border-b-2 border-transparent hover:border-[#f59e0b]"
             >Overview</a
           >
           <a
             href="/residences"
             onclick="navigateToSection('projects'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#f59e0b] transition-colors py-2 border-b-2 border-transparent hover:border-[#f59e0b]"
             >Residences</a
           >
           <a
             href="/about"
             onclick="navigateToSection('legacy'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#f59e0b] transition-colors py-2 border-b-2 border-transparent hover:border-[#f59e0b]"
             >About Us</a
           >
           <a
             href="/contact"
             onclick="navigateToSection('enquiry'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#f59e0b] transition-colors py-2 border-b-2 border-transparent hover:border-[#f59e0b]"
             >Contact</a
           >
           <a
             href="/faq"
             onclick="navigateToSection('faq'); return false"
-            class="nav-section-link text-gray-700 hover:text-sobhaGold transition-colors py-2 border-b-2 border-transparent hover:border-sobhaGold"
+            class="nav-section-link text-white/90 hover:text-[#f59e0b] transition-colors py-2 border-b-2 border-transparent hover:border-[#f59e0b]"
             >FAQ</a
           >
         </nav>
@@ -131,7 +176,7 @@
             aria-controls="mobileNavigation"
             aria-expanded="false"
             aria-label="Open navigation menu"
-            class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-gray-200 text-sobhaNavy"
+            class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-white/30 text-white hover:text-[#f59e0b] hover:border-[#f59e0b] transition-colors bg-white/5"
           >
             <svg
               id="mobileMenuIcon"
@@ -151,40 +196,63 @@
           </button>
         </div>
       </div>
-      <nav
+            <!-- Sticky Sub-Navigation Tabs Bar for Project Details (Scrolls into view past hero) -->
+      <nav class="detail-subnav-bar" id="detailSubnavBar" aria-label="Project sections navigation">
+        <div class="subnav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <button type="button" class="subnav-arrow subnav-arrow-left" id="subnavArrowLeft" aria-label="Scroll tabs left">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="subnav-track" id="subnavTrack" role="tablist">
+            <button type="button" class="subnav-tab active" role="tab" id="subnav-tab-overview" data-target="detailOverviewSection" aria-selected="true" tabindex="0">Overview</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-highlights" data-target="detailHighlightsSection" aria-selected="false" tabindex="-1">Highlights</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-gallery" data-target="detailGallerySection" aria-selected="false" tabindex="-1">Project Gallery</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-floorplans" data-target="detailFloorPlansSection" aria-selected="false" tabindex="-1">Floor Plans</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-emi" data-target="detailEmiSection" aria-selected="false" tabindex="-1">Financial Estimator</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-amenities" data-target="detailAmenitiesSection" aria-selected="false" tabindex="-1">Amenities</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-connectivity" data-target="detailConnectivitySection" aria-selected="false" tabindex="-1">Connectivity</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-comparison" data-target="detailComparisonSection" aria-selected="false" tabindex="-1">Compare</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-enquiry" data-target="detailEnquirySidebar" aria-selected="false" tabindex="-1">Enquire</button>
+          </div>
+          <button type="button" class="subnav-arrow subnav-arrow-right" id="subnavArrowRight" aria-label="Scroll tabs right">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+
+<nav
         id="mobileNavigation"
         hidden
-        class="hidden lg:hidden border-t border-gray-100 bg-white px-4 py-2 shadow-md"
+        class="hidden lg:hidden border-t border-white/10 bg-[#581c87] px-4 py-2 shadow-md"
         aria-label="Mobile navigation"
       >
         <a
           href="/"
           onclick="navigateToSection('hero'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#f59e0b] border-b border-white/10"
           >Overview</a
         >
         <a
           href="/residences"
           onclick="navigateToSection('projects'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#f59e0b] border-b border-white/10"
           >Residences</a
         >
         <a
           href="/about"
           onclick="navigateToSection('legacy'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#f59e0b] border-b border-white/10"
           >About Us</a
         >
         <a
           href="/contact"
           onclick="navigateToSection('enquiry'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#f59e0b] border-b border-white/10"
           >Contact</a
         >
         <a
           href="/faq"
           onclick="navigateToSection('faq'); return false"
-          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-gray-700 border-b-2 border-transparent"
+          class="nav-section-link block min-h-11 py-3 text-xs font-semibold uppercase tracking-widest text-white/90 hover:text-[#f59e0b] border-b border-transparent"
           >FAQ</a
         >
       </nav>
@@ -200,10 +268,13 @@
         <div class="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
-            alt="DS-MAX Luxury Residence Banner"
+            alt="Assetz Luxury Residence Banner"
+            class="w-full h-full object-cover"
+            loading="eager"
             fetchpriority="high"
             decoding="async"
-            class="w-full h-full object-cover"
+            width="2000"
+            height="1200"
           />
           <div
             class="absolute inset-0 bg-gradient-to-r from-sobhaNavy/90 via-sobhaNavy/70 to-sobhaNavy/40"
@@ -221,17 +292,15 @@
           >
             <span
               class="text-sobhaGold uppercase tracking-[0.2em] text-[10px] sm:text-xs font-bold"
-              >THE JOY OF LIVING SINCE 2007</span
+              >LIFE REIMAGINED SINCE 2006</span
             >
           </div>
 
           <h1
             class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-4xl mx-auto"
-          >DS Max Properties Bangalore</h1>
+          >Assetz Property Group Bangalore</h1>
 
-          <p
-            class="text-gray-200 text-xs sm:text-base max-w-2xl mx-auto font-normal leading-relaxed"
-          >Explore DS Max Properties Bangalore, DS Max apartments, and DS Max flats for sale in Bangalore, including DS Max Yelahanka, DS Max Sarjapur, DS Max Sky Fields, and DS Max Sky Sisira.</p>
+          <p class="text-gray-200 text-xs sm:text-base max-w-2xl mx-auto font-normal leading-relaxed" style="color: #FFFFFF !important; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85) !important; opacity: 0.95 !important;">Explore DS Max Properties Bangalore, DS Max apartments, and DS Max flats for sale in Bangalore, including DS Max Yelahanka, DS Max Sarjapur, DS Max Sky Fields, and DS Max Sky Sisira.</p>
 
           <!-- Interactive Search -->
           <div
@@ -430,7 +499,7 @@
             <p
               class="text-sobhaNavy uppercase tracking-[0.2em] text-xs font-semibold mb-3"
             >
-              19+ Years of Excellence
+              19+ YEARS OF EXCELLENCE
             </p>
             <h2
               class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy mb-6 leading-tight"
@@ -438,73 +507,30 @@
               BUILDING THE JOY OF LIVING.
             </h2>
             <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">
-              Founded on January 18, 2007, by Dr. K. V. Satish, DS-MAX
-              Properties Pvt. Ltd. has established nearly two decades of
-              excellence in Bengaluru's real estate market. Guided by its core
-              motto, "Joy of Living," the developer focuses on delivering
-              quality, luxurious residential communities at affordable prices
-              while maintaining complete RERA compliance and customer
-              satisfaction.
+              Founded on January 18, 2007, by Dr. K. V. Satish, DS-MAX Properties Pvt. Ltd. has established nearly two decades of excellence in Bengaluru's real estate market. Guided by its core motto, "Joy of Living," the developer focuses on delivering quality, luxurious residential communities at affordable prices while maintaining complete RERA compliance and customer satisfaction.
             </p>
             <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-              With a solid track record of completing 160 projects, DS-MAX
-              Properties has brought modern homes to over 22,000 happy families.
-              The builder continues its strong growth with more than 30 ongoing
-              projects in key locations across Bengaluru, combining strategic
-              connectivity with state-of-the-art security and lifestyle
-              amenities.
+              With a solid track record of completing 160 projects, DS-MAX has handed over homes to more than 20,000 satisfied families across prime growth corridors in Bengaluru, setting high benchmarks in customer trust and community development.
             </p>
           </div>
           <div
             class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mt-10 sm:mt-14"
           >
-            <div
-              class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center"
-            >
-              <p
-                class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy"
-              >
-                160+
-              </p>
-              <p class="text-[10px] sm:text-xs text-gray-600 mt-2">
-                Projects Completed
-              </p>
+            <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+              <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">19+</p>
+              <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Years of Excellence</p>
             </div>
-            <div
-              class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center"
-            >
-              <p
-                class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy"
-              >
-                500+
-              </p>
-              <p class="text-[10px] sm:text-xs text-gray-600 mt-2">
-                Quality Checks / Home
-              </p>
+            <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+              <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">160+</p>
+              <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Completed Projects</p>
             </div>
-            <div
-              class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center"
-            >
-              <p
-                class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy"
-              >
-                19+
-              </p>
-              <p class="text-[10px] sm:text-xs text-gray-600 mt-2">
-                Years of Legacy
-              </p>
+            <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+              <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">20,000+</p>
+              <p class="text-[10px] sm:text-xs text-gray-600 mt-2">Satisfied Families</p>
             </div>
-            <div
-              class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center"
-            >
-              <p
-                class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy"
-              >
-                22,000+
-              </p>
-              <p class="text-[10px] sm:text-xs text-gray-600 mt-2">
-                Happy Families
-              </p>
+            <div class="rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center">
+              <p class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sobhaNavy">100%</p>
+              <p class="text-[10px] sm:text-xs text-gray-600 mt-2">RERA Compliance</p>
             </div>
           </div>
         </div>
@@ -529,9 +555,7 @@
                 >
                   Schedule A Private Site Visit
                 </h3>
-                <p
-                  class="text-gray-300 text-xs sm:text-sm leading-relaxed font-light"
-                >
+                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed font-light" style="color: #FFFFFF !important; opacity: 0.95 !important;">
                   Connect with our senior property advisors to receive
                   comprehensive cost sheets, floor plans, and personalized
                   tours.
@@ -541,15 +565,15 @@
               <div
                 class="relative z-10 pt-8 border-t border-white/10 space-y-3 mt-6"
               >
-                <div class="flex items-center gap-3 text-xs text-gray-300">
+                <div class="flex items-center gap-3 text-xs text-gray-300" style="color: #FFFFFF !important;">
                   <span class="text-sobhaGold font-bold">✓</span> Personalized
                   One-on-One Property Tour
                 </div>
-                <div class="flex items-center gap-3 text-xs text-gray-300">
+                <div class="flex items-center gap-3 text-xs text-gray-300" style="color: #FFFFFF !important;">
                   <span class="text-sobhaGold font-bold">✓</span> Direct Unit
                   Selection & Custom Pricing
                 </div>
-                <div class="flex items-center gap-3 text-xs text-gray-300">
+                <div class="flex items-center gap-3 text-xs text-gray-300" style="color: #FFFFFF !important;">
                   <span class="text-sobhaGold font-bold">✓</span> Complete
                   Transparent Cost Breakdowns
                 </div>
@@ -700,10 +724,85 @@
           <div id="faqList" class="space-y-4"></div>
         </div>
       </section>
+    
+      <!-- 9. FOOTER -->
+    <footer
+      id="siteFooter"
+      class="bg-[#0b1220] text-slate-300 text-sm py-12 sm:py-16 mt-auto"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="pb-8 border-b border-white/10">
+          <div>
+            <a
+              href="/"
+              onclick="navigateToSection('hero'); return false;"
+              data-builder-name
+              class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight block focus:outline-none"
+            >
+              Assetz Property Group
+            </a>
+            <p
+              class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
+            >
+              Bengaluru
+            </p>
+            <div
+              class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 md:items-center"
+            >
+              <p class="text-sm text-slate-300">
+                Explore <span id="footerPropertyCount">0</span> properties by
+                <span data-builder-name>Assetz Property Group</span> featured on this
+                page.
+              </p>
+              <p
+                class="md:justify-self-end max-w-xl leading-relaxed text-slate-300"
+              >
+                This page is published and maintained by
+                <strong class="text-white">M&amp;A Ventures</strong>, an
+                <strong class="text-white">Authorised Channel Partner</strong>.
+                It is not the developer’s official website.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="py-7 border-b border-white/10 text-sm leading-7 text-slate-300"
+        >
+          <p>
+            Disclaimer: this website is operated by an Authorised Channel
+            Partner and is not the developer’s official website. All images are
+            artistic impressions and representative imagery, indicative only.
+            Floor plans, layouts, furniture, fixtures and fittings shown are for
+            illustrative purposes only and do not form part of the offering.
+            Plans, specifications, areas and amenities are subject to change
+            basis receipt of approvals and NOCs; dimensions and areas may
+            change. Drive times are approximate. Nothing on this page
+            constitutes an offer or a contract. Project information on this page
+            is taken from the developer’s brochure and applicable RERA records.
+          </p>
+        </div>
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-7 text-xs text-slate-400"
+        >
+          <p>
+            © 2026 · M&amp;A Ventures · Authorised Channel Partner ·
+            <a
+              href="/privacy-policy"
+              class="text-slate-300 underline underline-offset-2 hover:text-white"
+              >Privacy Policy</a
+            >
+          </p>
+          <p>
+            Residential properties by
+            <span data-builder-name>Assetz Property Group</span>
+          </p>
+        </div>
+      </div>
+    </footer>
     </div>
 
     <!-- 8. PROPERTY FULL DETAIL PAGE VIEW (SPA ROUTE TARGET) -->
-    <div id="detailView" class="hidden fade-in bg-white min-h-screen">
+    <div id="detailView" class="hidden fade-in bg-[#FAF8F5] min-h-screen pb-20 sm:pb-0">
       <!-- Detail view hero banner & gallery header -->
       <section
         class="bg-sobhaNavy text-white py-8 sm:py-12 border-b border-white/10"
@@ -713,9 +812,7 @@
             class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6"
           >
             <div>
-              <button
-                id="detailBackButton"
-                onclick="showCatalogView()"
+              <a href="/residences" id="detailBackButton" onclick="showCatalogView(); return false;" role="button"
                 class="hidden items-center gap-2 text-xs uppercase font-bold text-white hover:text-sobhaGold transition-colors bg-white/10 hover:bg-white/20 px-3 py-2 rounded-sm border border-white/20 mb-5"
               >
                 <svg
@@ -733,38 +830,28 @@
                   />
                 </svg>
                 Back to Residences
-              </button>
+              </a>
               <div class="flex flex-wrap items-center gap-3 mb-2">
                 <span
                   id="detailBadge"
                   class="bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1"
-                ></span>
+                >Ongoing</span>
                 <span
                   id="detailTheme"
                   class="text-sobhaGold text-xs uppercase tracking-widest font-semibold"
                 ></span>
-                <button
-                  id="detailReraToggle"
-                  type="button"
-                  onclick="toggleReraId(this)"
-                  aria-expanded="false"
-                  class="hidden bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1 cursor-pointer hover:bg-sobhaGoldHover transition-colors"
+                <span
+                  id="detailReraBadge"
+                  class="bg-sobhaGold text-sobhaNavy text-[10px] font-bold uppercase tracking-widest px-3 py-1 select-none pointer-events-none cursor-default"
                 >
                   ✓ RERA Verified
-                </button>
-                <span
-                  id="detailReraValue"
-                  class="hidden text-xs text-gray-200"
-                ></span>
+                </span>
               </div>
               <h1
                 id="detailTitle"
                 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-2"
               >DS MAX Sky Sanjeevini</h1>
-              <p
-                id="detailLocation"
-                class="text-gray-300 text-xs sm:text-sm flex items-center gap-1.5"
-              >Nagarur Colony, Dasanapura, Off Tumkur Road (NH 48), West Bengaluru</p>
+              <p id="detailLocation" class="text-gray-300 text-xs sm:text-sm flex items-center gap-1.5" style="color: #FFFFFF !important; opacity: 0.95 !important;">Nagarur Colony, Dasanapura, Off Tumkur Road (NH 48), West Bengaluru</p>
             </div>
 
             <div
@@ -775,8 +862,8 @@
               >
               <span
                 id="detailPrice"
-                class="font-serif text-2xl sm:text-3xl font-bold text-sobhaGold"
-              ></span>
+                class="font-sans text-2xl sm:text-3xl font-bold text-sobhaGold"
+              >₹ 81.43 L*</span>
               <span class="text-[10px] text-gray-300 mt-0.5"
                 >*Govt Taxes & Charges Extra</span
               >
@@ -786,15 +873,18 @@
           <!-- Main Gallery Showcase -->
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div
-              class="lg:col-span-2 relative h-72 sm:h-96 bg-gray-800 rounded overflow-hidden group"
+              class="lg:col-span-2 relative h-72 sm:h-96 bg-[#FAF8F5] border border-gray-200 rounded overflow-hidden group"
             >
               <img
                 id="mainGalleryImage"
                 src=""
                 alt="Main Project Gallery"
-                loading="lazy"
-                decoding="async"
                 class="w-full h-full object-cover transition-all duration-500"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="1200"
+                height="800"
               />
               <div
                 class="absolute bottom-4 left-4 bg-sobhaNavy/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded"
@@ -807,12 +897,12 @@
                 onclick="setGalleryImage(0)"
                 aria-pressed="true"
                 aria-label="Show first project image"
-                class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold"
+                class="relative h-32 sm:h-44 bg-[#FAF8F5] border border-gray-200 rounded overflow-hidden focus:outline-none ring-2 ring-sobhaGold"
               >
                 <img
                   id="thumb0"
                   src=""
-                  alt="Project gallery thumbnail 1"
+                  alt="Assetz Project Gallery Thumbnail 1"
                   loading="lazy"
                   decoding="async"
                   class="w-full h-full object-cover hover:scale-105 transition-transform"
@@ -822,12 +912,12 @@
                 onclick="setGalleryImage(1)"
                 aria-pressed="false"
                 aria-label="Show second project image"
-                class="relative h-32 sm:h-44 bg-gray-800 rounded overflow-hidden focus:outline-none"
+                class="relative h-32 sm:h-44 bg-[#FAF8F5] border border-gray-200 rounded overflow-hidden focus:outline-none"
               >
                 <img
                   id="thumb1"
                   src=""
-                  alt="Project gallery thumbnail 2"
+                  alt="Assetz Project Gallery Thumbnail 2"
                   loading="lazy"
                   decoding="async"
                   class="w-full h-full object-cover hover:scale-105 transition-transform"
@@ -853,7 +943,7 @@
               <p
                 id="specPossession"
                 class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"
-              ></p>
+              >August 2027</p>
             </div>
             <div
               class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center"
@@ -866,7 +956,7 @@
               <p
                 id="specLandArea"
                 class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"
-              ></p>
+              >1.50 Acres</p>
             </div>
             <div
               class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center"
@@ -879,7 +969,7 @@
               <p
                 id="specConfig"
                 class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"
-              ></p>
+              >2 &amp; 3 BHK High-Rise Apartments (207 Units)</p>
             </div>
             <div
               class="bg-white min-h-24 p-3 border border-gray-200 rounded shadow-sm flex flex-col items-center justify-center"
@@ -892,7 +982,7 @@
               <p
                 id="specRera"
                 class="text-sm sm:text-base font-bold text-sobhaNavy mt-1"
-              ></p>
+              >PRM/KA/RERA/1251/309/PR/060923/006244</p>
             </div>
           </div>
         </div>
@@ -901,127 +991,494 @@
       <!-- Detail Content Main Grid -->
       <section class="py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="detail-body-layout grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <!-- Left Column: Overview, Floor Plans & Amenities -->
-            <div class="lg:col-span-8 space-y-12">
+            <div class="detail-main-content lg:col-span-8 space-y-8 sm:space-y-12 min-w-0">
               <!-- Overview -->
-              <div>
-                <h2
-                  class="font-serif text-2xl font-bold text-sobhaNavy mb-4 pb-2 border-b-2 border-sobhaGold inline-block"
-                >
-                  Architectural Overview
-                </h2>
-                <p
-                  id="detailOverview"
-                  class="text-gray-600 text-sm leading-relaxed mt-4"
-                >DS MAX Sky Sanjeevini is a super-luxurious high-rise residential development by DS-MAX Properties, strategically located at Nagarur Colony in Dasanapura off Tumkur Road (NH 48), West Bengaluru. Spanning 1.50 acres, the high-rise development features a tower structure (2B + G + 9 Floors) housing 207 premium 2 and 3 BHK apartments. Designed to blend urban elegance with tranquil living, the project features vitrified tile flooring, UPVC sliding windows, branded FRLS insulated copper wiring, and an array of lifestyle amenities with quick access to BIEC, Golden Palms Resort, IKEA Nagasandra, and the Nagasandra Metro Station.</p>
-              </div>
+              <section id="detailOverviewSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Project Narrative</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-5">
+                    Architectural Overview
+                  </h2>
+                  <div
+                    id="detailOverview"
+                    class="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed"
+                  ><p class="overview-text leading-relaxed text-slate-700 mb-4">DS MAX Sky Sanjeevini is a super-luxurious high-rise residential development by DS-MAX Properties, strategically located at Nagarur Colony in Dasanapura off Tumkur Road (NH 48), West Bengaluru. Spanning 1.50 acres, the high-rise development features a tower structure (2B + G + 9 Floors) housing 207 premium 2 and 3 BHK apartments. Designed to blend urban elegance with tranquil living, the project features vitrified tile flooring, UPVC sliding windows, branded FRLS insulated copper wiring, and an array of lifestyle amenities with quick access to BIEC, Golden Palms Resort, IKEA Nagasandra, and the Nagasandra Metro Station. Buyers researching ready to move flats in Bangalore can explore DS-MAX Properties homes in Nagarur Colony, Dasanapura, Off Tumkur Road (NH 48), West Bengaluru, with project status, location, and configuration details available to compare.</p>
+                    <p class="overview-text leading-relaxed text-slate-700 mb-4">DS MAX Sky Sanjeevini is listed with 2 &amp; 3 BHK High-Rise Apartments (207 Units) across 1.50 Acres, with ongoing status and possession scheduled for August 2027. Listed floor plan options include 2 BHK and 3 BHK. Residents can explore lifestyle amenities such as Resident Main Lobby &amp; Clubhouse, Outdoor Swimming Pool &amp; Sun Deck, Fully Equipped Gymnasium &amp; Fitness Center and Open Terrace Sitting &amp; Gazebo Deck, with nearby destinations including Tumkur Road (NH 48) (0.8 km), The Golden Palms Hotel &amp; Spa (2.5 km) and Adichunchanagiri Ayurvedic Medical College &amp; Hospital (3.5 km). Review this DS-MAX Properties project’s floor plans, amenities, and connectivity when comparing homes in Bengaluru.</p>
+              <div class="overview-rera-card mt-5 pt-4 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-50/80 p-3.5 sm:p-4 rounded-xl border border-emerald-200/90">
+                <div class="flex items-center gap-2.5 text-emerald-900 text-xs sm:text-sm font-semibold">
+                  <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 text-[10px]">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                  </span>
+                  <span>Official Karnataka RERA Registered</span>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                  <span class="text-[10px] sm:text-xs uppercase tracking-wider text-emerald-800 font-bold">RERA No:</span>
+                  <span class="overview-rera font-mono text-xs font-bold text-slate-900 bg-white px-2.5 py-1 rounded border border-emerald-200 break-all select-all">PRM/KA/RERA/1251/309/PR/060923/006244</span>
+                </div>
+              </div></div>
+                </div>
+              </section>
+
+              <!-- Project Highlights -->
+              <section id="detailHighlightsSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Key Advantages</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
+                    Project Highlights
+                  </h2>
+                  <div id="detailHighlights" class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          
+          <span class="highlight-text">Prime West Bengaluru Transit Corridor Off Tumkur Road &amp; NH 48</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          <strong class="highlight-title">Officially Karnataka RERA Registered</strong>
+          <span class="highlight-text">PRM/KA/RERA/1251/309/PR/060923/006244</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          
+          <span class="highlight-text">Thoughtfully Designed 2 &amp; 3 BHK Homes with Unobstructed Views</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          
+          <span class="highlight-text">Clubhouse, Swimming Pool, Fitness Center &amp; Landscaped Open Courtyards</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          
+          <span class="highlight-text">Delivered in September 2023 with Occupancy Certificate Received</span>
+        </div>
+      </div>
+    
+      <div class="highlight-card">
+        <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+        <div class="highlight-text-wrap">
+          
+          <span class="highlight-text">Quick Connectivity to Nagasandra Metro Station, BIEC &amp; Peenya Industrial Hub</span>
+        </div>
+      </div>
+    </div>
+                </div>
+              </section>
+
+                            <!-- Project Gallery -->
+              <section id="detailGallerySection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Visual Showcase</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-2">
+                    Project Gallery
+                  </h2>
+                  <p class="text-xs sm:text-sm text-gray-600 mb-6">Browse project photos, architectural views, and available floor plans.</p>
+                  <button class="project-gallery-preview" id="projectGalleryPreview" type="button" aria-haspopup="dialog">
+                    <img id="projectGalleryPreviewImage" src="" alt="Project Gallery Preview" loading="lazy" decoding="async">
+                    <span class="project-gallery-preview-overlay" style="color: #ffffff !important;">
+                      <span class="project-gallery-image-count" id="projectGalleryImageCount" style="color: #ffffff !important; text-shadow: 0 1px 4px rgba(0,0,0,0.85);">1 Photos &amp; 2 Plans</span>
+                      <span class="project-gallery-preview-action" style="color: #ffffff !important; background: #143C47 !important; border: 1px solid #C5A059 !important;">
+                        <i class="fa-solid fa-images" style="color: #C5A059 !important;" aria-hidden="true"></i>
+                        <span style="color: #ffffff !important; font-weight: 700;">View Gallery</span>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </section>
 
               <!-- Interactive Floor Plans -->
-              <div>
-                <h2
-                  class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block"
-                >
-                  Floor Plans & Configurations
-                </h2>
+              <section id="detailFloorPlansSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Configuration & Layouts</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
+                    Floor Plans & Configurations
+                  </h2>
 
-                <div class="bg-sobhaLightBg p-6 border border-gray-200 rounded">
-                  <!-- Floor Plan Selectors -->
+                  <!-- Floor Plan Selectors (responsive pills) -->
                   <div
                     id="floorPlanTabs"
-                    class="flex flex-wrap gap-2 mb-6 border-b border-gray-200 pb-4"
-                  >
-                    <!-- Dynamic JS Injection -->
-                  </div>
+                    class="flex flex-nowrap overflow-x-auto no-scrollbar gap-2 mb-6 pb-2 border-b border-gray-100 sm:flex-wrap"
+                  ><button id="fpBtn-0" onclick="selectFloorPlan('ds-max-sky-sanjeevini',0)" class="fp-tab-btn px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 bg-sobhaNavy text-white shadow-md border-sobhaNavy">2 BHK</button><button id="fpBtn-1" onclick="selectFloorPlan('ds-max-sky-sanjeevini',1)" class="fp-tab-btn px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 bg-white text-gray-700 border-gray-200 hover:border-sobhaGold">3 BHK</button></div>
 
-                  <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
-                  >
-                    <div
-                      class="bg-white p-4 border border-gray-200 rounded text-center"
-                    >
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="bg-[#FAF8F5] p-4 sm:p-6 border border-gray-200 rounded-xl text-center min-h-[280px] flex items-center justify-center">
                       <img
                         id="floorPlanImg"
                         src=""
                         alt="Floor Plan"
                         loading="lazy"
                         decoding="async"
-                        class="w-full h-64 object-contain mx-auto"
+                        class="hidden w-full h-64 object-contain mx-auto"
                       />
+                      <div id="floorPlanPlaceholder" class="w-full flex flex-col items-center justify-center py-6 text-center">
+                        <div class="w-14 h-14 rounded-full bg-sobhaNavy/5 text-sobhaNavy flex items-center justify-center mb-3">
+                          <i class="fa-solid fa-compass-drafting text-2xl text-sobhaGold"></i>
+                        </div>
+                        <p class="font-serif text-base font-bold text-sobhaNavy mb-1">Architectural Layout Schematic</p>
+                        <p class="text-xs text-gray-500 max-w-xs mx-auto mb-4">Official master architectural layout and dimensions sheet available upon request.</p>
+                        <button type="button" onclick="triggerEnquiryScroll()" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sobhaNavy bg-white border border-sobhaGold px-4 py-2.5 rounded-full shadow-xs hover:bg-sobhaNavy hover:text-white transition-all">
+                          <i class="fa-solid fa-file-pdf text-sobhaGold"></i> Request Detailed Plan
+                        </button>
+                      </div>
                     </div>
                     <div class="space-y-4">
                       <h3
                         id="fpTitle"
-                        class="font-serif text-xl font-bold text-sobhaNavy"
-                      ></h3>
-                      <div class="space-y-2 text-xs sm:text-sm text-gray-600">
-                        <p
-                          class="flex justify-between border-b border-gray-200 pb-2"
-                        >
-                          <span class="text-gray-400"
-                            >Super Built-up Area:</span
-                          >
-                          <span
-                            id="fpSba"
-                            class="font-bold text-sobhaNavy"
-                          ></span>
+                        class="font-serif text-xl sm:text-2xl font-bold text-sobhaNavy"
+                      >2 BHK</h3>
+                      <div class="space-y-3 text-xs sm:text-sm text-gray-600">
+                        <p class="flex justify-between border-b border-gray-100 pb-2.5">
+                          <span class="text-gray-400 font-medium">Super Built-up Area:</span>
+                          <span id="fpSba" class="font-bold text-sobhaNavy">1,131 Sq. Ft.</span>
                         </p>
-                        <p
-                          class="flex justify-between border-b border-gray-200 pb-2"
-                        >
-                          <span class="text-gray-400">Estimated Price:</span>
-                          <span
-                            id="fpPrice"
-                            class="font-bold text-sobhaGold"
-                          ></span>
+                        <p class="flex justify-between border-b border-gray-100 pb-2.5">
+                          <span class="text-gray-400 font-medium">Estimated Starting Price:</span>
+                          <span id="fpPrice" class="font-bold text-sobhaGold text-base">₹ 81.43 L*</span>
                         </p>
                       </div>
                       <button
                         onclick="requestFloorPlanBrochure()"
-                        class="w-full bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-xs uppercase tracking-wider py-3 transition-colors mt-4"
+                        class="w-full bg-sobhaNavy hover:bg-sobhaGold hover:text-sobhaNavy text-white font-bold text-xs uppercase tracking-wider py-3 rounded-lg transition-colors mt-4 shadow-sm"
                       >
                         Download High-Res Floor Plan PDF
                       </button>
                     </div>
                   </div>
                 </div>
-              </div>
+              </section>
+
+              <!-- Home Loan EMI Financial Estimator -->
+              <section id="detailEmiSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                  <div class="emi-header-row">
+                    <div>
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Financial Planning</span>
+                      </div>
+                      <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-4">
+                        Home Loan EMI Calculator
+                      </h2>
+                      <p class="emi-section-intro">Estimate monthly loan installments with dynamic property pricing and customizable loan terms.</p>
+                    </div>
+                    <div class="emi-sync-badge" id="emiSyncBadge">
+                      <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+                      <span>Synced with: <strong id="emiSyncProperty">DS MAX Sky Sanjeevini</strong></span>
+                    </div>
+                  </div>
+
+                  <div class="emi-calculator-container">
+                    <!-- Left Column: Controls & Sliders -->
+                    <div class="emi-controls-col">
+                      <!-- Property Value Slider -->
+                      <div class="emi-control-group">
+                        <div class="emi-label-row">
+                          <label for="emiPropSlider" class="emi-label">
+                            <i class="fa-solid fa-indian-rupee-sign" aria-hidden="true"></i> Property Value
+                          </label>
+                          <div class="emi-val-wrap">
+                            <span class="emi-val-display" id="emiPropDisplay">₹1,01,00,000</span>
+                            <span class="emi-val-sub" id="emiPropSub">(₹1.01 Cr)</span>
+                          </div>
+                        </div>
+                        <div class="emi-slider-wrap">
+                          <input type="range" class="emi-slider" id="emiPropSlider" min="2500000" max="25000000" step="100000" value="10100000" aria-label="Property Value">
+                        </div>
+                        <div class="emi-range-limits">
+                          <span id="emiPropMinLbl">₹25 L</span>
+                          <button type="button" class="emi-reset-link" id="emiResetPriceBtn" title="Reset to project price">
+                            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset to Project Price
+                          </button>
+                          <span id="emiPropMaxLbl">₹2.50 Cr</span>
+                        </div>
+                      </div>
+
+                      <!-- Down Payment Slider -->
+                      <div class="emi-control-group">
+                        <div class="emi-label-row">
+                          <label for="emiDownSlider" class="emi-label">
+                            <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i> Down Payment
+                          </label>
+                          <div class="emi-val-wrap">
+                            <span class="emi-val-pill" id="emiDownPctDisplay">20%</span>
+                            <span class="emi-val-display" id="emiDownAmountDisplay">₹20,20,000</span>
+                          </div>
+                        </div>
+                        <div class="emi-slider-wrap">
+                          <input type="range" class="emi-slider" id="emiDownSlider" min="10" max="80" step="1" value="20" aria-label="Down Payment Percentage">
+                        </div>
+                        <div class="emi-range-limits">
+                          <span>10% (Min)</span>
+                          <span class="emi-loan-caption">Loan Amount: <strong id="emiLoanAmount">₹80,80,000</strong></span>
+                          <span>80%</span>
+                        </div>
+                      </div>
+
+                      <!-- Loan Tenure Slider & Quick Chips -->
+                      <div class="emi-control-group">
+                        <div class="emi-label-row">
+                          <label for="emiTenureSlider" class="emi-label">
+                            <i class="fa-solid fa-clock" aria-hidden="true"></i> Loan Tenure
+                          </label>
+                          <div class="emi-val-wrap">
+                            <span class="emi-val-display" id="emiTenureDisplay">20 Years</span>
+                            <span class="emi-val-sub" id="emiTenureMonths">(240 Months)</span>
+                          </div>
+                        </div>
+                        <div class="emi-slider-wrap">
+                          <input type="range" class="emi-slider" id="emiTenureSlider" min="5" max="30" step="1" value="20" aria-label="Loan Tenure in Years">
+                        </div>
+                        <div class="emi-tenure-chips" role="radiogroup" aria-label="Quick Loan Tenure selection">
+                          <button type="button" class="emi-chip" data-years="5">5 Yrs</button>
+                          <button type="button" class="emi-chip" data-years="10">10 Yrs</button>
+                          <button type="button" class="emi-chip" data-years="15">15 Yrs</button>
+                          <button type="button" class="emi-chip active" data-years="20">20 Yrs</button>
+                          <button type="button" class="emi-chip" data-years="25">25 Yrs</button>
+                          <button type="button" class="emi-chip" data-years="30">30 Yrs</button>
+                        </div>
+                      </div>
+
+                      <!-- Interest Rate Slider -->
+                      <div class="emi-control-group">
+                        <div class="emi-label-row">
+                          <label for="emiRateSlider" class="emi-label">
+                            <i class="fa-solid fa-percent" aria-hidden="true"></i> Interest Rate (% p.a.)
+                          </label>
+                          <div class="emi-val-wrap">
+                            <span class="emi-val-display" id="emiRateDisplay">8.50%</span>
+                          </div>
+                        </div>
+                        <div class="emi-slider-wrap">
+                          <input type="range" class="emi-slider" id="emiRateSlider" min="6.5" max="15" step="0.05" value="8.5" aria-label="Interest Rate per annum">
+                        </div>
+                        <div class="emi-range-limits">
+                          <span>6.5%</span>
+                          <span class="emi-bank-note"><i class="fa-solid fa-building-columns"></i> Benchmark home loan rates</span>
+                          <span>15.0%</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right Column: Results & Interactive SVG Chart -->
+                    <div class="emi-results-col">
+                      <!-- Hero EMI Card -->
+                      <div class="emi-hero-card" style="background: linear-gradient(135deg, #143C47 0%, #0F2D35 100%) !important; color: #FFFFFF !important;">
+                        <span class="emi-hero-label" style="color: #FFFFFF !important; font-weight: 700 !important; opacity: 0.95 !important;">Estimated Monthly EMI</span>
+                        <div class="emi-hero-amount" id="emiMonthlyOutput" style="color: #FFFFFF !important; font-weight: 800 !important;">₹70,086</div>
+                        <span class="emi-hero-footnote" id="emiHeroFootnote" style="color: #FFFFFF !important; opacity: 0.9 !important;">*For ₹80.80 L loan at 8.50% for 20 yrs</span>
+                      </div>
+
+                      <!-- Visual Donut Chart + Legend -->
+                      <div class="emi-chart-box">
+                        <div class="emi-donut-wrapper">
+                          <svg class="emi-donut-svg" viewBox="0 0 100 100" width="100" height="100" aria-label="Principal versus interest breakdown chart" role="img">
+                            <circle class="emi-donut-meter" cx="50" cy="50" r="38" />
+                            <circle class="emi-donut-segment emi-segment-principal" id="emiDonutPrincipal" cx="50" cy="50" r="38" stroke-dasharray="119.38 238.76" stroke-dashoffset="0" />
+                            <circle class="emi-donut-segment emi-segment-interest" id="emiDonutInterest" cx="50" cy="50" r="38" stroke-dasharray="119.38 238.76" stroke-dashoffset="-119.38" />
+                          </svg>
+                          <div class="emi-donut-center">
+                            <span class="emi-donut-center-lbl">Total</span>
+                            <span class="emi-donut-center-val" id="emiDonutCenterVal">₹1.68 Cr</span>
+                          </div>
+                        </div>
+                        <div class="emi-chart-legend">
+                          <div class="emi-legend-item">
+                            <span class="emi-legend-bullet bullet-principal"></span>
+                            <div class="emi-legend-info">
+                              <span class="emi-legend-title">Principal Loan</span>
+                              <strong class="emi-legend-value" id="emiLegendPrincipalVal">₹80,80,000</strong>
+                              <span class="emi-legend-pct" id="emiLegendPrincipalPct">(48%)</span>
+                            </div>
+                          </div>
+                          <div class="emi-legend-item">
+                            <span class="emi-legend-bullet bullet-interest"></span>
+                            <div class="emi-legend-info">
+                              <span class="emi-legend-title">Total Interest</span>
+                              <strong class="emi-legend-value" id="emiLegendInterestVal">₹87,40,640</strong>
+                              <span class="emi-legend-pct" id="emiLegendInterestPct">(52%)</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Summary Breakdown List -->
+                      <div class="emi-breakdown-table">
+                        <div class="emi-breakdown-row">
+                          <span class="emi-row-title">Down Payment <span id="emiTableDownPct" class="text-xs text-gray-400">(20%)</span></span>
+                          <strong class="emi-row-value" id="emiTableDown">₹20,20,000</strong>
+                        </div>
+                        <div class="emi-breakdown-row">
+                          <span class="emi-row-title">Principal Loan Amount</span>
+                          <strong class="emi-row-value" id="emiTablePrincipal">₹80,80,000</strong>
+                        </div>
+                        <div class="emi-breakdown-row">
+                          <span class="emi-row-title">Total Interest Payable</span>
+                          <strong class="emi-row-value" id="emiTableInterest">₹87,40,640</strong>
+                        </div>
+                        <div class="emi-breakdown-row emi-row-total">
+                          <span class="emi-row-title">Total Amount Payable</span>
+                          <strong class="emi-row-value" id="emiTableTotal">₹1,88,40,640</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
               <!-- Amenities Grid -->
-              <div>
-                <h2
-                  class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block"
-                >
-                  World-Class Amenities
-                </h2>
-                <div
-                  id="amenitiesGrid"
-                  class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
-                >
-                  <!-- Dynamic JS Injection -->
+              <section id="detailAmenitiesSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Curated Facilities</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
+                    World-Class Amenities
+                  </h2>
+                  <div
+                    id="amenitiesGrid"
+                    class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
+                  ><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-building-user text-sobhaGold" aria-hidden="true"></i><span>Resident Main Lobby &amp; Clubhouse</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-person-swimming text-sobhaGold" aria-hidden="true"></i><span>Outdoor Swimming Pool &amp; Sun Deck</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-dumbbell text-sobhaGold" aria-hidden="true"></i><span>Fully Equipped Gymnasium &amp; Fitness Center</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-torii-gate text-sobhaGold" aria-hidden="true"></i><span>Open Terrace Sitting &amp; Gazebo Deck</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-tree text-sobhaGold" aria-hidden="true"></i><span>Landscaped Gardens &amp; Walking Track</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-child-reaching text-sobhaGold" aria-hidden="true"></i><span>Children&#39;s Outdoor Play Zone</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-bolt text-sobhaGold" aria-hidden="true"></i><span>Power Backup &amp; High-Speed Elevators</span></div><div class="amenity-item bg-sobhaLightBg p-3 sm:p-4 border border-gray-200 text-xs font-semibold text-sobhaNavy rounded"><i class="fa-solid fa-shield-halved text-sobhaGold" aria-hidden="true"></i><span>24/7 Gated Security &amp; CCTV Surveillance</span></div></div>
                 </div>
-              </div>
+              </section>
 
-              <!-- Connectivity & Location -->
-              <div>
-                <h2
-                  class="font-serif text-2xl font-bold text-sobhaNavy mb-6 pb-2 border-b-2 border-sobhaGold inline-block"
-                >
-                  Location & Neighborhood Highlights
-                </h2>
-                <div
-                  id="connectivityList"
-                  class="bg-sobhaLightBg p-6 border border-gray-200 rounded space-y-3 text-xs sm:text-sm text-gray-700"
-                >
-                  <!-- Dynamic JS Injection -->
+                            <!-- Connectivity & Location -->
+              <section id="detailConnectivitySection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Prime Neighborhood</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-6">
+                    Location &amp; Strategic Connectivity
+                  </h2>
+                  <div class="connectivity-overview">
+                    <div class="connectivity-map-preview">
+                      <div id="connectivity-map-preview-canvas" class="connectivity-map-preview-canvas" role="img" aria-label="Map preview of the property location"></div>
+                      <button class="connectivity-map-trigger" id="connectivity-map-open" type="button">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        Show on Map
+                      </button>
+                    </div>
+                    <div class="connectivity-destinations">
+                      <h3 class="font-serif text-base sm:text-lg font-bold text-sobhaNavy mb-3">Nearby Destinations</h3>
+                      <div
+                        id="connectivityList"
+                        class="location-matrix"
+                      ><div class="connectivity-item loc-item"><span class="connectivity-label"><i class="fa-solid fa-route" aria-hidden="true"></i><span>Tumkur Road (NH 48)</span></span><span class="connectivity-distance">0.8 km</span></div><div class="connectivity-item loc-item"><span class="connectivity-label"><i class="fa-solid fa-hotel" aria-hidden="true"></i><span>The Golden Palms Hotel &amp; Spa</span></span><span class="connectivity-distance">2.5 km</span></div><div class="connectivity-item loc-item"><span class="connectivity-label"><i class="fa-solid fa-hospital" aria-hidden="true"></i><span>Adichunchanagiri Ayurvedic Medical College &amp; Hospital</span></span><span class="connectivity-distance">3.5 km</span></div><div class="connectivity-item loc-item"><span class="connectivity-label"><i class="fa-solid fa-road" aria-hidden="true"></i><span>NICE Ring Road Junction</span></span><span class="connectivity-distance">5.0 km</span></div></div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </section>
+
+              <!-- Compare Similar Projects -->
+              <section id="detailComparisonSection" class="detail-section-block scroll-mt-28">
+                <div class="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="section-subtitle text-xs uppercase tracking-widest text-[#B38E46] font-bold">Portfolio Comparison</span>
+                  </div>
+                  <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sobhaNavy mb-4">
+                    Compare Similar Projects
+                  </h2>
+                  <p class="project-comparison-intro">Compare this project with other DS-MAX Properties homes before you decide.</p>
+                  <div class="project-comparison-grid" id="detailComparisonGrid">
+        <article class="project-comparison-card is-current">
+          <div class="comparison-project-card">
+            <div class="comparison-project-image-wrap">
+              <img class="comparison-project-image" src="" alt="DS MAX Sky Sanjeevini project" loading="lazy" decoding="async">
+              <span class="comparison-current-label" style="background:#143C47 !important; color:#FFFFFF !important; border:1px solid #C5A059 !important; font-weight:800 !important;">Current Project</span>
+            </div>
+            <div class="comparison-project-name">
+              <span>DS MAX Sky Sanjeevini</span>
+              <span class="comparison-project-location">Nagarur Colony, Dasanapura, Off Tumkur Road (NH 48), West Bengaluru</span>
+            </div>
+            <button type="button" class="comparison-project-link" onclick="triggerEnquiryScroll()">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now
+            </button>
+            <div class="comparison-project-specs">
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Starting Price</span><span class="comparison-project-spec-value">₹ 81.43 L*</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value">2 &amp; 3 BHK High-Rise Apartments (207 Units)</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value">1.50 Acres</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value">Ongoing</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value">August 2027</span></div>
+            </div>
+          </div>
+        </article>
+      
+        <article class="project-comparison-card">
+          <div class="comparison-project-card">
+            <div class="comparison-project-image-wrap">
+              <img class="comparison-project-image" src="" alt="DS MAX Sky Sampurn project" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="comparison-project-name">
+              <span>DS MAX Sky Sampurn</span>
+              <span class="comparison-project-location">Varthur, Near Prestige Tech Forest, East Bengaluru</span>
+            </div>
+            <button type="button" class="comparison-project-link btn-outline" onclick="navigateToComparedProperty('ds-max-sky-sampurn'); return false;">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details
+            </button>
+            <div class="comparison-project-specs">
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Starting Price</span><span class="comparison-project-spec-value">₹ 86.83 L*</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value">2 &amp; 3 BHK High-Rise Apartments (615 Units)</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value">4.62 Acres</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value">New Launch</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value">June 2031</span></div>
+            </div>
+          </div>
+        </article>
+      
+        <article class="project-comparison-card">
+          <div class="comparison-project-card">
+            <div class="comparison-project-image-wrap">
+              <img class="comparison-project-image" src="" alt="DS MAX Sky Sukhino project" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="comparison-project-name">
+              <span>DS MAX Sky Sukhino</span>
+              <span class="comparison-project-location">Thavarekere, Off Magadi Main Road, West Bengaluru</span>
+            </div>
+            <button type="button" class="comparison-project-link btn-outline" onclick="navigateToComparedProperty('ds-max-sky-sukhino'); return false;">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details
+            </button>
+            <div class="comparison-project-specs">
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Starting Price</span><span class="comparison-project-spec-value">₹ 89.49 L*</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value">Exclusive 2 &amp; 3 BHK High-Rise Apartments (180 Units)</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value">1.60 Acres</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value">New Launch</span></div>
+              <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value">March 2031</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+                </div>
+              </section>
             </div>
 
             <!-- Right Sticky Sidebar CTA -->
-            <div class="lg:col-span-4">
+            <div class="detail-sidebar lg:col-span-4 min-w-0" id="detailEnquirySidebar">
               <div
-                class="sticky top-28 bg-white border-2 border-sobhaNavy p-6 shadow-xl space-y-6"
+                class="sticky top-28 bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 shadow-lg space-y-6 scroll-mt-28"
               >
                 <div class="border-b border-gray-200 pb-4">
                   <p
@@ -1127,79 +1584,7 @@
       </section>
     </div>
 
-    <!-- 9. FOOTER -->
-    <footer
-      id="siteFooter"
-      class="bg-[#0b1220] text-slate-300 text-sm py-12 sm:py-16 mt-auto"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="pb-8 border-b border-white/10">
-          <div>
-            <button
-              onclick="showCatalogView()"
-              data-builder-name
-              class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight block focus:outline-none"
-            >
-              SOBHA Limited
-            </button>
-            <p
-              class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
-            >
-              Bengaluru
-            </p>
-            <div
-              class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 md:items-center"
-            >
-              <p class="text-sm text-slate-300">
-                Explore <span id="footerPropertyCount">0</span> properties by
-                <span data-builder-name>SOBHA Limited</span> featured on this
-                page.
-              </p>
-              <p
-                class="md:justify-self-end max-w-xl leading-relaxed text-slate-300"
-              >
-                This page is published and maintained by
-                <strong class="text-white">M&amp;A Ventures</strong>, an
-                <strong class="text-white">Authorised Channel Partner</strong>.
-                It is not the developer’s official website.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="py-7 border-b border-white/10 text-sm leading-7 text-slate-300"
-        >
-          <p>
-            Disclaimer: this website is operated by an Authorised Channel
-            Partner and is not the developer’s official website. All images are
-            artistic impressions and representative imagery, indicative only.
-            Floor plans, layouts, furniture, fixtures and fittings shown are for
-            illustrative purposes only and do not form part of the offering.
-            Plans, specifications, areas and amenities are subject to change
-            basis receipt of approvals and NOCs; dimensions and areas may
-            change. Drive times are approximate. Nothing on this page
-            constitutes an offer or a contract. Project information on this page
-            is taken from the developer’s brochure and applicable RERA records.
-          </p>
-        </div>
-        <div
-          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-7 text-xs text-slate-400"
-        >
-          <p>
-            © 2026 · M&amp;A Ventures · Authorised Channel Partner ·
-            <a
-              href="/privacy-policy"
-              class="text-slate-300 underline underline-offset-2 hover:text-white"
-              >Privacy Policy</a
-            >
-          </p>
-          <p>
-            Residential properties by
-            <span data-builder-name>SOBHA Limited</span>
-          </p>
-        </div>
-      </div>
-    </footer>
+    
     <!-- WhatsApp brochure request -->
     <button
       id="whatsappLauncher"
@@ -1480,7 +1865,7 @@
           event.preventDefault();
           if (!form.reportValidity()) return;
           const phone = phoneInput.value.trim();
-          const message = `Hi, I would like the SOBHA e-brochure. My WhatsApp number is ${phone}. Please share floor plans, pricing, and payment schedules.`;
+          const message = `Hi, I would like the DS-MAX Properties e-brochure. My WhatsApp number is ${phone}. Please share floor plans, pricing, and payment schedules.`;
           closeDialog();
           window.open(
             `https://wa.me/918004250000?text=${encodeURIComponent(message)}`,
@@ -1495,6 +1880,95 @@
         if (!seen) window.setTimeout(openDialog, 3500);
       })();
     </script>
-    <script src="js/main.js"></script>
-  </body>
+    <script type="module" src="js/main.js?v=3.9"></script>
+  
+    <!-- MOBILE BOTTOM STICKY ACTION BAR -->
+    <div id="mobileBottomBar" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-2.5 flex items-center justify-between gap-3 shadow-lg">
+      <a href="tel:+918040000000" class="flex-1 inline-flex items-center justify-center gap-2 bg-[#FAF8F5] text-sobhaNavy border border-gray-300 py-2.5 px-3 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gray-100 transition-colors">
+        <i class="fa-solid fa-phone text-sobhaGold" aria-hidden="true"></i> Call
+      </a>
+      <button type="button" onclick="triggerEnquiryScroll()" class="flex-[2] inline-flex items-center justify-center gap-2 bg-sobhaNavy text-white py-2.5 px-4 rounded-lg text-xs font-bold uppercase tracking-wider shadow-md hover:bg-sobhaGold hover:text-sobhaNavy transition-all">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Enquire Now
+      </button>
+    </div>
+
+      <!-- Project Gallery Modal Dialog -->
+    <dialog class="project-gallery-dialog" id="projectGalleryDialog" aria-labelledby="projectGalleryTitle">
+      <div class="project-gallery-dialog-content">
+        <div class="project-gallery-dialog-header">
+          <div>
+            <span class="connectivity-map-eyebrow text-xs uppercase tracking-widest text-[#C5A059] font-bold">PROJECT VISUALS</span>
+            <h2 id="projectGalleryTitle" class="font-serif text-lg sm:text-xl font-bold text-white">Project Gallery</h2>
+          </div>
+          <button class="project-gallery-close" id="projectGalleryClose" type="button" aria-label="Close gallery">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="project-gallery-tabs" role="tablist" aria-label="Gallery media categories">
+          <button class="project-gallery-tab" id="projectGalleryProjectTab" type="button" role="tab" aria-selected="true" data-gallery-category="photo">
+            Project Photos
+          </button>
+          <button class="project-gallery-tab" id="projectGalleryFloorPlanTab" type="button" role="tab" aria-selected="false" data-gallery-category="floor-plan" tabindex="-1">
+            Floor Plans
+          </button>
+        </div>
+        <div class="project-gallery-viewer" id="projectGalleryViewer" role="region" aria-roledescription="carousel" aria-label="Gallery viewer">
+          <div class="project-gallery-main">
+            <button class="project-gallery-nav project-gallery-previous" id="projectGalleryPrevious" type="button" aria-label="Previous image">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <img class="project-gallery-current-image" id="projectGalleryCurrentImage" src="" alt="" decoding="async" draggable="false">
+            <button class="project-gallery-nav project-gallery-next" id="projectGalleryNext" type="button" aria-label="Next image">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+            <span class="project-gallery-counter" id="projectGalleryCounter" aria-live="polite"></span>
+          </div>
+          <div class="project-gallery-thumbnails" id="projectGalleryThumbnails" aria-label="Gallery thumbnails"></div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Full-screen Interactive Connectivity Map Modal -->
+    <section class="connectivity-map" id="connectivity-map" aria-labelledby="connectivity-map-title" aria-modal="true" role="dialog" hidden>
+      <header class="connectivity-map-header">
+        <div class="connectivity-map-heading">
+          <span class="connectivity-map-eyebrow">LOCATION &amp; CONNECTIVITY</span>
+          <h2 id="connectivity-map-title">Connectivity Map</h2>
+          <p id="connectivity-map-project"></p>
+        </div>
+        <label class="connectivity-map-search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <span class="sr-only">Search listed destinations</span>
+          <input id="connectivity-map-search-input" type="search" placeholder="Search listed destinations" autocomplete="off">
+        </label>
+        <button class="connectivity-map-close" id="connectivity-map-close" type="button" aria-label="Close map">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          <span>Back to property</span>
+        </button>
+      </header>
+      <div class="connectivity-map-layout">
+        <aside class="connectivity-map-sidebar" aria-label="Property connectivity">
+          <div class="connectivity-map-sidebar-heading">
+            <h3>Listed destinations</h3>
+            <span id="connectivity-map-count"></span>
+          </div>
+          <p class="connectivity-map-hint">Choose a destination from this property's connectivity list to view its route.</p>
+          <div class="connectivity-map-list" id="connectivity-map-list"></div>
+          <div class="connectivity-map-directions">
+            <a id="connectivity-map-directions-link" href="#" target="_blank" rel="noopener noreferrer">
+              Open directions in Google Maps
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+            <small>Destinations come from this property's connectivity data. The route line is provided by OSRM; open Google Maps for turn-by-turn directions.</small>
+          </div>
+        </aside>
+        <div class="connectivity-map-canvas">
+          <div id="connectivity-map-canvas" class="connectivity-leaflet-map" role="application" aria-label="Map showing the property and selected destination"></div>
+          <p id="connectivity-map-route-status" class="connectivity-map-route-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+</body>
 </html>
